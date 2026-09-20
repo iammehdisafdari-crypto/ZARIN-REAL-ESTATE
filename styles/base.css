@@ -1,0 +1,315 @@
+/* ==========================================================================
+   ZARIN — Base Typography, Reset & Structural Utilities
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-secondary);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Subtle architectural grain effect */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 0);
+  background-size: 32px 32px;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.6;
+}
+
+/* Typography Hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text-primary);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5.2vw, 4.8rem);
+  line-height: 1.08;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.4vw, 3.2rem);
+  line-height: 1.14;
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2vw, 2rem);
+  line-height: 1.25;
+}
+
+h4 {
+  font-size: 1.25rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+p {
+  margin-bottom: 1.25rem;
+  font-size: 1.05rem;
+  color: var(--color-text-secondary);
+}
+
+p.lead {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--color-text-primary);
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* Containers */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.container-wide {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: var(--container-narrow);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+/* Section Wrapper Standard */
+.section {
+  padding-top: clamp(4.5rem, 8vw, 8rem);
+  padding-bottom: clamp(4.5rem, 8vw, 8rem);
+  position: relative;
+}
+
+.section-divider {
+  position: relative;
+}
+.section-divider::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+}
+
+/* Micro-Tag / Pre-heading */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-gold-base);
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background-color: var(--color-gold-base);
+}
+
+/* Refined Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1.85rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--color-gold-base);
+  color: var(--color-text-inverted);
+  box-shadow: var(--shadow-gold);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(200, 171, 131, 0.25);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  border-color: var(--color-gold-base);
+  color: var(--color-gold-light);
+  background-color: var(--color-gold-subtle);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-gold-base);
+  padding: 0.5rem 0;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--color-gold-border);
+}
+
+.btn-ghost:hover {
+  color: var(--color-gold-light);
+  border-color: var(--color-gold-light);
+  padding-left: 0.35rem;
+}
+
+/* Subtle Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border-radius: var(--radius-xs);
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--color-text-primary);
+  border: var(--border-hairline);
+}
+
+.badge-gold {
+  background-color: var(--color-gold-subtle);
+  color: var(--color-gold-base);
+  border-color: var(--color-gold-border);
+}
+
+/* Animations & Scroll reveal primitives */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s var(--ease-editorial), transform 0.8s var(--ease-editorial);
+}
+
+.reveal-up.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.12s; }
+.delay-2 { transition-delay: 0.24s; }
+.delay-3 { transition-delay: 0.36s; }
+.delay-4 { transition-delay: 0.48s; }
+
+/* RTL Adjustments for Persian Language */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3 {
+  font-family: var(--font-farsi);
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .eyebrow {
+  letter-spacing: 0.05em;
+}
+
+[dir="rtl"] .eyebrow::before {
+  display: none;
+}
+
+[dir="rtl"] .eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background-color: var(--color-gold-base);
+}
+
+[dir="rtl"] .btn {
+  letter-spacing: 0.05em;
+}
+
+[dir="rtl"] .btn-ghost:hover {
+  padding-left: 0;
+  padding-right: 0.35rem;
+}

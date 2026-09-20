@@ -1,0 +1,290 @@
+/* ==========================================================================
+   ZARIN — Section 01: Hero (Calm, Confident & Authoritative)
+   ========================================================================== */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+  background-color: var(--color-bg-primary);
+}
+
+/* Atmospheric Visual Background */
+.hero-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-backdrop-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: brightness(0.42) contrast(1.1);
+  transform: scale(1.05);
+  animation: subtleZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes subtleZoom {
+  0% { transform: scale(1.02); }
+  100% { transform: scale(1.08); }
+}
+
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 11, 14, 0.75) 0%,
+    rgba(10, 11, 14, 0.45) 45%,
+    rgba(10, 11, 14, 0.88) 85%,
+    var(--color-bg-primary) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: flex-end;
+}
+
+/* Left Narrative Column */
+.hero-narrative {
+  max-width: 760px;
+}
+
+.hero-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 1.1rem;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: var(--border-hairline-gold);
+  border-radius: var(--radius-xs);
+  backdrop-filter: blur(12px);
+  margin-bottom: 2rem;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-gold-base);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-gold-base);
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+.hero-meta-text {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+}
+
+.hero-title {
+  margin-bottom: 1.8rem;
+  color: var(--color-text-primary);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.hero-title .em-gold {
+  color: var(--color-gold-light);
+  font-style: italic;
+  font-weight: 300;
+}
+
+[dir="rtl"] .hero-title .em-gold {
+  font-style: normal;
+  color: var(--color-gold-light);
+}
+
+.hero-lead {
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  line-height: 1.75;
+  color: #D1D5DB;
+  max-width: 640px;
+  margin-bottom: 2.8rem;
+  font-weight: 300;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+}
+
+/* Right Curated Teaser Column */
+.hero-teaser {
+  background: rgba(17, 19, 24, 0.68);
+  border: var(--border-hairline);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-sm);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-monolith);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-teaser::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-base), transparent);
+}
+
+.hero-teaser-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+  border-bottom: var(--border-hairline-subtle);
+  padding-bottom: 1rem;
+}
+
+.hero-teaser-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold-base);
+}
+
+.hero-teaser-ref {
+  font-size: 0.72rem;
+  color: var(--color-text-tertiary);
+  font-family: monospace;
+}
+
+.hero-teaser-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.6rem;
+}
+
+[dir="rtl"] .hero-teaser-title {
+  font-family: var(--font-farsi);
+}
+
+.hero-teaser-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.hero-teaser-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1.2rem;
+  border-top: var(--border-hairline-subtle);
+}
+
+.hero-metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-caption {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.3rem;
+}
+
+.metric-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.hero-teaser-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.teaser-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-base);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap var(--transition-fast);
+}
+
+.teaser-link:hover {
+  color: var(--color-gold-light);
+  gap: 0.8rem;
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-text-tertiary);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.scroll-line {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(180deg, var(--color-gold-base), transparent);
+  animation: scrollDown 2s infinite ease-in-out;
+}
+
+@keyframes scrollDown {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.1% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}

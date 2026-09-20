@@ -1,0 +1,268 @@
+/* ==========================================================================
+   ZARIN — Section 10: Final Conversion & Private Advisory Intake
+   ========================================================================== */
+
+.conversion-section {
+  background-color: var(--color-bg-primary);
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(6rem, 10vw, 10rem);
+  padding-bottom: clamp(6rem, 10vw, 10rem);
+}
+
+.conversion-container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.conversion-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200, 171, 131, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.conversion-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  color: var(--color-text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.conversion-subtitle {
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  max-width: 720px;
+  margin: 0 auto 3.5rem;
+  font-weight: 300;
+}
+
+/* Multi-Intent Interactive Intake Box */
+.intake-box {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background: var(--color-bg-surface);
+  border: var(--border-hairline-gold);
+  border-radius: var(--radius-sm);
+  padding: clamp(1.5rem, 3.8vw, 3.5rem);
+  box-shadow: var(--shadow-monolith);
+  text-align: left;
+  overflow: hidden;
+}
+
+[dir="rtl"] .intake-box {
+  text-align: right;
+}
+
+.intake-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1rem, 2.4vw, 1.8rem);
+  margin-bottom: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-label {
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-secondary);
+  margin-bottom: 0.6rem;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  background-color: var(--color-bg-primary);
+  border: var(--border-hairline);
+  border-radius: var(--radius-xs);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  padding: 0.92rem 1.15rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.form-select {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23C8AB83' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1.2rem center;
+  background-size: 14px;
+  padding-right: 2.8rem;
+}
+
+[dir="rtl"] .form-select {
+  background-position: left 1.2rem center;
+  padding-right: 1.15rem;
+  padding-left: 2.8rem;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+[dir="rtl"] .form-input, 
+[dir="rtl"] .form-select, 
+[dir="rtl"] .form-textarea {
+  font-family: var(--font-farsi);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--color-gold-base);
+  box-shadow: 0 0 0 2px var(--color-gold-subtle);
+}
+
+.form-select option {
+  background-color: var(--color-bg-surface);
+  color: var(--color-text-primary);
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.intake-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding-top: 1.6rem;
+  border-top: var(--border-hairline-subtle);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.direct-whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--color-gold-base);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color var(--transition-fast);
+  text-decoration: none;
+}
+
+.direct-whatsapp-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.direct-whatsapp-link:hover {
+  color: var(--color-gold-light);
+}
+
+/* Modal Window for Global "Book a Consultation" */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(10, 11, 14, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease-editorial);
+}
+
+.modal-backdrop.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-window {
+  background-color: var(--color-bg-surface);
+  border: var(--border-hairline-gold);
+  border-radius: var(--radius-sm);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: clamp(2rem, 4vw, 3rem);
+  box-shadow: var(--shadow-monolith);
+  position: relative;
+  transform: translateY(20px) scale(0.98);
+  transition: transform 0.4s var(--ease-editorial);
+}
+
+.modal-backdrop.is-active .modal-window {
+  transform: translateY(0) scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+  font-size: 1.4rem;
+  border-radius: var(--radius-xs);
+  transition: color var(--transition-fast);
+}
+
+[dir="rtl"] .modal-close-btn {
+  right: auto;
+  left: 1.5rem;
+}
+
+.modal-close-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.modal-title {
+  font-size: 1.8rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.modal-desc {
+  font-size: 0.94rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}

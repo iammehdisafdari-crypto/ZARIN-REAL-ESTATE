@@ -1,0 +1,290 @@
+/* ==========================================================================
+   ZARIN — Section 04: Curated Opportunities (Editorial Presentation)
+   ========================================================================== */
+
+.properties-section {
+  background-color: var(--color-bg-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.properties-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.properties-title-group {
+  max-width: 620px;
+}
+
+/* Category Filter Tabs */
+.property-filters {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-bg-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-xs);
+  padding: 0.35rem;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+.filter-btn.active {
+  background-color: var(--color-bg-surface-elevated);
+  color: var(--color-gold-light);
+  border: var(--border-hairline-gold);
+}
+
+.filter-btn:hover:not(.active) {
+  color: var(--color-text-primary);
+}
+
+/* Editorial Monograph Grid (Asymmetrical Layout, Not Generic 3-Box Grid) */
+.properties-showcase {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  min-height: 400px;
+}
+
+@keyframes propertyFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.property-monograph {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  background-color: var(--color-bg-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  animation: propertyFadeIn 0.45s var(--ease-editorial) forwards;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.property-monograph:hover {
+  border-color: var(--color-gold-border);
+  box-shadow: var(--shadow-monolith);
+  transform: translateY(-4px);
+}
+
+.property-monograph.reverse {
+  grid-template-columns: 0.8fr 1.2fr;
+}
+
+.property-monograph.reverse .property-visual {
+  order: 2;
+}
+
+.property-monograph.reverse .property-editorial {
+  order: 1;
+}
+
+/* Monograph Media */
+.property-visual {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+}
+
+.property-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-editorial), filter 0.8s ease;
+  filter: brightness(0.85);
+}
+
+.property-monograph:hover .property-img {
+  transform: scale(1.04);
+  filter: brightness(0.95);
+}
+
+.property-tag-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+  background: rgba(10, 11, 14, 0.82);
+  backdrop-filter: blur(8px);
+  border: var(--border-hairline-gold);
+  color: var(--color-gold-light);
+  padding: 0.4rem 0.85rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .property-tag-badge {
+  left: auto;
+  right: 1.5rem;
+}
+
+.property-ref-tag {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 2;
+  background: rgba(10, 11, 14, 0.7);
+  backdrop-filter: blur(6px);
+  color: var(--color-text-tertiary);
+  font-size: 0.68rem;
+  font-family: monospace;
+  padding: 0.3rem 0.6rem;
+}
+
+[dir="rtl"] .property-ref-tag {
+  left: auto;
+  right: 1.5rem;
+}
+
+/* Monograph Content */
+.property-editorial {
+  padding: clamp(2rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.property-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.property-location {
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold-base);
+}
+
+.property-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  color: var(--color-text-secondary);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10B981;
+}
+
+.status-dot.offplan {
+  background-color: #3B82F6;
+}
+
+.property-name {
+  font-size: clamp(1.4rem, 2.2vw, 2rem);
+  color: var(--color-text-primary);
+  margin-bottom: 0.8rem;
+}
+
+.property-thesis {
+  font-size: 0.94rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+/* Architectural Specs */
+.property-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.4rem 0;
+  border-top: var(--border-hairline-subtle);
+  border-bottom: var(--border-hairline-subtle);
+  margin-bottom: 1.8rem;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.spec-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.25rem;
+}
+
+.spec-val {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+/* Price & Action Row */
+.property-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.price-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-sub {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 0.2rem;
+}
+
+.price-main {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.1;
+}
+
+[dir="rtl"] .price-main {
+  font-family: var(--font-farsi);
+  font-weight: 700;
+}
+
+.properties-action-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4.5rem;
+  padding-top: 2.5rem;
+  border-top: var(--border-hairline-subtle);
+}

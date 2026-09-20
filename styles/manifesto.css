@@ -1,0 +1,104 @@
+/* ==========================================================================
+   ZARIN — Section 03: Brand Manifesto (Philosophy & Gravitas)
+   ========================================================================== */
+
+.manifesto-section {
+  background-color: var(--color-bg-surface);
+  position: relative;
+  overflow: hidden;
+  padding-top: clamp(6rem, 10vw, 11rem);
+  padding-bottom: clamp(6rem, 10vw, 11rem);
+}
+
+.manifesto-section::after {
+  content: 'ZARIN';
+  position: absolute;
+  right: -3vw;
+  bottom: -4vw;
+  font-family: var(--font-serif);
+  font-size: 24vw;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.015);
+  line-height: 0.8;
+  pointer-events: none;
+  z-index: 1;
+  user-select: none;
+}
+
+[dir="rtl"] .manifesto-section::after {
+  right: auto;
+  left: -3vw;
+  font-family: var(--font-farsi);
+}
+
+.manifesto-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.manifesto-lead-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(2.1rem, 4vw, 3.8rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  margin-bottom: 3.5rem;
+  letter-spacing: -0.01em;
+}
+
+[dir="rtl"] .manifesto-lead-quote {
+  font-family: var(--font-farsi);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.manifesto-lead-quote .highlight-statement {
+  color: var(--color-gold-base);
+  display: block;
+  margin-top: 0.8rem;
+  font-style: italic;
+}
+
+[dir="rtl"] .manifesto-lead-quote .highlight-statement {
+  font-style: normal;
+}
+
+.manifesto-triad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(2rem, 4vw, 4.5rem);
+  margin-top: clamp(3rem, 5vw, 5rem);
+  padding-top: 3.5rem;
+  border-top: var(--border-hairline);
+}
+
+.manifesto-triad-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.triad-number {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-gold-base);
+  letter-spacing: 0.2em;
+  margin-bottom: 1.2rem;
+}
+
+.triad-title {
+  font-size: 1.25rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
+}
+
+.triad-text {
+  font-size: 0.94rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 0;
+}

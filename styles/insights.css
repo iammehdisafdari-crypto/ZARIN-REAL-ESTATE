@@ -1,0 +1,157 @@
+/* ==========================================================================
+   ZARIN — Section 09: Editorial Insights & Intelligence
+   ========================================================================== */
+
+.insights-section {
+  background-color: var(--color-bg-surface);
+  position: relative;
+  border-top: var(--border-hairline);
+  border-bottom: var(--border-hairline);
+}
+
+.insights-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+}
+
+/* Primary Featured Insight */
+.insight-lead-card {
+  background-color: var(--color-bg-primary);
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+}
+
+.insight-lead-card:hover {
+  border-color: var(--color-gold-border);
+  box-shadow: var(--shadow-monolith);
+}
+
+.insight-lead-media {
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+}
+
+.insight-lead-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-editorial);
+  filter: brightness(0.8);
+}
+
+.insight-lead-card:hover .insight-lead-img {
+  transform: scale(1.04);
+}
+
+.insight-lead-body {
+  padding: clamp(2rem, 3vw, 2.8rem);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.insight-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.insight-category {
+  color: var(--color-gold-base);
+  font-weight: 700;
+}
+
+.insight-date {
+  color: var(--color-text-tertiary);
+}
+
+.insight-title {
+  font-size: clamp(1.4rem, 2vw, 1.85rem);
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+.insight-excerpt {
+  font-size: 0.94rem;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+/* Secondary List of Briefs */
+.insights-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.insight-brief-item {
+  background-color: var(--color-bg-primary);
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 1.8rem;
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.insight-brief-item:hover {
+  border-color: var(--color-gold-border);
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .insight-brief-item:hover {
+  transform: translateX(-4px);
+}
+
+.brief-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.brief-category {
+  color: var(--color-gold-base);
+  font-weight: 600;
+}
+
+.brief-time {
+  color: var(--color-text-tertiary);
+}
+
+.brief-title {
+  font-size: 1.12rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.4;
+}
+
+.brief-desc {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}

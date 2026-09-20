@@ -1,0 +1,166 @@
+/* ==========================================================================
+   ZARIN — Responsive Design & Breakpoints
+   ========================================================================== */
+
+/* Tablet & Smaller Laptops (max-width: 1100px) */
+@media (max-width: 1100px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-teaser {
+    max-width: 580px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+
+  .intelligence-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .process-track {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .locations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* Tablets & Mobile (max-width: 860px) */
+@media (max-width: 860px) {
+
+  .property-monograph,
+  .property-monograph.reverse {
+    grid-template-columns: 1fr;
+  }
+
+  .property-monograph.reverse .property-visual {
+    order: 1;
+  }
+
+  .property-monograph.reverse .property-editorial {
+    order: 2;
+  }
+
+  .property-visual {
+    min-height: 320px;
+  }
+
+  .pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .manifesto-triad {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .intake-form-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .intake-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .intake-actions .btn {
+    width: 100%;
+  }
+
+  .direct-whatsapp-link {
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.85rem;
+    border: var(--border-hairline-gold);
+    border-radius: var(--radius-xs);
+    background: rgba(200, 171, 131, 0.05);
+  }
+}
+
+/* Mobile Small Devices (max-width: 600px) */
+@media (max-width: 600px) {
+  .hero-section {
+    padding-top: 6rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .conversion-section {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .conversion-subtitle {
+    margin-bottom: 2rem;
+  }
+
+  .intake-box {
+    padding: 1.5rem 1.15rem;
+    border-radius: var(--radius-xs);
+  }
+
+  .intelligence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process-track {
+    grid-template-columns: 1fr;
+  }
+
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .location-card {
+    height: 400px;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-legal-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .trust-pillars-mini {
+    grid-template-columns: 1fr;
+  }
+
+  .property-spec-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

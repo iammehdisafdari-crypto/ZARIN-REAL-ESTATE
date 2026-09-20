@@ -1,0 +1,220 @@
+/* ==========================================================================
+   ZARIN — Section 02: Trust & Institutional Lineage (Since 2005)
+   ========================================================================== */
+
+.trust-section {
+  background-color: var(--color-bg-primary);
+  position: relative;
+  z-index: 5;
+  border-top: var(--border-hairline);
+  padding-top: clamp(5rem, 8vw, 9rem);
+  padding-bottom: clamp(5rem, 8vw, 9rem);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(3rem, 6vw, 7rem);
+  align-items: center;
+}
+
+/* Left Narrative & Chronology Column */
+.trust-anchor {
+  position: relative;
+}
+
+.trust-year-badge {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 300;
+  line-height: 0.95;
+  color: var(--color-gold-base);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+  opacity: 0.9;
+}
+
+[dir="rtl"] .trust-year-badge {
+  font-family: var(--font-farsi);
+  font-weight: 800;
+}
+
+.trust-title {
+  margin-bottom: 2rem;
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  color: var(--color-text-primary);
+}
+
+.trust-editorial {
+  font-size: 1.12rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: 2.2rem;
+}
+
+.trust-editorial strong {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* Institutional Standards Grid */
+.trust-pillars-mini {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  padding-top: 1.8rem;
+  border-top: var(--border-hairline);
+}
+
+.mini-pillar-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.mini-pillar-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-gold-base);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.12em;
+}
+
+.mini-pillar-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.mini-pillar-desc {
+  font-size: 0.84rem;
+  color: var(--color-text-tertiary);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Right Column: Historical Milestones Showcase */
+.trust-timeline-card {
+  background: var(--color-bg-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: clamp(2rem, 4vw, 3.5rem);
+  position: relative;
+  box-shadow: var(--shadow-monolith);
+}
+
+.trust-timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: clamp(2rem, 4vw, 3.5rem);
+  width: 1px;
+  background: linear-gradient(180deg, var(--color-gold-base), transparent);
+}
+
+[dir="rtl"] .trust-timeline-card::before {
+  left: auto;
+  right: clamp(2rem, 4vw, 3.5rem);
+}
+
+.timeline-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-left: 2.2rem;
+}
+
+[dir="rtl"] .timeline-items {
+  padding-left: 0;
+  padding-right: 2.2rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  top: 0.35rem;
+  left: -2.2rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-gold-base);
+  box-shadow: 0 0 8px var(--color-gold-base);
+  transform: translateX(-3px);
+}
+
+[dir="rtl"] .timeline-item::after {
+  left: auto;
+  right: -2.2rem;
+  transform: translateX(3px);
+}
+
+.timeline-date {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold-base);
+  margin-bottom: 0.4rem;
+}
+
+.timeline-head {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.timeline-body {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Institutional Marquee Strip */
+.institutional-strip {
+  margin-top: clamp(4rem, 6vw, 6.5rem);
+  padding: 2rem 0;
+  border-top: var(--border-hairline-subtle);
+  border-bottom: var(--border-hairline-subtle);
+}
+
+.strip-label {
+  text-align: center;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--color-text-tertiary);
+  margin-bottom: 1.5rem;
+}
+
+.strip-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.strip-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-text-secondary);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.strip-badge-item svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--color-gold-base);
+}

@@ -1,0 +1,126 @@
+/* ==========================================================================
+   ZARIN — Section 05: Investment Intelligence (Analytical Authority)
+   ========================================================================== */
+
+.intelligence-section {
+  background-color: var(--color-bg-surface);
+  position: relative;
+  border-top: var(--border-hairline);
+  border-bottom: var(--border-hairline);
+}
+
+.intelligence-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 4rem;
+}
+
+.intelligence-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  margin-bottom: 4rem;
+}
+
+.intel-card {
+  background-color: var(--color-bg-primary);
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 2.2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+  position: relative;
+}
+
+.intel-card:hover {
+  border-color: var(--color-gold-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-monolith);
+}
+
+.intel-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 1.8rem;
+  right: 1.8rem;
+  height: 2px;
+  background: var(--color-gold-base);
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.intel-card:hover::before {
+  opacity: 1;
+}
+
+.intel-index {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--color-gold-base);
+  letter-spacing: 0.16em;
+  margin-bottom: 1.2rem;
+}
+
+.intel-card-title {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.8rem;
+  letter-spacing: -0.01em;
+}
+
+.intel-card-body {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.intel-metric-tag {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: var(--border-hairline-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.74rem;
+  color: var(--color-text-tertiary);
+}
+
+.intel-metric-tag span:last-child {
+  color: var(--color-gold-light);
+  font-weight: 600;
+}
+
+/* Intelligence Callout Block */
+.intel-advisor-banner {
+  background: linear-gradient(135deg, rgba(200, 171, 131, 0.08) 0%, rgba(17, 19, 24, 0.8) 100%);
+  border: var(--border-hairline-gold);
+  border-radius: var(--radius-sm);
+  padding: clamp(2rem, 4vw, 3.2rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.intel-banner-content {
+  max-width: 680px;
+}
+
+.intel-banner-heading {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  color: var(--color-text-primary);
+  margin-bottom: 0.6rem;
+}
+
+.intel-banner-sub {
+  font-size: 0.96rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 0;
+  line-height: 1.6;
+}

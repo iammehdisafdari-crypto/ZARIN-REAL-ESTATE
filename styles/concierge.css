@@ -1,0 +1,349 @@
+/* ==========================================================================
+   ZARIN — Luxury Concierge & Touchpoint Architecture
+   UI/UX Best Practices for Ultra-Prime Dubai Real Estate
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SINGLE VIP CONCIERGE FLOATING ACTION BUTTON (WhatsApp Bot)
+   Discreet, non-intrusive, luxury obsidian glass with champagne gold border
+   -------------------------------------------------------------------------- */
+.floating-concierge-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 850;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem 0.75rem 0.95rem;
+  background: rgba(13, 15, 20, 0.92);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-full);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 24px rgba(200, 171, 131, 0.15);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.floating-concierge-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: var(--color-gold-light);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.75), 0 0 32px rgba(200, 171, 131, 0.28);
+  background: rgba(20, 23, 30, 0.96);
+}
+
+[dir="rtl"] .floating-concierge-btn {
+  right: auto;
+  left: 2rem;
+  padding: 0.75rem 0.95rem 0.75rem 1.25rem;
+}
+
+.concierge-icon-wrap {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.12);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #25D366;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.floating-concierge-btn:hover .concierge-icon-wrap {
+  background: #25D366;
+  color: #0A0B0E;
+}
+
+.concierge-icon-wrap svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.concierge-online-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 9px;
+  height: 9px;
+  background: #10B981;
+  border: 2px solid #0D0F14;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #10B981;
+}
+
+.concierge-label-block {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+[dir="rtl"] .concierge-label-block {
+  text-align: right;
+}
+
+.concierge-subhead {
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gold-base);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.concierge-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: 0.2rem;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   2. SECTION 09: INSTAGRAM EDITORIAL SHOWCASE
+   Framing Instagram as an architectural media monograph, not a support desk
+   -------------------------------------------------------------------------- */
+.instagram-editorial-banner {
+  margin-top: 3.5rem;
+  padding: 2.2rem 2.8rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(20, 22, 28, 0.8) 0%, rgba(13, 14, 18, 0.95) 100%);
+  border: var(--border-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-editorial-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(225, 48, 108, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ig-editorial-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.ig-badge-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+  padding: 2.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ig-badge-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: #0D0F14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.ig-badge-inner svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.ig-editorial-meta h4 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+
+.ig-editorial-meta p {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  max-width: 580px;
+}
+
+.ig-follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-xs);
+  border: var(--border-hairline);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text-primary);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.ig-follow-btn:hover {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF);
+  border-color: transparent;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(221, 42, 123, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   3. MODAL VERBAL ALTERNATIVE (Confidential Phone Desk)
+   -------------------------------------------------------------------------- */
+.modal-verbal-alternative {
+  margin-top: 1.5rem;
+  padding: 1rem 1.2rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: var(--border-hairline-subtle);
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.modal-verbal-text {
+  font-size: 0.76rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.modal-verbal-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--color-gold-light);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.4rem 0.8rem;
+  border: var(--border-hairline);
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+.modal-verbal-phone:hover {
+  background: var(--color-gold-subtle);
+  border-color: var(--color-gold-base);
+  color: #FFFFFF;
+}
+
+.modal-verbal-phone svg {
+  width: 14px;
+  height: 14px;
+  stroke: var(--color-gold-base);
+}
+
+/* --------------------------------------------------------------------------
+   4. INTAKE SECTION 10: DISCREET WHATSAPP ASSISTANT LINK
+   -------------------------------------------------------------------------- */
+.intake-discrete-wa {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color var(--transition-fast);
+}
+
+.intake-discrete-wa svg {
+  width: 16px;
+  height: 16px;
+  fill: #25D366;
+}
+
+.intake-discrete-wa:hover {
+  color: #25D366;
+}
+
+/* --------------------------------------------------------------------------
+   5. RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .instagram-editorial-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.8rem;
+    gap: 1.4rem;
+  }
+
+  .ig-follow-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .floating-concierge-btn {
+    bottom: 1.2rem;
+    right: 1rem;
+    padding: 0.6rem 0.9rem;
+  }
+
+  [dir="rtl"] .floating-concierge-btn {
+    right: auto;
+    left: 1rem;
+    padding: 0.6rem 0.9rem;
+  }
+
+  .concierge-subhead {
+    display: none;
+  }
+
+  .concierge-title {
+    font-size: 0.75rem;
+  }
+
+  .modal-verbal-alternative {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modal-verbal-phone {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .concierge-label-block {
+    display: none;
+  }
+
+  .floating-concierge-btn {
+    padding: 0.6rem;
+    border-radius: 50%;
+  }
+}

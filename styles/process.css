@@ -1,0 +1,111 @@
+/* ==========================================================================
+   ZARIN — Section 07: The ZARIN Process (6-Stage Client Journey)
+   ========================================================================== */
+
+.process-section {
+  background-color: var(--color-bg-surface);
+  position: relative;
+  border-top: var(--border-hairline);
+  border-bottom: var(--border-hairline);
+}
+
+.process-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4.5rem;
+}
+
+.process-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+
+.process-step-card {
+  background-color: var(--color-bg-primary);
+  border: var(--border-hairline);
+  border-radius: var(--radius-sm);
+  padding: 2.5rem 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-smooth);
+}
+
+.process-step-card:hover {
+  border-color: var(--color-gold-border);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-monolith);
+}
+
+.step-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.step-number {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--color-gold-base);
+  line-height: 1;
+}
+
+[dir="rtl"] .step-number {
+  font-family: var(--font-farsi);
+  font-weight: 700;
+}
+
+.step-phase-tag {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-text-tertiary);
+}
+
+.step-title {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 0.8rem;
+}
+
+.step-description {
+  font-size: 0.92rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.step-deliverable {
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: var(--border-hairline-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.deliverable-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-gold-base);
+  font-weight: 600;
+}
+
+.deliverable-val {
+  font-size: 0.82rem;
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* Step 06 Special Emphasis */
+.process-step-card.final-stage {
+  border-color: var(--color-gold-border);
+  background: linear-gradient(180deg, rgba(200, 171, 131, 0.05) 0%, var(--color-bg-primary) 100%);
+}
