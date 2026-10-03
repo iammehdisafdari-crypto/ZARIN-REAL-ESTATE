@@ -1,0 +1,298 @@
+/* ==========================================================================
+   ZARIN — Error 404 Styles
+   Quiet Architectural Luxury & Institutional Minimalism
+   ========================================================================== */
+
+.error-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Ambient Lighting */
+.error-page-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(700px, 90vw);
+  height: min(700px, 90vw);
+  background: radial-gradient(circle, rgba(200, 171, 131, 0.07) 0%, rgba(10, 11, 14, 0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Subtle Architectural Grid Lines */
+.error-page-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Minimal Header */
+.error-header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.75rem var(--container-pad);
+  border-bottom: var(--border-hairline-subtle);
+  backdrop-filter: blur(12px);
+  background: rgba(10, 11, 14, 0.65);
+}
+
+.error-brand-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.error-brand-link:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.error-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.error-lang-pill {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold-base);
+  border: 1px solid var(--color-gold-border);
+  padding: 0.4rem 0.9rem;
+  border-radius: 2px;
+  text-decoration: none;
+  background: var(--color-gold-subtle);
+  transition: all 0.3s ease;
+}
+
+.error-lang-pill:hover {
+  background: var(--color-gold-base);
+  color: var(--color-text-inverted);
+}
+
+/* Main Content Stage */
+.error-stage {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem var(--container-pad);
+}
+
+.error-content-box {
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* Monumental 404 Code */
+.error-code-wrap {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.25rem;
+}
+
+.error-code {
+  font-family: var(--font-serif);
+  font-size: clamp(6rem, 16vw, 11rem);
+  font-weight: 300;
+  line-height: 0.9;
+  letter-spacing: 0.05em;
+  background: linear-gradient(180deg, #F8F9FA 20%, #C8AB83 85%, #6E5B41 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  margin: 0;
+}
+
+.error-code-badge {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-gold-base);
+  border: 1px solid var(--color-gold-border);
+  padding: 0.35rem 0.85rem;
+  margin-bottom: 1.5rem;
+  background: rgba(200, 171, 131, 0.05);
+}
+
+/* Editorial Headings */
+.error-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--color-text-primary);
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.01em;
+}
+
+.error-description {
+  font-family: var(--font-sans);
+  font-size: clamp(0.92rem, 1.6vw, 1.05rem);
+  color: var(--color-text-secondary);
+  line-height: 1.75;
+  margin: 0 auto 2.5rem auto;
+  max-width: 540px;
+}
+
+.error-description-fa {
+  font-family: var(--font-farsi), sans-serif;
+  direction: rtl;
+  font-size: 0.98rem;
+  color: #B5BCC8;
+  margin-top: 0.6rem;
+  display: block;
+}
+
+/* Actions Strip */
+.error-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.error-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: var(--color-gold-base);
+  color: var(--color-text-inverted);
+  padding: 0.95rem 2rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px rgba(200, 171, 131, 0.25);
+}
+
+.error-btn-primary:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(200, 171, 131, 0.35);
+}
+
+.error-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  background: transparent;
+  color: var(--color-text-primary);
+  padding: 0.95rem 1.8rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.error-btn-secondary:hover {
+  border-color: var(--color-gold-base);
+  color: var(--color-gold-base);
+  background: rgba(200, 171, 131, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Minimalist Institutional Footer */
+.error-footer {
+  position: relative;
+  z-index: 10;
+  padding: 1.5rem var(--container-pad);
+  border-top: var(--border-hairline-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.error-footer-text {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-tertiary);
+  margin: 0;
+}
+
+.error-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.error-footer-link {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.error-footer-link:hover {
+  color: var(--color-gold-base);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .error-stage {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .error-btn-primary,
+  .error-btn-secondary {
+    width: 100%;
+  }
+
+  .error-footer {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+}
