@@ -1,0 +1,120 @@
+backend:
+  name: github
+  repo: iammehdisafdari-crypto/ZARIN-REAL-ESTATE
+  base_url: https://sveltia-cms-auth.iammehdisafdari.workers.dev
+  branch: cms/sveltia
+
+site_url: https://zarinrealestate.com
+display_url: https://zarinrealestate.com
+locale: fa
+
+media_folder: /public/uploads
+public_folder: /uploads
+
+collections:
+  - name: properties
+    label: املاک
+    label_singular: ملک
+    file: content/properties.json
+    identifier_field: id
+    format: json
+    fields:
+      - name: id
+        label: شناسهٔ ملک
+        widget: string
+        required: true
+
+      - name: ref
+        label: کد مرجع
+        widget: string
+        required: true
+
+      - name: category
+        label: دسته‌بندی اصلی
+        widget: select
+        options:
+          - { label: ملک شاخص, value: trophy }
+          - { label: آماده, value: ready }
+          - { label: پیش‌فروش, value: offplan }
+        required: true
+
+      - name: categories
+        label: دسته‌بندی‌ها
+        widget: select
+        multiple: true
+        options:
+          - { label: ملک شاخص, value: trophy }
+          - { label: آماده, value: ready }
+          - { label: پیش‌فروش, value: offplan }
+        required: true
+
+      - name: title_en
+        label: عنوان انگلیسی
+        widget: string
+        required: true
+
+      - name: title_fa
+        label: عنوان فارسی
+        widget: string
+        required: true
+
+      - name: location_en
+        label: موقعیت به انگلیسی
+        widget: string
+        required: true
+
+      - name: location_fa
+        label: موقعیت به فارسی
+        widget: string
+        required: true
+
+      - name: status_en
+        label: وضعیت به انگلیسی
+        widget: string
+        required: true
+
+      - name: status_fa
+        label: وضعیت به فارسی
+        widget: string
+        required: true
+
+      - name: status_type
+        label: نوع وضعیت
+        widget: select
+        options:
+          - { label: آماده, value: ready }
+          - { label: پیش‌فروش, value: offplan }
+        required: true
+
+      - name: price_aed
+        label: قیمت به درهم
+        widget: number
+        value_type: int
+        min: 1
+        required: true
+
+      - name: thesis_en
+        label: توضیحات انگلیسی
+        widget: text
+        required: true
+
+      - name: thesis_fa
+        label: توضیحات فارسی
+        widget: text
+        required: true
+
+      - name: specs
+        label: مشخصات
+        widget: object
+        fields:
+          - { name: beds_en, label: اتاق‌خواب انگلیسی, widget: string, required: true }
+          - { name: beds_fa, label: اتاق‌خواب فارسی, widget: string, required: true }
+          - { name: bua_en, label: زیربنا انگلیسی, widget: string, required: true }
+          - { name: bua_fa, label: زیربنا فارسی, widget: string, required: true }
+          - { name: yield_en, label: بازدهی انگلیسی, widget: string, required: true }
+          - { name: yield_fa, label: بازدهی فارسی, widget: string, required: true }
+
+      - name: image
+        label: تصویر ملک
+        widget: image
+        required: true
