@@ -1,16 +1,16 @@
 /**
  * ZARIN — Real-Time TGJU.org Live Currency Engine
- * Directly connects to TGJU.org's live ticker feed for second-by-second updates.
+ * Loads live exchange rates through the site's /api/tgju Cloudflare Worker endpoint.
  */
 
-// Default Fallback Rates in case of connection latency
+// Unknown until the upstream live-rate request succeeds; never show fake rates.
 export const liveRates = {
-  aed_irr: 629030,
-  usd_irr: 2310000,
-  eur_irr: 2655800,
-  last_updated: "هم‌اکنون",
-  last_updated_en: "Live",
-  is_connected: true
+  aed_irr: null,
+  usd_irr: null,
+  eur_irr: null,
+  last_updated: null,
+  last_updated_en: null,
+  is_connected: false
 };
 
 const listeners = new Set();
@@ -79,6 +79,9 @@ export async function fetchLiveTgjuRates() {
 
       liveRates.is_connected = true;
       notifyListeners();
+    } else {
+      liveRates.is_connected = false;
+      notifyListeners();
     }
   } catch (err) {
     console.warn('[ZARIN TGJU Engine] Real-time fetch latency:', err);
@@ -86,10 +89,10 @@ export async function fetchLiveTgjuRates() {
   }
 }
 
-// Start continuous polling (every 3 seconds)
+// Start continuous polling (every 30 seconds for production efficiency)
 let pollingInterval = null;
 
-export function startLiveRatesPolling(intervalMs = 3000) {
+export function startLiveRatesPolling(intervalMs = 30000) {
   if (pollingInterval) clearInterval(pollingInterval);
   fetchLiveTgjuRates();
   pollingInterval = setInterval(fetchLiveTgjuRates, intervalMs);

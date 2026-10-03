@@ -138,3 +138,48 @@
 .footer-legal-links a:hover {
   color: var(--color-gold-base);
 }
+
+/* Institutional Creator Credit */
+.footer-creator-credit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  text-align: center;
+  direction: ltr;
+}
+
+.creator-line {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--color-text-tertiary);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.creator-link {
+  color: var(--color-gold-base);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.creator-link:hover {
+  color: var(--color-gold-light);
+  opacity: 0.9;
+}
+
+.creator-subline {
+  font-family: var(--font-sans);
+  font-size: 0.60rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(159, 166, 178, 0.45);
+  font-weight: 400;
+}

@@ -1,6 +1,18 @@
+import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
 
+const projectRoot = fileURLToPath(new URL('.', import.meta.url));
+
 export default defineConfig({
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(projectRoot, 'index.html'),
+        notFound: resolve(projectRoot, '404.html')
+      }
+    }
+  },
   server: {
     port: 5174,
     host: true,

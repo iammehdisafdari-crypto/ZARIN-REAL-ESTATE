@@ -160,8 +160,8 @@ export function setLanguage(lang) {
 
 // Live Rates Controller (TGJU.org WebSocket/Poller)
 function initLiveRates() {
-  // Poll TGJU live rates every 3 seconds
-  startLiveRatesPolling(3000);
+  // Poll TGJU live rates every 30 seconds for balanced freshness and performance.
+  startLiveRatesPolling(30000);
 
   subscribeToRates((rates) => {
     updateLiveBadge(rates);
@@ -176,10 +176,14 @@ function updateLiveBadge(rates) {
   const badgeTextEl = document.getElementById('tgju-badge-text');
   if (!badgeTextEl) return;
   const isRtl = currentLang === 'fa';
+  if (!rates || !rates.aed_irr) {
+    badgeTextEl.textContent = isRtl ? 'TGJU: در حال دریافت نرخ زنده...' : 'TGJU: Fetching live rate...';
+    return;
+  }
   if (isRtl) {
-    badgeTextEl.textContent = `TGJU زنده: ۱ درهم = ${rates.aed_irr.toLocaleString('fa-IR')} ریال (${rates.last_updated})`;
+    badgeTextEl.textContent = `TGJU زنده: ۱ درهم = ${rates.aed_irr.toLocaleString('fa-IR')} ریال (${rates.last_updated || 'هم‌اکنون'})`;
   } else {
-    badgeTextEl.textContent = `TGJU Live: 1 AED = ${rates.aed_irr.toLocaleString('en-US')} IRR (${rates.last_updated_en})`;
+    badgeTextEl.textContent = `TGJU Live: 1 AED = ${rates.aed_irr.toLocaleString('en-US')} IRR (${rates.last_updated_en || 'Live'})`;
   }
 }
 
@@ -222,10 +226,12 @@ function renderProperties() {
     const bua = isRtl ? item.specs.bua_fa : item.specs.bua_en;
     const yieldStrategy = isRtl ? item.specs.yield_fa : item.specs.yield_en;
     const formattedPrice = formatCurrency(item.price_aed, currentCurrency, currentLang);
-    const tgjuNote = currentCurrency === 'IRR' 
-      ? `<span class="currency-tgju-tag" style="font-size: 0.68rem; color: var(--color-gold-base); display: block; margin-top: 0.35rem; font-weight: 500;">${isRtl ? `معادل‌سازی لحظه‌ای TGJU: ۱ درهم = ${liveRates.aed_irr.toLocaleString('fa-IR')} ریال (${liveRates.last_updated})` : `Real-time TGJU feed: 1 AED = ${liveRates.aed_irr.toLocaleString('en-US')} IRR (${liveRates.last_updated_en})`}</span>` 
+    const tgjuNote = currentCurrency === 'IRR'
+      ? (liveRates.aed_irr
+        ? `<span class="currency-tgju-tag" style="font-size: 0.68rem; color: var(--color-gold-base); display: block; margin-top: 0.35rem; font-weight: 500;">${isRtl ? `معادل‌سازی لحظه‌ای TGJU: ۱ درهم = ${liveRates.aed_irr.toLocaleString('fa-IR')} ریال (${liveRates.last_updated || 'هم‌اکنون'})` : `Real-time TGJU feed: 1 AED = ${liveRates.aed_irr.toLocaleString('en-US')} IRR (${liveRates.last_updated_en || 'Live'})`}</span>`
+        : `<span class="currency-tgju-tag" style="font-size: 0.65rem; color: rgba(200, 171, 131, 0.75); display: block; margin-top: 0.35rem; font-weight: 400;">${isRtl ? 'در انتظار دریافت نرخ از TGJU.org...' : 'Connecting to TGJU.org...'}</span>`)
       : (currentCurrency === 'USD' || currentCurrency === 'EUR')
-      ? `<span class="currency-tgju-tag" style="font-size: 0.65rem; color: rgba(200, 171, 131, 0.75); display: block; margin-top: 0.35rem; font-weight: 400;">${isRtl ? `برابری ارزی متصل به TGJU.org (${liveRates.last_updated})` : `Live cross-rate via TGJU.org (${liveRates.last_updated_en})`}</span>`
+      ? `<span class="currency-tgju-tag" style="font-size: 0.65rem; color: rgba(200, 171, 131, 0.75); display: block; margin-top: 0.35rem; font-weight: 400;">${isRtl ? `برابری ارزی متصل به TGJU.org (${liveRates.last_updated || 'لحظه‌ای'})` : `Live cross-rate via TGJU.org (${liveRates.last_updated_en || 'Live'})`}</span>`
       : '';
 
     return `
