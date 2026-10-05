@@ -3,7 +3,7 @@
  * Loads live exchange rates through the site's /api/tgju Cloudflare Worker endpoint.
  */
 
-// Unknown until the upstream live-rate request succeeds; never show fake rates.
+// Unknown until the upstream live-rate request succeeds; null values prevent showing unverified fake rates.
 export const liveRates = {
   aed_irr: null,
   usd_irr: null,

@@ -9,7 +9,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(projectRoot, 'index.html'),
-        notFound: resolve(projectRoot, '404.html')
+        notFound: resolve(projectRoot, '404.html'),
+        brandbook: resolve(projectRoot, 'brandbook.html')
       }
     }
   },
