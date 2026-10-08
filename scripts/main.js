@@ -1,11 +1,11 @@
-import { translations } from './i18n.js';
+import { translations, setLanguage as i18nSetLanguage, getCurrentLanguage } from './i18n.js';
 import { propertiesData, formatCurrency } from './properties.js';
 import { initMotion } from './motion.js';
 import { initConsultation } from './consultation.js';
 import { initLifestyle } from './lifestyle.js';
 import { startLiveRatesPolling, subscribeToRates, liveRates } from './rates.js';
 
-let currentLang = 'en';
+let currentLang = getCurrentLanguage();
 let currentCurrency = 'AED';
 let currentFilter = 'all';
 
@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
   initMotion();
   initConsultation();
   initLiveRates();
+
+  window.addEventListener('zarin:languageChange', (e) => {
+    currentLang = e.detail.lang;
+    renderProperties();
+    updateLiveBadge(liveRates);
+  });
 });
 
 // Localization Controller
@@ -136,24 +142,7 @@ function initCurrencyDropdown() {
 
 export function setLanguage(lang) {
   currentLang = lang;
-  document.documentElement.lang = lang;
-  document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
-
-  // Update active button state
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.lang === lang);
-  });
-
-  // Translate all marked elements
-  const dict = translations[lang] || translations.en;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.dataset.i18n;
-    if (dict[key]) {
-      el.textContent = dict[key];
-    }
-  });
-
-  // Re-render properties with translated text
+  i18nSetLanguage(lang);
   renderProperties();
   updateLiveBadge(liveRates);
 }

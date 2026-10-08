@@ -61,8 +61,9 @@ export function initConsultation() {
       // Show refined success feedback
       const submitBtn = intakeForm.querySelector("button[type='submit']");
       if (submitBtn) {
+        const isFa = document.documentElement.lang === 'fa';
         const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = `<span>✓ Consultation Requested</span>`;
+        submitBtn.innerHTML = `<span>${isFa ? '✓ درخواست مشاوره ثبت شد' : '✓ Consultation Requested'}</span>`;
         submitBtn.style.backgroundColor = "#10B981";
         submitBtn.style.color = "#FFFFFF";
 
@@ -82,14 +83,15 @@ export function initConsultation() {
       e.preventDefault();
       const submitBtn = modalForm.querySelector("button[type='submit']");
       if (submitBtn) {
-        submitBtn.innerHTML = `<span>✓ Request Confirmed</span>`;
+        const isFa = document.documentElement.lang === 'fa';
+        submitBtn.innerHTML = `<span>${isFa ? '✓ درخواست تایید شد' : '✓ Request Confirmed'}</span>`;
         submitBtn.style.backgroundColor = "#10B981";
         submitBtn.style.color = "#FFFFFF";
 
         setTimeout(() => {
           closeModal();
           modalForm.reset();
-          submitBtn.innerHTML = `<span>Schedule Private Consultation</span>`;
+          submitBtn.innerHTML = `<span>${isFa ? 'رزرو مشاوره اختصاصی' : 'Schedule Private Consultation'}</span>`;
           submitBtn.style.backgroundColor = "";
           submitBtn.style.color = "";
         }, 1800);
