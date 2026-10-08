@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+@theme {
+  /* ═══ Black Scale — Primary Backgrounds ═══ */
+  --color-ink-950: #050507;
+  --color-ink-900: #0A0B0E;
+  --color-ink-850: #0E1015;
+  --color-ink-800: #111318;
+  --color-ink-700: #181B22;
+  --color-ink-600: #20242D;
+  --color-ink-500: #2A2E37;
+  --color-ink-400: #3A3F4A;
+  --color-ink-300: #4A5160;
+
+  /* ═══ Gold Scale — Brand Accent ═══ */
+  --color-gold-100: #F5E9D4;
+  --color-gold-200: #E8D4B0;
+  --color-gold-300: #DFC49E;
+  --color-gold-400: #C8AB83;
+  --color-gold-500: #B89868;
+  --color-gold-600: #A88D66;
+  --color-gold-700: #8B7048;
+  --color-gold-800: #6B5638;
+
+  /* ═══ Translucent Gold ═══ */
+  --color-gold-soft: rgba(200, 171, 131, 0.08);
+  --color-gold-tint: rgba(200, 171, 131, 0.15);
+  --color-gold-line: rgba(200, 171, 131, 0.32);
+  --color-gold-border: rgba(200, 171, 131, 0.45);
+  --color-gold-glow: rgba(200, 171, 131, 0.20);
+
+  /* ═══ Neutral — Text ═══ */
+  --color-bone: #F8F9FA;
+  --color-pearl: #E8EAED;
+  --color-ash: #9FA6B2;
+  --color-slate: #676E7D;
+  --color-graphite: #4A5160;
+
+  /* ═══ White Alpha ═══ */
+  --color-white-soft: rgba(255, 255, 255, 0.04);
+  --color-white-line: rgba(255, 255, 255, 0.08);
+  --color-white-tint: rgba(255, 255, 255, 0.12);
+
+  /* ═══ Glass ═══ */
+  --color-glass: rgba(10, 11, 14, 0.78);
+  --color-glass-light: rgba(10, 11, 14, 0.92);
+
+  /* ═══ Semantic ═══ */
+  --color-success: #4ADE80;
+  --color-warning: #FBBF24;
+  --color-info: #60A5FA;
+  --color-danger: #F87171;
+
+  /* ═══ Crypto ═══ */
+  --color-bitcoin: #F7931A;
+  --color-ethereum: #627EEA;
+  --color-tether: #26A17B;
+
+  /* ═══ Typography: Source Sans 3 + Vazirmatn ═══ */
+  --font-sans: "Source Sans 3", "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* ═══ Containers ═══ */
+  --container-narrow: 1040px;
+  --container-default: 1380px;
+  --container-wide: 1600px;
+
+  /* ═══ Radii ═══ */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* ═══ Shadows ═══ */
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.35);
+  --shadow-monolith: 0 24px 60px rgba(0, 0, 0, 0.65);
+  --shadow-gold: 0 10px 30px rgba(200, 171, 131, 0.12);
+
+  /* ═══ Motion ═══ */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: "Source Sans 3", "Vazirmatn", -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0A0B0E;
+  color: #F8F9FA;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #0A0B0E; }
+::-webkit-scrollbar-thumb { background: #C8AB83; border-radius: 4px; }
+::selection { background: rgba(200, 171, 131, 0.3); color: #F8F9FA; }
+
+.glass { background: rgba(10, 11, 14, 0.78); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+.gold-glow { transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.gold-glow:hover { box-shadow: 0 10px 30px rgba(200, 171, 131, 0.15); border-color: rgba(200, 171, 131, 0.45); }
+.text-gold-gradient { background: linear-gradient(135deg, #DFC49E 0%, #C8AB83 50%, #A88D66 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+.stat-number { font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+
+.mega-menu-trigger { position: relative; }
+.mega-menu-panel { opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s; }
+.mega-menu-trigger:not(.is-closed):hover .mega-menu-panel,
+.mega-menu-trigger:not(.is-closed):focus-within .mega-menu-panel,
+.mega-menu-trigger.is-open .mega-menu-panel,
+.mega-menu-panel.is-open { opacity: 1; visibility: visible; transform: translateY(0); }
+.mega-menu-toggle-btn[aria-expanded="true"] svg,
+.mega-menu-trigger.is-open .mega-menu-toggle-btn svg,
+#mobile-properties-toggle[aria-expanded="true"] svg,
+#mobile-offplan-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+.hero-overlay { background: linear-gradient(180deg, rgba(10,11,14,0.4) 0%, rgba(10,11,14,0.6) 50%, rgba(10,11,14,0.95) 100%); }
+
+details summary { list-style: none; cursor: pointer; }
+details summary::-webkit-details-marker { display: none; }
+details[open] .faq-icon { transform: rotate(45deg); }
+.faq-icon { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+
+.card-lift { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.card-lift:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
+
+.img-zoom { overflow: hidden; }
+.img-zoom img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+.img-zoom:hover img { transform: scale(1.05); }
+
+.mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.mobile-menu.open { transform: translateX(0); }
+
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+.live-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+/* Cookie banner */
+.cookie-banner { transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.cookie-banner.show { transform: translateY(0); }
+
+/* Sticky WhatsApp on mobile */
+.sticky-whatsapp { display: none; }
+@media (max-width: 1024px) {
+  .sticky-whatsapp { display: flex; }
+}
+
+.filter-pill { transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+.filter-pill.active { background: #C8AB83; color: #0A0B0E; border-color: #C8AB83; }

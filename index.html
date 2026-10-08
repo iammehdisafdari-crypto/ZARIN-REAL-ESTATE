@@ -46,141 +46,9 @@
   <!-- ================ FONTS ================ -->
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
 
-  <!-- ================ TAILWIND v4 ================ -->
-  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <!-- ================ PRODUCTION STYLES (Tailwind v4 Compiled Asset) ================ -->
+  <link rel="stylesheet" href="/styles/main.css">
 
-  <!-- ================ BRAND DESIGN SYSTEM ================ -->
-  <style type="text/tailwindcss">
-    @theme {
-      /* BLACK SCALE */
-      --color-ink-950: #050507;
-      --color-ink-900: #0A0B0E;
-      --color-ink-850: #0E1015;
-      --color-ink-800: #111318;
-      --color-ink-700: #181B22;
-      --color-ink-600: #20242D;
-      --color-ink-500: #2A2E37;
-      --color-ink-400: #3A3F4A;
-      --color-ink-300: #4A5160;
-
-      /* GOLD SCALE */
-      --color-gold-100: #F5E9D4;
-      --color-gold-200: #E8D4B0;
-      --color-gold-300: #DFC49E;
-      --color-gold-400: #C8AB83;
-      --color-gold-500: #B89868;
-      --color-gold-600: #A88D66;
-      --color-gold-700: #8B7048;
-      --color-gold-800: #6B5638;
-
-      /* GOLD ALPHA */
-      --color-gold-soft: rgba(200, 171, 131, 0.08);
-      --color-gold-tint: rgba(200, 171, 131, 0.15);
-      --color-gold-line: rgba(200, 171, 131, 0.32);
-      --color-gold-border: rgba(200, 171, 131, 0.45);
-      --color-gold-glow: rgba(200, 171, 131, 0.20);
-
-      /* NEUTRAL */
-      --color-bone: #F8F9FA;
-      --color-pearl: #E8EAED;
-      --color-ash: #9FA6B2;
-      --color-slate: #676E7D;
-      --color-graphite: #4A5160;
-
-      /* WHITE ALPHA */
-      --color-white-soft: rgba(255, 255, 255, 0.04);
-      --color-white-line: rgba(255, 255, 255, 0.08);
-      --color-white-tint: rgba(255, 255, 255, 0.12);
-
-      /* GLASS */
-      --color-glass: rgba(10, 11, 14, 0.78);
-      --color-glass-light: rgba(10, 11, 14, 0.92);
-
-      /* SEMANTIC */
-      --color-success: #4ADE80;
-      --color-warning: #FBBF24;
-      --color-info: #60A5FA;
-      --color-danger: #F87171;
-
-      /* CRYPTO */
-      --color-bitcoin: #F7931A;
-      --color-ethereum: #627EEA;
-      --color-tether: #26A17B;
-
-      --font-sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --container-narrow: 1040px;
-      --container-default: 1380px;
-      --container-wide: 1600px;
-      --radius-xs: 2px;
-      --radius-sm: 4px;
-      --radius-md: 8px;
-      --radius-lg: 12px;
-      --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.35);
-      --shadow-monolith: 0 24px 60px rgba(0, 0, 0, 0.65);
-      --shadow-gold: 0 10px 30px rgba(200, 171, 131, 0.12);
-      --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
-      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-    }
-  </style>
-
-  <style>
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0A0B0E;
-      color: #F8F9FA;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      overflow-x: hidden;
-    }
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: #0A0B0E; }
-    ::-webkit-scrollbar-thumb { background: #C8AB83; border-radius: 4px; }
-    ::selection { background: rgba(200, 171, 131, 0.3); color: #F8F9FA; }
-
-    .glass { background: rgba(10, 11, 14, 0.78); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-    .gold-glow { transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-    .gold-glow:hover { box-shadow: 0 10px 30px rgba(200, 171, 131, 0.15); border-color: rgba(200, 171, 131, 0.45); }
-    .text-gold-gradient { background: linear-gradient(135deg, #DFC49E 0%, #C8AB83 50%, #A88D66 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-    .stat-number { font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
-
-    .mega-menu-trigger { position: relative; }
-    .mega-menu-panel { opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s; }
-    .mega-menu-trigger:hover .mega-menu-panel, .mega-menu-trigger:focus-within .mega-menu-panel { opacity: 1; visibility: visible; transform: translateY(0); }
-
-    .hero-overlay { background: linear-gradient(180deg, rgba(10,11,14,0.4) 0%, rgba(10,11,14,0.6) 50%, rgba(10,11,14,0.95) 100%); }
-
-    details summary { list-style: none; cursor: pointer; }
-    details summary::-webkit-details-marker { display: none; }
-    details[open] .faq-icon { transform: rotate(45deg); }
-    .faq-icon { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-
-    .card-lift { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-    .card-lift:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
-
-    .img-zoom { overflow: hidden; }
-    .img-zoom img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-    .img-zoom:hover img { transform: scale(1.05); }
-
-    .mobile-menu { transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .mobile-menu.open { transform: translateX(0); }
-
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
-
-    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-    .live-dot { animation: pulse-dot 2s ease-in-out infinite; }
-
-    /* Cookie banner */
-    .cookie-banner { transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .cookie-banner.show { transform: translateY(0); }
-
-    /* Sticky WhatsApp on mobile */
-    .sticky-whatsapp { display: none; }
-    @media (max-width: 1024px) {
-      .sticky-whatsapp { display: flex; }
-    }
-  </style>
 
   <!-- ================ JSON-LD: Organization (ENHANCED for E-E-A-T Aug 2026) ================ -->
   <script type="application/ld+json">
@@ -453,34 +321,35 @@
 
         <nav class="hidden lg:flex items-center gap-1" aria-label="Primary Navigation">
 
-          <div class="mega-menu-trigger">
-            <button class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
-              Properties
-              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          <div class="mega-menu-trigger flex items-center group/prop">
+            <a href="/properties" class="pl-3 pr-1 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300" id="properties-nav-link">Properties</a>
+            <button type="button" class="mega-menu-toggle-btn pr-3 pl-1 py-2 text-ash hover:text-gold-400 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-400" id="properties-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="properties-mega-panel" aria-label="Toggle Properties submenu">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[640px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-3 gap-x-6 gap-y-3">
+            <div id="properties-mega-panel" class="mega-menu-panel absolute top-full left-0 mt-2 w-[640px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-3 gap-x-6 gap-y-3" role="region" aria-label="Properties submenu">
               <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">For Sale</div>
-              <a href="/properties-for-sale" class="text-sm text-bone hover:text-gold-400 transition-colors">All Properties for Sale</a>
-              <a href="/apartments-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Apartments</a>
-              <a href="/villas-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Villas</a>
-              <a href="/penthouses-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Penthouses</a>
-              <a href="/townhouses-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Townhouses</a>
-              <a href="/trophy-residences" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">Trophy Residences →</a>
+              <a href="/properties" class="text-sm text-bone hover:text-gold-400 transition-colors">All Dubai Properties</a>
+              <a href="/properties#apartments" class="text-sm text-ash hover:text-gold-400 transition-colors">Apartments</a>
+              <a href="/properties#villas" class="text-sm text-ash hover:text-gold-400 transition-colors">Villas</a>
+              <a href="/properties#penthouses" class="text-sm text-ash hover:text-gold-400 transition-colors">Penthouses</a>
+              <a href="/properties#townhouses" class="text-sm text-ash hover:text-gold-400 transition-colors">Townhouses</a>
+              <a href="/properties#trophy-residences" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">Trophy Residences →</a>
               <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">By Lifestyle</div>
-              <a href="/beachfront-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Beachfront</a>
-              <a href="/burj-khalifa-view-properties" class="text-sm text-ash hover:text-gold-400 transition-colors">Burj View</a>
-              <a href="/golf-course-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Golf Course</a>
-              <a href="/branded-residences-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Branded Residences</a>
-              <a href="/commercial-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Commercial</a>
+              <a href="/properties#beachfront" class="text-sm text-ash hover:text-gold-400 transition-colors">Beachfront</a>
+              <a href="/properties#burj-view" class="text-sm text-ash hover:text-gold-400 transition-colors">Burj View</a>
+              <a href="/properties#golf-course" class="text-sm text-ash hover:text-gold-400 transition-colors">Golf Course</a>
+              <a href="/properties#branded-residences" class="text-sm text-ash hover:text-gold-400 transition-colors">Branded Residences</a>
+              <a href="/properties#marina-living" class="text-sm text-ash hover:text-gold-400 transition-colors">Marina Living</a>
+              <a href="/properties#lifestyle" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">Browse All Lifestyles →</a>
             </div>
           </div>
 
-          <div class="mega-menu-trigger">
-            <button class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
-              Off-Plan
-              <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          <div class="mega-menu-trigger flex items-center group/offplan">
+            <a href="/off-plan" class="pl-3 pr-1 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300" id="offplan-nav-link">Off-Plan</a>
+            <button type="button" class="mega-menu-toggle-btn pr-3 pl-1 py-2 text-ash hover:text-gold-400 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-400" id="offplan-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="offplan-mega-panel" aria-label="Toggle Off-Plan submenu">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+            <div id="offplan-mega-panel" class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3" role="region" aria-label="Off-Plan submenu">
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">Discover</div>
               <a href="/off-plan" class="text-sm text-bone hover:text-gold-400 transition-colors">All Off-Plan Projects</a>
               <a href="/off-plan/new-launches" class="text-sm text-ash hover:text-gold-400 transition-colors">New Launches</a>
@@ -645,8 +514,50 @@
         </button>
       </div>
       <nav class="flex flex-col gap-1" aria-label="Mobile primary navigation">
-        <a href="/properties" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Properties</a>
-        <a href="/off-plan" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Off-Plan</a>
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/properties" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">Properties</a>
+            <button type="button" id="mobile-properties-toggle" aria-expanded="false" aria-controls="mobile-properties-submenu" aria-label="Toggle Properties submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-properties-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1">For Sale</div>
+            <a href="/properties" class="text-xs text-bone hover:text-gold-400 py-1">All Dubai Properties</a>
+            <a href="/properties#apartments" class="text-xs text-ash hover:text-gold-400 py-1">Apartments</a>
+            <a href="/properties#villas" class="text-xs text-ash hover:text-gold-400 py-1">Villas</a>
+            <a href="/properties#penthouses" class="text-xs text-ash hover:text-gold-400 py-1">Penthouses</a>
+            <a href="/properties#townhouses" class="text-xs text-ash hover:text-gold-400 py-1">Townhouses</a>
+            <a href="/properties#trophy-residences" class="text-xs text-gold-400 font-semibold py-1">Trophy Residences →</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2">By Lifestyle</div>
+            <a href="/properties#beachfront" class="text-xs text-ash hover:text-gold-400 py-1">Beachfront</a>
+            <a href="/properties#burj-view" class="text-xs text-ash hover:text-gold-400 py-1">Burj View</a>
+            <a href="/properties#golf-course" class="text-xs text-ash hover:text-gold-400 py-1">Golf Course</a>
+            <a href="/properties#branded-residences" class="text-xs text-ash hover:text-gold-400 py-1">Branded Residences</a>
+            <a href="/properties#marina-living" class="text-xs text-ash hover:text-gold-400 py-1">Marina Living</a>
+            <a href="/properties#lifestyle" class="text-xs text-gold-400 font-semibold py-1">Browse All Lifestyles →</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/off-plan" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">Off-Plan</a>
+            <button type="button" id="mobile-offplan-toggle" aria-expanded="false" aria-controls="mobile-offplan-submenu" aria-label="Toggle Off-Plan submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-offplan-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1">Discover</div>
+            <a href="/off-plan" class="text-xs text-bone hover:text-gold-400 py-1">All Off-Plan Projects</a>
+            <a href="/off-plan/new-launches" class="text-xs text-ash hover:text-gold-400 py-1">New Launches</a>
+            <a href="/off-plan/coming-soon" class="text-xs text-ash hover:text-gold-400 py-1">Coming Soon</a>
+            <a href="/off-plan/by-developer" class="text-xs text-ash hover:text-gold-400 py-1">By Developer</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2">Investment Tools</div>
+            <a href="/off-plan/investment-guide" class="text-xs text-ash hover:text-gold-400 py-1">Investment Guide</a>
+            <a href="/off-plan/payment-plan-calculator" class="text-xs text-ash hover:text-gold-400 py-1">Payment Calculator</a>
+            <a href="/off-plan/roi-predictor" class="text-xs text-ash hover:text-gold-400 py-1">ROI Predictor</a>
+            <a href="/off-plan/developer-reputation-tracker" class="text-xs text-gold-400 font-semibold py-1">Developer Tracker →</a>
+          </div>
+        </div>
         <a href="/areas" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Areas</a>
         <a href="/private-office" class="py-3 px-4 text-sm font-semibold text-gold-400 hover:bg-white-soft rounded-xs transition-all">Private Office</a>
         <a href="/services" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Services</a>
@@ -2262,8 +2173,88 @@
       cookieBanner.classList.remove('show');
     });
 
-    // Mega menu accessibility (keyboard)
-    document.querySelectorAll('.mega-menu-trigger').forEach(trigger => {
+    // Desktop Properties dropdown toggle & keyboard accessibility
+    const propNavTrigger = document.querySelector('.mega-menu-trigger.group\\/prop');
+    const propNavToggle = document.getElementById('properties-nav-toggle');
+
+    if (propNavToggle && propNavTrigger) {
+      propNavToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = propNavTrigger.classList.contains('is-open');
+        if (isOpen) {
+          propNavTrigger.classList.remove('is-open');
+          propNavTrigger.classList.add('is-closed');
+          propNavToggle.setAttribute('aria-expanded', 'false');
+        } else {
+          propNavTrigger.classList.add('is-open');
+          propNavTrigger.classList.remove('is-closed');
+          propNavToggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      propNavTrigger.addEventListener('mouseleave', () => {
+        propNavTrigger.classList.remove('is-closed');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!propNavTrigger.contains(e.target)) {
+          propNavTrigger.classList.remove('is-open', 'is-closed');
+          propNavToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && propNavTrigger.classList.contains('is-open')) {
+          propNavTrigger.classList.remove('is-open');
+          propNavTrigger.classList.add('is-closed');
+          propNavToggle.setAttribute('aria-expanded', 'false');
+          propNavToggle.focus();
+        }
+      });
+    }
+
+    // Desktop Off-Plan dropdown toggle & keyboard accessibility
+    const offplanNavTrigger = document.querySelector('.mega-menu-trigger.group\\/offplan');
+    const offplanNavToggle = document.getElementById('offplan-nav-toggle');
+
+    if (offplanNavToggle && offplanNavTrigger) {
+      offplanNavToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = offplanNavTrigger.classList.contains('is-open');
+        if (isOpen) {
+          offplanNavTrigger.classList.remove('is-open');
+          offplanNavTrigger.classList.add('is-closed');
+          offplanNavToggle.setAttribute('aria-expanded', 'false');
+        } else {
+          offplanNavTrigger.classList.add('is-open');
+          offplanNavTrigger.classList.remove('is-closed');
+          offplanNavToggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      offplanNavTrigger.addEventListener('mouseleave', () => {
+        offplanNavTrigger.classList.remove('is-closed');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!offplanNavTrigger.contains(e.target)) {
+          offplanNavTrigger.classList.remove('is-open', 'is-closed');
+          offplanNavToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && offplanNavTrigger.classList.contains('is-open')) {
+          offplanNavTrigger.classList.remove('is-open');
+          offplanNavTrigger.classList.add('is-closed');
+          offplanNavToggle.setAttribute('aria-expanded', 'false');
+          offplanNavToggle.focus();
+        }
+      });
+    }
+
+    // Mega menu accessibility for other items (Areas, Private Office, etc.)
+    document.querySelectorAll('.mega-menu-trigger:not(.group\\/prop):not(.group\\/offplan)').forEach(trigger => {
       const button = trigger.querySelector('button');
       button?.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -2272,6 +2263,42 @@
         }
       });
     });
+
+    // Mobile Properties accordion toggle
+    const mobilePropToggle = document.getElementById('mobile-properties-toggle');
+    const mobilePropSubmenu = document.getElementById('mobile-properties-submenu');
+
+    if (mobilePropToggle && mobilePropSubmenu) {
+      mobilePropToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = mobilePropToggle.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          mobilePropToggle.setAttribute('aria-expanded', 'false');
+          mobilePropSubmenu.classList.add('hidden');
+        } else {
+          mobilePropToggle.setAttribute('aria-expanded', 'true');
+          mobilePropSubmenu.classList.remove('hidden');
+        }
+      });
+    }
+
+    // Mobile Off-Plan accordion toggle
+    const mobileOffplanToggle = document.getElementById('mobile-offplan-toggle');
+    const mobileOffplanSubmenu = document.getElementById('mobile-offplan-submenu');
+
+    if (mobileOffplanToggle && mobileOffplanSubmenu) {
+      mobileOffplanToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = mobileOffplanToggle.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          mobileOffplanToggle.setAttribute('aria-expanded', 'false');
+          mobileOffplanSubmenu.classList.add('hidden');
+        } else {
+          mobileOffplanToggle.setAttribute('aria-expanded', 'true');
+          mobileOffplanSubmenu.classList.remove('hidden');
+        }
+      });
+    }
   </script>
 
 </body>

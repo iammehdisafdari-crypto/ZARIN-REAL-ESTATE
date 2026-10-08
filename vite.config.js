@@ -1,16 +1,24 @@
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
+import tailwindcss from '@tailwindcss/vite';
 
 const projectRoot = fileURLToPath(new URL('.', import.meta.url));
 
 export default defineConfig({
+  plugins: [
+    tailwindcss()
+  ],
   build: {
     rollupOptions: {
       input: {
         main: resolve(projectRoot, 'index.html'),
         notFound: resolve(projectRoot, '404.html'),
-        brandbook: resolve(projectRoot, 'brandbook.html')
+        brandbook: resolve(projectRoot, 'brandbook.html'),
+        properties: resolve(projectRoot, 'properties/index.html'),
+        propertiesHtml: resolve(projectRoot, 'properties.html'),
+        offPlan: resolve(projectRoot, 'off-plan/index.html'),
+        offPlanHtml: resolve(projectRoot, 'off-plan.html')
       }
     }
   },
