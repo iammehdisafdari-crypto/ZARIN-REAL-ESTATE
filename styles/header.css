@@ -38,13 +38,23 @@
 .site-header nav button,
 #site-header nav a,
 #site-header nav button,
-.mega-menu-panel a {
+.mega-menu-panel a,
+.mobile-nav-item button,
+.mobile-nav-item a,
+[id^="mobile-"][id$="-toggle"] {
   cursor: pointer !important;
 }
 
 .mega-menu-trigger svg,
-.mega-menu-toggle-btn svg {
+.mega-menu-toggle-btn svg,
+.mobile-nav-item button svg,
+[id^="mobile-"][id$="-toggle"] svg {
   pointer-events: none;
+}
+
+.mobile-nav-item button[aria-expanded="true"] svg,
+[id^="mobile-"][id$="-toggle"][aria-expanded="true"] svg {
+  transform: rotate(180deg);
 }
 
 /* ==========================================================================

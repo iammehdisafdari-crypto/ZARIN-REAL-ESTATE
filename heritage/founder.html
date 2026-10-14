@@ -154,22 +154,200 @@
     </div>
   </header>
 
-  <!-- Mobile Menu -->
+  <!-- Mobile Menu Drawer -->
   <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full max-w-sm h-full bg-ink-900 border-l border-white-line z-[1000] overflow-y-auto lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <div class="p-6">
-      <div class="flex justify-between items-center mb-8"><span class="font-sans font-extrabold text-xl text-bone">ZARIN</span><button id="mobile-menu-close" class="text-ash hover:text-gold-400 transition-colors" aria-label="Close menu"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg></button></div>
+      <div class="flex justify-between items-center mb-8">
+        <span class="font-sans font-extrabold text-xl text-bone">ZARIN</span>
+        <button id="mobile-menu-close" class="text-ash hover:text-gold-400 transition-colors" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
       <nav class="flex flex-col gap-1" aria-label="Mobile primary navigation">
-        <a href="/properties-for-sale" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Properties</a>
-        <a href="/off-plan" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Off-Plan</a>
-        <a href="/areas" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Areas</a>
-        <a href="/private-office" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Private Office</a>
-        <a href="/services" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Services</a>
-        <a href="/visas" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Visas</a>
-        <a href="/insights" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all">Insights</a>
-        <a href="/heritage" class="py-3 px-4 text-sm font-semibold text-gold-400 hover:bg-white-soft rounded-xs transition-all">Heritage</a>
-        <div class="h-px bg-white-line my-4"></div>
-        <a href="/consultation" class="py-3 px-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-wide text-center rounded-xs hover:bg-gold-300 transition-all">Book Consultation</a>
-        <a href="https://wa.me/971586901231" class="py-3 px-4 text-sm text-gold-400 text-center">WhatsApp</a>
+        <!-- 1. Properties -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/properties" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_properties">Properties</a>
+            <button type="button" id="mobile-properties-toggle" aria-expanded="false" aria-controls="mobile-properties-submenu" aria-label="Toggle Properties submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-properties-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="footer_for_sale">For Sale</div>
+            <a href="/properties" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_properties">All Dubai Properties</a>
+            <a href="/properties#apartments" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_apartments">Apartments</a>
+            <a href="/properties#villas" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_villas">Villas</a>
+            <a href="/properties#penthouses" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_penthouses">Penthouses</a>
+            <a href="/properties#townhouses" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_townhouses">Townhouses</a>
+            <a href="/properties#trophy-residences" class="text-xs text-gold-400 font-semibold py-1" data-i18n="filter_trophy">Trophy Residences →</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_by_lifestyle">By Lifestyle</div>
+            <a href="/properties#beachfront" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_beachfront">Beachfront</a>
+            <a href="/properties#burj-view" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="feat_burj_view">Burj View</a>
+            <a href="/properties#golf-course" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_golf_course">Golf Course</a>
+            <a href="/properties#branded-residences" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_branded">Branded Residences</a>
+            <a href="/properties#marina-living" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_marina_living">Marina Living</a>
+            <a href="/properties#lifestyle" class="text-xs text-gold-400 font-semibold py-1" data-i18n="nav_browse_all_lifestyles">Browse All Lifestyles →</a>
+          </div>
+        </div>
+
+        <!-- 2. Off-Plan -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/off-plan" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_offplan">Off-Plan</a>
+            <button type="button" id="mobile-offplan-toggle" aria-expanded="false" aria-controls="mobile-offplan-submenu" aria-label="Toggle Off-Plan submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-offplan-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_discover">Discover</div>
+            <a href="/off-plan" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_offplan">All Off-Plan Projects</a>
+            <a href="/off-plan/new-launches" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_new_launches">New Launches</a>
+            <a href="/off-plan/by-developer" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_by_developer">By Developer</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_investment_tools">Investment Tools</div>
+            <a href="/off-plan/investment-guide" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_investment_guide">Investment Guide</a>
+          </div>
+        </div>
+
+        <!-- 3. Areas -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/areas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_areas">Areas</a>
+            <button type="button" id="mobile-areas-toggle" aria-expanded="false" aria-controls="mobile-areas-submenu" aria-label="Toggle Areas submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-areas-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_featured_areas">Featured Areas</div>
+            <a href="/areas" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_areas">All Areas →</a>
+            <a href="/areas/palm-jumeirah" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_palm_jumeirah">Palm Jumeirah</a>
+            <a href="/areas/downtown-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_downtown_dubai">Downtown Dubai</a>
+            <a href="/areas/dubai-hills-estate" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_dubai_hills_estate">Dubai Hills Estate</a>
+          </div>
+        </div>
+
+        <!-- 4. Private Office -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/private-office" class="flex-1 py-3 px-4 text-sm font-semibold text-gold-400 hover:text-gold-300" data-i18n="nav_private_office">Private Office</a>
+            <button type="button" id="mobile-private-office-toggle" aria-expanded="false" aria-controls="mobile-private-office-submenu" aria-label="Toggle Private Office submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-private-office-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_the_private_office_menu">The Private Office (<!-- Mobile Menu -->
+  0M+)</div>
+            <a href="/private-office" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_overview">Overview</a>
+            <a href="/private-office/off-market" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_off_market_listings">Off-Market Listings</a>
+            <a href="/private-office/multi-currency" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_multi_currency">Multi-Currency Pricing</a>
+            <a href="/private-office/crypto-payments" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_crypto_payments">Crypto Payments</a>
+            <a href="/private-office/concierge" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_lifestyle_concierge">Lifestyle Concierge</a>
+            <a href="/private-office/yacht-aviation" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_po_yacht">Yacht & Aviation</a>
+            <a href="/private-office/cross-border-tax" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_cross_border_tax">Cross-Border Tax</a>
+          </div>
+        </div>
+
+        <!-- 5. Services -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/services" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_services">Services</a>
+            <button type="button" id="mobile-services-toggle" aria-expanded="false" aria-controls="mobile-services-submenu" aria-label="Toggle Services submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-services-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_buying_selling">Buying & Selling</div>
+            <a href="/services" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_services">All Services →</a>
+            <a href="/services/buying" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_buying">Buying Advisory</a>
+            <a href="/services/selling" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_selling_advisory">Selling Advisory</a>
+            <a href="/services/mortgage" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_mortgage_advisory">Mortgage Advisory</a>
+            <a href="/services/valuation" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_free_valuation">Free Valuation</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_management_legal">Management & Legal</div>
+            <a href="/services/property-management" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_property_management">Property Management</a>
+            <a href="/services/legal" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_legal">Legal & Conveyancing</a>
+            <a href="/services/insurance" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_property_insurance">Property Insurance</a>
+            <a href="/services/after-sales" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_after_sales">After-Sales Support</a>
+          </div>
+        </div>
+
+        <!-- 6. Visas -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/visas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_visas">Visas</a>
+            <button type="button" id="mobile-visas-toggle" aria-expanded="false" aria-controls="mobile-visas-submenu" aria-label="Toggle Visas submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-visas-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_visa_types">Visa Types</div>
+            <a href="/visas" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_visas">All Visas →</a>
+            <a href="/visas/golden-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_golden_visa_10yr">Golden Visa (10-Year)</a>
+            <a href="/visas/investor-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_investor_visa_2yr">Investor Visa (2-Year)</a>
+            <a href="/visas/retirement-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_retirement_visa_5yr">Retirement Visa (5-Year)</a>
+            <a href="/visas/remote-work-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_remote_work_visa">Remote Work Visa</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_by_nationality">By Nationality</div>
+            <a href="/visas/for-indian-buyers" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="visa_nat_indian_title">For Indian Buyers</a>
+            <a href="/visas/for-uk-buyers" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="visa_nat_uk_title">For UK Buyers</a>
+            <a href="/visas/for-chinese-buyers" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="visa_nat_chinese_title">For Chinese Buyers</a>
+            <a href="/visas/eligibility-checker" class="text-xs text-gold-400 font-semibold py-1" data-i18n="nav_check_eligibility">Check Eligibility →</a>
+          </div>
+        </div>
+
+        <!-- 7. Insights -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/insights" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_insights">Insights</a>
+            <button type="button" id="mobile-insights-toggle" aria-expanded="false" aria-controls="mobile-insights-submenu" aria-label="Toggle Insights submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-insights-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_content_hub">Content Hub</div>
+            <a href="/insights" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_insights">All Insights →</a>
+            <a href="/insights/blog" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_blog_articles">Blog Articles</a>
+            <a href="/insights/market-reports" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_market_reports">Market Reports</a>
+            <a href="/insights/podcast" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="art_podcast_tag">Podcast</a>
+            <a href="/insights/guides" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_buyers_guides">Buyer's Guides</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_tools_reference">Tools & Reference</div>
+            <a href="/insights/calculators" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_all_calculators">All Calculators</a>
+            <a href="/insights/faq" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_faq_hub">FAQ Hub</a>
+            <a href="/insights/glossary" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_glossary">Glossary</a>
+            <a href="/insights/market-data" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_market_data">Market Data</a>
+          </div>
+        </div>
+
+        <!-- 8. Heritage -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/heritage" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_heritage">Heritage</a>
+            <button type="button" id="mobile-heritage-toggle" aria-expanded="false" aria-controls="mobile-heritage-submenu" aria-label="Toggle Heritage submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-heritage-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_about_zarin">About ZARIN</div>
+            <a href="/heritage" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_our_story">Our Story (since 2005)</a>
+            <a href="/heritage/founder" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_founders_letter">Founder's Letter</a>
+            <a href="/heritage/team" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_team">Our Team</a>
+            <a href="/heritage/authors" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_authors">Author Profiles</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_trust_proof">Trust & Proof</div>
+            <a href="/heritage/testimonials" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_testimonials">Testimonials</a>
+            <a href="/heritage/awards" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_awards">Awards</a>
+            <a href="/heritage/press" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_press">Press & Media</a>
+            <a href="/heritage/case-studies" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_case_studies">Case Studies</a>
+          </div>
+        </div>
+
+        <div class="px-4 py-3 border-t border-white-line my-2">
+          <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-2" data-i18n="lang_label">Language / زبان</div>
+          <div class="flex items-center gap-2" role="group" aria-label="Select language">
+            <button type="button" class="mobile-lang-btn lang-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-gold-line bg-gold-400 text-ink-900 transition-all text-center active cursor-pointer" data-lang="en" data-i18n="lang_en_label">English (EN)</button>
+            <button type="button" class="mobile-lang-btn lang-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-white-line text-ash hover:text-gold-400 hover:border-gold-line transition-all text-center cursor-pointer" data-lang="fa" data-i18n="lang_fa_label">فارسی (FA)</button>
+          </div>
+        </div>
+        <div class="h-px bg-white-line my-2"></div>
+        <a href="/consultation" class="py-3 px-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-wide text-center rounded-xs hover:bg-gold-300 transition-all" data-i18n="nav_cta">Book Consultation</a>
+        <a href="tel:+971586901231" class="py-3 px-4 text-sm text-ash hover:text-gold-400 text-center"><span dir="ltr" class="tabular-nums">+971 58 690 1231</span></a>
+        <a href="https://wa.me/971586901231" class="py-3 px-4 text-sm text-tether hover:text-tether/80 text-center" data-i18n="contact_wa_title">WhatsApp</a>
       </nav>
     </div>
   </div>
@@ -280,6 +458,22 @@
     mt?.addEventListener('click',()=>{mm.classList.add('open');mt.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';});
     mc?.addEventListener('click',()=>{mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';});
     mm?.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
+
+    // Universal Mobile Accordion Toggle Handler
+    document.querySelectorAll('.mobile-nav-item').forEach(item => {
+      const toggle = item.querySelector('button[id$="-toggle"]');
+      const submenu = item.querySelector('div[id$="-submenu"]');
+      if (toggle && submenu && !toggle.dataset.boundNav) {
+        toggle.dataset.boundNav = 'true';
+        toggle.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+          submenu.classList.toggle('hidden', isExpanded);
+        });
+      }
+    });
+
   </script>
 </body>
 </html>

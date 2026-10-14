@@ -140,9 +140,14 @@ body {
 }
 .mega-menu-toggle-btn[aria-expanded="true"] svg,
 .mega-menu-trigger.is-open .mega-menu-toggle-btn svg,
-#mobile-properties-toggle[aria-expanded="true"] svg,
-#mobile-offplan-toggle[aria-expanded="true"] svg,
-#mobile-areas-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.mobile-nav-item button[aria-expanded="true"] svg,
+[id^="mobile-"][id$="-toggle"][aria-expanded="true"] svg { transform: rotate(180deg); }
+
+.mobile-nav-item button,
+.mobile-nav-item a,
+[id^="mobile-"][id$="-toggle"] {
+  cursor: pointer !important;
+}
 
 .hero-overlay { background: linear-gradient(180deg, rgba(10,11,14,0.4) 0%, rgba(10,11,14,0.6) 50%, rgba(10,11,14,0.95) 100%); }
 

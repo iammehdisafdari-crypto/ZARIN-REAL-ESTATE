@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMotion();
   initConsultation();
   initLiveRates();
+  initMobileNav();
 
   window.addEventListener('zarin:languageChange', (e) => {
     currentLang = e.detail.lang;
@@ -214,3 +215,54 @@ function renderProperties() {
     });
   });
 }
+
+// Mobile Navigation Drawer & Accordion Controller
+export function initMobileNav() {
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuToggle && mobileMenu && !mobileMenuToggle.dataset.boundNav) {
+    mobileMenuToggle.dataset.boundNav = 'true';
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.add('open');
+      mobileMenuToggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (mobileMenuClose && mobileMenu && !mobileMenuClose.dataset.boundNav) {
+    mobileMenuClose.dataset.boundNav = 'true';
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  }
+
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    if (!link.dataset.boundNav) {
+      link.dataset.boundNav = 'true';
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileMenuToggle?.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    }
+  });
+
+  document.querySelectorAll('.mobile-nav-item').forEach(item => {
+    const toggle = item.querySelector('button[id$="-toggle"]');
+    const submenu = item.querySelector('div[id$="-submenu"]');
+    if (toggle && submenu && !toggle.dataset.boundNav) {
+      toggle.dataset.boundNav = 'true';
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
+        submenu.classList.toggle('hidden', isExpanded);
+      });
+    }
+  });
+}
+
