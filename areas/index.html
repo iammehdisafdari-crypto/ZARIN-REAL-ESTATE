@@ -1133,21 +1133,9 @@
   </script>
   <script type="module" src="/scripts/properties.js"></script>
   <script type="module" src="/scripts/i18n.js"><script>
-    // Universal Mobile Accordion Toggle Handler
-    document.querySelectorAll('.mobile-nav-item').forEach(item => {
-      const toggle = item.querySelector('button[id$="-toggle"]');
-      const submenu = item.querySelector('div[id$="-submenu"]');
-      if (toggle && submenu && !toggle.dataset.boundNav) {
-        toggle.dataset.boundNav = 'true';
-        toggle.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-          submenu.classList.toggle('hidden', isExpanded);
-        });
-      }
-    });
+    
 </script>
 </script>
+  <script type="module" src="/scripts/nav.js"></script>
 </body>
 </html>

@@ -1748,30 +1748,7 @@
       }
     });
 
-    // Mobile menu
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuToggle?.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
-      mobileMenuToggle.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    });
-
-    mobileMenuClose?.addEventListener('click', () => {
-      mobileMenu.classList.remove('open');
-      mobileMenuToggle.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
-
-    mobileMenu?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
-    });
+    
 
     // FAQ accordion
     const details = document.querySelectorAll('details');
@@ -1915,24 +1892,12 @@
     });
 
     
-    // Universal Mobile Accordion Toggle Handler
-    document.querySelectorAll('.mobile-nav-item').forEach(item => {
-      const toggle = item.querySelector('button[id$="-toggle"]');
-      const submenu = item.querySelector('div[id$="-submenu"]');
-      if (toggle && submenu && !toggle.dataset.boundNav) {
-        toggle.dataset.boundNav = 'true';
-        toggle.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-          submenu.classList.toggle('hidden', isExpanded);
-        });
-      }
-    });
+    
 
     </script>
   <script type="module" src="/scripts/properties.js"></script>
   <script type="module" src="/scripts/i18n.js"></script>
+  <script type="module" src="/scripts/nav.js"></script>
 </body>
 </html>
 

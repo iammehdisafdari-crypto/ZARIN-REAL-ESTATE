@@ -41,6 +41,8 @@
 .mega-menu-panel a,
 .mobile-nav-item button,
 .mobile-nav-item a,
+#mobile-menu-toggle,
+#mobile-menu-close,
 [id^="mobile-"][id$="-toggle"] {
   cursor: pointer !important;
 }

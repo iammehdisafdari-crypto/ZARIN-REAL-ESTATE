@@ -461,25 +461,13 @@
         });
       });
     }
-    mt?.addEventListener('click',()=>{mm.classList.add('open');mt.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';});
-    mc?.addEventListener('click',()=>{mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';});
-    mm?.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
+    
+    
+    
 
-    // Universal Mobile Accordion Toggle Handler
-    document.querySelectorAll('.mobile-nav-item').forEach(item => {
-      const toggle = item.querySelector('button[id$="-toggle"]');
-      const submenu = item.querySelector('div[id$="-submenu"]');
-      if (toggle && submenu && !toggle.dataset.boundNav) {
-        toggle.dataset.boundNav = 'true';
-        toggle.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-          submenu.classList.toggle('hidden', isExpanded);
-        });
-      }
-    });
+    
 
   </script>
+  <script type="module" src="/scripts/nav.js"></script>
 </body>
 </html>
