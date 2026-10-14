@@ -249,9 +249,35 @@ export default {
       return handleTgjuRequest(request);
     }
 
+    // Handle form submissions to /consultation (prevent 404/405)
+    if (request.method === 'POST' && (url.pathname === '/consultation' || url.pathname === '/consultation/')) {
+      const headers = new Headers({ 'Content-Type': 'text/html; charset=utf-8' });
+      applySecurityHeaders(headers, url.pathname);
+      const successHtml = `<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Inquiry Received | ZARIN Private Office</title><link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet"><script src="https://unpkg.com/@tailwindcss/browser@4"></script></head><body class="bg-[#0A0B0E] text-[#F8F9FA] min-h-screen flex items-center justify-center p-6"><div class="max-w-md w-full bg-[#111318] border border-[rgba(200,171,131,0.32)] rounded p-8 text-center"><div class="w-12 h-12 mx-auto mb-4 border border-[rgba(200,171,131,0.45)] rounded flex items-center justify-center text-[#C8AB83]"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><h1 class="text-2xl font-bold mb-2">Application Received</h1><p class="text-[#9FA6B2] text-sm mb-6 leading-relaxed">Thank you for your confidential inquiry. A senior director from ZARIN Private Office will reach out within 24 hours.</p><a href="/private-office" class="inline-block px-6 py-3 bg-[#C8AB83] text-[#0A0B0E] text-xs font-bold uppercase tracking-wider rounded hover:bg-[#DFC49E] transition-colors">Return to Private Office</a></div></body></html>`;
+      return new Response(successHtml, { status: 200, headers });
+    }
+
     // Pass all other requests to Cloudflare Static Assets
     if (env && env.ASSETS) {
-      const response = await env.ASSETS.fetch(request);
+      let response = await env.ASSETS.fetch(request);
+
+      // Handle clean URLs (e.g. /areas -> /areas.html or /areas/index.html)
+      if (response.status === 404 && !url.pathname.includes('.')) {
+        const cleanPath = url.pathname.endsWith('/') ? `${url.pathname}index.html` : `${url.pathname}.html`;
+        const cleanUrl = new URL(cleanPath, request.url);
+        const cleanResponse = await env.ASSETS.fetch(cleanUrl.toString());
+        if (cleanResponse.status !== 404) {
+          response = cleanResponse;
+        } else if (!url.pathname.endsWith('/')) {
+          const dirIndexUrl = new URL(`${url.pathname}/index.html`, request.url);
+          const dirResponse = await env.ASSETS.fetch(dirIndexUrl.toString());
+          if (dirResponse.status !== 404) {
+            response = dirResponse;
+          }
+        }
+      }
+
       if (response.status === 404) {
         // Fetch the custom 404 page content from assets
         const notFoundUrl = new URL('/404.html', request.url);

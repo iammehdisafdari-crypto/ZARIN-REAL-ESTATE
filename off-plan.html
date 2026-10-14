@@ -171,8 +171,12 @@
               <a href="/off-plan/developer-reputation-tracker" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold" data-i18n="nav_developer_tracker">Developer Tracker →</a>
             </div>
           </div>
-          <div class="mega-menu-trigger"><button class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_areas">Areas</span><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
-            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[640px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-3 gap-x-6 gap-y-3">
+          <div class="mega-menu-trigger flex items-center group/areas">
+            <a href="/areas" class="pl-3 pr-1 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300" id="areas-nav-link" data-i18n="nav_areas">Areas</a>
+            <button type="button" class="mega-menu-toggle-btn pr-3 pl-1 py-2 text-ash hover:text-gold-400 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-400" id="areas-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="areas-mega-panel" aria-label="Toggle Areas submenu">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="areas-mega-panel" class="mega-menu-panel absolute top-full left-0 mt-2 w-[640px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-3 gap-x-6 gap-y-3" role="region" aria-label="Areas submenu">
               <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_featured_areas">Featured Areas</div>
               <a href="/areas/palm-jumeirah" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_palm_jumeirah">Palm Jumeirah</a>
               <a href="/areas/downtown-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_downtown_dubai">Downtown Dubai</a>
@@ -182,7 +186,7 @@
               <a href="/areas" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold" data-i18n="nav_all_areas">All Areas →</a>
             </div>
           </div>
-          <div class="mega-menu-trigger"><button class="px-3 py-2 text-[13px] font-semibold tracking-wide text-gold-400 hover:text-gold-300 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_private_office">Private Office</span><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="mega-menu-trigger"><a href="/private-office" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-gold-400 hover:text-gold-300 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_private_office">Private Office</span><svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
             <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-gold-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_the_private_office">The Private Office</div>
               <a href="/private-office" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_overview">Overview</a>
@@ -193,7 +197,7 @@
               <a href="/private-office/cross-border-tax" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_cross_border_tax">Cross-Border Tax</a>
             </div>
           </div>
-          <div class="mega-menu-trigger"><button class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_services">Services</span><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="mega-menu-trigger"><a href="/services" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_services">Services</span><svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
             <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_buying_selling">Buying & Selling</div>
               <a href="/services/buying" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_buying_advisory">Buying Advisory</a>
@@ -202,7 +206,7 @@
               <a href="/services/legal" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_legal_conveyancing">Legal</a>
             </div>
           </div>
-          <div class="mega-menu-trigger"><button class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_visas">Visas</span><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="mega-menu-trigger"><a href="/visas" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_visas">Visas</span><svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
             <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_visa_types">Visa Types</div>
               <a href="/visas/golden-visa" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_golden_visa">Golden Visa (10-Year)</a>
@@ -210,7 +214,7 @@
               <a href="/visas/eligibility-checker" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold" data-i18n="nav_check_eligibility">Check Eligibility →</a>
             </div>
           </div>
-          <div class="mega-menu-trigger"><button class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_insights">Insights</span><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="mega-menu-trigger"><a href="/insights" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_insights">Insights</span><svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
             <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_insights">Content Hub</div>
               <a href="/insights/blog" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="footer_short_blog">Blog</a>
@@ -219,7 +223,7 @@
               <a href="/insights/faq" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="footer_short_faq">FAQ</a>
             </div>
           </div>
-          <div class="mega-menu-trigger"><button class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_heritage">Heritage</span><svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></button>
+          <div class="mega-menu-trigger"><a href="/heritage" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false"><span data-i18n="nav_heritage">Heritage</span><svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
             <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_about_zarin">About ZARIN</div>
               <a href="/heritage" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_our_story">Our Story</a>
@@ -235,45 +239,40 @@
             <span dir="ltr" class="tabular-nums">+971 58 690 1231</span>
           </a>
 
-          <a href="/consultation" class="header-cta hidden sm:inline-flex items-center justify-center h-[34px] px-4 md:px-5 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-[0.06em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold whitespace-nowrap" aria-label="Book a consultation" data-i18n="nav_cta">
+          <a href="/consultation" class="header-cta hidden lg:inline-flex items-center justify-center h-[34px] px-4 md:px-5 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-[0.06em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold whitespace-nowrap" aria-label="Book a consultation" data-i18n="nav_cta">
             Book Consultation
           </a>
 
-          <div class="lang-switch inline-flex items-center h-[34px] bg-white/[0.04] border border-white-line rounded-xs p-0.5" role="group" aria-label="Language selection">
+          <div class="lang-switch hidden lg:inline-flex items-center h-[34px] bg-white/[0.04] border border-white-line rounded-xs p-0.5" role="group" aria-label="Language selection">
             <button type="button" class="lang-btn h-full px-2 text-[11px] font-semibold rounded-xs transition-all active is-active" data-lang="en" aria-label="Switch to English" aria-pressed="true">EN</button>
             <button type="button" class="lang-btn h-full px-2 text-[11px] font-semibold rounded-xs transition-all" data-lang="fa" aria-label="تغییر زبان به فارسی" aria-pressed="false">فارسی</button>
           </div>
 
-          <div class="currency-dropdown relative inline-block" id="header-currency-dropdown" data-currency-dropdown>
-            <button type="button" class="currency-trigger flex items-center gap-1.5 h-[34px] px-2.5 border border-white-line rounded-xs text-[11px] font-semibold text-bone hover:text-gold-400 hover:border-gold-line transition-all cursor-pointer bg-white/[0.04] focus:outline-none focus-visible:border-gold-400 whitespace-nowrap" id="currency-dropdown-toggle" aria-haspopup="listbox" aria-expanded="false" aria-controls="currency-dropdown-menu" aria-label="Select currency">
-              <span class="currency-trigger-code" id="currency-trigger-code">USD</span>
-              <svg class="w-3 h-3 currency-caret pointer-events-none transition-transform duration-300 text-ash" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+          <!-- Mobile Language Switcher (immediately left of hamburger menu) -->
+          <div class="mobile-lang-container relative lg:hidden" id="mobile-lang-container">
+            <button
+              type="button"
+              id="mobile-lang-trigger"
+              class="mobile-lang-trigger"
+              aria-label="Select language / تغییر زبان"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="mobile-lang-menu"
+            >
+              <span id="mobile-lang-label">EN</span>
+              <svg class="mobile-lang-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
             </button>
-            <ul id="currency-dropdown-menu" class="currency-menu absolute right-0 top-full mt-2 w-48 glass border border-gold-line/40 rounded-xs shadow-monolith py-1 z-[1000] flex flex-col" role="listbox" aria-label="Select currency">
-              <li class="currency-option px-3 py-2 text-xs font-medium text-bone hover:bg-gold-soft hover:text-gold-400 cursor-pointer flex items-center justify-between transition-colors is-active" role="option" data-value="USD" aria-selected="true" tabindex="0">
-                <div class="flex items-center gap-2">
-                  <span class="font-bold text-gold-400">USD</span>
-                  <span class="text-slate text-[11px]" data-i18n="currency_usd_desc">$ · US Dollar</span>
-                </div>
-                <span class="curr-check text-gold-400 text-xs font-bold">✓</span>
-              </li>
-              <li class="currency-option px-3 py-2 text-xs font-medium text-bone hover:bg-gold-soft hover:text-gold-400 cursor-pointer flex items-center justify-between transition-colors" role="option" data-value="AED" aria-selected="false" tabindex="0">
-                <div class="flex items-center gap-2">
-                  <span class="font-bold text-gold-400">AED</span>
-                  <span class="text-slate text-[11px]" data-i18n="currency_aed_desc">د.إ · UAE Dirham</span>
-                </div>
-                <span class="curr-check text-gold-400 text-xs font-bold hidden">✓</span>
-              </li>
-              <li class="currency-option px-3 py-2 text-xs font-medium text-bone hover:bg-gold-soft hover:text-gold-400 cursor-pointer flex items-center justify-between transition-colors" role="option" data-value="IRR" aria-selected="false" tabindex="0">
-                <div class="flex items-center gap-2">
-                  <span class="font-bold text-gold-400">IRR</span>
-                  <span class="text-slate text-[11px]" data-i18n="currency_irr_desc">﷼ · Iranian Rial</span>
-                </div>
-                <span class="curr-check text-gold-400 text-xs font-bold hidden">✓</span>
-              </li>
-            </ul>
+            <div id="mobile-lang-menu" class="mobile-lang-menu hidden" role="menu" aria-labelledby="mobile-lang-trigger">
+              <button type="button" class="lang-btn mobile-lang-item is-active" data-lang="en" role="menuitem" aria-label="Switch to English">
+                <span>English (EN)</span>
+                <span class="mobile-lang-check text-gold-400 font-bold">✓</span>
+              </button>
+              <button type="button" class="lang-btn mobile-lang-item" data-lang="fa" role="menuitem" aria-label="تغییر به زبان فارسی">
+                <span>فارسی (FA)</span>
+                <span class="mobile-lang-check text-gold-400 font-bold hidden">✓</span>
+              </button>
+            </div>
           </div>
-
           <button id="mobile-menu-toggle" class="lg:hidden text-bone hover:text-gold-400 transition-colors p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
         </div>
       </div>
@@ -329,20 +328,28 @@
             <a href="/off-plan/developer-reputation-tracker" class="text-xs text-gold-400 font-semibold py-1" data-i18n="nav_developer_tracker">Developer Tracker →</a>
           </div>
         </div>
-        <a href="/areas" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all" data-i18n="nav_areas">Areas</a>
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/areas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_areas">Areas</a>
+            <button type="button" id="mobile-areas-toggle" aria-expanded="false" aria-controls="mobile-areas-submenu" aria-label="Toggle Areas submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-areas-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_featured_areas">Featured Areas</div>
+            <a href="/areas" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_areas">All Areas →</a>
+            <a href="/areas/palm-jumeirah" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_palm_jumeirah">Palm Jumeirah</a>
+            <a href="/areas/downtown-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_downtown_dubai">Downtown Dubai</a>
+            <a href="/areas/dubai-hills-estate" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_dubai_hills_estate">Dubai Hills Estate</a>
+            <a href="/areas/dubai-marina" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_dubai_marina">Dubai Marina</a>
+            <a href="/areas/business-bay" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_business_bay">Business Bay</a>
+          </div>
+        </div>
         <a href="/private-office" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all" data-i18n="hist_po_label">Private Office</a>
         <a href="/services" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all" data-i18n="nav_services">Services</a>
         <a href="/visas" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all" data-i18n="nav_visas">Visas</a>
         <a href="/insights" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all" data-i18n="footer_insights">Insights</a>
         <a href="/heritage" class="py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all" data-i18n="nav_heritage">Heritage</a>
-        <div class="px-4 py-3 border-t border-white-line my-2">
-          <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-2" data-i18n="currency_label">Currency</div>
-          <div class="flex items-center gap-2" role="radiogroup" aria-label="Select currency">
-            <button type="button" class="mobile-curr-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-gold-line bg-gold-400 text-ink-900 transition-all text-center is-active" data-value="USD">USD</button>
-            <button type="button" class="mobile-curr-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-white-line text-ash hover:text-gold-400 hover:border-gold-line transition-all text-center" data-value="AED">AED</button>
-            <button type="button" class="mobile-curr-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-white-line text-ash hover:text-gold-400 hover:border-gold-line transition-all text-center" data-value="IRR">IRR</button>
-          </div>
-        </div>
         <div class="px-4 py-3 border-t border-white-line my-2">
           <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-2" data-i18n="lang_label">Language</div>
           <div class="grid grid-cols-2 gap-2" role="group" aria-label="Mobile language selection">
@@ -960,8 +967,48 @@
       });
     }
 
+    // Desktop Areas dropdown toggle & keyboard accessibility
+    const areasNavTrigger = document.querySelector('.mega-menu-trigger.group\\/areas');
+    const areasNavToggle = document.getElementById('areas-nav-toggle');
+
+    if (areasNavToggle && areasNavTrigger) {
+      areasNavToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = areasNavTrigger.classList.contains('is-open');
+        if (isOpen) {
+          areasNavTrigger.classList.remove('is-open');
+          areasNavTrigger.classList.add('is-closed');
+          areasNavToggle.setAttribute('aria-expanded', 'false');
+        } else {
+          areasNavTrigger.classList.add('is-open');
+          areasNavTrigger.classList.remove('is-closed');
+          areasNavToggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      areasNavTrigger.addEventListener('mouseleave', () => {
+        areasNavTrigger.classList.remove('is-closed');
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!areasNavTrigger.contains(e.target)) {
+          areasNavTrigger.classList.remove('is-open', 'is-closed');
+          areasNavToggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && areasNavTrigger.classList.contains('is-open')) {
+          areasNavTrigger.classList.remove('is-open');
+          areasNavTrigger.classList.add('is-closed');
+          areasNavToggle.setAttribute('aria-expanded', 'false');
+          areasNavToggle.focus();
+        }
+      });
+    }
+
     // Mega menu accessibility for other items
-    document.querySelectorAll('.mega-menu-trigger:not(.group\\/prop):not(.group\\/offplan)').forEach(trigger => {
+    document.querySelectorAll('.mega-menu-trigger:not(.group\\/prop):not(.group\\/offplan):not(.group\\/areas)').forEach(trigger => {
       const button = trigger.querySelector('button');
       button?.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -1007,224 +1054,27 @@
       });
     }
 
-    // Currency Switcher & Real-Time Rates Engine
-    const currencyState = {
-      current: localStorage.getItem('zarin_currency') || 'USD',
-      rates: {
-        aed_irr: 730000,
-        usd_irr: 2680000,
-        aed_usd: 1 / 3.6725
-      }
-    };
+    // Mobile Areas accordion toggle
+    const mobileAreasToggle = document.getElementById('mobile-areas-toggle');
+    const mobileAreasSubmenu = document.getElementById('mobile-areas-submenu');
 
-    async function updateLiveRates() {
-      try {
-        const res = await fetch('/api/tgju', { cache: 'no-store' });
-        if (!res.ok) return;
-        const data = await res.json();
-        const curr = data && data.current;
-        if (curr) {
-          if (curr.price_aed && curr.price_aed.p) {
-            const p = parseFloat(String(curr.price_aed.p).replace(/[^\d.]/g, ''));
-            if (p && !isNaN(p)) currencyState.rates.aed_irr = p;
-          }
-          if (curr.price_dollar_rl && curr.price_dollar_rl.p) {
-            const p = parseFloat(String(curr.price_dollar_rl.p).replace(/[^\d.]/g, ''));
-            if (p && !isNaN(p)) currencyState.rates.usd_irr = p;
-          }
-          if (currencyState.rates.aed_irr && currencyState.rates.usd_irr) {
-            currencyState.rates.aed_usd = currencyState.rates.aed_irr / currencyState.rates.usd_irr;
-          }
-          updateAllPrices();
-        }
-      } catch (e) {}
-    }
-
-    function formatValue(amountAed, currency) {
-      const aedToUsd = currencyState.rates.aed_usd || (1 / 3.6725);
-      const aedToIrr = currencyState.rates.aed_irr || 730000;
-
-      if (currency === 'USD') {
-        const usd = amountAed * aedToUsd;
-        if (usd >= 1000000) {
-          const val = (usd / 1000000).toFixed(1).replace(/\.0$/, '');
-          return `$${val}M`;
-        }
-        if (usd >= 1000) {
-          const val = Math.round(usd / 1000);
-          return `$${val}K`;
-        }
-        return `$${Math.round(usd).toLocaleString('en-US')}`;
-      }
-
-      if (currency === 'IRR') {
-        const irr = amountAed * aedToIrr;
-        if (irr >= 1e12) {
-          const val = (irr / 1e12).toFixed(2).replace(/\.00$/, '');
-          return `${val}T IRR`;
-        }
-        if (irr >= 1e9) {
-          const val = (irr / 1e9).toFixed(1).replace(/\.0$/, '');
-          return `${val}B IRR`;
-        }
-        return `${Math.round(irr).toLocaleString('en-US')} IRR`;
-      }
-
-      // Default AED
-      if (amountAed >= 1000000) {
-        const val = (amountAed / 1000000).toFixed(1).replace(/\.0$/, '');
-        return `AED ${val}M`;
-      }
-      return `AED ${amountAed.toLocaleString('en-US')}`;
-    }
-
-    function getSecondaryText(amountAed, currentCurrency) {
-      if (currentCurrency === 'USD') {
-        return `≈ ${formatValue(amountAed, 'AED')}`;
-      }
-      if (currentCurrency === 'AED') {
-        return `≈ ${formatValue(amountAed, 'USD')} USD`;
-      }
-      if (currentCurrency === 'IRR') {
-        return `≈ ${formatValue(amountAed, 'AED')} (${formatValue(amountAed, 'USD')})`;
-      }
-      return '';
-    }
-
-    function updateAllPrices() {
-      const curr = currencyState.current;
-
-      document.querySelectorAll('.property-price-card').forEach(card => {
-        const aed = parseFloat(card.dataset.priceAed);
-        if (!aed || isNaN(aed)) return;
-
-        const prefix = card.dataset.prefix || '';
-        const primaryEl = card.querySelector('.price-primary');
-        const secondaryEl = card.querySelector('.price-secondary');
-
-        if (primaryEl) {
-          primaryEl.textContent = `${prefix}${formatValue(aed, curr)}`;
-        }
-        if (secondaryEl) {
-          secondaryEl.textContent = getSecondaryText(aed, curr);
+    if (mobileAreasToggle && mobileAreasSubmenu) {
+      mobileAreasToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isExpanded = mobileAreasToggle.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          mobileAreasToggle.setAttribute('aria-expanded', 'false');
+          mobileAreasSubmenu.classList.add('hidden');
+        } else {
+          mobileAreasToggle.setAttribute('aria-expanded', 'true');
+          mobileAreasSubmenu.classList.remove('hidden');
         }
       });
     }
 
-    function setSiteCurrency(code) {
-      if (!['USD', 'AED', 'IRR'].includes(code)) return;
-      currencyState.current = code;
-      try { localStorage.setItem('zarin_currency', code); } catch (e) {}
-
-      document.querySelectorAll('.currency-trigger-code').forEach(el => {
-        el.textContent = code;
-      });
-
-      document.querySelectorAll('.currency-option').forEach(opt => {
-        const isMatch = opt.dataset.value === code;
-        opt.classList.toggle('is-active', isMatch);
-        opt.setAttribute('aria-selected', isMatch ? 'true' : 'false');
-        const check = opt.querySelector('.curr-check');
-        if (check) {
-          check.classList.toggle('hidden', !isMatch);
-        }
-      });
-
-      document.querySelectorAll('.mobile-curr-btn').forEach(btn => {
-        const isMatch = btn.dataset.value === code;
-        btn.classList.toggle('bg-gold-400', isMatch);
-        btn.classList.toggle('text-ink-900', isMatch);
-        btn.classList.toggle('border-gold-line', isMatch);
-        btn.classList.toggle('border-white-line', !isMatch);
-        btn.classList.toggle('text-ash', !isMatch);
-      });
-
-      updateAllPrices();
-    }
-
-    function initCurrencyDropdown() {
-      const dropdown = document.getElementById('header-currency-dropdown');
-      const toggle = document.getElementById('currency-dropdown-toggle');
-      const menu = document.getElementById('currency-dropdown-menu');
-
-      function openDropdown() {
-        if (!dropdown || !toggle) return;
-        dropdown.classList.add('is-open');
-        toggle.setAttribute('aria-expanded', 'true');
-      }
-
-      function closeDropdown() {
-        if (!dropdown || !toggle) return;
-        dropdown.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      }
-
-      if (toggle && dropdown && menu) {
-        toggle.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const isOpen = dropdown.classList.contains('is-open');
-          if (isOpen) {
-            closeDropdown();
-          } else {
-            openDropdown();
-          }
-        });
-
-        menu.querySelectorAll('.currency-option').forEach((opt, idx, all) => {
-          opt.addEventListener('click', (e) => {
-            e.stopPropagation();
-            setSiteCurrency(opt.dataset.value);
-            closeDropdown();
-            toggle.focus();
-          });
-
-          opt.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              setSiteCurrency(opt.dataset.value);
-              closeDropdown();
-              toggle.focus();
-            } else if (e.key === 'ArrowDown') {
-              e.preventDefault();
-              const next = all[idx + 1] || all[0];
-              next.focus();
-            } else if (e.key === 'ArrowUp') {
-              e.preventDefault();
-              const prev = all[idx - 1] || all[all.length - 1];
-              prev.focus();
-            } else if (e.key === 'Escape') {
-              closeDropdown();
-              toggle.focus();
-            }
-          });
-        });
-
-        document.addEventListener('click', (e) => {
-          if (!dropdown.contains(e.target)) {
-            closeDropdown();
-          }
-        });
-
-        document.addEventListener('keydown', (e) => {
-          if (e.key === 'Escape' && dropdown.classList.contains('is-open')) {
-            closeDropdown();
-            toggle.focus();
-          }
-        });
-      }
-
-      document.querySelectorAll('.mobile-curr-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-          setSiteCurrency(btn.dataset.value);
-        });
-      });
-
-      setSiteCurrency(currencyState.current);
-      updateLiveRates();
-    }
-
-    initCurrencyDropdown();
   </script>
+  <script type="module" src="/scripts/properties.js"></script>
   <script type="module" src="/scripts/i18n.js"></script>
 </body>
 </html>
+

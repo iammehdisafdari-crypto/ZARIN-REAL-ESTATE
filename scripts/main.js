@@ -1,12 +1,11 @@
 import { translations, setLanguage as i18nSetLanguage, getCurrentLanguage } from './i18n.js';
-import { propertiesData, formatCurrency } from './properties.js';
+import { propertiesData, formatCurrency, getDualPricing, updateAllPriceCards } from './properties.js';
 import { initMotion } from './motion.js';
 import { initConsultation } from './consultation.js';
 import { initLifestyle } from './lifestyle.js';
 import { startLiveRatesPolling, subscribeToRates, liveRates } from './rates.js';
 
 let currentLang = getCurrentLanguage();
-let currentCurrency = 'AED';
 let currentFilter = 'all';
 
 // Initialize App
@@ -21,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('zarin:languageChange', (e) => {
     currentLang = e.detail.lang;
     renderProperties();
+    updateAllPriceCards(currentLang);
     updateLiveBadge(liveRates);
   });
 });
@@ -37,113 +37,17 @@ function initI18n() {
       }
     });
   });
-
-  initCurrencyDropdown();
 }
 
-export function setCurrency(code) {
-  if (!code) return;
-  currentCurrency = code;
-
-  // 1. Update all dropdown trigger labels
-  document.querySelectorAll('.currency-trigger-code').forEach(el => {
-    el.textContent = code;
-  });
-
-  // 2. Update active states on custom dropdown options
-  document.querySelectorAll('.currency-option').forEach(opt => {
-    opt.classList.toggle('is-active', opt.dataset.value === code);
-  });
-
-  // 3. Update drawer currency pills
-  document.querySelectorAll('.drawer-curr-pill').forEach(pill => {
-    pill.classList.toggle('is-active', pill.dataset.currencyVal === code);
-  });
-
-  // 4. Update native select if present for backward compatibility
-  document.querySelectorAll('.currency-select').forEach(sel => {
-    sel.value = code;
-  });
-
-  // 5. Re-render all property listings with newly selected currency
-  renderProperties();
-}
-
-function initCurrencyDropdown() {
-  const dropdowns = document.querySelectorAll('[data-currency-dropdown]');
-
-  dropdowns.forEach(dropdown => {
-    const trigger = dropdown.querySelector('.currency-trigger');
-    const options = dropdown.querySelectorAll('.currency-option');
-
-    if (!trigger) return;
-
-    trigger.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = dropdown.classList.toggle('is-open');
-      trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-
-      dropdowns.forEach(other => {
-        if (other !== dropdown) {
-          other.classList.remove('is-open');
-          other.querySelector('.currency-trigger')?.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-
-    options.forEach(opt => {
-      opt.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const val = opt.dataset.value;
-        if (val) {
-          setCurrency(val);
-          dropdown.classList.remove('is-open');
-          trigger.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-  });
-
-  // Drawer currency pills support
-  document.querySelectorAll('.drawer-curr-pill').forEach(pill => {
-    pill.addEventListener('click', () => {
-      const val = pill.dataset.currencyVal;
-      if (val) {
-        setCurrency(val);
-      }
-    });
-  });
-
-  // Native select change event fallback
-  document.querySelectorAll('.currency-select').forEach(select => {
-    select.addEventListener('change', (e) => {
-      setCurrency(e.target.value);
-    });
-  });
-
-  // Close dropdowns on click outside
-  document.addEventListener('click', () => {
-    dropdowns.forEach(d => {
-      d.classList.remove('is-open');
-      d.querySelector('.currency-trigger')?.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // Close dropdowns on Escape key
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      dropdowns.forEach(d => {
-        d.classList.remove('is-open');
-        d.querySelector('.currency-trigger')?.setAttribute('aria-expanded', 'false');
-      });
-    }
-  });
+export function setCurrency() {
+  // Deprecated: Currencies now follow selected site language automatically
 }
 
 export function setLanguage(lang) {
   currentLang = lang;
   i18nSetLanguage(lang);
   renderProperties();
+  updateAllPriceCards(lang);
   updateLiveBadge(liveRates);
 }
 
@@ -154,10 +58,8 @@ function initLiveRates() {
 
   subscribeToRates((rates) => {
     updateLiveBadge(rates);
-    // If user is currently viewing IRR, USD, or EUR, re-render to reflect live price ticks
-    if (currentCurrency === 'IRR' || currentCurrency === 'USD' || currentCurrency === 'EUR') {
-      renderProperties();
-    }
+    renderProperties();
+    updateAllPriceCards(currentLang);
   });
 }
 
@@ -170,9 +72,9 @@ function updateLiveBadge(rates) {
     return;
   }
   if (isRtl) {
-    badgeTextEl.textContent = `TGJU زنده: ۱ درهم = ${rates.aed_irr.toLocaleString('fa-IR')} ریال (${rates.last_updated || 'هم‌اکنون'})`;
+    badgeTextEl.textContent = `TGJU زنده: ۱ درهم = ${(rates.aed_irr / 10).toLocaleString('fa-IR')} تومان (${rates.last_updated || 'هم‌اکنون'})`;
   } else {
-    badgeTextEl.textContent = `TGJU Live: 1 AED = ${rates.aed_irr.toLocaleString('en-US')} IRR (${rates.last_updated_en || 'Live'})`;
+    badgeTextEl.textContent = `TGJU Live: 1 AED = ${((rates.usd_irr && rates.aed_irr) ? (rates.aed_irr / rates.usd_irr).toFixed(4) : (1 / 3.6725).toFixed(4))} USD (${rates.last_updated_en || 'Live'})`;
   }
 }
 
@@ -189,6 +91,7 @@ function initProperties() {
   });
 
   renderProperties();
+  updateAllPriceCards(currentLang);
 }
 
 function renderProperties() {
@@ -214,14 +117,29 @@ function renderProperties() {
     const beds = isRtl ? item.specs.beds_fa : item.specs.beds_en;
     const bua = isRtl ? item.specs.bua_fa : item.specs.bua_en;
     const yieldStrategy = isRtl ? item.specs.yield_fa : item.specs.yield_en;
-    const formattedPrice = formatCurrency(item.price_aed, currentCurrency, currentLang);
-    const tgjuNote = currentCurrency === 'IRR'
+
+    const aed = item.price_aed;
+    const aedToUsd = (liveRates.aed_irr && liveRates.usd_irr) ? (liveRates.aed_irr / liveRates.usd_irr) : (1 / 3.6725);
+    const usd = Math.round(aed * aedToUsd);
+    const aedToIrr = liveRates.aed_irr || 730000;
+    const aedToIrt = aedToIrr / 10;
+    const irt = Math.round(aed * aedToIrt);
+
+    const formattedPricePrimary = isRtl
+      ? `${aed.toLocaleString('fa-IR')} درهم`
+      : `AED ${aed.toLocaleString('en-US')}`;
+
+    const formattedPriceSecondary = isRtl
+      ? `معادل ${irt.toLocaleString('fa-IR')} تومان`
+      : `$${usd.toLocaleString('en-US')} USD · AED ${aed.toLocaleString('en-US')}`;
+
+    const tgjuNote = isRtl
       ? (liveRates.aed_irr
-        ? `<span class="currency-tgju-tag" style="font-size: 0.68rem; color: var(--color-gold-base); display: block; margin-top: 0.35rem; font-weight: 500;">${isRtl ? `معادل‌سازی لحظه‌ای TGJU: ۱ درهم = ${liveRates.aed_irr.toLocaleString('fa-IR')} ریال (${liveRates.last_updated || 'هم‌اکنون'})` : `Real-time TGJU feed: 1 AED = ${liveRates.aed_irr.toLocaleString('en-US')} IRR (${liveRates.last_updated_en || 'Live'})`}</span>`
-        : `<span class="currency-tgju-tag" style="font-size: 0.65rem; color: rgba(200, 171, 131, 0.75); display: block; margin-top: 0.35rem; font-weight: 400;">${isRtl ? 'در انتظار دریافت نرخ از TGJU.org...' : 'Connecting to TGJU.org...'}</span>`)
-      : (currentCurrency === 'USD' || currentCurrency === 'EUR')
-      ? `<span class="currency-tgju-tag" style="font-size: 0.65rem; color: rgba(200, 171, 131, 0.75); display: block; margin-top: 0.35rem; font-weight: 400;">${isRtl ? `برابری ارزی متصل به TGJU.org (${liveRates.last_updated || 'لحظه‌ای'})` : `Live cross-rate via TGJU.org (${liveRates.last_updated_en || 'Live'})`}</span>`
-      : '';
+        ? `<span class="currency-tgju-tag" style="font-size: 0.68rem; color: var(--color-gold-base); display: block; margin-top: 0.35rem; font-weight: 500;">معادل‌سازی لحظه‌ای TGJU: ۱ درهم = ${(liveRates.aed_irr / 10).toLocaleString('fa-IR')} تومان (${liveRates.last_updated || 'هم‌اکنون'})</span>`
+        : `<span class="currency-tgju-tag" style="font-size: 0.65rem; color: rgba(200, 171, 131, 0.75); display: block; margin-top: 0.35rem; font-weight: 400;">در انتظار دریافت نرخ از TGJU.org...</span>`)
+      : (liveRates.aed_irr
+        ? `<span class="currency-tgju-tag" style="font-size: 0.65rem; color: rgba(200, 171, 131, 0.75); display: block; margin-top: 0.35rem; font-weight: 400;">Live cross-rate via TGJU.org (${liveRates.last_updated_en || 'Live'})</span>`
+        : '');
 
     return `
       <article class="property-monograph ${isReverse ? 'reverse' : ''}" style="animation-delay: ${idx * 0.06}s;">
@@ -260,7 +178,8 @@ function renderProperties() {
           <div class="property-price-row">
             <div class="price-block">
               <span class="price-sub">${isRtl ? 'ارزش تخصیص' : 'Target Allocation'}</span>
-              <span class="price-main">${formattedPrice}</span>
+              <span class="price-main stat-number">${formattedPricePrimary}</span>
+              <span class="price-secondary text-xs text-slate mt-1">${formattedPriceSecondary}</span>
               ${tgjuNote}
             </div>
             <button class="btn btn-secondary" data-open-consultation>
@@ -272,10 +191,16 @@ function renderProperties() {
     `;
   }).join('');
 
-  // Update hero teaser price
+  // Update hero teaser price if present
   const heroPriceEl = document.getElementById('hero-teaser-price');
   if (heroPriceEl) {
-    heroPriceEl.textContent = formatCurrency(32500000, currentCurrency, currentLang);
+    const aedToUsd = (liveRates.aed_irr && liveRates.usd_irr) ? (liveRates.aed_irr / liveRates.usd_irr) : (1 / 3.6725);
+    const usd = Math.round(32500000 * aedToUsd);
+    const aedToIrr = liveRates.aed_irr || 730000;
+    const irt = Math.round(32500000 * (aedToIrr / 10));
+    heroPriceEl.innerHTML = isRtl
+      ? `<span>۳۲,۵۰۰,۰۰۰ درهم</span><span class="block text-xs text-slate mt-0.5">معادل ${irt.toLocaleString('fa-IR')} تومان</span>`
+      : `<span>AED 32,500,000</span><span class="block text-xs text-slate mt-0.5">$${usd.toLocaleString('en-US')} USD · AED 32,500,000</span>`;
   }
 
   // Re-bind modal triggers for newly inserted buttons

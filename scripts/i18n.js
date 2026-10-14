@@ -6,6 +6,15 @@ export const translations = {
   "en": {
     "nav_properties": "Properties",
     "nav_offplan": "Off-Plan",
+    "nav_areas": "Areas",
+    "nav_featured_areas": "Featured Areas",
+    "nav_palm_jumeirah": "Palm Jumeirah",
+    "nav_downtown_dubai": "Downtown Dubai",
+    "nav_dubai_hills_estate": "Dubai Hills Estate",
+    "nav_dubai_marina": "Dubai Marina",
+    "nav_business_bay": "Business Bay",
+    "nav_dubai_creek_harbour": "Dubai Creek Harbour",
+    "nav_all_areas": "All Areas →",
     "nav_lifestyle": "Lifestyle",
     "nav_locations": "Locations",
     "nav_intelligence": "Intelligence",
@@ -1055,11 +1064,125 @@ export const translations = {
     "intel_3_head_1": "Developer Escrow",
     "intel_3_head_2": "& Delivery",
     "intel_4_head_1": "Cross-Border Tax",
-    "intel_4_head_2": "& Currency"
+    "intel_4_head_2": "& Currency",
+    "areas_meta_title": "Dubai Area Guides & Neighborhood Profiles | ZARIN",
+    "areas_hero_eyebrow": "Prime Locations",
+    "areas_hero_title": "Dubai <span class=\"text-gold-gradient\">Prime</span><br>Territories",
+    "areas_hero_desc": "Comprehensive area guides for Dubai's prime neighborhoods — Palm Jumeirah, Downtown, Dubai Hills, Marina, Business Bay, and more. Price trends, rental yields, lifestyle, schools, and investment ranking for each area.",
+    "areas_cta_specialist": "Speak to Area Specialist",
+    "areas_cta_browse": "Browse Areas",
+    "areas_stat_guides": "Area Guides",
+    "areas_stat_yields": "Gross Yields",
+    "areas_stat_price_range": "Price per sqft Range",
+    "areas_tldr_eyebrow": "Area Overview",
+    "areas_tldr_desc": "Dubai's prime areas range from AED 1,400/sqft in Business Bay to AED 2,400/sqft on Palm Jumeirah. Gross rental yields span 5.5% to 7.5%, with Business Bay offering the highest yields and Palm Jumeirah delivering the strongest capital appreciation. Each area serves a different buyer profile — from waterfront luxury to golf community family living.",
+    "areas_featured_eyebrow": "Featured Areas",
+    "areas_featured_title": "Dubai's Prime Territories",
+    "areas_view_all": "View All Areas",
+    "areas_palm_tag": "Waterfront Icon",
+    "areas_downtown_tag": "Urban Center",
+    "areas_hills_tag": "Golf Community",
+    "areas_marina_tag": "Waterfront Living",
+    "areas_bay_tag": "Business Hub",
+    "areas_creek_tag": "Future Icon",
+    "areas_rank_eyebrow": "Investment Ranking",
+    "areas_rank_title": "Best Areas to Invest in 2026",
+    "areas_rank_sub": "Ranked by ZARIN's investment advisory based on yield, capital appreciation potential, and entry price accessibility.",
+    "areas_badge_best_yield": "Best Yield",
+    "areas_badge_balanced": "Balanced",
+    "areas_badge_capital_growth": "Capital Growth",
+    "areas_badge_future_growth": "Future Growth",
+    "areas_badge_trophy": "Trophy Asset",
+    "areas_rank_yield_label": "Yield",
+    "areas_rank1_desc": "Highest gross yield in Dubai at 7.5%. Central location next to Downtown, affordable entry at AED 1,400/sqft, and growing demand from young professionals. Ideal for buy-to-let investors.",
+    "areas_rank2_desc": "Strong 6.8% yield with established infrastructure and high tenant demand. Waterfront lifestyle appeal drives consistent rental occupancy. AED 1,800/sqft entry with strong appreciation potential.",
+    "areas_rank3_desc": "The address that defines Dubai — Burj Khalifa, Dubai Mall, Dubai Opera. 6.2% yield with the strongest capital appreciation trajectory. Higher entry at AED 2,100/sqft but trophy asset status.",
+    "areas_rank4_desc": "Emaar's flagship future development around the new Creek Tower. 6.0% yield with massive upside potential as infrastructure completes. Entry at AED 1,900/sqft — values expected to rise significantly by 2028.",
+    "areas_rank5_desc": "Dubai's most iconic address. 5.5% yield is lower but capital appreciation is unmatched. Entry at AED 2,400/sqft — the ultimate trophy asset for long-term wealth preservation.",
+    "areas_life_eyebrow": "Browse by Lifestyle",
+    "areas_life_title": "Find Your Lifestyle Match",
+    "areas_life_waterfront": "Waterfront",
+    "areas_life_waterfront_sub": "4 areas",
+    "areas_life_golf": "Golf",
+    "areas_life_golf_sub": "3 areas",
+    "areas_life_family": "Family",
+    "areas_life_family_sub": "5 areas",
+    "areas_life_marina": "Marina Living",
+    "areas_life_marina_sub": "3 areas",
+    "areas_life_business": "Business Hub",
+    "areas_life_business_sub": "2 areas",
+    "areas_table_eyebrow": "Compare Areas",
+    "areas_table_title": "Price & Yield Comparison",
+    "areas_table_sub": "Side-by-side comparison of Dubai's prime areas by price, yield, and entry threshold.",
+    "areas_th_area": "Area",
+    "areas_th_price_sqft": "Price/sqft",
+    "areas_th_yield": "Gross Yield",
+    "areas_th_min_entry": "Min Entry",
+    "areas_th_best_for": "Best For",
+    "areas_th_guide": "Guide",
+    "areas_table_note": "Source: Dubai Land Department transaction data, Q3 2026. Yields are gross; net yields average 1.5-2% lower after service charges. <a href=\"/insights/market-data\" class=\"text-gold-400 hover:underline\">View full market data →</a>",
+    "areas_intl_eyebrow": "International Comparison",
+    "areas_intl_title": "Dubai vs Other Cities",
+    "areas_intl_sub": "How does Dubai real estate compare to other global investment destinations?",
+    "areas_vs_london": "Dubai vs London",
+    "areas_vs_london_sub": "6-8% vs 3-4% yield. No property tax in Dubai.",
+    "areas_vs_singapore": "Dubai vs Singapore",
+    "areas_vs_singapore_sub": "6-8% vs 2-3% yield. No ABSD in Dubai.",
+    "areas_vs_newyork": "Dubai vs New York",
+    "areas_vs_newyork_sub": "Lower entry, higher yield. No state tax.",
+    "areas_vs_hongkong": "Dubai vs Hong Kong",
+    "areas_vs_hongkong_sub": "Affordable entry vs world's priciest.",
+    "areas_vs_monaco": "Dubai vs Monaco",
+    "areas_vs_monaco_sub": "Similar tax benefits, better yields.",
+    "areas_faq_eyebrow": "Frequently Asked",
+    "areas_faq_title": "Questions About Dubai Areas",
+    "areas_faq_q1": "Which Dubai area is best for property investment in 2026?",
+    "areas_faq_a1": "Business Bay offers the highest yield at 7.5%, while Palm Jumeirah provides the strongest capital appreciation. For balanced returns, Dubai Marina (6.8%) and Downtown Dubai (6.2%) are top choices.",
+    "areas_faq_q2": "What is the most expensive area to buy property in Dubai?",
+    "areas_faq_a2": "Palm Jumeirah is the most expensive at AED 2,400 per sqft, followed by Downtown Dubai at AED 2,100. Emirates Hills and Jumeirah Bay Island also command premium prices for trophy villas.",
+    "areas_faq_q3": "Which Dubai areas allow foreigners to buy freehold property?",
+    "areas_faq_a3": "Foreigners can buy freehold property in all designated freehold areas including Palm Jumeirah, Downtown, Dubai Marina, Dubai Hills, and Business Bay. These were established by the 2002 Freehold Decree.",
+    "areas_faq_q4": "What is the cheapest area to buy property in Dubai?",
+    "areas_faq_a4": "Business Bay (AED 1,400/sqft) and Dubai Hills Estate (AED 1,500/sqft) offer the most accessible entry points among prime areas. JVC and Dubai South are even more affordable but less established.",
+    "areas_faq_q5": "Which Dubai areas have the best rental yields?",
+    "areas_faq_a5": "Business Bay leads with 7.5% gross yield, followed by Dubai Marina (6.8%), Downtown Dubai (6.2%), and Dubai Creek Harbour (6.0%). Palm Jumeirah yields 5.5% but offers stronger capital appreciation.",
+    "areas_faq_q6": "Is Dubai Creek Harbour a good investment?",
+    "areas_faq_a6": "Yes. Dubai Creek Harbour is Emaar's flagship future development, planned around the new Creek Tower. Current prices average AED 1,900/sqft with 6.0% yield, expected to rise significantly as infrastructure completes.",
+    "areas_faq_q7": "Which Dubai area is best for families?",
+    "areas_faq_a7": "Dubai Hills Estate is the top family community, offering villas, golf courses, schools (including GEMS and Repton), parks, and Dubai Hills Mall. Arabian Ranches and JVC are also popular family choices.",
+    "areas_faq_q8": "How does Dubai property compare to London or Singapore?",
+    "areas_faq_a8": "Dubai offers higher rental yields (6-8% vs London's 3-4% or Singapore's 2-3%), no property tax, and Golden Visa eligibility. However, London and Singapore offer more established legal frameworks.",
+    "areas_cta_eyebrow": "Area Specialist Consultation",
+    "areas_cta_title": "Speak to an Area Specialist",
+    "areas_cta_desc": "Not sure which area fits your investment thesis? Schedule a consultation with a ZARIN area specialist. We'll match your budget, lifestyle, and goals to the right Dubai neighborhood.",
+    "areas_cta_phone_label": "Direct Phone",
+    "areas_cta_wa_label": "WhatsApp",
+    "areas_cta_wa_desc": "Message us directly",
+    "areas_cta_rera": "RERA Licensed",
+    "areas_cta_response": "24hr Response",
+    "areas_form_name": "Full Name *",
+    "areas_form_name_ph": "Your name",
+    "areas_form_email": "Email *",
+    "areas_form_email_ph": "you@email.com",
+    "areas_form_phone": "Phone / WhatsApp *",
+    "areas_form_interest": "I'm interested in",
+    "areas_form_select_prompt": "Select area of interest",
+    "areas_form_not_sure": "Not sure yet — need advice",
+    "areas_form_submit": "Request Consultation",
+    "areas_form_privacy": "By submitting, you agree to our <a href=\"/legal/privacy\" class=\"text-gold-400 hover:underline\">Privacy Policy</a>."
   },
   "fa": {
     "nav_properties": "املاک برگزیده",
     "nav_offplan": "پیش‌فروش و آف‌پلان",
+    "nav_areas": "مناطق دبی",
+    "nav_featured_areas": "مناطق برگزیده",
+    "nav_palm_jumeirah": "پالم جمیرا",
+    "nav_downtown_dubai": "داون‌تاون دبی",
+    "nav_dubai_hills_estate": "دبی هیلز استیت",
+    "nav_dubai_marina": "دبی مارینا",
+    "nav_business_bay": "بیزنس بی",
+    "nav_dubai_creek_harbour": "دبی کریک هاربر",
+    "nav_all_areas": "همه مناطق ←",
     "nav_lifestyle": "سبک زندگی",
     "nav_locations": "مناطق شاخص دبی",
     "nav_intelligence": "تحلیل و سرمایه‌گذاری",
@@ -2109,7 +2232,112 @@ export const translations = {
     "intel_3_head_1": "حساب‌های امانی",
     "intel_3_head_2": "و تعهد تحویل",
     "intel_4_head_1": "معافیت مالیاتی",
-    "intel_4_head_2": "و ثبات ارزی"
+    "intel_4_head_2": "و ثبات ارزی",
+    "areas_meta_title": "راهنمای جامع مناطق و محله‌های دبی | املاک زرین",
+    "areas_hero_eyebrow": "مناطق شاخص و ممتاز",
+    "areas_hero_title": "مناطق <span class=\"text-gold-gradient\">شاخص</span><br>دبی",
+    "areas_hero_desc": "راهنمای تخصصی و سرمایه‌گذاری محله‌های برتر دبی — پالم جمیرا، داون‌تاون، دبی هیلز، مارینا، بیزنس بی و سایر مناطق. روند قیمت‌ها، بازدهی اجاره، مدارس و رتبه‌بندی سرمایه‌گذاری.",
+    "areas_cta_specialist": "گفتگو با مشاور تخصصی منطقه",
+    "areas_cta_browse": "مشاهده و مقایسه مناطق",
+    "areas_stat_guides": "راهنمای مناطق",
+    "areas_stat_yields": "بازدهی ناخالص",
+    "areas_stat_price_range": "دامنه قیمت هر فوت مربع",
+    "areas_tldr_eyebrow": "چشم‌انداز اجمالی مناطق",
+    "areas_tldr_desc": "قیمت مناطق شاخص دبی از ۱٬۴۰۰ درهم برای هر فوت مربع در بیزنس بی تا ۲٬۴۰۰ درهم در پالم جمیرا متغیر است. بازدهی ناخالص اجاره بین ۵.۵٪ تا ۷.۵٪ بوده که بیزنس بی بالاترین بازدهی نقدی و پالم جمیرا بیشترین رشد ارزش سرمایه را ارائه می‌دهد. هر منطقه متناسب با نیازهای خاصی از خریداران — از املاک ساحلی تا مجتمع‌های ویلایی خانوادگی — طراحی شده است.",
+    "areas_featured_eyebrow": "مناطق برگزیده",
+    "areas_featured_title": "برترین قلمروهای ملکی دبی",
+    "areas_view_all": "مشاهده همه مناطق",
+    "areas_palm_tag": "نماد املاک ساحلی",
+    "areas_downtown_tag": "قلب تپنده شهری",
+    "areas_hills_tag": "مجتمع اختصاصی گلف",
+    "areas_marina_tag": "زندگی ساحلی مدرن",
+    "areas_bay_tag": "قطب تجارت و سرمایه",
+    "areas_creek_tag": "افق درخشان آینده",
+    "areas_rank_eyebrow": "رتبه‌بندی فرصت‌های سرمایه‌گذاری",
+    "areas_rank_title": "بهترین مناطق برای سرمایه‌گذاری در ۲۰۲۶",
+    "areas_rank_sub": "رتبه‌بندی شده توسط تیم مشاوره سرمایه‌گذاری زرین بر اساس نرخ بازدهی، پتانسیل رشد سرمایه و سهولت ورود سرمایه‌گذار.",
+    "areas_badge_best_yield": "بالاترین بازدهی",
+    "areas_badge_balanced": "متوازن و پایدار",
+    "areas_badge_capital_growth": "رشد ارزش سرمایه",
+    "areas_badge_future_growth": "رشد پرشتاب آتی",
+    "areas_badge_trophy": "ملک شاخص و ممتاز",
+    "areas_rank_yield_label": "بازدهی",
+    "areas_rank1_desc": "بالاترین بازده ناخالص در دبی با ۷.۵٪. موقعیت مرکزی مجاور داون‌تاون، قیمت ورودی مناسب با ۱٬۴۰۰ درهم در هر فوت مربع و تقاضای رو به رشد متخصصان. گزینه‌ای ایده‌آل برای سرمایه‌گذاری با هدف کسب اجاره.",
+    "areas_rank2_desc": "بازدهی قدرتمند ۶.۸٪ با زیرساخت‌های کامل و تقاضای مستمر مستاجران. جذابیت سبک زندگی ساحلی نرخ پر بودن واحدهای اجاره‌ای را تثبیت می‌کند. ورود با ۱٬۸۰۰ درهم در هر فوت مربع و پتانسیل رشد بالا.",
+    "areas_rank3_desc": "آدرسی که اعتبار دبی را تعریف می‌کند — برج خلیفه، دبی مال، دبی اپرا. بازدهی ۶.۲٪ با بالاترین پتانسیل رشد ارزش سرمایه. قیمت ورودی ۲٬۱۰۰ درهم در هر فوت مربع با جایگاه ابدی ملک شاخص.",
+    "areas_rank4_desc": "پروژه پرچمدار اعمار در پیرامون برج جدید کریک. بازده ۶.۰٪ همراه با فرصت کم‌نظیر رشد سرمایه همزمان با تکمیل زیرساخت‌ها تا سال ۲۰۲۸.",
+    "areas_rank5_desc": "نمادین‌ترین آدرس املاک در دبی. بازدهی ۵.۵٪ در کنار رشد قیمت بی‌رقیب. نرخ ورودی ۲٬۴۰۰ درهم برای هر فوت مربع — برترین دارایی شاخص جهت حفظ و رشد بلندمدت ثروت.",
+    "areas_life_eyebrow": "دسته‌بندی بر اساس سبک زندگی",
+    "areas_life_title": "سبک زندگی متناسب با نیاز خود را بیابید",
+    "areas_life_waterfront": "ساحلی و آب‌نما",
+    "areas_life_waterfront_sub": "۴ منطقه",
+    "areas_life_golf": "گلف و طبیعت",
+    "areas_life_golf_sub": "۳ منطقه",
+    "areas_life_family": "خانوادگی",
+    "areas_life_family_sub": "۵ منطقه",
+    "areas_life_marina": "اسکله و قایق‌رانی",
+    "areas_life_marina_sub": "۳ منطقه",
+    "areas_life_business": "قطب کسب‌وکار",
+    "areas_life_business_sub": "۲ منطقه",
+    "areas_table_eyebrow": "مقایسه جامع مناطق",
+    "areas_table_title": "مقایسه قیمت و نرخ بازدهی",
+    "areas_table_sub": "بررسی تطبیقی مناطق برتر دبی از حیث قیمت، بازدهی و حداقل سرمایه ورود.",
+    "areas_th_area": "منطقه",
+    "areas_th_price_sqft": "قیمت/فوت مربع",
+    "areas_th_yield": "بازدهی ناخالص",
+    "areas_th_min_entry": "حداقل ورود",
+    "areas_th_best_for": "مناسب‌ترین برای",
+    "areas_th_guide": "راهنما",
+    "areas_table_note": "منبع: داده‌های رسمی معاملات اداره اراضی دبی (DLD)، سه‌ماهه سوم ۲۰۲۶. بازدهی‌ها ناخالص است؛ بازدهی خالص با کسر هزینه‌های شارژ حدود ۱.۵ تا ۲٪ کمتر خواهد بود. <a href=\"/insights/market-data\" class=\"text-gold-400 hover:underline\">مشاهده آمار کامل بازار ←</a>",
+    "areas_intl_eyebrow": "مقایسه بین‌المللی",
+    "areas_intl_title": "دبی در مقایسه با سایر شهرهای جهان",
+    "areas_intl_sub": "بازار املاک دبی در مقایسه با مقاصد مطرح سرمایه‌گذاری بین‌المللی چه مزایایی دارد؟",
+    "areas_vs_london": "دبی در برابر لندن",
+    "areas_vs_london_sub": "بازده ۶-۸٪ در برابر ۳-۴٪. بدون مالیات بر ملک در دبی.",
+    "areas_vs_singapore": "دبی در برابر سنگاپور",
+    "areas_vs_singapore_sub": "بازده ۶-۸٪ در برابر ۲-۳٪. بدون مالیات خرید خارجی‌ها در دبی.",
+    "areas_vs_newyork": "دبی در برابر نیویورک",
+    "areas_vs_newyork_sub": "سرمایه ورودی کمتر، بازدهی بالاتر و بدون مالیات بر درآمد ایالتی.",
+    "areas_vs_hongkong": "دبی در برابر هنگ‌کنگ",
+    "areas_vs_hongkong_sub": "قیمت‌های قابل دسترس در مقایسه با گران‌ترین بازار دنیا.",
+    "areas_vs_monaco": "دبی در برابر موناکو",
+    "areas_vs_monaco_sub": "مزایای مالیاتی مشابه، همراه با بازدهی به مراتب بیشتر.",
+    "areas_faq_eyebrow": "پرسش‌های متداول",
+    "areas_faq_title": "پرسش‌های متداول درباره مناطق دبی",
+    "areas_faq_q1": "کدام منطقه دبی برای سرمایه‌گذاری در سال ۲۰۲۶ مناسب‌تر است؟",
+    "areas_faq_a1": "بیزنس بی با ۷.۵٪ بالاترین بازدهی اجاره را دارد، در حالی که پالم جمیرا بیشترین رشد سرمایه را ثبت می‌کند. برای بازدهی متوازن، دبی مارینا (۶.۸٪) و داون‌تاون (۶.۲٪) گزینه‌های برتر هستند.",
+    "areas_faq_q2": "گران‌ترین منطقه برای خرید ملک در دبی کجاست؟",
+    "areas_faq_a2": "پالم جمیرا با میانگین ۲٬۴۰۰ درهم برای هر فوت مربع گران‌ترین منطقه است و پس از آن داون‌تاون با ۲٬۱۰۰ درهم قرار دارد. جزیره جمیرا بی و امارات هیلز نیز برای ویلاهای لوکس بالاترین قیمت‌ها را ثبت می‌کنند.",
+    "areas_faq_q3": "در کدام مناطق دبی اتباع خارجی می‌توانند مالکیت قطعی (فری‌هولد) داشته باشند؟",
+    "areas_faq_a3": "خارجی‌ها می‌توانند در تمامی مناطق تعیین‌شده فری‌هولد از جمله پالم جمیرا، داون‌تاون دبی، دبی مارینا، دبی هیلز و بیزنس بی مالکیت صددرصدی و سند قطعی دریافت کنند.",
+    "areas_faq_q4": "ارزان‌ترین مناطق مناسب برای خرید ملک در دبی کدامند؟",
+    "areas_faq_a4": "بیزنس بی (۱٬۴۰۰ درهم/فوت مربع) و دبی هیلز استیت (۱٬۵۰۰ درهم/فوت مربع) در میان مناطق شاخص دسترس‌پذیرترین مبالغ ورود را دارند. مناطقی چون JVC و دبی ساوت نیز اقتصادی‌تر هستند.",
+    "areas_faq_q5": "کدام مناطق دبی بالاترین بازدهی اجاره را ارائه می‌دهند؟",
+    "areas_faq_a5": "بیزنس بی با ۷.۵٪ بازدهی ناخالص پیشتاز است، و دبی مارینا (۶.۸٪)، داون‌تاون (۶.۲٪) و کریک هاربر (۶.۰٪) در رده‌های بعدی قرار دارند.",
+    "areas_faq_q6": "آیا دبی کریک هاربر فرصت مناسبی برای سرمایه‌گذاری است؟",
+    "areas_faq_a6": "بله؛ دبی کریک هاربر پروژه پرچمدار آینده شرکت اعمار در اطراف برج کریک است. میانگین قیمت فعلی ۱٬۹۰۰ درهم با بازدهی ۶.۰٪ است و با تکمیل زیرساخت‌ها پتانسیل رشد بالایی دارد.",
+    "areas_faq_q7": "کدام منطقه دبی برای سکونت خانواده‌ها بهترین است؟",
+    "areas_faq_a7": "دبی هیلز استیت با برخورداری از ویلاها، زمین‌های گلف، مدارس بین‌المللی برتر، پارک‌های وسیع و مرکز خرید دبی هیلز مال، برترین مجتمع برای سکونت خانواده‌ها محسوب می‌شود.",
+    "areas_faq_q8": "بازار مسکن دبی چه مقایسه‌ای با لندن یا سنگاپور دارد؟",
+    "areas_faq_a8": "دبی بازدهی اجاره بسیار بالاتری (۶ تا ۸٪ در برابر ۳ تا ۴٪ لندن یا ۲ تا ۳٪ سنگاپور)، عدم وجود مالیات بر ملک و امکان اخذ اقامت طلایی ۱۰ ساله را ارائه می‌دهد.",
+    "areas_cta_eyebrow": "مشاوره تخصصی مناطق",
+    "areas_cta_title": "گفتگو با مشاور تخصصی منطقه",
+    "areas_cta_desc": "مطمئن نیستید کدام منطقه بیشترین تطابق را با اهداف سرمایه‌گذاری شما دارد؟ یک جلسه مشاوره با کارشناس مناطق دبی در زرین رزرو کنید تا مناسب‌ترین محله بر اساس بودجه و نیاز شما مشخص گردد.",
+    "areas_cta_phone_label": "تماس مستقیم",
+    "areas_cta_wa_label": "واتس‌اپ",
+    "areas_cta_wa_desc": "ارتباط فوری و مستقیم",
+    "areas_cta_rera": "دارای مجوز رسمی RERA",
+    "areas_cta_response": "پاسخگویی ۲۴ ساعته",
+    "areas_form_name": "نام و نام خانوادگی *",
+    "areas_form_name_ph": "نام شما",
+    "areas_form_email": "ایمیل *",
+    "areas_form_email_ph": "you@email.com",
+    "areas_form_phone": "شماره تماس / واتس‌اپ *",
+    "areas_form_interest": "منطقه مورد علاقه",
+    "areas_form_select_prompt": "انتخاب منطقه مورد نظر",
+    "areas_form_not_sure": "هنوز مطمئن نیستم — نیاز به راهنمایی دارم",
+    "areas_form_submit": "درخواست مشاوره اختصاصی",
+    "areas_form_privacy": "با ارسال این فرم، با <a href=\"/legal/privacy\" class=\"text-gold-400 hover:underline\">سیاست حفظ حریم خصوصی</a> ما موافقت می‌نمایید."
   }
 };
 
@@ -2186,10 +2414,91 @@ export function setLanguage(lang) {
     }
   });
 
+  // Sync mobile header language trigger & dropdown
+  const mobileLangLabel = document.getElementById('mobile-lang-label');
+  if (mobileLangLabel) {
+    mobileLangLabel.textContent = lang === 'fa' ? 'FA' : 'EN';
+  }
+  document.querySelectorAll('#mobile-lang-menu .mobile-lang-check').forEach(chk => {
+    const parentBtn = chk.closest('button');
+    if (parentBtn) {
+      chk.classList.toggle('hidden', parentBtn.dataset.lang !== lang);
+    }
+  });
+  const mobileLangMenu = document.getElementById('mobile-lang-menu');
+  const mobileLangTrigger = document.getElementById('mobile-lang-trigger');
+  if (mobileLangMenu && !mobileLangMenu.classList.contains('hidden')) {
+    mobileLangMenu.classList.add('hidden');
+    mobileLangTrigger?.setAttribute('aria-expanded', 'false');
+  }
+
   // Dispatch global event for other scripts/components
   if (typeof window !== 'undefined') {
     window.dispatchEvent(new CustomEvent('zarin:languageChange', { detail: { lang } }));
   }
+}
+
+export function initMobileLanguageDropdown() {
+  const trigger = document.getElementById('mobile-lang-trigger');
+  const menu = document.getElementById('mobile-lang-menu');
+  const hamburger = document.getElementById('mobile-menu-toggle');
+  const label = document.getElementById('mobile-lang-label');
+
+  if (!trigger || !menu) return;
+
+  function closeMenu() {
+    menu.classList.add('hidden');
+    menu.classList.remove('is-open');
+    trigger.setAttribute('aria-expanded', 'false');
+  }
+
+  function openMenu() {
+    menu.classList.remove('hidden');
+    menu.classList.add('is-open');
+    trigger.setAttribute('aria-expanded', 'true');
+  }
+
+  // Ensure initially closed
+  closeMenu();
+
+  if (!trigger.dataset.bound) {
+    trigger.dataset.bound = 'true';
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (menu.classList.contains('hidden')) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!trigger.contains(e.target) && !menu.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeMenu();
+      }
+    });
+
+    hamburger?.addEventListener('click', () => {
+      closeMenu();
+    });
+  }
+
+  const cur = getCurrentLanguage();
+  if (label) {
+    label.textContent = cur === 'fa' ? 'FA' : 'EN';
+  }
+  document.querySelectorAll('#mobile-lang-menu .mobile-lang-check').forEach(chk => {
+    const parentBtn = chk.closest('button');
+    if (parentBtn) {
+      chk.classList.toggle('hidden', parentBtn.dataset.lang !== cur);
+    }
+  });
 }
 
 export function initI18n() {
@@ -2208,6 +2517,7 @@ export function initI18n() {
     }
   });
 
+  initMobileLanguageDropdown();
   setLanguage(initialLang);
 }
 
@@ -2218,6 +2528,7 @@ if (typeof window !== 'undefined') {
     translations,
     setLanguage,
     initI18n,
+    initMobileLanguageDropdown,
     getCurrentLanguage
   };
   window.setLanguage = setLanguage;
