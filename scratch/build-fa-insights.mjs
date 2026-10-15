@@ -1,0 +1,728 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname, '..');
+
+const htmlContent = `<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0A0B0E">
+
+  <title>تحلیل بازار، گزارش‌های فصلی و پادکست املاک دبی | زرین (ZARIN)</title>
+  <meta name="description" content="مرکز هوش تحلیلی و پژوهش املاک زرین دبی: گزارش‌های فصلی بازار، راهنمای سرمایه‌گذاری، پادکست تخصصی، ۷ ماشین‌حساب مالی، اصطلاح‌نامه و آمار معاملات رسمی دپارتمان اراضی دبی (DLD).">
+  <meta name="keywords" content="گزارش بازار املاک دبی, تحلیل سرمایه‌گذاری ملک دبی, پادکست املاک دبی, ماشین‌حساب بازدهی ملک دبی, قیمت هر فوت مربع دبی ۲۰۲۶">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="ZARIN Real Estate">
+  <link rel="canonical" href="https://zarinrealestate.com/fa/insights">
+  <link rel="alternate" hreflang="fa" href="https://zarinrealestate.com/fa/insights">
+  <link rel="alternate" hreflang="en" href="https://zarinrealestate.com/insights">
+  <link rel="alternate" hreflang="x-default" href="https://zarinrealestate.com/insights">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="تحلیل بازار، گزارش‌های فصلی و پادکست املاک دبی | ZARIN Insights">
+  <meta property="og:description" content="مرکز هوش تحلیلی املاک زرین دبی — گزارش‌های فصلی، راهنمای سرمایه‌گذاری، پادکست، ماشین‌حساب‌های مالی و آمار روزانه معاملات DLD.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="هوش تحلیلی و گزارش‌های بازار املاک دبی در زرین">
+  <meta property="og:url" content="https://zarinrealestate.com/fa/insights">
+  <meta property="og:site_name" content="ZARIN Real Estate">
+  <meta property="og:locale" content="fa_IR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="تحلیل بازار املاک دبی | ZARIN Insights">
+  <meta name="twitter:description" content="گزارش‌های فصلی بازار، راهنمای سرمایه‌گذاری، پادکست، ماشین‌حساب‌ها و آمار رسمی DLD.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0B0E'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' fill='%23C8AB83' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/main.css">
+
+  <style>
+    html{scroll-behavior:smooth}body{font-family:"Vazirmatn","Source Sans 3",-apple-system,sans-serif;background:#0A0B0E;color:#F8F9FA;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+    ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0A0B0E}::-webkit-scrollbar-thumb{background:#C8AB83;border-radius:4px}
+    ::selection{background:rgba(200,171,131,0.3);color:#F8F9FA}
+    .glass{background:rgba(10,11,14,0.78);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+    .gold-glow{transition:box-shadow .5s cubic-bezier(.16,1,.3,1),border-color .5s cubic-bezier(.16,1,.3,1)}
+    .gold-glow:hover{box-shadow:0 10px 30px rgba(200,171,131,.15);border-color:rgba(200,171,131,.45)}
+    .text-gold-gradient{background:linear-gradient(135deg,#DFC49E 0%,#C8AB83 50%,#A88D66 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .stat-number{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+    .mega-menu-trigger{position:relative}
+    .mega-menu-panel{opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1),visibility .3s;z-index:950}
+    .mega-menu-panel::before{content:'';position:absolute;top:-12px;left:0;right:0;height:12px}
+    .mega-menu-trigger:hover .mega-menu-panel,.mega-menu-trigger:focus-within .mega-menu-panel{opacity:1;visibility:visible;transform:translateY(0)}
+    .card-lift{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s cubic-bezier(.16,1,.3,1)}
+    .card-lift:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+    .img-zoom{overflow:hidden}.img-zoom img{transition:transform .8s cubic-bezier(.16,1,.3,1)}.img-zoom:hover img{transform:scale(1.05)}
+    .mobile-menu{transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}.mobile-menu.open{transform:translateX(0)}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .animate-fade-in-up{animation:fadeInUp .8s cubic-bezier(.16,1,.3,1) both}
+    details summary{list-style:none;cursor:pointer}details summary::-webkit-details-marker{display:none}
+    details[open] .faq-icon{transform:rotate(45deg)}.faq-icon{transition:transform .3s cubic-bezier(.16,1,.3,1)}
+    .sticky-whatsapp{display:none}@media(max-width:1024px){.sticky-whatsapp{display:flex}}
+    .rtl-flip{transform:scaleX(-1);display:inline-block}
+  </style>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"صفحه اصلی","item":"https://zarinrealestate.com/fa"},
+    {"@type":"ListItem","position":2,"name":"تحلیل و بینش بازار","item":"https://zarinrealestate.com/fa/insights"}
+  ]}
+  </script>
+
+  <!-- JSON-LD: CollectionPage -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"CollectionPage","@id":"https://zarinrealestate.com/fa/insights#collection",
+    "name":"تحلیل بازار، گزارش‌های فصلی و پادکست املاک دبی | ZARIN Insights",
+    "url":"https://zarinrealestate.com/fa/insights",
+    "description":"مرکز هوش تحلیلی املاک زرین دبی: گزارش‌های فصلی، راهنمای سرمایه‌گذاری، پادکست، ابزارهای مالی و آمار معاملات DLD.",
+    "isPartOf":{"@id":"https://zarinrealestate.com/fa#website"}
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","@id":"https://zarinrealestate.com/fa/insights#faq","mainEntity":[
+    {"@type":"Question","name":"وضعیت کنونی بازار املاک دبی در سال ۲۰۲۶ چگونه است؟","acceptedAnswer":{"@type":"Answer","text":"بازار املاک دبی در سال ۲۰۲۶ با رشد سالیانه ۱۲ درصدی قیمت‌ها مواجه بوده است. مناطق شاخص مانند پالم جمیرا به میانگین ۲,۴۰۰ درهم بر فوت مربع رسیده‌اند و بیزنس بی با بازدهی ناخالص ۷.۵ درصدی از پربازده‌ترین‌هاست."}},
+    {"@type":"Question","name":"گزارش‌های فصلی املاک دبی زرین از چه منابعی استخراج می‌شود؟","acceptedAnswer":{"@type":"Answer","text":"تمام گزارش‌های تحلیلی زرین مستقیماً از داده‌های ثبت‌شده در دپارتمان اراضی دبی (DLD)، وضعیت پیشرفت پروژه‌ها در سامانه RERA و ممیزی‌های میدانی تهیه می‌شود."}},
+    {"@type":"Question","name":"میانگین بازدهی اجاره (ROI) در دبی در سال ۲۰۲۶ چقدر است؟","acceptedAnswer":{"@type":"Answer","text":"بازدهی ناخالص سالیانه اجاره در دبی بین ۵ تا ۹ درصد است که در بیزنس بی حدود ۷.۵٪، دبی مارینا ۶.۸٪، داون‌تاون ۶.۲٪ و پالم جمیرا حدود ۵.۵٪ است."}},
+    {"@type":"Question","name":"پادکست تخصصی املاک زرین چه موضوعاتی را پوشش می‌دهد؟","acceptedAnswer":{"@type":"Answer","text":"این پادکست شامل گفتگو با مدیران ارشد سازندگان معتبر، بررسی تخصصی مناطق، قوانین اقامت و گلدن ویزا و ساختاردهی بهینه مالیاتی برای خریداران بین‌المللی است."}},
+    {"@type":"Question","name":"چه ماشین‌حساب‌های مالی در پلتفرم زرین قابل استفاده است؟","acceptedAnswer":{"@type":"Answer","text":"زرین دارای ۷ ابزار محاسباتی آنلاین شامل ماشین‌حساب وام مسکن، محاسبه سود مرکب و ROI، جدول اقساط پیش‌فروش، هزینه‌های شارژ، مبدل ارزی، ارزیابی گلدن ویزا و تطبیق هوشمند ملک است."}},
+    {"@type":"Question","name":"آمار و داده‌های بازار در چه بازه‌هایی به‌روزرسانی می‌شوند؟","acceptedAnswer":{"@type":"Answer","text":"داشبورد داده‌های بازار زرین به صورت ۲۴ ساعته بر مبنای آخرین تراکنش‌های رسمی اداره اراضی دبی (DLD) به‌روزرسانی می‌گردد."}},
+    {"@type":"Question","name":"آیا امکان دریافت بروشورهای اختصاصی پروژه‌ها وجود دارد؟","acceptedAnswer":{"@type":"Answer","text":"بله. در کتابخانه اسناد زرین می‌توانید کاتالوگ‌های کامل، پلان واحدها و بروشورهای رسمی پروژه‌های شاخص آف‌پلان را دانلود کنید."}},
+    {"@type":"Question","name":"اصطلاح‌نامه تخصصی املاک دبی چیست؟","acceptedAnswer":{"@type":"Answer","text":"این مرجع جامع شامل توضیح شفاف بیش از ۱۰۰ مفهوم و واژه حقوقی و مالی دبی از جمله RERA، سند Oqood، حساب امانی Escrow و نرخ بهره EIBOR است."}}
+  ]}
+  </script>
+</head>
+
+<body class="bg-ink-900 text-bone antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-gold-400 focus:text-ink-900 focus:rounded-xs focus:text-sm focus:font-bold">پرش به محتوای اصلی</a>
+
+  <!-- HEADER -->
+  <header id="site-header" class="fixed top-0 left-0 w-full z-[900] transition-all duration-500" role="banner" style="padding:1.25rem 0;border-bottom:1px solid transparent;">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="flex items-center justify-between gap-4">
+        <a href="/fa" class="flex items-center gap-2 group flex-shrink-0" aria-label="املاک زرین — صفحه اصلی">
+          <span class="font-sans font-extrabold text-2xl tracking-tight text-bone group-hover:text-gold-400 transition-colors duration-300">ZARIN</span>
+          <span class="hidden md:inline text-[10px] tracking-[0.3em] uppercase text-gold-400 font-semibold border-r border-gold-line pr-2">Real Estate</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center gap-1" aria-label="ناوبری اصلی">
+          <div class="mega-menu-trigger">
+            <a href="/fa/properties" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">املاک دبی<svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3 text-right">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">املاک آماده و تحویل‌شده</div>
+              <a href="/fa/properties" class="text-sm text-bone hover:text-gold-400 transition-colors">همه املاک دبی</a>
+              <a href="/fa/properties" class="text-sm text-ash hover:text-gold-400 transition-colors">املاک سوپرلوکس شاخص</a>
+              <a href="/fa/properties" class="text-sm text-ash hover:text-gold-400 transition-colors">اقامتگاه‌های برندینگ‌شده</a>
+              <a href="/fa/properties" class="text-sm text-ash hover:text-gold-400 transition-colors">املاک تجاری و اداری</a>
+            </div>
+          </div>
+
+          <div class="mega-menu-trigger">
+            <a href="/fa/off-plan" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">پیش‌فروش (آف‌پلان)<svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3 text-right">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">پروژه‌های در حال ساخت</div>
+              <a href="/fa/off-plan" class="text-sm text-bone hover:text-gold-400 transition-colors">همه پروژه‌های آف‌پلان</a>
+              <a href="/fa/off-plan" class="text-sm text-ash hover:text-gold-400 transition-colors">پروژه‌های تازه عرضه‌شده</a>
+              <a href="/fa/off-plan" class="text-sm text-ash hover:text-gold-400 transition-colors">تفکیک بر اساس سازنده</a>
+              <a href="/fa/off-plan" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">راهنمای سرمایه‌گذاری ←</a>
+            </div>
+          </div>
+
+          <div class="mega-menu-trigger">
+            <a href="/fa/areas" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">مناطق دبی<svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3 text-right">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">مناطق برگزیده و شاخص</div>
+              <a href="/fa/areas" class="text-sm text-bone hover:text-gold-400 transition-colors">پالم جمیرا</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">داون‌تاون دبی</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">دبی هیلز استیت</a>
+              <a href="/fa/areas" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">همه مناطق دبی ←</a>
+            </div>
+          </div>
+
+          <div class="mega-menu-trigger">
+            <a href="/fa/private-office" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">پرایوت آفیس<svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-gold-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3 text-right">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">میز معاملات اختصاصی</div>
+              <a href="/fa/private-office" class="text-sm text-bone hover:text-gold-400 transition-colors">معرفی و شرایط</a>
+              <a href="/fa/private-office" class="text-sm text-ash hover:text-gold-400 transition-colors">املاک خارج از بازار (Off-Market)</a>
+              <a href="/fa/private-office" class="text-sm text-ash hover:text-gold-400 transition-colors">تسویه چندارزی و کریپتو</a>
+              <a href="/fa/private-office" class="text-sm text-ash hover:text-gold-400 transition-colors">کانسیرژ سبک زندگی</a>
+            </div>
+          </div>
+
+          <div class="mega-menu-trigger">
+            <a href="/fa/services" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">خدمات ما<svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3 text-right">
+              <a href="/fa/services" class="text-sm text-bone hover:text-gold-400 transition-colors">مشاوره خرید ملک</a>
+              <a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">تسهیلات و وام مسکن</a>
+              <a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">امور حقوقی و سند</a>
+              <a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">کارشناسی و ارزیابی</a>
+            </div>
+          </div>
+
+          <div class="mega-menu-trigger">
+            <a href="/fa/visas" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">اقامت و ویزا<svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3 text-right">
+              <a href="/fa/visas" class="text-sm text-bone hover:text-gold-400 transition-colors">گلدن ویزای ۱۰ ساله</a>
+              <a href="/fa/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">ویزای سرمایه‌گذاری ۲ ساله</a>
+              <a href="/fa/visas" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">ارزیابی شرایط اقامت ←</a>
+            </div>
+          </div>
+
+          <div class="mega-menu-trigger">
+            <a href="/fa/insights" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-gold-400 hover:text-gold-300 transition-colors duration-300 flex items-center gap-1" aria-current="page" aria-haspopup="true" aria-expanded="false">تحلیل بازار<svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3 text-right">
+              <a href="/fa/insights" class="text-sm text-bone hover:text-gold-400 transition-colors font-semibold">گزارش‌های فصلی بازار</a>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">مقالات و تحلیل‌ها</a>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">ماشین‌حساب‌های مالی</a>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">پرسش‌های متداول</a>
+            </div>
+          </div>
+
+          <div class="mega-menu-trigger">
+            <a href="/fa/heritage" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">اصالت زرین<svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg></a>
+            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3 text-right">
+              <a href="/fa/heritage" class="text-sm text-bone hover:text-gold-400 transition-colors">داستان ما (از ۲۰۰۵)</a>
+              <a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">تیم و مشاوران ارشد</a>
+              <a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">دیدگاه مشتریان</a>
+              <a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">جوایز و مجوزها</a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="flex items-center gap-3">
+          <div class="hidden sm:flex items-center h-8 bg-ink-800 border border-white-line rounded-xs p-0.5" role="group" aria-label="تغییر زبان">
+            <button type="button" class="lang-btn h-full px-2 text-[11px] font-semibold rounded-xs transition-all cursor-pointer" data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+            <button type="button" class="lang-btn h-full px-2 text-[11px] font-semibold rounded-xs transition-all active is-active cursor-pointer" data-lang="fa" aria-label="تغییر زبان به فارسی" aria-pressed="true">فارسی</button>
+          </div>
+
+          <a href="tel:+971586901231" class="hidden md:flex items-center gap-2 text-xs font-semibold text-ash hover:text-gold-400 transition-colors" aria-label="تماس تلفنی">
+            <svg class="w-4 h-4 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.288a11.3 11.3 0 005.067 5.067l1.288-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span dir="ltr" class="tabular-nums">+971 58 690 1231</span>
+          </a>
+
+          <a href="/fa/consultation" class="hidden md:inline-flex items-center px-5 py-2.5 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-[0.08em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold" aria-label="رزرو مشاوره">رزرو مشاوره</a>
+
+          <!-- Mobile Language Switcher -->
+          <div class="mobile-lang-container relative lg:hidden" id="mobile-lang-container">
+            <button
+              type="button"
+              id="mobile-lang-trigger"
+              class="mobile-lang-trigger flex items-center gap-1 px-2.5 py-1.5 rounded-xs border border-white-line text-xs font-bold text-bone hover:border-gold-line transition-all"
+              aria-label="انتخاب زبان"
+              aria-haspopup="true"
+              aria-expanded="false"
+              aria-controls="mobile-lang-menu"
+            >
+              <span id="mobile-lang-label">FA</span>
+              <svg class="mobile-lang-chevron w-3 h-3 text-gold-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="mobile-lang-menu" class="mobile-lang-menu hidden absolute top-full left-0 mt-2 w-36 glass border border-gold-line rounded-xs shadow-monolith p-1 text-xs z-[1000]" role="menu" aria-labelledby="mobile-lang-trigger">
+              <button type="button" class="lang-btn mobile-lang-item w-full flex items-center justify-between px-3 py-2 rounded-xs text-ash hover:text-gold-400 hover:bg-white-soft transition-all" data-lang="en" role="menuitem">
+                <span>English (EN)</span>
+                <span class="mobile-lang-check text-gold-400 font-bold hidden">✓</span>
+              </button>
+              <button type="button" class="lang-btn mobile-lang-item w-full flex items-center justify-between px-3 py-2 rounded-xs text-gold-400 bg-gold-soft font-bold is-active" data-lang="fa" role="menuitem">
+                <span>فارسی (FA)</span>
+                <span class="mobile-lang-check text-gold-400 font-bold">✓</span>
+              </button>
+            </div>
+          </div>
+
+          <button id="mobile-menu-toggle" class="lg:hidden text-bone hover:text-gold-400 transition-colors p-2" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full max-w-sm h-full bg-ink-900 border-l border-white-line z-[1000] overflow-y-auto lg:hidden" role="dialog" aria-modal="true" aria-label="منوی موبایل">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-8">
+        <span class="font-sans font-extrabold text-xl text-bone">ZARIN</span>
+        <button id="mobile-menu-close" class="text-ash hover:text-gold-400 transition-colors" aria-label="بستن منو">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-1" aria-label="ناوبری اصلی موبایل">
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/properties" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">املاک دبی</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/off-plan" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">پیش‌فروش (آف‌پلان)</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/areas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">مناطق دبی</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/private-office" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">پرایوت آفیس</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/services" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">خدمات ما</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/visas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">اقامت و ویزا</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/insights" class="flex-1 py-3 px-4 text-sm font-semibold text-gold-400 hover:text-gold-300">تحلیل بازار</a>
+          </div>
+        </div>
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/heritage" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">اصالت زرین</a>
+          </div>
+        </div>
+
+        <div class="px-4 py-3 border-t border-white-line my-2">
+          <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-2">انتخاب زبان / Language</div>
+          <div class="flex items-center gap-2" role="group" aria-label="انتخاب زبان">
+            <button type="button" class="mobile-lang-btn lang-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-white-line text-ash hover:text-gold-400 hover:border-gold-line transition-all text-center cursor-pointer" data-lang="en">English (EN)</button>
+            <button type="button" class="mobile-lang-btn lang-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-gold-line bg-gold-400 text-ink-900 transition-all text-center active cursor-pointer" data-lang="fa">فارسی (FA)</button>
+          </div>
+        </div>
+        <div class="h-px bg-white-line my-2"></div>
+        <a href="/fa/consultation" class="py-3 px-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-wide text-center rounded-xs hover:bg-gold-300 transition-all">رزرو مشاوره اختصاصی</a>
+        <a href="tel:+971586901231" class="py-3 px-4 text-sm text-ash hover:text-gold-400 text-center"><span dir="ltr" class="tabular-nums">+971 58 690 1231</span></a>
+        <a href="https://wa.me/971586901231" class="py-3 px-4 text-sm text-tether hover:text-tether/80 text-center">ارتباط مستقیم در واتس‌اپ</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="pt-24 bg-ink-900 border-b border-white-line">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-4">
+      <nav aria-label="مسیر راهنما" class="text-xs">
+        <ol class="flex items-center gap-2 text-slate">
+          <li><a href="/fa" class="hover:text-gold-400 transition-colors">صفحه اصلی</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-bone font-semibold" aria-current="page">تحلیل و بینش بازار</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main">
+
+  <!-- 1. HERO -->
+  <section class="relative py-20 md:py-28 overflow-hidden bg-ink-900" aria-label="معرفی مرکز تحلیل زرین">
+    <div class="absolute inset-0 opacity-10"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80" alt="" class="w-full h-full object-cover" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-ink-900 via-ink-900/95 to-ink-900"></div>
+    <div class="relative max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-4xl animate-fade-in-up">
+        <div class="inline-flex items-center gap-2 mb-6"><span class="w-8 h-px bg-gold-400"></span><span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">مرکز هوش تحلیلی بازار</span></div>
+        <h1 id="hero-headline" class="font-sans font-extrabold text-5xl md:text-7xl lg:text-[4.5rem] leading-[1.1] tracking-tight text-bone mb-6">هوش تحلیلی و بینش بازار<br><span class="text-gold-gradient">املاک دبی</span></h1>
+        <p class="text-lg md:text-xl text-ash max-w-2xl leading-relaxed mb-8 font-light">پلتفرم جامع بینش بازار زرین — شامل گزارش‌های فصلی پژوهشی، راهنماهای گام‌به‌گام سرمایه‌گذاری، پادکست اختصاصی، ماشین‌حساب‌های مالی و آمار روزانه معاملات دپارتمان اراضی دبی (DLD). دو دهه تجربه زیسته در بازار املاک، در دسترس همه خریداران فهیم.</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#latest-articles" class="inline-flex items-center justify-center px-8 py-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold" aria-label="مشاهده جدیدترین مقالات">مطالعه تازه‌ترین تحلیل‌ها<svg class="w-4 h-4 mr-2 rtl-flip" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+          <a href="#market-reports" class="inline-flex items-center justify-center px-8 py-4 border border-gold-line text-bone text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-soft hover:border-gold-border transition-all duration-300" aria-label="دانلود گزارش بازار">دانلود گزارش‌های فصلی</a>
+        </div>
+        <div class="flex flex-wrap items-center gap-6 md:gap-10 mt-16 pt-8 border-t border-white-line">
+          <div><div class="text-2xl md:text-3xl font-bold text-gold-400 stat-number">۲۰۰+</div><div class="text-xs text-slate uppercase tracking-wider mt-1">مقاله و پژوهش منتشرشده</div></div>
+          <div><div class="text-2xl md:text-3xl font-bold text-gold-400 stat-number">۷</div><div class="text-xs text-slate uppercase tracking-wider mt-1">ابزار و ماشین‌حساب مالی</div></div>
+          <div><div class="text-2xl md:text-3xl font-bold text-gold-400 stat-number">۲۴</div><div class="text-xs text-slate uppercase tracking-wider mt-1">اپیزود پادکست تخصصی</div></div>
+          <div><div class="text-2xl md:text-3xl font-bold text-gold-400 stat-number">روزانه</div><div class="text-xs text-slate uppercase tracking-wider mt-1">پایش زنده آمار معاملات</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. TL;DR -->
+  <section class="bg-ink-850 py-16 md:py-20" aria-label="خلاصه ماهیت بخش تحلیل">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-4xl mx-auto border-r-2 border-gold-400 pr-8">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">دیدگاه تحلیلی ما</div>
+        <p id="tldr-summary" class="text-xl md:text-2xl leading-relaxed text-bone font-light">مرکز تحلیل زرین بیش از ۲۰۰ مقاله و گزارش، تحلیل‌های فصلی مستند به آمار DLD، ۲۴ اپیزود پادکست و ۷ ابزار کاربردی را گرد هم آورده است. هدف ما این است که خریداران در هر مرحله از سرمایه‌گذاری، بر مبنای داده‌های راستی‌آزمایی‌شده و واقعیت‌های اقتصادی تصمیم‌گیری کنند — نه شعارهای تبلیغاتی.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. LATEST ARTICLES -->
+  <section id="latest-articles" class="bg-ink-900 py-24 md:py-32" aria-label="تازه‌ترین مقالات و یادداشت‌ها">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">تازه‌ترین مقالات تحلیلی</div>
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-bone">دانشنامه و وبلاگ تخصصی املاک</h2>
+        </div>
+        <a href="#latest-articles" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors mt-4 md:mt-0" aria-label="مشاهده همه مقالات">همه مقالات و تحلیل‌ها<svg class="w-4 h-4 rtl-flip" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-ink-800 border border-white-line rounded-sm overflow-hidden card-lift gold-glow group">
+          <div class="img-zoom aspect-[16/10]"><img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80" alt="راهنمای خریداران غیرمقیم ملک در دبی" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3"><span class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold">راهنمای خریدار</span><span class="w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span><span class="text-[10px] text-slate">زمان مطالعه: ۸ دقیقه</span></div>
+            <h3 class="text-lg font-bold text-bone mb-3 group-hover:text-gold-400 transition-colors leading-snug">نقشه راه خریداران غیرمقیم: حساب‌های اسکرو، سند رسمی و امور بانکی</h3>
+            <div class="flex items-center gap-2 pt-3 border-t border-white-line"><div class="w-6 h-6 rounded-full bg-gold-soft border border-gold-line"></div><span class="text-xs text-slate">تحریریه پژوهش زرین</span></div>
+          </div>
+        </article>
+        <article class="bg-ink-800 border border-white-line rounded-sm overflow-hidden card-lift gold-glow group">
+          <div class="img-zoom aspect-[16/10]"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="تحلیل نرخ ورود و ارزش جایگزینی در پروژه‌های پیش‌فروش دبی" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3"><span class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold">تحلیل استراتژیک</span><span class="w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span><span class="text-[10px] text-slate">زمان مطالعه: ۱۲ دقیقه</span></div>
+            <h3 class="text-lg font-bold text-bone mb-3 group-hover:text-gold-400 transition-colors leading-snug">قیمت ورود در برابر هزینه جایگزینی: نظریه پیش‌فروش در سال ۲۰۲۶</h3>
+            <div class="flex items-center gap-2 pt-3 border-t border-white-line"><div class="w-6 h-6 rounded-full bg-gold-soft border border-gold-line"></div><span class="text-xs text-slate">میز پژوهش‌های مالی زرین</span></div>
+          </div>
+        </article>
+        <article class="bg-ink-800 border border-white-line rounded-sm overflow-hidden card-lift gold-glow group">
+          <div class="img-zoom aspect-[16/10]"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=800&q=80" alt="راهنمای اخذ گلدن ویزای امارات از طریق سرمایه‌گذاری ملکی" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3"><span class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold">اقامت و ویزا</span><span class="w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span><span class="text-[10px] text-slate">زمان مطالعه: ۶ دقیقه</span></div>
+            <h3 class="text-lg font-bold text-bone mb-3 group-hover:text-gold-400 transition-colors leading-snug">گلدن ویزا با خرید ملک: جزئیات و الزامات حدنصاب ۲ میلیون درهمی</h3>
+            <div class="flex items-center gap-2 pt-3 border-t border-white-line"><div class="w-6 h-6 rounded-full bg-gold-soft border border-gold-line"></div><span class="text-xs text-slate">دپارتمان اقامت زرین</span></div>
+          </div>
+        </article>
+        <article class="bg-ink-800 border border-white-line rounded-sm overflow-hidden card-lift gold-glow group">
+          <div class="img-zoom aspect-[16/10]"><img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=800&q=80" alt="تحلیل سرمایه‌گذاری در دبی هیلز استیت" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3"><span class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold">بررسی منطقه</span><span class="w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span><span class="text-[10px] text-slate">زمان مطالعه: ۱۰ دقیقه</span></div>
+            <h3 class="text-lg font-bold text-bone mb-3 group-hover:text-gold-400 transition-colors leading-snug">دبی هیلز استیت: پرونده جامع بازدهی و رشد سرمایه در ۲۰۲۶</h3>
+            <div class="flex items-center gap-2 pt-3 border-t border-white-line"><div class="w-6 h-6 rounded-full bg-gold-soft border border-gold-line"></div><span class="text-xs text-slate">تیم تحلیل مناطق زرین</span></div>
+          </div>
+        </article>
+        <article class="bg-ink-800 border border-white-line rounded-sm overflow-hidden card-lift gold-glow group">
+          <div class="img-zoom aspect-[16/10]"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="مقایسه خرید پیش‌فروش در برابر ملک آماده در دبی" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3"><span class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold">مقایسه تخصصی</span><span class="w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span><span class="text-[10px] text-slate">زمان مطالعه: ۷ دقیقه</span></div>
+            <h3 class="text-lg font-bold text-bone mb-3 group-hover:text-gold-400 transition-colors leading-snug">پیش‌فروش یا ملک آماده تحویل: کدام گزینه در ۲۰۲۶ سودآورتر است؟</h3>
+            <div class="flex items-center gap-2 pt-3 border-t border-white-line"><div class="w-6 h-6 rounded-full bg-gold-soft border border-gold-line"></div><span class="text-xs text-slate">تحریریه پژوهش زرین</span></div>
+          </div>
+        </article>
+        <article class="bg-ink-800 border border-white-line rounded-sm overflow-hidden card-lift gold-glow group">
+          <div class="img-zoom aspect-[16/10]"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=800&q=80" alt="بررسی هزینه‌های شارژ ساختمان در دبی" class="w-full h-full object-cover" loading="lazy" decoding="async" width="800" height="500"></div>
+          <div class="p-6">
+            <div class="flex items-center gap-2 mb-3"><span class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold">شفافیت هزینه‌ها</span><span class="w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span><span class="text-[10px] text-slate">زمان مطالعه: ۵ دقیقه</span></div>
+            <h3 class="text-lg font-bold text-bone mb-3 group-hover:text-gold-400 transition-colors leading-snug">تشریح شارژ ساختمان و هزینه‌های جاری: فراتر از قیمت خرید چه می‌پردازید؟</h3>
+            <div class="flex items-center gap-2 pt-3 border-t border-white-line"><div class="w-6 h-6 rounded-full bg-gold-soft border border-gold-line"></div><span class="text-xs text-slate">دپارتمان بهره‌برداری زرین</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. MARKET REPORTS + PODCAST -->
+  <section id="market-reports" class="bg-ink-850 py-24 md:py-32" aria-label="گزارش‌های فصلی و پادکست">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Market Reports -->
+        <div class="bg-ink-900 border border-gold-line rounded-sm p-8 bg-gold-soft text-right">
+          <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">گزارش‌های دوره‌ای بازار</div>
+          <h3 class="text-2xl font-bold text-bone mb-4">هوش تحلیلی فصلی املاک دبی</h3>
+          <p class="text-sm text-ash leading-relaxed mb-6">گزارش‌های فصلی پژوهش زرین را دریافت نمایید — شامل تحلیل داده‌های رسمی DLD، روند قیمت‌ها بر اساس هر فوت مربع، تحلیل بازدهی خالص و ارزیابی عملکرد سازندگان.</p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center justify-between p-3 bg-ink-800 border border-white-line rounded-xs">
+              <div><div class="text-sm font-bold text-bone">گزارش سه‌ماهه سوم ۲۰۲۶ (Q3)</div><div class="text-xs text-slate">منتشرشده در اکتبر ۲۰۲۶ · ۴۲ صفحه گزارش تفصیلی</div></div>
+              <a href="/fa/consultation" class="text-xs font-bold text-gold-400 hover:text-gold-300">دریافت نسخه PDF ←</a>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-ink-800 border border-white-line rounded-xs">
+              <div><div class="text-sm font-bold text-bone">گزارش سه‌ماهه دوم ۲۰۲۶ (Q2)</div><div class="text-xs text-slate">منتشرشده در ژوئیه ۲۰۲۶ · ۳۸ صفحه</div></div>
+              <a href="/fa/consultation" class="text-xs font-bold text-gold-400 hover:text-gold-300">دریافت نسخه PDF ←</a>
+            </div>
+            <div class="flex items-center justify-between p-3 bg-ink-800 border border-white-line rounded-xs">
+              <div><div class="text-sm font-bold text-bone">گزارش سالیانه تحولات بازار ۲۰۲۵</div><div class="text-xs text-slate">منتشرشده در ژانویه ۲۰۲۶ · ۸۶ صفحه سند آماری</div></div>
+              <a href="/fa/consultation" class="text-xs font-bold text-gold-400 hover:text-gold-300">دریافت نسخه PDF ←</a>
+            </div>
+          </div>
+          <a href="/fa/consultation" class="inline-flex items-center gap-2 text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors">درخواست ارسال گزارش‌های فصلی به ایمیل<svg class="w-4 h-4 rtl-flip" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+        <!-- Podcast -->
+        <div class="bg-ink-900 border border-white-line rounded-sm p-8 text-right">
+          <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">پادکست تخصصی زرین</div>
+          <h3 class="text-2xl font-bold text-bone mb-4">شنیدن نبض بازار دبی</h3>
+          <p class="text-sm text-ash leading-relaxed mb-6">۲۴ اپیزود تخصصی شامل مصاحبه با مدیران سازندگان مطرح، بررسی تحلیلی مناطق، داستان‌های واقعی خریداران و الگوهای سرمایه‌گذاری برای خریداران ایرانی و بین‌المللی.</p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-4 p-3 bg-ink-800 border border-white-line rounded-xs hover:border-gold-line transition-colors group cursor-pointer">
+              <div class="w-10 h-10 bg-gold-400 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"><svg class="w-5 h-5 text-ink-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="flex-1"><div class="text-sm font-bold text-bone group-hover:text-gold-400 transition-colors">اپیزود ۲۴: یک دهه دگرگونی و شکوه در پالم جمیرا</div><div class="text-xs text-slate">۴۲ دقیقه · تحلیل بازدهی و کمبود زمین ساحلی</div></div>
+            </div>
+            <div class="flex items-center gap-4 p-3 bg-ink-800 border border-white-line rounded-xs hover:border-gold-line transition-colors group cursor-pointer">
+              <div class="w-10 h-10 bg-gold-400 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"><svg class="w-5 h-5 text-ink-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="flex-1"><div class="text-sm font-bold text-bone group-hover:text-gold-400 transition-colors">اپیزود ۲۳: باورهای غلط درباره گلدن ویزا و واقعیت‌های قانونی</div><div class="text-xs text-slate">۳۸ دقیقه · پاسخ به دغدغه‌های خریداران</div></div>
+            </div>
+            <div class="flex items-center gap-4 p-3 bg-ink-800 border border-white-line rounded-xs hover:border-gold-line transition-colors group cursor-pointer">
+              <div class="w-10 h-10 bg-gold-400 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform"><svg class="w-5 h-5 text-ink-900" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+              <div class="flex-1"><div class="text-sm font-bold text-bone group-hover:text-gold-400 transition-colors">اپیزود ۲۲: اعتبارسنجی سازندگان پیش‌فروش و پیشگیری از تاخیر</div><div class="text-xs text-slate">۴۵ دقیقه · تحلیل شاخص‌های مالی RERA</div></div>
+            </div>
+          </div>
+          <span class="inline-flex items-center gap-2 text-sm font-semibold text-gold-400">شنیدن در پلتفرم‌های کست‌باکس، اسپاتیفای و اپل‌پادکست</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. CALCULATORS HUB -->
+  <section class="bg-ink-900 py-24 md:py-32" aria-label="جعبه‌ابزار و ماشین‌حساب‌های مالی">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="text-center mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">ابزارهای محاسباتی رایگان</div>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-bone">۷ ماشین‌حساب هوشمند املاک</h2>
+        <p class="text-ash max-w-2xl mx-auto mt-4 leading-relaxed">محاسبات آنی و دقیق مالی برای برنامه‌ریزی هوشمندانه سرمایه‌گذاری ملکی در دبی بدون نیاز به ثبت‌نام.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+        <div class="group bg-ink-800 border border-white-line rounded-sm p-6 hover:border-gold-line transition-all card-lift">
+          <div class="w-12 h-12 mx-auto mb-4 border border-gold-line rounded-xs flex items-center justify-center group-hover:bg-gold-soft transition-colors"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8"/></svg></div>
+          <div class="text-sm font-bold text-bone mb-1">وام مسکن دبی</div><div class="text-xs text-slate">اقساط ماهانه بانکی</div>
+        </div>
+        <div class="group bg-ink-800 border border-white-line rounded-sm p-6 hover:border-gold-line transition-all card-lift">
+          <div class="w-12 h-12 mx-auto mb-4 border border-gold-line rounded-xs flex items-center justify-center group-hover:bg-gold-soft transition-colors"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
+          <div class="text-sm font-bold text-bone mb-1">بازدهی سرمایه (ROI)</div><div class="text-xs text-slate">سود خالص اجاره‌داری</div>
+        </div>
+        <div class="group bg-ink-800 border border-white-line rounded-sm p-6 hover:border-gold-line transition-all card-lift">
+          <div class="w-12 h-12 mx-auto mb-4 border border-gold-line rounded-xs flex items-center justify-center group-hover:bg-gold-soft transition-colors"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+          <div class="text-sm font-bold text-bone mb-1">اقساط پیش‌فروش</div><div class="text-xs text-slate">جدول زمان‌بندی ساخت</div>
+        </div>
+        <div class="group bg-ink-800 border border-gold-line rounded-sm p-6 hover:border-gold-border transition-all card-lift bg-gold-soft">
+          <div class="w-12 h-12 mx-auto mb-4 border border-gold-border rounded-xs flex items-center justify-center group-hover:bg-gold-tint transition-colors bg-gold-soft"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg></div>
+          <div class="text-sm font-bold text-bone mb-1">شارژ و نگهداری</div><div class="text-xs text-slate">برآورد هزینه‌های سالیانه</div>
+        </div>
+        <div class="group bg-ink-800 border border-white-line rounded-sm p-6 hover:border-gold-line transition-all card-lift">
+          <div class="w-12 h-12 mx-auto mb-4 border border-gold-line rounded-xs flex items-center justify-center group-hover:bg-gold-soft transition-colors"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8"/></svg></div>
+          <div class="text-sm font-bold text-bone mb-1">مبدل چندارزی</div><div class="text-xs text-slate">تومان، درهم، دلار و تتر</div>
+        </div>
+        <div class="group bg-ink-800 border border-white-line rounded-sm p-6 hover:border-gold-line transition-all card-lift">
+          <div class="w-12 h-12 mx-auto mb-4 border border-gold-line rounded-xs flex items-center justify-center group-hover:bg-gold-soft transition-colors"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+          <div class="text-sm font-bold text-bone mb-1">ارزیابی گلدن ویزا</div><div class="text-xs text-slate">بررسی نصاب قانونی دارایی</div>
+        </div>
+        <div class="group bg-ink-800 border border-white-line rounded-sm p-6 hover:border-gold-line transition-all card-lift">
+          <div class="w-12 h-12 mx-auto mb-4 border border-gold-line rounded-xs flex items-center justify-center group-hover:bg-gold-soft transition-colors"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <div class="text-sm font-bold text-bone mb-1">تطبیق هوشمند ملک</div><div class="text-xs text-slate">جستجو بر مبنای تارگت مالی</div>
+        </div>
+        <div class="group bg-ink-800 border border-gold-line rounded-sm p-6 hover:border-gold-border transition-all card-lift bg-gold-soft flex flex-col items-center justify-center">
+          <div class="w-12 h-12 mx-auto mb-4 border border-gold-border rounded-xs flex items-center justify-center bg-gold-soft"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg></div>
+          <div class="text-sm font-bold text-bone mb-1">کل ابزارها</div><div class="text-xs text-slate">دسترسی رایگان و آنی</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. GUIDES + GLOSSARY + FAQ + BROCHURES -->
+  <section class="bg-ink-850 py-24 md:py-32" aria-label="راهنماها و کتابخانه مرجع">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="text-center mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">کتابخانه مرجع سرمایه‌گذار</div>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-bone">راهنماها، اصطلاح‌نامه و بروشورها</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-right">
+        <div class="bg-ink-900 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift">
+          <div class="w-12 h-12 border border-gold-line rounded-xs flex items-center justify-center mb-6 bg-gold-soft"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div>
+          <h3 class="text-xl font-bold text-bone mb-3">راهنمای جامع خریدار</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">دستورالعمل گام‌به‌گام برای خریداران اولی، غیرمقیم‌ها و سرمایه‌گذاران باسابقه.</p>
+          <a href="/fa/consultation" class="text-xs font-bold text-gold-400 hover:text-gold-300">درخواست مشاوره اختصاصی ←</a>
+        </div>
+        <div class="bg-ink-900 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift">
+          <div class="w-12 h-12 border border-gold-line rounded-xs flex items-center justify-center mb-6 bg-gold-soft"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+          <h3 class="text-xl font-bold text-bone mb-3">اصطلاح‌نامه املاک دبی</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">تشریح بیش از ۱۰۰ مفهوم کاربردی — از DLD و RERA تا عقود، حساب اسکرو و نرخ ایبور.</p>
+          <a href="#faq-section" class="text-xs font-bold text-gold-400 hover:text-gold-300">مطالعه اصطلاحات کلیدی ←</a>
+        </div>
+        <div class="bg-ink-900 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift">
+          <div class="w-12 h-12 border border-gold-line rounded-xs flex items-center justify-center mb-6 bg-gold-soft"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093M12 17h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3 class="text-xl font-bold text-bone mb-3">پاسخ به سوالات متداول</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">پاسخ‌های شفاف به پرتکرارترین پرسش‌های خریداران ایرانی پیرامون اقامت، هزینه‌ها و انتقال وجه.</p>
+          <a href="#faq-section" class="text-xs font-bold text-gold-400 hover:text-gold-300">مشاهده پرسش‌ها ←</a>
+        </div>
+        <div class="bg-ink-900 border border-gold-line rounded-sm p-8 hover:border-gold-border transition-all card-lift bg-gold-soft">
+          <div class="w-12 h-12 border border-gold-border rounded-xs flex items-center justify-center mb-6 bg-gold-soft"><svg class="w-6 h-6 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg></div>
+          <h3 class="text-xl font-bold text-bone mb-3">آرشیو بروشور پروژه‌ها</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">دریافت فایل کاتالوگ، پلان معماری و شرایط پرداخت پروژه‌های برتر مسکونی دبی.</p>
+          <a href="/fa/consultation" class="text-xs font-bold text-gold-400 hover:text-gold-300">دریافت فایل‌ها ←</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. MARKET DATA PREVIEW -->
+  <section class="bg-ink-900 py-24 md:py-32" aria-label="پیش‌نمایش داده‌های بازار">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">آمار زنده معاملات</div>
+          <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">رصد روزانه نبض اقتصادی دبی</h2>
+          <p class="text-lg text-ash leading-relaxed mb-8">داشبورد هوش بازار زرین مستقیماً به سامانه‌های داده‌ای اداره اراضی دبی (DLD) متصل است و تغییرات قیمت بر فوت مربع، حجم تراکنش‌ها و عملکرد مناطق را پایش می‌کند.</p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3"><div class="flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft"><svg class="w-4 h-4 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-sm text-bone">آمار روزانه تراکنش‌های رسمی DLD</span></div>
+            <div class="flex items-start gap-3"><div class="flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft"><svg class="w-4 h-4 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-sm text-bone">روند نوسانات قیمت بر مبنای هر فوت مربع در هر منطقه</span></div>
+            <div class="flex items-start gap-3"><div class="flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft"><svg class="w-4 h-4 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-sm text-bone">شاخص هزینه‌های شارژ و نگهداری تفکیک‌شده برج‌ها</span></div>
+            <div class="flex items-start gap-3"><div class="flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft"><svg class="w-4 h-4 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-sm text-bone">محاسبه بازدهی خالص اجاره دلاری</span></div>
+          </div>
+          <a href="/fa/consultation" class="inline-flex items-center px-8 py-4 border border-gold-line text-gold-400 text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-400 hover:text-ink-900 transition-all duration-300" aria-label="درخواست گزارش تحلیلی اختصاصی">درخواست گزارش تحلیلی برای ملک شما<svg class="w-4 h-4 mr-2 rtl-flip" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+        </div>
+        <div class="glass border border-gold-line rounded-sm p-8 text-right">
+          <div class="text-xs uppercase tracking-wider text-gold-400 font-semibold mb-6 pb-6 border-b border-white-line">نمای کلی بازار — سه‌ماهه سوم ۲۰۲۶</div>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">میانگین قیمت هر فوت مربع در دبی</span><span dir="ltr" class="text-lg font-bold text-gold-400 stat-number">AED 1,650/sqft</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">رشد سالیانه ارزش دارایی</span><span dir="ltr" class="text-lg font-bold text-success stat-number">+12%</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">میانگین سود ناخالص اجاره</span><span dir="ltr" class="text-lg font-bold text-bone stat-number">6.5%</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">منطقه پیشتاز در بازدهی اجاره</span><span class="text-lg font-bold text-bone">بیزنس بی (Business Bay)</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">منطقه پیشتاز در رشد سرمایه</span><span class="text-lg font-bold text-bone">پالم جمیرا (Palm Jumeirah)</span></div>
+            <div class="flex justify-between items-center py-3"><span class="text-sm text-ash">تعداد کل معاملات ثبت‌شده (Q3)</span><span dir="ltr" class="text-lg font-bold text-gold-400 stat-number">38,247</span></div>
+          </div>
+          <p class="text-[10px] text-slate mt-6">منبع: اسناد رسمی دپارتمان اراضی دبی (DLD)، سه‌ماهه سوم ۲۰۲۶.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. FAQ -->
+  <section id="faq-section" class="bg-ink-850 py-24 md:py-32" aria-label="پرسش‌های متداول تحلیلی">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-12">
+      <div class="text-center mb-16">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">پرسش‌های متداول</div>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-bone">پرسش‌های کلیدی بازار املاک</h2>
+      </div>
+      <div class="space-y-px bg-white-line">
+        <details class="bg-ink-900 group"><summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-lg font-semibold text-bone group-hover:text-gold-400 transition-colors">وضعیت کنونی بازار املاک دبی در سال ۲۰۲۶ چگونه است؟</span><span class="faq-icon flex-shrink-0 mr-4 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg></span></summary><div class="px-6 pb-6"><p class="text-ash leading-relaxed">بازار املاک دبی در سال ۲۰۲۶ با رشد سالیانه ۱۲ درصدی مواجه بوده است. مناطق ساحلی و شاخص رشد سرمایه بالایی تجربه کرده‌اند، در حالی که مناطق مرکزی بازدهی دلاری پایداری از محل اجاره ایجاد می‌کنند.</p></div></details>
+        <details class="bg-ink-900 group"><summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-lg font-semibold text-bone group-hover:text-gold-400 transition-colors">گزارش‌های فصلی زرین بر چه اساسی تنظیم می‌شوند؟</span><span class="faq-icon flex-shrink-0 mr-4 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg></span></summary><div class="px-6 pb-6"><p class="text-ash leading-relaxed">گزارش‌های زرین بر مبنای قراردادهای قطعی ثبت‌شده در سامانه دپارتمان اراضی دبی (DLD) و استعلام حساب‌های اسکرو در RERA تنظیم می‌شوند و حاوی تحلیل ریسک‌های عرضه و تقاضا هستند.</p></div></details>
+        <details class="bg-ink-900 group"><summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-lg font-semibold text-bone group-hover:text-gold-400 transition-colors">میانگین بازدهی اجاره در دبی چقدر است؟</span><span class="faq-icon flex-shrink-0 mr-4 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg></span></summary><div class="px-6 pb-6"><p class="text-ash leading-relaxed">بازدهی ناخالص سالیانه در دبی بین ۵ تا ۹ درصد است. املاک مسکونی در مناطق Business Bay و Dubai Marina معمولاً بازدهی اجاره بالاتری دارند و املاک پالم جمیرا رشد سرمایه‌ای چشمگیرتری ثبت کرده‌اند.</p></div></details>
+        <details class="bg-ink-900 group"><summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-lg font-semibold text-bone group-hover:text-gold-400 transition-colors">پادکست زرین برای سرمایه‌گذاران چه مزیتی دارد؟</span><span class="faq-icon flex-shrink-0 mr-4 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg></span></summary><div class="px-6 pb-6"><p class="text-ash leading-relaxed">پادکست زرین نکات عملی، هشدارهای معاملاتی، نحوه راستی‌آزمایی پروژه‌های آف‌پلان و راهکارهای قانونی انتقال سرمایه را با حضور کارشناسان مطرح و بدون سوگیری پورسانتی تشریح می‌کند.</p></div></details>
+        <details class="bg-ink-900 group"><summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-lg font-semibold text-bone group-hover:text-gold-400 transition-colors">ماشین‌حساب‌های مالی چه کمکی به تصمیم‌گیری می‌کنند؟</span><span class="faq-icon flex-shrink-0 mr-4 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg></span></summary><div class="px-6 pb-6"><p class="text-ash leading-relaxed">این ابزارها امکان شبیه‌سازی اقساط، هزینه واقعی شارژ، محاسبه سود خالص پس از کسر تمام مخارج و تخمین ارزش دلاری بازدهی را فراهم می‌کنند.</p></div></details>
+        <details class="bg-ink-900 group"><summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-lg font-semibold text-bone group-hover:text-gold-400 transition-colors">داده‌های بازار هر چند وقت یک‌بار به‌روزرسانی می‌شوند؟</span><span class="faq-icon flex-shrink-0 mr-4 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg></span></summary><div class="px-6 pb-6"><p class="text-ash leading-relaxed">داشبورد آمار بازار زرین هر ۲۴ ساعت یک بار داده‌های رسمی DLD را دریافت و جدول تحلیل‌ها را تازه‌سازی می‌نماید.</p></div></details>
+        <details class="bg-ink-900 group"><summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-lg font-semibold text-bone group-hover:text-gold-400 transition-colors">چگونه می‌توان بروشور پروژه‌ها را دریافت کرد؟</span><span class="faq-icon flex-shrink-0 mr-4 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg></span></summary><div class="px-6 pb-6"><p class="text-ash leading-relaxed">کافی است از طریق فرم مشاوره یا واتس‌اپ با مشاوران ما در ارتباط باشید تا فایل کامل پروژه‌ها را دریافت نمایید.</p></div></details>
+        <details class="bg-ink-900 group"><summary class="flex items-center justify-between p-6 cursor-pointer"><span class="text-lg font-semibold text-bone group-hover:text-gold-400 transition-colors">اصطلاح‌نامه چه کمکی به خریداران می‌کند؟</span><span class="faq-icon flex-shrink-0 mr-4 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg></span></summary><div class="px-6 pb-6"><p class="text-ash leading-relaxed">این مجموعه به شما کمک می‌کند تمام مفاد قراردادهای خرید (SPA)، تعهدات سازنده، ضوابط اداره اراضی و سازوکارهای قانونی را پیش از امضا با دید باز متوجه شوید.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. NEWSLETTER + CTA -->
+  <section class="bg-ink-900 py-24 md:py-32 relative overflow-hidden" aria-label="عضویت در خبرنامه تحلیلی">
+    <div class="absolute inset-0 opacity-5"><div class="absolute inset-0" style="background-image:radial-gradient(circle at 20% 50%,#C8AB83 0%,transparent 50%);"></div></div>
+    <div class="relative max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid lg:grid-cols-2 gap-16">
+        <div>
+          <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">خبرنامه هوش تحلیلی ماهانه</div>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-bone mb-6">آگاهانه سرمایه‌گذاری کنید، یک گام جلوتر باشید</h2>
+          <p class="text-lg text-ash leading-relaxed mb-8">در خبرنامه ماهانه زرین عضو شوید. خلاصه گزارش‌های فصلی بازار، هشدارهای فرصت‌های طلایی، اپیزودهای پادکست و تحلیل‌های عمیق را در ایمیل خود دریافت نمایید. بدون هرزنامه؛ لغو اشتراک در هر لحظه امکان‌پذیر است.</p>
+          <div class="space-y-4 mb-8">
+            <div class="flex items-center gap-4"><div class="flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft"><svg class="w-4 h-4 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-sm text-bone">چکیده گزارش‌های ماهانه و فصلی بازار</span></div>
+            <div class="flex items-center gap-4"><div class="flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft"><svg class="w-4 h-4 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-sm text-bone">اطلاع‌رسانی عرضه پروژه‌های ممتاز پیش‌فروش</span></div>
+            <div class="flex items-center gap-4"><div class="flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft"><svg class="w-4 h-4 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-sm text-bone">اپیزودهای تازه پادکست املاک زرین</span></div>
+            <div class="flex items-center gap-4"><div class="flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft"><svg class="w-4 h-4 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><span class="text-sm text-bone">بدون هرزنامه — لغو اشتراک با یک کلیک</span></div>
+          </div>
+        </div>
+        <div class="bg-ink-800 border border-white-line rounded-sm p-8 text-right" id="newsletter-container">
+          <form id="newsletter-form" class="space-y-5" action="/newsletter" method="POST" aria-label="فرم اشتراک در خبرنامه">
+            <div><label for="name" class="block text-xs uppercase tracking-wider text-slate font-semibold mb-2">نام و نام خانوادگی *</label><input id="name" name="name" type="text" required autocomplete="name" class="w-full bg-ink-900 border border-white-line rounded-xs px-4 py-3 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors" placeholder="نام شریف شما" aria-required="true"></div>
+            <div><label for="email" class="block text-xs uppercase tracking-wider text-slate font-semibold mb-2">پست الکترونیکی *</label><input id="email" name="email" type="email" required autocomplete="email" class="w-full bg-ink-900 border border-white-line rounded-xs px-4 py-3 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors" placeholder="email@example.com" aria-required="true"></div>
+            <div><label for="interests" class="block text-xs uppercase tracking-wider text-slate font-semibold mb-2">حوزه علاقه‌مندی شما</label>
+              <select id="interests" name="interests" class="w-full bg-ink-900 border border-white-line rounded-xs px-4 py-3 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors">
+                <option value="">انتخاب اولویت دریافت گزارش</option>
+                <option value="buying">خرید ملک مسکونی</option>
+                <option value="investing">سرمایه‌گذاری با سود دلاری</option>
+                <option value="off-plan">پروژه‌های پیش‌فروش</option>
+                <option value="visa">گلدن ویزای امارات</option>
+                <option value="market-data">آمار و روندهای بازار DLD</option>
+              </select>
+            </div>
+            <button type="submit" id="newsletter-submit-btn" class="w-full py-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold cursor-pointer" aria-label="عضویت در خبرنامه تحلیلی">عضویت در خبرنامه تحلیلی</button>
+            <p class="text-xs text-slate text-center">عضویت به منزله پذیرش <a href="/fa" class="text-gold-400 hover:underline">سیاست حفظ حریم خصوصی</a> زرین است.</p>
+          </form>
+          <div id="newsletter-success" class="hidden text-center py-8">
+            <div class="w-12 h-12 mx-auto mb-4 border border-gold-line rounded-xs flex items-center justify-center text-gold-400 bg-gold-soft">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-bone mb-2">اشتراک شما با موفقیت ثبت شد</h3>
+            <p class="text-ash text-sm leading-relaxed mb-6">به جامعه خریداران و سرمایه‌گذاران همراه زرین خوش آمدید. نخستین بسته هوش تحلیلی بازار برای شما ارسال گردید.</p>
+            <span class="inline-block px-4 py-2 bg-gold-soft border border-gold-line text-gold-400 text-xs font-semibold rounded-xs">تاییدشده و فعال</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-ink-950 border-t border-white-line pt-20 pb-8 text-right" role="contentinfo">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
+        <div class="col-span-2 lg:col-span-1">
+          <a href="/fa" class="flex items-center gap-2 mb-4" aria-label="صفحه اصلی زرین"><span class="font-sans font-extrabold text-2xl tracking-tight text-bone">ZARIN</span></a>
+          <p class="text-sm text-slate leading-relaxed mb-6">مرکز هوش تحلیلی و مشاوره سرمایه‌گذاری املاک دبی با دو دهه تجربه در بازار از سال ۲۰۰۵.</p>
+          <div class="flex gap-3">
+            <a href="https://instagram.com/zarin.realestate" class="w-10 h-10 border border-white-line rounded-xs flex items-center justify-center text-ash hover:text-gold-400 hover:border-gold-line transition-all" aria-label="اینستاگرام"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://wa.me/971586901231" class="w-10 h-10 border border-white-line rounded-xs flex items-center justify-center text-ash hover:text-gold-400 hover:border-gold-line transition-all" aria-label="واتس‌اپ"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="بینش و تحلیل"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">تحلیل بازار</h2><ul class="space-y-2"><li><a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">گزارش‌های فصلی</a></li><li><a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">مقالات و پژوهش‌ها</a></li><li><a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">ماشین‌حساب‌های مالی</a></li><li><a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">پرسش‌های متداول</a></li></ul></nav>
+        <nav aria-label="املاک و پروژه‌ها"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">املاک و پروژه‌ها</h2><ul class="space-y-2"><li><a href="/fa/properties" class="text-sm text-ash hover:text-gold-400 transition-colors">املاک آماده</a></li><li><a href="/fa/off-plan" class="text-sm text-ash hover:text-gold-400 transition-colors">پیش‌فروش (آف‌پلان)</a></li><li><a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">مناطق دبی</a></li><li><a href="/fa/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">گلدن ویزا</a></li></ul></nav>
+        <nav aria-label="خدمات حقوقی و مالی"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">خدمات ما</h2><ul class="space-y-2"><li><a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">مشاوره خرید</a></li><li><a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">وام مسکن</a></li><li><a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">امور حقوقی و سند</a></li><li><a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">کارشناسی و ارزیابی</a></li></ul></nav>
+        <nav aria-label="اصالت زرین"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">اصالت زرین</h2><ul class="space-y-2"><li><a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">داستان ما</a></li><li><a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">تیم و مشاوران</a></li><li><a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">دیدگاه مشتریان</a></li><li><a href="/fa/consultation" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">رزرو مشاوره</a></li></ul></nav>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 py-8 border-t border-white-line">
+        <address class="not-italic"><div class="text-xs uppercase tracking-wider text-slate mb-2">دفتر دبی</div><p class="text-sm text-ash">خیابان شیخ زاید<br>داون‌تاون دبی، امارات متحده عربی</p></address>
+        <div><div class="text-xs uppercase tracking-wider text-slate mb-2">تلفن مستقیم</div><a href="tel:+971586901231" class="text-sm text-bone hover:text-gold-400 transition-colors"><span dir="ltr" class="tabular-nums">+971 58 690 1231</span></a></div>
+        <div><div class="text-xs uppercase tracking-wider text-slate mb-2">پست الکترونیکی</div><a href="mailto:advisory@zarinrealestate.com" class="text-sm text-bone hover:text-gold-400 transition-colors"><span dir="ltr">advisory@zarinrealestate.com</span></a></div>
+      </div>
+      <div class="pt-8 border-t border-white-line flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate">
+        <div>&copy; ۲۰۲۶ املاک زرین. تمامی حقوق محفوظ است. کارگزاری رسمی دارای پروانه RERA.</div>
+        <nav aria-label="لینک‌های قانونی" class="flex flex-wrap items-center gap-4 text-xs">
+          <a href="/fa" class="text-slate hover:text-gold-400 transition-colors">حریم خصوصی</a>
+          <a href="/fa" class="text-slate hover:text-gold-400 transition-colors">شرایط و ضوابط</a>
+          <a href="/fa" class="text-slate hover:text-gold-400 transition-colors">نقشه سایت</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/971586901231" class="sticky-whatsapp fixed bottom-6 left-6 z-[800] w-14 h-14 bg-gold-400 rounded-full shadow-monolith items-center justify-center hover:bg-gold-300 transition-colors" aria-label="واتس‌اپ زرین"><svg class="w-7 h-7 text-ink-900 mx-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+
+  <script defer>
+    const header=document.getElementById('site-header');let ticking=false;
+    window.addEventListener('scroll',()=>{if(!ticking){window.requestAnimationFrame(()=>{if(window.scrollY>60){header.style.backgroundColor='rgba(10,11,14,0.85)';header.style.backdropFilter='blur(20px)';header.style.borderBottomColor='rgba(200,171,131,0.15)';header.style.padding='0.85rem 0';}else{header.style.backgroundColor='transparent';header.style.backdropFilter='none';header.style.borderBottomColor='transparent';header.style.padding='1.25rem 0';}ticking=false;});ticking=true;}});
+    const ds=document.querySelectorAll('details');ds.forEach(d=>{d.addEventListener('toggle',()=>{if(d.open){ds.forEach(x=>{if(x!==d)x.open=false;});}});});
+
+    const nf=document.getElementById('newsletter-form');
+    if(nf){
+      nf.addEventListener('submit',(e)=>{
+        e.preventDefault();
+        const sc=document.getElementById('newsletter-success');
+        if(sc){
+          nf.classList.add('hidden');
+          sc.classList.remove('hidden');
+        }
+      });
+    }
+  </script>
+  <script type="module" src="/scripts/nav.js"></script>
+</body>
+</html>`;
+
+const faInsightsPath = path.join(rootDir, 'fa', 'insights.html');
+const faInsightsDir = path.join(rootDir, 'fa', 'insights');
+const faInsightsIndexPath = path.join(faInsightsDir, 'index.html');
+
+if (!fs.existsSync(faInsightsDir)) {
+  fs.mkdirSync(faInsightsDir, { recursive: true });
+}
+
+fs.writeFileSync(faInsightsPath, htmlContent, 'utf8');
+fs.writeFileSync(faInsightsIndexPath, htmlContent, 'utf8');
+console.log('✅ Generated fa/insights.html and fa/insights/index.html');

@@ -2351,19 +2351,57 @@ let activeLang = 'en';
 
 export function getCurrentLanguage() {
   try {
-    return localStorage.getItem('zarin_lang') || activeLang;
+    if (typeof window !== 'undefined' && window.location) {
+      const p = (window.location.pathname || '').replace(/\/$/, '');
+      if (p === '/fa' || p.startsWith('/fa/') || p.startsWith('/fa.')) {
+        return 'fa';
+      }
+    }
+    if (typeof document !== 'undefined' && document.documentElement && document.documentElement.lang) {
+      if (document.documentElement.lang === 'fa') return 'fa';
+      if (document.documentElement.lang === 'en') return 'en';
+    }
+    const saved = typeof localStorage !== 'undefined' ? localStorage.getItem('zarin_lang') : null;
+    if (saved === 'fa' || saved === 'en') {
+      return saved;
+    }
+    return activeLang;
   } catch (e) {
     return activeLang;
   }
 }
 
-export function setLanguage(lang) {
+export function setLanguage(lang, options = {}) {
   if (!translations[lang]) return;
   activeLang = lang;
 
   try {
     localStorage.setItem('zarin_lang', lang);
   } catch (e) {}
+
+  // If explicitly switching language by user action, route to corresponding counterpart page
+  if (options && options.userAction && typeof window !== 'undefined' && window.location) {
+    let clean = (window.location.pathname || '/').split('?')[0].split('#')[0];
+    if (!clean.startsWith('/')) clean = '/' + clean;
+    clean = clean.replace(/\/index\.html$/, '').replace(/\.html$/, '');
+    if (clean === '') clean = '/';
+
+    let targetUrl = clean;
+    if (lang === 'fa') {
+      if (clean === '/' || clean === '') targetUrl = '/fa';
+      else if (!clean.startsWith('/fa')) targetUrl = '/fa' + clean;
+    } else {
+      if (clean === '/fa' || clean === '/fa/') targetUrl = '/';
+      else if (clean.startsWith('/fa/')) targetUrl = clean.replace(/^\/fa/, '') || '/';
+    }
+
+    const curPath = (window.location.pathname || '').replace(/\/$/, '') || '/';
+    const normTarget = targetUrl.replace(/\/$/, '') || '/';
+    if (curPath !== normTarget) {
+      window.location.href = targetUrl;
+      return;
+    }
+  }
 
   document.documentElement.lang = lang;
   document.documentElement.dir = lang === 'fa' ? 'rtl' : 'ltr';
@@ -2438,9 +2476,37 @@ export function setLanguage(lang) {
     mobileLangTrigger?.setAttribute('aria-expanded', 'false');
   }
 
+  // Ensure navigation links in header & mobile drawer point to the active language route
+  const targetConsultationHref = lang === 'fa' ? '/fa/consultation' : '/consultation';
+  document.querySelectorAll('header a[href="/consultation"], header a[href="/fa/consultation"], #mobile-menu a[href="/consultation"], #mobile-menu a[href="/fa/consultation"]').forEach(a => {
+    a.setAttribute('href', targetConsultationHref);
+  });
+
+  const mainRoutes = ['properties', 'off-plan', 'areas', 'private-office', 'services', 'visas', 'insights', 'heritage'];
+  document.querySelectorAll('header nav a[href], #mobile-menu a[href]').forEach(a => {
+    const href = a.getAttribute('href');
+    if (!href) return;
+    for (const r of mainRoutes) {
+      if (lang === 'fa') {
+        if (href === `/${r}` || href === `/${r}.html` || href === `/${r}/`) {
+          a.setAttribute('href', `/fa/${r}`);
+          break;
+        }
+      } else {
+        if (href === `/fa/${r}` || href === `/fa/${r}.html` || href === `/fa/${r}/`) {
+          a.setAttribute('href', `/${r}`);
+          break;
+        }
+      }
+    }
+  });
+
   // Dispatch global event for other scripts/components
   if (typeof window !== 'undefined') {
-    window.dispatchEvent(new CustomEvent('zarin:languageChange', { detail: { lang } }));
+    const CustomEvt = window.CustomEvent || (typeof CustomEvent !== 'undefined' ? CustomEvent : null);
+    if (CustomEvt) {
+      window.dispatchEvent(new CustomEvt('zarin:languageChange', { detail: { lang } }));
+    }
   }
 }
 
@@ -2510,6 +2576,11 @@ export function initMobileLanguageDropdown() {
 export function initI18n() {
   const initialLang = getCurrentLanguage();
 
+  if (initialLang && typeof document !== 'undefined') {
+    document.documentElement.lang = initialLang;
+    document.documentElement.dir = initialLang === 'fa' ? 'rtl' : 'ltr';
+  }
+
   document.querySelectorAll('.lang-btn').forEach(btn => {
     if (!btn.dataset.i18nBound) {
       btn.dataset.i18nBound = 'true';
@@ -2517,15 +2588,16 @@ export function initI18n() {
         e.preventDefault();
         const targetLang = btn.dataset.lang;
         if (targetLang) {
-          setLanguage(targetLang);
+          setLanguage(targetLang, { userAction: true });
         }
       });
     }
   });
 
   initMobileLanguageDropdown();
-  setLanguage(initialLang);
+  setLanguage(initialLang, { userAction: false });
 }
+
 
 // Global exposure
 if (typeof window !== 'undefined') {

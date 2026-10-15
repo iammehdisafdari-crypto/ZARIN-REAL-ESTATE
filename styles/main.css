@@ -574,15 +574,60 @@ details[open] .faq-icon { transform: rotate(45deg); }
   padding-right: 0.625rem !important;
 }
 
-[dir="rtl"] a[href^="tel:"],
-[dir="rtl"] a[href^="mailto:"],
+/* ═══ CTA Contact Card Component (Locale-Aware RTL / LTR Architecture) ═══ */
+.cta-contact-card,
+.cta-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* In RTL: Flex main-axis starts on the RIGHT.
+   Child 1 (Icon box) sits on the RIGHT.
+   Child 2 (Text container) sits to the LEFT of the icon.
+   Text and digits align towards the icon (right-aligned). */
+[dir="rtl"] .cta-contact-card,
+[dir="rtl"] .cta-contact-item,
+[dir="rtl"] .space-y-4 > a[href^="tel:"].flex,
+[dir="rtl"] .space-y-4 > a[href*="wa.me"].flex,
+[dir="rtl"] .space-y-4 > a[href^="mailto:"].flex {
+  direction: rtl !important;
+  display: flex !important;
+  align-items: center !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .cta-contact-card > .cta-contact-text,
+[dir="rtl"] .cta-contact-card > div:not(.flex-shrink-0),
+[dir="rtl"] .cta-contact-item > div:not(.flex-shrink-0),
+[dir="rtl"] .space-y-4 > a.flex > div:not(.flex-shrink-0) {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Latin contact numbers / emails maintain LTR character sequence but align to the right next to the icon */
+[dir="rtl"] .cta-contact-card [dir="ltr"],
+[dir="rtl"] .cta-contact-item [dir="ltr"],
+[dir="rtl"] .space-y-4 > a.flex [dir="ltr"],
 [dir="rtl"] .phone-number,
 [dir="rtl"] .email-address {
   direction: ltr !important;
   unicode-bidi: isolate !important;
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
+  text-align: right !important;
 }
+
+/* Isolated telephone & email inline links (e.g. in footer or text links, not full CTA cards) */
+[dir="rtl"] p a[href^="tel:"],
+[dir="rtl"] p a[href^="mailto:"],
+[dir="rtl"] address a[href^="tel:"],
+[dir="rtl"] address a[href^="mailto:"],
+[dir="rtl"] footer a[href^="tel:"],
+[dir="rtl"] footer a[href^="mailto:"] {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
+
 
 
 

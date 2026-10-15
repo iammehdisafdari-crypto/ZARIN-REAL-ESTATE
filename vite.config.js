@@ -36,7 +36,19 @@ export default defineConfig({
       name: 'form-post-middleware',
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
-          if (req.method === 'POST' && (req.url === '/consultation' || req.url === '/consultation/')) {
+          if (req.method === 'POST' && (req.url === '/consultation' || req.url === '/consultation/' || req.url === '/consultation/submit' || req.url === '/fa/consultation' || req.url === '/fa/consultation/' || req.url === '/fa/consultation/submit')) {
+            const accept = req.headers['accept'] || '';
+            if (accept.includes('application/json')) {
+              res.statusCode = 200;
+              res.setHeader('Content-Type', 'application/json; charset=utf-8');
+              res.end(JSON.stringify({
+                success: true,
+                bookingId: 'ZR-' + Date.now().toString(36).toUpperCase(),
+                advisor: 'Senior Client Advisor (Private Office)',
+                message: 'Thank you for your confidential inquiry. A senior director from ZARIN will reach out within 24 hours.'
+              }));
+              return;
+            }
             res.statusCode = 200;
             res.setHeader('Content-Type', 'text/html; charset=utf-8');
             res.end(consultationSuccessHtml);
@@ -53,7 +65,19 @@ export default defineConfig({
       },
       configurePreviewServer(server) {
         server.middlewares.use((req, res, next) => {
-          if (req.method === 'POST' && (req.url === '/consultation' || req.url === '/consultation/')) {
+          if (req.method === 'POST' && (req.url === '/consultation' || req.url === '/consultation/' || req.url === '/consultation/submit' || req.url === '/fa/consultation' || req.url === '/fa/consultation/' || req.url === '/fa/consultation/submit')) {
+            const accept = req.headers['accept'] || '';
+            if (accept.includes('application/json')) {
+              res.statusCode = 200;
+              res.setHeader('Content-Type', 'application/json; charset=utf-8');
+              res.end(JSON.stringify({
+                success: true,
+                bookingId: 'ZR-' + Date.now().toString(36).toUpperCase(),
+                advisor: 'Senior Client Advisor (Private Office)',
+                message: 'Thank you for your confidential inquiry. A senior director from ZARIN will reach out within 24 hours.'
+              }));
+              return;
+            }
             res.statusCode = 200;
             res.setHeader('Content-Type', 'text/html; charset=utf-8');
             res.end(consultationSuccessHtml);

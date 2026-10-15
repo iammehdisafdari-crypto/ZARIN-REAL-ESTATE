@@ -107,196 +107,160 @@ export function initMobileNav(doc = (typeof document !== 'undefined' ? document 
       });
     }
   });
+
+  // Normalize internal links in mobile drawer to guarantee absolute root paths
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href && !href.startsWith('/') && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('tel:') && !href.startsWith('mailto:')) {
+      a.setAttribute('href', '/' + href);
+    }
+  });
 }
 
-export function initDesktopNav() {
-  // Desktop Properties dropdown toggle & keyboard accessibility
-  const propNavTrigger = document.querySelector('.mega-menu-trigger.group\\/prop');
-  const propNavToggle = document.getElementById('properties-nav-toggle');
+export function initDesktopNav(doc = (typeof document !== 'undefined' ? document : null)) {
+  if (!doc) return;
+  const win = doc.defaultView || (typeof window !== 'undefined' ? window : null);
 
-  if (propNavToggle && propNavTrigger && !propNavToggle.dataset.boundNav) {
-    propNavToggle.dataset.boundNav = 'true';
-    propNavToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = propNavTrigger.classList.contains('is-open');
-      if (isOpen) {
-        propNavTrigger.classList.remove('is-open');
-        propNavTrigger.classList.add('is-closed');
-        propNavToggle.setAttribute('aria-expanded', 'false');
-      } else {
-        propNavTrigger.classList.add('is-open');
-        propNavTrigger.classList.remove('is-closed');
-        propNavToggle.setAttribute('aria-expanded', 'true');
+  // Normalize all internal header links to prevent unwanted relative paths (e.g. /consultation/properties)
+  doc.querySelectorAll('#site-header nav a, .site-header nav a').forEach(a => {
+    const href = a.getAttribute('href');
+    if (href && !href.startsWith('/') && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('tel:') && !href.startsWith('mailto:')) {
+      a.setAttribute('href', '/' + href);
+    }
+  });
+
+  // Canonical route mapping for universal resilient navigation fallback
+  const CANONICAL_SECTION_ROUTES = {
+    'properties': '/properties',
+    'off-plan': '/off-plan',
+    'offplan': '/off-plan',
+    'areas': '/areas',
+    'private office': '/private-office',
+    'private-office': '/private-office',
+    'services': '/services',
+    'visas': '/visas',
+    'insights': '/insights',
+    'heritage': '/heritage'
+  };
+
+  const triggers = doc.querySelectorAll('.mega-menu-trigger, #site-header nav > div, .site-header nav > div, header nav > div');
+
+  triggers.forEach(trigger => {
+    const toggleBtn = trigger.querySelector('.mega-menu-toggle-btn') || trigger.querySelector('button[id$="-toggle"]');
+    const primaryLink = trigger.querySelector(':scope > a') || trigger.querySelector('a[id$="-link"]');
+    const panel = trigger.querySelector('.mega-menu-panel');
+
+    // 1. If trigger has a toggle button (split link + chevron button layout)
+    if (toggleBtn && !toggleBtn.dataset.boundNav) {
+      toggleBtn.dataset.boundNav = 'true';
+      toggleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = trigger.classList.contains('is-open');
+        if (isOpen) {
+          trigger.classList.remove('is-open');
+          trigger.classList.add('is-closed');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          // Close other open triggers
+          triggers.forEach(t => {
+            if (t !== trigger) {
+              t.classList.remove('is-open');
+              const otherBtn = t.querySelector('.mega-menu-toggle-btn') || t.querySelector('button[id$="-toggle"]');
+              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+            }
+          });
+          trigger.classList.add('is-open');
+          trigger.classList.remove('is-closed');
+          toggleBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    }
+
+    trigger.addEventListener('mouseleave', () => {
+      trigger.classList.remove('is-closed');
+    });
+
+    // 2. Defensive fallback: If trigger only contains a button and NO <a> link (future-proofing)
+    const buttonOnly = trigger.querySelector(':scope > button:not(.mega-menu-toggle-btn)');
+    if (buttonOnly && !primaryLink && !buttonOnly.dataset.boundFallback) {
+      buttonOnly.dataset.boundFallback = 'true';
+      const rawText = buttonOnly.textContent.replace(/[\n\r]+/g, ' ').trim().toLowerCase();
+      let matchedRoute = buttonOnly.getAttribute('data-href');
+      if (!matchedRoute) {
+        for (const [key, route] of Object.entries(CANONICAL_SECTION_ROUTES)) {
+          if (rawText.startsWith(key)) {
+            matchedRoute = route;
+            break;
+          }
+        }
       }
-    });
-
-    propNavTrigger.addEventListener('mouseleave', () => {
-      propNavTrigger.classList.remove('is-closed');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!propNavTrigger.contains(e.target)) {
-        propNavTrigger.classList.remove('is-open', 'is-closed');
-        propNavToggle.setAttribute('aria-expanded', 'false');
+      if (matchedRoute) {
+        const isFa = doc.documentElement.lang === 'fa' || (win && win.location && (win.location.pathname === '/fa' || win.location.pathname.startsWith('/fa/') || win.location.pathname.startsWith('/fa.')));
+        const finalRoute = (isFa && !matchedRoute.startsWith('/fa')) ? ('/fa' + matchedRoute) : matchedRoute;
+        buttonOnly.dataset.fallbackRoute = finalRoute;
+        buttonOnly.addEventListener('click', (e) => {
+          if (win && win.location) {
+            win.location.href = finalRoute;
+          }
+        });
       }
-    });
+    }
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && propNavTrigger.classList.contains('is-open')) {
-        propNavTrigger.classList.remove('is-open');
-        propNavTrigger.classList.add('is-closed');
-        propNavToggle.setAttribute('aria-expanded', 'false');
-        propNavToggle.focus();
-      }
-    });
-  }
-
-  // Desktop Off-Plan dropdown toggle & keyboard accessibility
-  const offplanNavTrigger = document.querySelector('.mega-menu-trigger.group\\/offplan');
-  const offplanNavToggle = document.getElementById('offplan-nav-toggle');
-
-  if (offplanNavToggle && offplanNavTrigger && !offplanNavToggle.dataset.boundNav) {
-    offplanNavToggle.dataset.boundNav = 'true';
-    offplanNavToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = offplanNavTrigger.classList.contains('is-open');
-      if (isOpen) {
-        offplanNavTrigger.classList.remove('is-open');
-        offplanNavTrigger.classList.add('is-closed');
-        offplanNavToggle.setAttribute('aria-expanded', 'false');
-      } else {
-        offplanNavTrigger.classList.add('is-open');
-        offplanNavTrigger.classList.remove('is-closed');
-        offplanNavToggle.setAttribute('aria-expanded', 'true');
-      }
-    });
-
-    offplanNavTrigger.addEventListener('mouseleave', () => {
-      offplanNavTrigger.classList.remove('is-closed');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!offplanNavTrigger.contains(e.target)) {
-        offplanNavTrigger.classList.remove('is-open', 'is-closed');
-        offplanNavToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && offplanNavTrigger.classList.contains('is-open')) {
-        offplanNavTrigger.classList.remove('is-open');
-        offplanNavTrigger.classList.add('is-closed');
-        offplanNavToggle.setAttribute('aria-expanded', 'false');
-        offplanNavToggle.focus();
-      }
-    });
-  }
-
-  // Desktop Areas dropdown toggle & keyboard accessibility
-  const areasNavTrigger = document.querySelector('.mega-menu-trigger.group\\/areas');
-  const areasNavToggle = document.getElementById('areas-nav-toggle');
-
-  if (areasNavToggle && areasNavTrigger && !areasNavToggle.dataset.boundNav) {
-    areasNavToggle.dataset.boundNav = 'true';
-    areasNavToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = areasNavTrigger.classList.contains('is-open');
-      if (isOpen) {
-        areasNavTrigger.classList.remove('is-open');
-        areasNavTrigger.classList.add('is-closed');
-        areasNavToggle.setAttribute('aria-expanded', 'false');
-      } else {
-        areasNavTrigger.classList.add('is-open');
-        areasNavTrigger.classList.remove('is-closed');
-        areasNavToggle.setAttribute('aria-expanded', 'true');
-      }
-    });
-
-    areasNavTrigger.addEventListener('mouseleave', () => {
-      areasNavTrigger.classList.remove('is-closed');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!areasNavTrigger.contains(e.target)) {
-        areasNavTrigger.classList.remove('is-open', 'is-closed');
-        areasNavToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && areasNavTrigger.classList.contains('is-open')) {
-        areasNavTrigger.classList.remove('is-open');
-        areasNavTrigger.classList.add('is-closed');
-        areasNavToggle.setAttribute('aria-expanded', 'false');
-        areasNavToggle.focus();
-      }
-    });
-  }
-
-  // Desktop Private Office dropdown toggle & keyboard accessibility
-  const poNavTrigger = document.querySelector('.mega-menu-trigger.group\\/po');
-  const poNavToggle = document.getElementById('private-office-nav-toggle');
-
-  if (poNavToggle && poNavTrigger && !poNavToggle.dataset.boundNav) {
-    poNavToggle.dataset.boundNav = 'true';
-    poNavToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = poNavTrigger.classList.contains('is-open');
-      if (isOpen) {
-        poNavTrigger.classList.remove('is-open');
-        poNavTrigger.classList.add('is-closed');
-        poNavToggle.setAttribute('aria-expanded', 'false');
-      } else {
-        poNavTrigger.classList.add('is-open');
-        poNavTrigger.classList.remove('is-closed');
-        poNavToggle.setAttribute('aria-expanded', 'true');
-      }
-    });
-
-    poNavTrigger.addEventListener('mouseleave', () => {
-      poNavTrigger.classList.remove('is-closed');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!poNavTrigger.contains(e.target)) {
-        poNavTrigger.classList.remove('is-open', 'is-closed');
-        poNavToggle.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && poNavTrigger.classList.contains('is-open')) {
-        poNavTrigger.classList.remove('is-open');
-        poNavTrigger.classList.add('is-closed');
-        poNavToggle.setAttribute('aria-expanded', 'false');
-        poNavToggle.focus();
-      }
-    });
-  }
-
-  // Mega menu accessibility for other items
-  document.querySelectorAll('.mega-menu-trigger:not(.group\\/prop):not(.group\\/offplan):not(.group\\/areas):not(.group\\/po)').forEach(trigger => {
-    const button = trigger.querySelector('button');
-    if (button && !button.dataset.boundNav) {
-      button.dataset.boundNav = 'true';
-      button.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
+    // 3. Keyboard accessibility for triggers
+    if (primaryLink && !toggleBtn && !primaryLink.dataset.boundNav) {
+      primaryLink.dataset.boundNav = 'true';
+      primaryLink.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' && panel) {
           e.preventDefault();
-          button.setAttribute('aria-expanded', button.getAttribute('aria-expanded') === 'true' ? 'false' : 'true');
+          const firstLink = panel.querySelector('a');
+          if (firstLink) firstLink.focus();
         }
       });
     }
   });
 
+  // Global outside click & Escape handling
+  if (!doc.documentElement.dataset.boundDesktopOutside) {
+    doc.documentElement.dataset.boundDesktopOutside = 'true';
+    doc.addEventListener('click', (e) => {
+      triggers.forEach(trigger => {
+        if (!trigger.contains(e.target)) {
+          trigger.classList.remove('is-open', 'is-closed');
+          const toggleBtn = trigger.querySelector('.mega-menu-toggle-btn') || trigger.querySelector('button[id$="-toggle"]');
+          if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    doc.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        triggers.forEach(trigger => {
+          if (trigger.classList.contains('is-open')) {
+            trigger.classList.remove('is-open');
+            trigger.classList.add('is-closed');
+            const toggleBtn = trigger.querySelector('.mega-menu-toggle-btn') || trigger.querySelector('button[id$="-toggle"]');
+            if (toggleBtn) {
+              toggleBtn.setAttribute('aria-expanded', 'false');
+              toggleBtn.focus();
+            } else {
+              const link = trigger.querySelector('a');
+              if (link) link.focus();
+            }
+          }
+        });
+      }
+    });
+  }
+
   // Header scroll blur effect
-  const header = document.getElementById('site-header');
-  if (header && !header.dataset.boundScroll) {
+  const header = doc.getElementById('site-header');
+  if (header && win && !header.dataset.boundScroll) {
     header.dataset.boundScroll = 'true';
     let ticking = false;
-    window.addEventListener('scroll', () => {
+    win.addEventListener('scroll', () => {
       if (!ticking) {
-        window.requestAnimationFrame(() => {
-          if (window.scrollY > 40) {
+        win.requestAnimationFrame(() => {
+          if (win.scrollY > 40) {
             header.style.backgroundColor = 'rgba(10, 11, 14, 0.92)';
             header.style.backdropFilter = 'blur(20px)';
             header.style.webkitBackdropFilter = 'blur(20px)';
@@ -317,8 +281,9 @@ export function initDesktopNav() {
   }
 }
 
-export function initFaqAccordion() {
-  const details = document.querySelectorAll('details');
+export function initFaqAccordion(doc = (typeof document !== 'undefined' ? document : null)) {
+  if (!doc) return;
+  const details = doc.querySelectorAll('details');
   details.forEach(detail => {
     if (!detail.dataset.boundFaq) {
       detail.dataset.boundFaq = 'true';
@@ -331,16 +296,193 @@ export function initFaqAccordion() {
   });
 }
 
-export function initNavigation() {
-  initMobileNav();
-  initDesktopNav();
-  initFaqAccordion();
+export function getCounterpartUrl(currentPath, targetLang) {
+  let clean = (currentPath || '/').split('?')[0].split('#')[0];
+  if (!clean.startsWith('/')) clean = '/' + clean;
+  clean = clean.replace(/\/index\.html$/, '').replace(/\.html$/, '');
+  if (clean === '') clean = '/';
+
+  if (targetLang === 'fa') {
+    if (clean === '/' || clean === '') return '/fa';
+    if (clean === '/fa' || clean.startsWith('/fa/')) return clean;
+    return '/fa' + clean;
+  } else {
+    if (clean === '/fa' || clean === '/fa/') return '/';
+    if (clean.startsWith('/fa/')) {
+      const stripped = clean.substring(3);
+      return stripped || '/';
+    }
+    return clean;
+  }
+}
+
+export function initGlobalLanguageState(doc = (typeof document !== 'undefined' ? document : null)) {
+  if (!doc) return;
+  const win = doc.defaultView || (typeof window !== 'undefined' ? window : null);
+
+  const storage = (win && win.localStorage) || (typeof localStorage !== 'undefined' ? localStorage : null);
+
+  let savedLang = 'en';
+  try {
+    if (storage) {
+      savedLang = storage.getItem('zarin_lang') || doc.documentElement.lang || 'en';
+    } else {
+      savedLang = doc.documentElement.lang || 'en';
+    }
+  } catch (_) {
+    savedLang = doc.documentElement.lang || 'en';
+  }
+
+  // If current URL is explicitly /fa or starts with /fa/, lock savedLang to 'fa'
+  if (win && win.location) {
+    const curPath = (win.location.pathname || '').replace(/\/$/, '');
+    if (curPath === '/fa' || curPath.startsWith('/fa/') || curPath.startsWith('/fa.')) {
+      savedLang = 'fa';
+      try { if (storage) storage.setItem('zarin_lang', 'fa'); } catch (_) {}
+    }
+  }
+  if (doc.documentElement && doc.documentElement.lang === 'fa') {
+    savedLang = 'fa';
+    try { if (storage) storage.setItem('zarin_lang', 'fa'); } catch (_) {}
+  }
+
+  // Maintain document dir and lang attributes
+  if (doc.documentElement) {
+    doc.documentElement.lang = savedLang;
+    doc.documentElement.dir = savedLang === 'fa' ? 'rtl' : 'ltr';
+  }
+
+  // 1. Synchronize active state of all language switcher buttons
+  doc.querySelectorAll('.lang-btn').forEach(btn => {
+    const isTarget = btn.dataset.lang === savedLang;
+    btn.classList.toggle('active', isTarget);
+    btn.classList.toggle('is-active', isTarget);
+    btn.setAttribute('aria-pressed', isTarget ? 'true' : 'false');
+
+    if (!btn.dataset.boundLang) {
+      btn.dataset.boundLang = 'true';
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const l = btn.dataset.lang;
+        if (!l) return;
+        try {
+          if (storage) {
+            storage.setItem('zarin_lang', l);
+          }
+        } catch (_) {}
+
+        // Route cleanly to counterpart URL across all site routes
+        if (win && win.location) {
+          const targetUrl = getCounterpartUrl(win.location.pathname, l);
+          const curPath = (win.location.pathname || '').replace(/\/$/, '') || '/';
+          const normTarget = targetUrl.replace(/\/$/, '') || '/';
+          if (curPath !== normTarget) {
+            win.location.href = targetUrl;
+            return;
+          }
+        }
+
+        if (win && win.ZARIN_I18N && typeof win.ZARIN_I18N.setLanguage === 'function') {
+          win.ZARIN_I18N.setLanguage(l, { userAction: true });
+        } else {
+          doc.documentElement.lang = l;
+          doc.documentElement.dir = l === 'fa' ? 'rtl' : 'ltr';
+          initGlobalLanguageState(doc);
+        }
+      });
+    }
+  });
+
+  // 2. Synchronize mobile language trigger label & checkmarks
+  const mobileLabel = doc.getElementById('mobile-lang-label');
+  if (mobileLabel) {
+    mobileLabel.textContent = savedLang === 'fa' ? 'FA' : 'EN';
+  }
+  doc.querySelectorAll('#mobile-lang-menu .mobile-lang-check').forEach(chk => {
+    const parent = chk.closest('button');
+    if (parent) {
+      chk.classList.toggle('hidden', parent.dataset.lang !== savedLang);
+    }
+  });
+
+  // 3. Ensure all internal navigation links respect active language
+  if (savedLang === 'fa') {
+    doc.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (
+        href &&
+        href.startsWith('/') &&
+        !href.startsWith('/fa') &&
+        !href.startsWith('/styles') &&
+        !href.startsWith('/scripts') &&
+        !href.startsWith('/public') &&
+        !href.startsWith('/images') &&
+        !href.startsWith('/api') &&
+        !href.startsWith('/admin') &&
+        !href.startsWith('/#') &&
+        !href.startsWith('//')
+      ) {
+        if (href.includes('.') && !href.endsWith('.html')) {
+          return;
+        }
+        if (href === '/') {
+          a.setAttribute('href', '/fa');
+        } else {
+          a.setAttribute('href', '/fa' + href);
+        }
+      }
+    });
+
+    // Ensure all navigation items remain in Persian
+    const faNavLabels = {
+      'nav_properties': 'املاک برگزیده',
+      'nav_offplan': 'پیش‌فروش و آف‌پلان',
+      'nav_areas': 'مناطق',
+      'nav_private_office': 'دفتر اختصاصی',
+      'nav_services': 'خدمات',
+      'nav_visas': 'ویزای اقامت',
+      'nav_insights': 'تحلیل و گزارش‌ها',
+      'nav_heritage': 'اصالت و پیشینه',
+      'nav_cta': 'رزرو مشاوره'
+    };
+    doc.querySelectorAll('header [data-i18n], #mobile-menu [data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (faNavLabels[key]) {
+        el.textContent = faNavLabels[key];
+      }
+    });
+
+    // Guard Private Office specifically across header & mobile menu
+    doc.querySelectorAll('header a[href*="private-office"], #mobile-menu a[href*="private-office"]').forEach(el => {
+      const span = el.querySelector('span');
+      if (span && (span.textContent.trim() === 'Private Office' || span.textContent.trim() === 'The Private Office')) {
+        span.textContent = 'دفتر اختصاصی';
+      } else if (el.textContent.trim() === 'Private Office' || el.textContent.trim() === 'The Private Office') {
+        el.textContent = 'دفتر اختصاصی';
+      }
+    });
+  } else {
+    doc.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (href && (href === '/fa' || href.startsWith('/fa/'))) {
+        const enHref = href === '/fa' ? '/' : href.replace(/^\/fa/, '');
+        a.setAttribute('href', enHref || '/');
+      }
+    });
+  }
+}
+
+export function initNavigation(doc = (typeof document !== 'undefined' ? document : null)) {
+  initMobileNav(doc);
+  initDesktopNav(doc);
+  initFaqAccordion(doc);
+  initGlobalLanguageState(doc);
 }
 
 // Auto-initialize when loaded
 if (typeof document !== 'undefined') {
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initNavigation);
+    document.addEventListener('DOMContentLoaded', () => initNavigation());
   } else {
     initNavigation();
   }
@@ -352,6 +494,9 @@ if (typeof window !== 'undefined') {
     initMobileNav,
     initDesktopNav,
     initFaqAccordion,
+    initGlobalLanguageState,
     initNavigation
   };
 }
+
+

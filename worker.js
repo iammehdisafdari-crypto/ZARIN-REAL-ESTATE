@@ -249,8 +249,19 @@ export default {
       return handleTgjuRequest(request);
     }
 
-    // Handle form submissions to /consultation (prevent 404/405)
-    if (request.method === 'POST' && (url.pathname === '/consultation' || url.pathname === '/consultation/')) {
+    // Handle form submissions to /consultation and /fa/consultation (prevent 404/405)
+    if (request.method === 'POST' && (url.pathname === '/consultation' || url.pathname === '/consultation/' || url.pathname === '/consultation/submit' || url.pathname === '/fa/consultation' || url.pathname === '/fa/consultation/' || url.pathname === '/fa/consultation/submit')) {
+      const accept = request.headers.get('Accept') || '';
+      if (accept.includes('application/json')) {
+        const jsonHeaders = new Headers({ 'Content-Type': 'application/json; charset=utf-8' });
+        applySecurityHeaders(jsonHeaders, url.pathname);
+        return new Response(JSON.stringify({
+          success: true,
+          bookingId: 'ZR-' + Date.now().toString(36).toUpperCase(),
+          advisor: 'Senior Client Advisor (Private Office)',
+          message: 'Thank you for your confidential inquiry. A senior director from ZARIN will reach out within 24 hours.'
+        }), { status: 200, headers: jsonHeaders });
+      }
       const headers = new Headers({ 'Content-Type': 'text/html; charset=utf-8' });
       applySecurityHeaders(headers, url.pathname);
       const successHtml = `<!DOCTYPE html>
@@ -274,6 +285,32 @@ export default {
           const dirResponse = await env.ASSETS.fetch(dirIndexUrl.toString());
           if (dirResponse.status !== 404) {
             response = dirResponse;
+          }
+        }
+
+        // Persian graceful section fallback (never expose raw English or 404 to Persian users)
+        if (response.status === 404 && (url.pathname === '/fa' || url.pathname.startsWith('/fa/'))) {
+          const parts = url.pathname.split('/').filter(Boolean);
+          if (parts.length >= 2) {
+            const section = parts[1]; // e.g. 'visas', 'properties', 'areas'
+            const sectionIndexUrl = new URL(`/fa/${section}/index.html`, request.url);
+            const sectionResp = await env.ASSETS.fetch(sectionIndexUrl.toString());
+            if (sectionResp.status !== 404) {
+              response = sectionResp;
+            } else {
+              const sectionHtmlUrl = new URL(`/fa/${section}.html`, request.url);
+              const sectionHtmlResp = await env.ASSETS.fetch(sectionHtmlUrl.toString());
+              if (sectionHtmlResp.status !== 404) {
+                response = sectionHtmlResp;
+              }
+            }
+          }
+          if (response.status === 404) {
+            const faHomeUrl = new URL('/fa/index.html', request.url);
+            const faHomeResp = await env.ASSETS.fetch(faHomeUrl.toString());
+            if (faHomeResp.status !== 404) {
+              response = faHomeResp;
+            }
           }
         }
       }
