@@ -1043,14 +1043,6 @@
       }
     });
 
-    // FAQ single-open accordion behavior
-    const ds = document.querySelectorAll('details');
-    ds.forEach(d => {
-      d.addEventListener('toggle', () => {
-        if (d.open) {
-          ds.forEach(x => {
-            if (x !== d) x.open = false;
-          });
         }
       });
     });

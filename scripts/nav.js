@@ -283,16 +283,169 @@ export function initDesktopNav(doc = (typeof document !== 'undefined' ? document
 
 export function initFaqAccordion(doc = (typeof document !== 'undefined' ? document : null)) {
   if (!doc) return;
-  const details = doc.querySelectorAll('details');
-  details.forEach(detail => {
-    if (!detail.dataset.boundFaq) {
-      detail.dataset.boundFaq = 'true';
-      detail.addEventListener('toggle', () => {
-        if (detail.open) {
-          details.forEach(d => { if (d !== detail) d.open = false; });
-        }
-      });
+
+  const detailsList = doc.querySelectorAll('details');
+  if (!detailsList.length) return;
+
+  const win = doc.defaultView || (typeof window !== 'undefined' ? window : null);
+  const prefersReduced = () => {
+    try {
+      return !!(win && win.matchMedia && win.matchMedia('(prefers-reduced-motion: reduce)').matches);
+    } catch (_) {
+      return false;
     }
+  };
+
+  detailsList.forEach((detail, index) => {
+    if (detail.dataset.faqEnhanced === 'true') return;
+    detail.dataset.faqEnhanced = 'true';
+
+    const summary = detail.querySelector('summary');
+    if (!summary) return;
+
+    let answer = detail.querySelector('[itemprop="acceptedAnswer"]');
+    if (!answer) {
+      for (let i = 0; i < detail.children.length; i++) {
+        const child = detail.children[i];
+        if (child !== summary && !child.classList?.contains('faq-accordion-panel')) {
+          answer = child;
+          break;
+        }
+      }
+    }
+    if (!answer) return;
+
+    // Wrap answer into panel and content containers if not already wrapped
+    let panel = detail.querySelector(':scope > .faq-accordion-panel');
+    let content = panel ? panel.querySelector(':scope > .faq-accordion-content') : null;
+
+    if (!panel) {
+      panel = doc.createElement('div');
+      panel.className = 'faq-accordion-panel';
+
+      content = doc.createElement('div');
+      content.className = 'faq-accordion-content';
+
+      detail.insertBefore(panel, answer);
+      content.appendChild(answer);
+      panel.appendChild(content);
+    }
+
+    // Set up stable IDs and WAI-ARIA accessibility attributes
+    const panelId = answer.id || `faq-panel-${index + 1}`;
+    const summaryId = summary.id || `faq-summary-${index + 1}`;
+
+    summary.id = summaryId;
+    summary.setAttribute('aria-controls', panelId);
+    summary.setAttribute('role', 'button');
+    panel.id = panelId;
+    panel.setAttribute('role', 'region');
+    panel.setAttribute('aria-labelledby', summaryId);
+
+    if (detail.hasAttribute('open')) {
+      detail.classList.add('is-open');
+      panel.classList.add('is-open');
+      summary.setAttribute('aria-expanded', 'true');
+    } else {
+      detail.classList.remove('is-open', 'is-closing');
+      panel.classList.remove('is-open');
+      summary.setAttribute('aria-expanded', 'false');
+    }
+
+    const closeItem = (d, p, s, isReduced = prefersReduced()) => {
+      if (!d.hasAttribute('open') && !d.classList.contains('is-open')) return;
+
+      s.setAttribute('aria-expanded', 'false');
+      d.classList.remove('is-open');
+      p.classList.remove('is-open');
+
+      if (isReduced) {
+        d.removeAttribute('open');
+        d.classList.remove('is-closing');
+        return;
+      }
+
+      d.classList.add('is-closing');
+
+      let closed = false;
+      const finishClose = () => {
+        if (closed) return;
+        closed = true;
+        p.removeEventListener('transitionend', onTransitionEnd);
+        clearTimeout(fallbackTimer);
+        d.removeAttribute('open');
+        d.classList.remove('is-closing');
+      };
+
+      const onTransitionEnd = (e) => {
+        if (e.target === p && (!e.propertyName || e.propertyName === 'grid-template-rows')) {
+          finishClose();
+        }
+      };
+
+      p.addEventListener('transitionend', onTransitionEnd);
+      const fallbackTimer = setTimeout(finishClose, 320);
+    };
+
+    const openItem = (d, p, s, isReduced = prefersReduced()) => {
+      // Single-open accordion: close open siblings in same container
+      const parent = d.parentElement;
+      if (parent) {
+        const siblings = parent.querySelectorAll('details');
+        siblings.forEach(sibling => {
+          if (sibling !== d && (sibling.hasAttribute('open') || sibling.classList.contains('is-open'))) {
+            const sibSummary = sibling.querySelector('summary');
+            const sibPanel = sibling.querySelector(':scope > .faq-accordion-panel');
+            if (sibSummary && sibPanel) {
+              closeItem(sibling, sibPanel, sibSummary, isReduced);
+            } else {
+              sibling.removeAttribute('open');
+            }
+          }
+        });
+      }
+
+      if (isReduced) {
+        d.setAttribute('open', '');
+        d.classList.add('is-open');
+        d.classList.remove('is-closing');
+        p.classList.add('is-open');
+        s.setAttribute('aria-expanded', 'true');
+        return;
+      }
+
+      d.classList.remove('is-closing');
+      d.setAttribute('open', '');
+
+      // Force layout calculation if in DOM
+      if (typeof p.offsetHeight === 'number') {
+        void p.offsetHeight;
+      }
+
+      d.classList.add('is-open');
+      p.classList.add('is-open');
+      s.setAttribute('aria-expanded', 'true');
+    };
+
+    const handleToggle = (e) => {
+      if (e && typeof e.preventDefault === 'function') e.preventDefault();
+      const isReduced = prefersReduced();
+      const isOpen = detail.classList.contains('is-open') && !detail.classList.contains('is-closing');
+
+      if (isOpen) {
+        closeItem(detail, panel, summary, isReduced);
+      } else {
+        openItem(detail, panel, summary, isReduced);
+      }
+    };
+
+    summary.addEventListener('click', handleToggle);
+    summary.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Spacebar') {
+        if (typeof e.preventDefault === 'function') e.preventDefault();
+        handleToggle(e);
+      }
+    });
   });
 }
 

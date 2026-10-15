@@ -1750,15 +1750,6 @@
 
     
 
-    // FAQ accordion
-    const details = document.querySelectorAll('details');
-    details.forEach(detail => {
-      detail.addEventListener('toggle', () => {
-        if (detail.open) {
-          details.forEach(d => { if (d !== detail) d.open = false; });
-        }
-      });
-    });
 
     // Desktop Properties dropdown toggle & keyboard accessibility
     const propNavTrigger = document.querySelector('.mega-menu-trigger.group\\/prop');

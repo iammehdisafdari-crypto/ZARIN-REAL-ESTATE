@@ -151,10 +151,90 @@ body {
 
 .hero-overlay { background: linear-gradient(180deg, rgba(10,11,14,0.4) 0%, rgba(10,11,14,0.6) 50%, rgba(10,11,14,0.95) 100%); }
 
-details summary { list-style: none; cursor: pointer; }
-details summary::-webkit-details-marker { display: none; }
-details[open] .faq-icon { transform: rotate(45deg); }
-.faq-icon { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+details summary {
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none;
+}
+details summary:focus-visible {
+  outline: 2px solid rgba(200, 171, 131, 0.6);
+  outline-offset: -2px;
+}
+
+/* FAQ Icon rotation */
+.faq-icon {
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+details.is-open .faq-icon,
+details[open]:not(.is-closing) .faq-icon {
+  transform: rotate(45deg);
+}
+details.is-closing .faq-icon {
+  transform: rotate(0deg) !important;
+}
+
+/* FAQ Accordion Panel: Smooth height transition via CSS Grid */
+.faq-accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+details.is-open .faq-accordion-panel,
+details[open].is-open .faq-accordion-panel,
+.faq-accordion-panel.is-open {
+  grid-template-rows: 1fr;
+}
+
+details.is-closing .faq-accordion-panel {
+  grid-template-rows: 0fr !important;
+  pointer-events: none;
+}
+
+/* FAQ Accordion Content: Gentle Fade Transition */
+.faq-accordion-content {
+  min-height: 0;
+  opacity: 0;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
+}
+
+details.is-open .faq-accordion-content,
+details[open].is-open .faq-accordion-content,
+.faq-accordion-panel.is-open .faq-accordion-content {
+  opacity: 1;
+}
+
+details.is-closing .faq-accordion-content {
+  opacity: 0 !important;
+}
+
+/* Reduced Motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .faq-icon,
+  .faq-accordion-panel,
+  .faq-accordion-content {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+  }
+  details[open] .faq-icon {
+    transform: rotate(45deg) !important;
+  }
+  details[open] .faq-accordion-panel {
+    grid-template-rows: 1fr !important;
+  }
+  details[open] .faq-accordion-content {
+    opacity: 1 !important;
+  }
+}
 
 .card-lift { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
 .card-lift:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5); }
