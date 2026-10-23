@@ -117,7 +117,60 @@ for (const relPath of testPages) {
   assert(invalidRelative === 0, `[${relPath}] Zero relative links that could break in subpaths (all root-absolute)`);
 }
 
-// 6. Test nav.js runtime normalization & dynamic trigger routing
+// 6. Test Legal Pages & DMCA Route Coverage
+console.log('\n--- Testing Legal Pages & DMCA Route Coverage ---');
+const legalPages = [
+  { relPath: 'legal/privacy.html', dirIndex: 'legal/privacy/index.html', title: 'Privacy Policy', canonical: 'https://zarinrealestate.com/legal/privacy' },
+  { relPath: 'legal/terms.html', dirIndex: 'legal/terms/index.html', title: 'Terms of Service', canonical: 'https://zarinrealestate.com/legal/terms' },
+  { relPath: 'legal/cookies.html', dirIndex: 'legal/cookies/index.html', title: 'Cookie Policy', canonical: 'https://zarinrealestate.com/legal/cookies' },
+  { relPath: 'legal/dmca.html', dirIndex: 'legal/dmca/index.html', title: 'DMCA & Copyright Policy', canonical: 'https://zarinrealestate.com/legal/dmca' },
+];
+
+for (const lp of legalPages) {
+  const fullPath = path.join(__dirname, lp.relPath);
+  const fullDirPath = path.join(__dirname, lp.dirIndex);
+  assert(fs.existsSync(fullPath), `[Legal] ${lp.relPath} file exists`);
+  assert(fs.existsSync(fullDirPath), `[Legal] ${lp.dirIndex} clean URL index exists`);
+
+  const html = fs.readFileSync(fullPath, 'utf8');
+  const dom = new JSDOM(html);
+  const doc = dom.window.document;
+
+  // Title & Canonical
+  const title = doc.querySelector('title')?.textContent || '';
+  assert(title.includes(lp.title), `[Legal] ${lp.relPath} has title matching "${lp.title}"`);
+  const canonical = doc.querySelector('link[rel="canonical"]')?.getAttribute('href');
+  assert(canonical === lp.canonical, `[Legal] ${lp.relPath} canonical is ${lp.canonical}`);
+
+  // Header & Mobile Menu
+  assert(!!doc.querySelector('header#site-header'), `[Legal] ${lp.relPath} has header#site-header`);
+  assert(!!doc.querySelector('#mobile-menu'), `[Legal] ${lp.relPath} has #mobile-menu`);
+
+  // Footer Legal links nav
+  const legalNav = doc.querySelector('footer nav[aria-label="Legal links"]');
+  assert(!!legalNav, `[Legal] ${lp.relPath} has footer nav[aria-label="Legal links"]`);
+  if (legalNav) {
+    const links = Array.from(legalNav.querySelectorAll('a')).map(a => a.getAttribute('href'));
+    assert(links.includes('/legal/privacy'), `[Legal] ${lp.relPath} footer has /legal/privacy`);
+    assert(links.includes('/legal/terms'), `[Legal] ${lp.relPath} footer has /legal/terms`);
+    assert(links.includes('/legal/cookies'), `[Legal] ${lp.relPath} footer has /legal/cookies`);
+    assert(links.includes('/legal/dmca'), `[Legal] ${lp.relPath} footer has /legal/dmca`);
+    assert(links.includes('/sitemap'), `[Legal] ${lp.relPath} footer has /sitemap`);
+  }
+
+  // Internal links are root-relative
+  const allLinks = Array.from(doc.querySelectorAll('a[href]'));
+  let invalidRelative = 0;
+  for (const a of allLinks) {
+    const href = a.getAttribute('href');
+    if (href.startsWith('http://') || href.startsWith('https://') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) continue;
+    if (href.startsWith('#')) continue;
+    if (!href.startsWith('/')) invalidRelative++;
+  }
+  assert(invalidRelative === 0, `[Legal] ${lp.relPath} has zero invalid relative links`);
+}
+
+// 7. Test nav.js runtime normalization & dynamic trigger routing
 console.log('\nTesting nav.js runtime behavior...');
 import('./scripts/nav.js').then(({ initDesktopNav, initMobileNav }) => {
   // Create simulated DOM with button triggers to verify defensive fallback

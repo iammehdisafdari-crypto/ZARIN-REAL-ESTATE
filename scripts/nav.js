@@ -143,44 +143,186 @@ export function initDesktopNav(doc = (typeof document !== 'undefined' ? document
     'heritage': '/heritage'
   };
 
-  const triggers = doc.querySelectorAll('.mega-menu-trigger, #site-header nav > div, .site-header nav > div, header nav > div');
+  const triggers = Array.from(doc.querySelectorAll('.mega-menu-trigger, #site-header nav > div, .site-header nav > div, header nav > div'));
+
+  let activeTrigger = null;
+  let leaveTimeout = null;
+
+  const CLOSE_DELAY = 200; // Configurable debounce delay (150-250ms) per UX standard
+
+  function clearPendingClose() {
+    if (leaveTimeout) {
+      clearTimeout(leaveTimeout);
+      leaveTimeout = null;
+    }
+  }
+
+  function closeTrigger(trigger) {
+    if (!trigger) return;
+    trigger.classList.remove('is-open');
+    trigger.classList.remove('is-closed');
+    const toggleBtn = trigger.querySelector('.mega-menu-toggle-btn') || trigger.querySelector('button[id$="-toggle"]');
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+    const panel = trigger.querySelector('.mega-menu-panel');
+    if (panel) {
+      panel.classList.remove('is-open');
+    }
+    if (activeTrigger === trigger) {
+      activeTrigger = null;
+    }
+  }
+
+  function closeAllTriggers(exceptTrigger = null) {
+    triggers.forEach(trigger => {
+      if (trigger !== exceptTrigger) {
+        closeTrigger(trigger);
+      }
+    });
+  }
+
+  function openTrigger(trigger) {
+    if (!trigger) return;
+    clearPendingClose();
+
+    // Close all other open triggers first
+    closeAllTriggers(trigger);
+
+    trigger.classList.add('is-open');
+    trigger.classList.remove('is-closed');
+    const toggleBtn = trigger.querySelector('.mega-menu-toggle-btn') || trigger.querySelector('button[id$="-toggle"]');
+    if (toggleBtn) {
+      toggleBtn.setAttribute('aria-expanded', 'true');
+    }
+    const panel = trigger.querySelector('.mega-menu-panel');
+    if (panel) {
+      panel.classList.add('is-open');
+    }
+    activeTrigger = trigger;
+  }
+
+  function scheduleClose(trigger) {
+    clearPendingClose();
+    leaveTimeout = setTimeout(() => {
+      closeTrigger(trigger);
+    }, CLOSE_DELAY);
+  }
 
   triggers.forEach(trigger => {
     const toggleBtn = trigger.querySelector('.mega-menu-toggle-btn') || trigger.querySelector('button[id$="-toggle"]');
     const primaryLink = trigger.querySelector(':scope > a') || trigger.querySelector('a[id$="-link"]');
     const panel = trigger.querySelector('.mega-menu-panel');
 
-    // 1. If trigger has a toggle button (split link + chevron button layout)
+    // 1. Mouse enters a trigger: cancel pending close, open this menu, close others
+    trigger.addEventListener('mouseenter', () => {
+      clearPendingClose();
+      if (panel) {
+        openTrigger(trigger);
+      } else {
+        closeAllTriggers();
+      }
+    });
+
+    trigger.addEventListener('pointerenter', () => {
+      clearPendingClose();
+      if (panel) {
+        openTrigger(trigger);
+      } else {
+        closeAllTriggers();
+      }
+    });
+
+    // 2. Mouse leaves trigger: schedule close ONLY if pointer genuinely leaves trigger & panel
+    trigger.addEventListener('mouseleave', (e) => {
+      trigger.classList.remove('is-closed');
+      const related = e.relatedTarget;
+      if (related && (trigger.contains(related) || (panel && panel.contains(related)))) {
+        return; // still moving within trigger or entering dropdown panel
+      }
+      scheduleClose(trigger);
+    });
+
+    // 3. Panel coordination: ensure moving into/within panel keeps menu open and cancels any pending close
+    if (panel) {
+      panel.addEventListener('mouseenter', () => {
+        clearPendingClose();
+        openTrigger(trigger);
+      });
+
+      panel.addEventListener('pointerenter', () => {
+        clearPendingClose();
+        openTrigger(trigger);
+      });
+
+      panel.addEventListener('mouseleave', (e) => {
+        const related = e.relatedTarget;
+        if (related && (trigger.contains(related) || panel.contains(related))) {
+          return; // moving back to trigger button or between submenu elements
+        }
+        scheduleClose(trigger);
+      });
+    }
+
+    // 4. Toggle button click (if present)
     if (toggleBtn && !toggleBtn.dataset.boundNav) {
       toggleBtn.dataset.boundNav = 'true';
       toggleBtn.addEventListener('click', (e) => {
         e.stopPropagation();
-        const isOpen = trigger.classList.contains('is-open');
-        if (isOpen) {
-          trigger.classList.remove('is-open');
+        if (trigger.classList.contains('is-open')) {
+          closeTrigger(trigger);
           trigger.classList.add('is-closed');
-          toggleBtn.setAttribute('aria-expanded', 'false');
         } else {
-          // Close other open triggers
-          triggers.forEach(t => {
-            if (t !== trigger) {
-              t.classList.remove('is-open');
-              const otherBtn = t.querySelector('.mega-menu-toggle-btn') || t.querySelector('button[id$="-toggle"]');
-              if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
-            }
-          });
-          trigger.classList.add('is-open');
-          trigger.classList.remove('is-closed');
-          toggleBtn.setAttribute('aria-expanded', 'true');
+          openTrigger(trigger);
         }
       });
     }
 
-    trigger.addEventListener('mouseleave', () => {
-      trigger.classList.remove('is-closed');
+    // 5. Focus enters trigger: open this trigger and close others
+    trigger.addEventListener('focusin', () => {
+      if (trigger.classList.contains('is-closed')) return;
+      clearPendingClose();
+      if (panel) {
+        openTrigger(trigger);
+      } else {
+        closeAllTriggers();
+      }
     });
 
-    // 2. Defensive fallback: If trigger only contains a button and NO <a> link (future-proofing)
+    trigger.addEventListener('focusout', (e) => {
+      const related = e.relatedTarget;
+      if (!related || (!trigger.contains(related) && (!panel || !panel.contains(related)))) {
+        trigger.classList.remove('is-closed');
+        scheduleClose(trigger);
+      }
+    });
+
+    // 5. ArrowDown key on primary link opens panel and focuses first item
+    if (primaryLink && !primaryLink.dataset.boundNavKey) {
+      primaryLink.dataset.boundNavKey = 'true';
+      primaryLink.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' && panel) {
+          e.preventDefault();
+          openTrigger(trigger);
+          const firstLink = panel.querySelector('a');
+          if (firstLink) firstLink.focus();
+        }
+      });
+    }
+
+    // 6. When any link inside the panel is clicked: close all menus immediately
+    if (panel) {
+      panel.querySelectorAll('a').forEach(link => {
+        if (!link.dataset.boundPanelLink) {
+          link.dataset.boundPanelLink = 'true';
+          link.addEventListener('click', () => {
+            closeAllTriggers();
+          });
+        }
+      });
+    }
+
+    // 7. Defensive fallback for button-only triggers
     const buttonOnly = trigger.querySelector(':scope > button:not(.mega-menu-toggle-btn)');
     if (buttonOnly && !primaryLink && !buttonOnly.dataset.boundFallback) {
       buttonOnly.dataset.boundFallback = 'true';
@@ -205,49 +347,32 @@ export function initDesktopNav(doc = (typeof document !== 'undefined' ? document
         });
       }
     }
-
-    // 3. Keyboard accessibility for triggers
-    if (primaryLink && !toggleBtn && !primaryLink.dataset.boundNav) {
-      primaryLink.dataset.boundNav = 'true';
-      primaryLink.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowDown' && panel) {
-          e.preventDefault();
-          const firstLink = panel.querySelector('a');
-          if (firstLink) firstLink.focus();
-        }
-      });
-    }
   });
 
   // Global outside click & Escape handling
   if (!doc.documentElement.dataset.boundDesktopOutside) {
     doc.documentElement.dataset.boundDesktopOutside = 'true';
     doc.addEventListener('click', (e) => {
-      triggers.forEach(trigger => {
-        if (!trigger.contains(e.target)) {
-          trigger.classList.remove('is-open', 'is-closed');
-          const toggleBtn = trigger.querySelector('.mega-menu-toggle-btn') || trigger.querySelector('button[id$="-toggle"]');
-          if (toggleBtn) toggleBtn.setAttribute('aria-expanded', 'false');
-        }
-      });
+      const clickedInsideTrigger = triggers.some(t => t.contains(e.target));
+      if (!clickedInsideTrigger) {
+        closeAllTriggers();
+      }
     });
 
     doc.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
-        triggers.forEach(trigger => {
-          if (trigger.classList.contains('is-open')) {
-            trigger.classList.remove('is-open');
-            trigger.classList.add('is-closed');
-            const toggleBtn = trigger.querySelector('.mega-menu-toggle-btn') || trigger.querySelector('button[id$="-toggle"]');
-            if (toggleBtn) {
-              toggleBtn.setAttribute('aria-expanded', 'false');
-              toggleBtn.focus();
-            } else {
-              const link = trigger.querySelector('a');
-              if (link) link.focus();
-            }
+        const openTrig = triggers.find(t => t.classList.contains('is-open'));
+        if (openTrig) {
+          closeAllTriggers();
+          openTrig.classList.add('is-closed');
+          const toggleBtn = openTrig.querySelector('.mega-menu-toggle-btn') || openTrig.querySelector('button[id$="-toggle"]');
+          if (toggleBtn) {
+            toggleBtn.focus();
+          } else {
+            const link = openTrig.querySelector('a');
+            if (link) link.focus();
           }
-        });
+        }
       }
     });
   }
@@ -473,7 +598,12 @@ export function initGlobalLanguageState(doc = (typeof document !== 'undefined' ?
   if (!doc) return;
   const win = doc.defaultView || (typeof window !== 'undefined' ? window : null);
 
-  const storage = (win && win.localStorage) || (typeof localStorage !== 'undefined' ? localStorage : null);
+  let storage = null;
+  try {
+    storage = (win && win.localStorage) || (typeof localStorage !== 'undefined' ? localStorage : null);
+  } catch (_) {
+    storage = null;
+  }
 
   let savedLang = 'en';
   try {

@@ -30,7 +30,30 @@
 }
 
 /* Primary desktop navigation cursor guarantee */
-.mega-menu-trigger,
+.mega-menu-trigger {
+  position: relative;
+}
+.mega-menu-trigger > a,
+.mega-menu-trigger > button,
+.mega-menu-toggle-btn {
+  position: relative;
+  z-index: 2;
+  cursor: pointer !important;
+}
+.mega-menu-panel {
+  cursor: default;
+}
+.mega-menu-panel::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  pointer-events: auto;
+  cursor: default;
+  z-index: 1;
+}
 .mega-menu-trigger > a,
 .mega-menu-trigger > button,
 .mega-menu-toggle-btn,

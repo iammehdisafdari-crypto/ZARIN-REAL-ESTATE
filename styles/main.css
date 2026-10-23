@@ -101,37 +101,58 @@ body {
 .stat-number { font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
 
 .mega-menu-trigger { position: relative; }
+.mega-menu-trigger > a,
+.mega-menu-trigger > button,
+.mega-menu-toggle-btn {
+  position: relative;
+  z-index: 2;
+}
 .mega-menu-panel {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  cursor: default;
   transform: translateY(8px);
-  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
+  z-index: 950;
 }
 .mega-menu-panel::before {
   content: '';
   position: absolute;
-  top: -12px;
+  top: -20px;
   left: 0;
   right: 0;
-  height: 12px;
+  height: 20px;
+  pointer-events: auto;
+  cursor: default;
+  z-index: 1;
 }
-.mega-menu-trigger:not(.is-closed):hover .mega-menu-panel,
-.mega-menu-trigger:not(.is-closed):focus-within .mega-menu-panel,
-.mega-menu-trigger.is-open .mega-menu-panel,
+.mega-menu-trigger.is-open > .mega-menu-panel,
+.mega-menu-trigger:not(.is-closed):hover > .mega-menu-panel,
+.mega-menu-trigger:not(.is-closed):focus-within > .mega-menu-panel,
 .mega-menu-panel.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0);
 }
-.mega-menu-trigger,
-.mega-menu-trigger a,
-.mega-menu-trigger button,
+.mega-menu-trigger.is-closed > .mega-menu-panel {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transform: translateY(8px) !important;
+}
+.mega-menu-trigger > a,
+.mega-menu-trigger > button,
 .mega-menu-toggle-btn,
 #site-header nav a,
 #site-header nav button,
-.mega-menu-panel a {
+.mega-menu-panel a,
+.header-action-cluster a,
+.header-action-cluster button,
+.lang-btn,
+.mobile-lang-trigger,
+.mobile-lang-item {
   cursor: pointer !important;
 }
 .mega-menu-trigger svg,

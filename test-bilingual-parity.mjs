@@ -34,8 +34,20 @@ const routePairs = [
   { name: 'Heritage', en: 'heritage.html', fa: 'fa/heritage.html', canonicalEn: 'heritage', canonicalFa: 'fa/heritage' },
   { name: 'Insights', en: 'insights.html', fa: 'fa/insights.html', canonicalEn: 'insights', canonicalFa: 'fa/insights' },
   { name: 'Properties', en: 'properties.html', fa: 'fa/properties.html', canonicalEn: 'properties', canonicalFa: 'fa/properties' },
+  { name: 'Properties for Rent', en: 'properties-for-rent.html', fa: 'fa/properties-for-rent.html', canonicalEn: 'properties-for-rent', canonicalFa: 'fa/properties-for-rent' },
+  { name: 'Properties for Sale', en: 'properties-for-sale.html', fa: 'fa/properties-for-sale.html', canonicalEn: 'properties-for-sale', canonicalFa: 'fa/properties-for-sale' },
   { name: 'Off-Plan', en: 'off-plan.html', fa: 'fa/off-plan.html', canonicalEn: 'off-plan', canonicalFa: 'fa/off-plan' },
   { name: 'Areas', en: 'areas.html', fa: 'fa/areas.html', canonicalEn: 'areas', canonicalFa: 'fa/areas' },
+  { name: 'Trophy Residences', en: 'trophy-residences.html', fa: 'fa/trophy-residences.html', canonicalEn: 'trophy-residences', canonicalFa: 'fa/trophy-residences' },
+  { name: 'Apartments', en: 'apartments-for-sale-in-dubai.html', fa: 'fa/apartments-for-sale-in-dubai.html', canonicalEn: 'apartments-for-sale-in-dubai', canonicalFa: 'fa/apartments-for-sale-in-dubai' },
+  { name: 'Villas', en: 'villas-for-sale-in-dubai.html', fa: 'fa/villas-for-sale-in-dubai.html', canonicalEn: 'villas-for-sale-in-dubai', canonicalFa: 'fa/villas-for-sale-in-dubai' },
+  { name: 'Penthouses', en: 'penthouses-for-sale-in-dubai.html', fa: 'fa/penthouses-for-sale-in-dubai.html', canonicalEn: 'penthouses-for-sale-in-dubai', canonicalFa: 'fa/penthouses-for-sale-in-dubai' },
+  { name: 'Townhouses', en: 'townhouses-for-sale-in-dubai.html', fa: 'fa/townhouses-for-sale-in-dubai.html', canonicalEn: 'townhouses-for-sale-in-dubai', canonicalFa: 'fa/townhouses-for-sale-in-dubai' },
+  { name: 'Beachfront', en: 'beachfront-properties-in-dubai.html', fa: 'fa/beachfront-properties-in-dubai.html', canonicalEn: 'beachfront-properties-in-dubai', canonicalFa: 'fa/beachfront-properties-in-dubai' },
+  { name: 'Branded Residences', en: 'branded-residences-in-dubai.html', fa: 'fa/branded-residences-in-dubai.html', canonicalEn: 'branded-residences-in-dubai', canonicalFa: 'fa/branded-residences-in-dubai' },
+  { name: 'Burj View', en: 'burj-khalifa-view-properties.html', fa: 'fa/burj-khalifa-view-properties.html', canonicalEn: 'burj-khalifa-view-properties', canonicalFa: 'fa/burj-khalifa-view-properties' },
+  { name: 'Commercial', en: 'commercial-properties-in-dubai.html', fa: 'fa/commercial-properties-in-dubai.html', canonicalEn: 'commercial-properties-in-dubai', canonicalFa: 'fa/commercial-properties-in-dubai' },
+  { name: 'Golf Course', en: 'golf-course-properties-in-dubai.html', fa: 'fa/golf-course-properties-in-dubai.html', canonicalEn: 'golf-course-properties-in-dubai', canonicalFa: 'fa/golf-course-properties-in-dubai' },
 ];
 
 console.log('\n--- 1. File Existence & Clean URL Counterparts ---');
