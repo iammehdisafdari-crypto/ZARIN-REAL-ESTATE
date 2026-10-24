@@ -47,7 +47,9 @@ const routePairs = [
   { name: 'Branded Residences', en: 'branded-residences-in-dubai.html', fa: 'fa/branded-residences-in-dubai.html', canonicalEn: 'branded-residences-in-dubai', canonicalFa: 'fa/branded-residences-in-dubai' },
   { name: 'Burj View', en: 'burj-khalifa-view-properties.html', fa: 'fa/burj-khalifa-view-properties.html', canonicalEn: 'burj-khalifa-view-properties', canonicalFa: 'fa/burj-khalifa-view-properties' },
   { name: 'Commercial', en: 'commercial-properties-in-dubai.html', fa: 'fa/commercial-properties-in-dubai.html', canonicalEn: 'commercial-properties-in-dubai', canonicalFa: 'fa/commercial-properties-in-dubai' },
-  { name: 'Golf Course', en: 'golf-course-properties-in-dubai.html', fa: 'fa/golf-course-properties-in-dubai.html', canonicalEn: 'golf-course-properties-in-dubai', canonicalFa: 'fa/golf-course-properties-in-dubai' },
+  { name: 'Payment Calculator', en: 'off-plan/payment-calculator.html', fa: 'fa/off-plan/payment-calculator.html', canonicalEn: 'off-plan/payment-calculator', canonicalFa: 'fa/off-plan/payment-calculator' },
+  { name: 'ROI Predictor', en: 'off-plan/roi-predictor.html', fa: 'fa/off-plan/roi-predictor.html', canonicalEn: 'off-plan/roi-predictor', canonicalFa: 'fa/off-plan/roi-predictor' },
+  { name: 'Developer Tracker', en: 'off-plan/developer-reputation-tracker.html', fa: 'fa/off-plan/developer-reputation-tracker.html', canonicalEn: 'off-plan/developer-reputation-tracker', canonicalFa: 'fa/off-plan/developer-reputation-tracker' },
 ];
 
 console.log('\n--- 1. File Existence & Clean URL Counterparts ---');

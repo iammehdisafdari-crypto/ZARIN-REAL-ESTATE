@@ -48,11 +48,27 @@ it('main.css sets cursor: pointer !important on genuine interactive elements onl
 const subpagesToTest = [
   { file: 'index.html', name: 'Homepage (Source of Truth)', lang: 'en', dir: 'ltr' },
   { file: 'off-plan.html', name: 'Off-Plan (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'off-plan/coming-soon.html', name: 'Coming Soon (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'off-plan/new-launches.html', name: 'New Launches (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'off-plan/investment-guide.html', name: 'Investment Guide (EN)', lang: 'en', dir: 'ltr' },
   { file: 'apartments-for-sale-in-dubai/index.html', name: 'Apartments (EN)', lang: 'en', dir: 'ltr' },
   { file: 'areas/index.html', name: 'Areas (EN)', lang: 'en', dir: 'ltr' },
   { file: 'fa/index.html', name: 'Homepage (FA Source of Truth)', lang: 'fa', dir: 'rtl' },
   { file: 'fa/off-plan.html', name: 'Off-Plan (FA)', lang: 'fa', dir: 'rtl' },
-  { file: 'fa/apartments-for-sale-in-dubai.html', name: 'Apartments (FA)', lang: 'fa', dir: 'rtl' }
+  { file: 'fa/off-plan/coming-soon.html', name: 'Coming Soon (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'fa/off-plan/new-launches.html', name: 'New Launches (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'fa/off-plan/investment-guide.html', name: 'Investment Guide (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'fa/apartments-for-sale-in-dubai.html', name: 'Apartments (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'off-plan/projects.html', name: 'All Off-Plan Projects (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'fa/off-plan/projects.html', name: 'All Off-Plan Projects (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'off-plan/by-developer.html', name: 'By Developer (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'fa/off-plan/by-developer.html', name: 'By Developer (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'off-plan/payment-calculator.html', name: 'Payment Calculator (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'fa/off-plan/payment-calculator.html', name: 'Payment Calculator (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'off-plan/roi-predictor.html', name: 'ROI Predictor (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'fa/off-plan/roi-predictor.html', name: 'ROI Predictor (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'off-plan/developer-reputation-tracker.html', name: 'Developer Tracker (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'fa/off-plan/developer-reputation-tracker.html', name: 'Developer Tracker (FA)', lang: 'fa', dir: 'rtl' }
 ];
 
 console.log('\n--- 2. Structural & Interaction Parity Across Subpages ---');

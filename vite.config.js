@@ -36,16 +36,27 @@ export default defineConfig({
       name: 'form-post-middleware',
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
-          if (req.method === 'POST' && (req.url === '/consultation' || req.url === '/consultation/' || req.url === '/consultation/submit' || req.url === '/fa/consultation' || req.url === '/fa/consultation/' || req.url === '/fa/consultation/submit')) {
+          if (req.method === 'POST' && (
+            req.url === '/consultation' || req.url === '/consultation/' || req.url === '/consultation/submit' ||
+            req.url === '/fa/consultation' || req.url === '/fa/consultation/' || req.url === '/fa/consultation/submit' ||
+            req.url === '/off-plan/coming-soon' || req.url === '/off-plan/coming-soon/' || req.url === '/off-plan/coming-soon/submit' ||
+            req.url === '/fa/off-plan/coming-soon' || req.url === '/fa/off-plan/coming-soon/' || req.url === '/fa/off-plan/coming-soon/submit'
+          )) {
             const accept = req.headers['accept'] || '';
+            const isComingSoon = req.url.includes('coming-soon');
+            const isFa = req.url.includes('/fa');
             if (accept.includes('application/json')) {
               res.statusCode = 200;
               res.setHeader('Content-Type', 'application/json; charset=utf-8');
               res.end(JSON.stringify({
                 success: true,
-                bookingId: 'ZR-' + Date.now().toString(36).toUpperCase(),
-                advisor: 'Senior Client Advisor (Private Office)',
-                message: 'Thank you for your confidential inquiry. A senior director from ZARIN will reach out within 24 hours.'
+                bookingId: (isComingSoon ? 'ZR-LAUNCH-' : 'ZR-') + Date.now().toString(36).toUpperCase(),
+                advisor: isComingSoon
+                  ? (isFa ? 'میز مشاوره پیش‌عرضه (دفتر اختصاصی زارین)' : 'Off-Plan Launch Advisory Desk')
+                  : 'Senior Client Advisor (Private Office)',
+                message: isComingSoon
+                  ? (isFa ? 'درخواست دسترسی زودهنگام شما ثبت شد. مشاور ارشد زارین ظرف ۲۴ ساعت آینده با شما تماس خواهد گرفت.' : 'Thank you for registering for priority pre-launch access. A senior ZARIN advisor will reach out within 24 hours.')
+                  : 'Thank you for your confidential inquiry. A senior director from ZARIN will reach out within 24 hours.'
               }));
               return;
             }
@@ -65,16 +76,27 @@ export default defineConfig({
       },
       configurePreviewServer(server) {
         server.middlewares.use((req, res, next) => {
-          if (req.method === 'POST' && (req.url === '/consultation' || req.url === '/consultation/' || req.url === '/consultation/submit' || req.url === '/fa/consultation' || req.url === '/fa/consultation/' || req.url === '/fa/consultation/submit')) {
+          if (req.method === 'POST' && (
+            req.url === '/consultation' || req.url === '/consultation/' || req.url === '/consultation/submit' ||
+            req.url === '/fa/consultation' || req.url === '/fa/consultation/' || req.url === '/fa/consultation/submit' ||
+            req.url === '/off-plan/coming-soon' || req.url === '/off-plan/coming-soon/' || req.url === '/off-plan/coming-soon/submit' ||
+            req.url === '/fa/off-plan/coming-soon' || req.url === '/fa/off-plan/coming-soon/' || req.url === '/fa/off-plan/coming-soon/submit'
+          )) {
             const accept = req.headers['accept'] || '';
+            const isComingSoon = req.url.includes('coming-soon');
+            const isFa = req.url.includes('/fa');
             if (accept.includes('application/json')) {
               res.statusCode = 200;
               res.setHeader('Content-Type', 'application/json; charset=utf-8');
               res.end(JSON.stringify({
                 success: true,
-                bookingId: 'ZR-' + Date.now().toString(36).toUpperCase(),
-                advisor: 'Senior Client Advisor (Private Office)',
-                message: 'Thank you for your confidential inquiry. A senior director from ZARIN will reach out within 24 hours.'
+                bookingId: (isComingSoon ? 'ZR-LAUNCH-' : 'ZR-') + Date.now().toString(36).toUpperCase(),
+                advisor: isComingSoon
+                  ? (isFa ? 'میز مشاوره پیش‌عرضه (دفتر اختصاصی زارین)' : 'Off-Plan Launch Advisory Desk')
+                  : 'Senior Client Advisor (Private Office)',
+                message: isComingSoon
+                  ? (isFa ? 'درخواست دسترسی زودهنگام شما ثبت شد. مشاور ارشد زارین ظرف ۲۴ ساعت آینده با شما تماس خواهد گرفت.' : 'Thank you for registering for priority pre-launch access. A senior ZARIN advisor will reach out within 24 hours.')
+                  : 'Thank you for your confidential inquiry. A senior director from ZARIN will reach out within 24 hours.'
               }));
               return;
             }

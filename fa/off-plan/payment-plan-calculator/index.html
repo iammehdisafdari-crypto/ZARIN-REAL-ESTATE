@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0A0B0E">
+
+  <!-- ═══ PRIMARY META ═══ -->
+  <title>محاسبه‌گر اقساط پیش‌فروش دبی | املاک زرین</title>
+  <meta name="description" content="محاسبه‌گر رایگان و آنلاین جدول اقساط پروژه‌های پیش‌فروش دبی — مدل‌سازی طرح‌های ۶۰/۴۰، ۷۰/۳۰، پس از تحویل و ۱٪ ماهیانه همراه با جدول زمان‌بندی و تفکیک هزینه‌های جانبی سند.">
+  <meta name="keywords" content="محاسبه اقساط پیش فروش دبی, ماشین حساب اقساط ملک دبی, طرح پرداخت 60/40 دبی, اقساط پس از تحویل دبی, هزینه ثبت سند DLD دبی, خرید ملک اقساطی دبی, سرمایه گذاری اف پلان دبی">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="ZARIN Real Estate">
+  <link rel="canonical" href="https://zarinrealestate.com/fa/off-plan/payment-calculator">
+
+  <!-- ═══ HREFLANG ALTERNATES ═══ -->
+  <link rel="alternate" hreflang="en" href="https://zarinrealestate.com/off-plan/payment-calculator">
+  <link rel="alternate" hreflang="fa" href="https://zarinrealestate.com/fa/off-plan/payment-calculator">
+  <link rel="alternate" hreflang="x-default" href="https://zarinrealestate.com/off-plan/payment-calculator">
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="محاسبه‌گر اقساط پیش‌فروش دبی | املاک زرین">
+  <meta property="og:description" content="محاسبه‌گر آنلاین اقساط پروژه‌های پیش‌فروش دبی — ۵ ساختار پرداخت، زمان‌بندی مراحل ساخت و اقساط ماهیانه.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="محاسبه‌گر اقساط پیش‌فروش دبی — ابزار تعاملی برنامه‌ریزی مالی املاک زرین">
+  <meta property="og:url" content="https://zarinrealestate.com/fa/off-plan/payment-calculator">
+  <meta property="og:site_name" content="ZARIN Real Estate">
+  <meta property="og:locale" content="fa_IR">
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="محاسبه‌گر اقساط پیش‌فروش دبی | املاک زرین">
+  <meta name="twitter:description" content="محاسبه‌گر رایگان اقساط پیش‌فروش دبی — ۵ طرح پرداخت، زمان‌بندی مراحل و هزینه‌های جانبی.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- ═══ FAVICON ═══ -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0B0E'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' fill='%23C8AB83' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+
+  <!-- ═══ RESOURCE PRELOADS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+
+  <!-- ═══ FONTS ═══ -->
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ═══ PRODUCTION STYLES ═══ -->
+  <link rel="stylesheet" href="/styles/main.css">
+
+  <style>
+    body { font-family: "Vazirmatn", "Source Sans 3", -apple-system, sans-serif !important; }
+    html { scroll-behavior: smooth; }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0A0B0E; }
+    ::-webkit-scrollbar-thumb { background: #C8AB83; border-radius: 4px; }
+    ::selection { background: rgba(200, 171, 131, 0.3); color: #F8F9FA; }
+    .glass { background: rgba(10, 11, 14, 0.78); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    .gold-glow { transition: box-shadow .5s cubic-bezier(.16, 1, .3, 1), border-color .5s cubic-bezier(.16, 1, .3, 1); }
+    .gold-glow:hover { box-shadow: 0 10px 30px rgba(200, 171, 131, .15); border-color: rgba(200, 171, 131, .45); }
+    .text-gold-gradient { background: linear-gradient(135deg, #DFC49E 0%, #C8AB83 50%, #A88D66 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat-number { font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+    .mega-menu-trigger { position: relative; }
+    .mega-menu-panel { opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .3s cubic-bezier(.16, 1, .3, 1), transform .3s cubic-bezier(.16, 1, .3, 1), visibility .3s; pointer-events: none; }
+    .mega-menu-trigger:hover .mega-menu-panel, .mega-menu-trigger.is-open .mega-menu-panel, .mega-menu-panel:hover { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+    .card-lift { transition: transform .5s cubic-bezier(.16, 1, .3, 1), box-shadow .5s cubic-bezier(.16, 1, .3, 1); }
+    .card-lift:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0, 0, 0, .5); }
+    .mobile-menu { transform: translateX(100%); transition: transform .4s cubic-bezier(.16, 1, .3, 1); }
+    .mobile-menu.open { transform: translateX(0); }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in-up { animation: fadeInUp .8s cubic-bezier(.16, 1, .3, 1) both; }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform .3s cubic-bezier(.16, 1, .3, 1); }
+    .sticky-whatsapp { display: none; }
+    @media (max-width: 1024px) { .sticky-whatsapp { display: flex; } }
+    .step-line::before { content: ""; position: absolute; right: 1.5rem; top: 3.5rem; bottom: -2.5rem; width: 1px; background: linear-gradient(to bottom, rgba(200, 171, 131, 0.45), rgba(200, 171, 131, 0.05)); }
+    @media (max-width: 768px) { .step-line::before { display: none; } }
+    /* Calculator UI */
+    input[type="range"].calc-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; background: rgba(255, 255, 255, 0.08); border-radius: 999px; outline: none; cursor: pointer; }
+    input[type="range"].calc-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; background: #C8AB83; border-radius: 50%; border: 2px solid #0A0B0E; box-shadow: 0 0 0 1px rgba(200, 171, 131, 0.45); transition: transform .2s; }
+    input[type="range"].calc-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+    input[type="range"].calc-slider::-moz-range-thumb { width: 20px; height: 20px; background: #C8AB83; border-radius: 50%; border: 2px solid #0A0B0E; box-shadow: 0 0 0 1px rgba(200, 171, 131, 0.45); cursor: pointer; }
+    input[type="range"].calc-slider:focus-visible { outline: 2px solid #C8AB83; outline-offset: 4px; }
+    .calc-radio:focus-visible + .calc-radio-label { outline: 2px solid #C8AB83; outline-offset: 2px; }
+    input[type="radio"].calc-radio:checked + .calc-radio-label { border-color: rgba(200, 171, 131, 0.65); background: rgba(200, 171, 131, 0.10); }
+    select.calc-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23C8AB83'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: left 0.85rem center; background-size: 1.1rem; }
+    input[type="checkbox"].calc-checkbox:checked { accent-color: #C8AB83; }
+    .result-card { animation: fadeInUp .6s cubic-bezier(.16, 1, .3, 1) both; }
+    .progress-track { background: rgba(255, 255, 255, 0.08); border-radius: 999px; overflow: hidden; }
+    .progress-fill { background: linear-gradient(90deg, #DFC49E 0%, #C8AB83 50%, #A88D66 100%); transition: width .5s cubic-bezier(.16, 1, .3, 1); }
+    .schedule-table tbody tr:nth-child(odd) { background: rgba(255, 255, 255, 0.02); }
+    .schedule-table tbody tr:hover { background: rgba(200, 171, 131, 0.05); }
+    .metric-card { transition: border-color .3s, transform .3s; }
+    .metric-card:hover { border-color: rgba(200, 171, 131, 0.45); transform: translateY(-2px); }
+    .hidden-conditional { display: none; }
+  </style>
+
+  <!-- ═══ JSON-LD: BreadcrumbList ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "صفحه اصلی",
+        "item": "https://zarinrealestate.com/fa"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "پیش‌فروش و آف‌پلان",
+        "item": "https://zarinrealestate.com/fa/off-plan"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "محاسبه‌گر اقساط",
+        "item": "https://zarinrealestate.com/fa/off-plan/payment-calculator"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ JSON-LD: WebApplication ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://zarinrealestate.com/fa/off-plan/payment-calculator#webapp",
+    "name": "محاسبه‌گر اقساط پیش‌فروش زرین",
+    "url": "https://zarinrealestate.com/fa/off-plan/payment-calculator",
+    "description": "ابزار تعاملی و رایگان محاسبه اقساط پیش‌فروش دبی — مدل‌سازی قیمت ملک، نوع کاربری، ۵ ساختار پرداخت (۶۰/۴۰، ۷۰/۳۰، ۵۰/۵۰، پس از تحویل و ۱٪ ماهیانه)، مدت دوره ساخت، بازه اقساط پس از تحویل و تفکیک عوارض سند DLD و کمیسیون.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "featureList": [
+      "مدل‌سازی مبالغ ۵۰۰ هزار تا ۵۰ میلیون درهم با محاسبه همزمان اسلایدر و ورودی عددی",
+      "۵ الگوی ساختار پرداخت استاندارد مورد تایید دپارتمان اراضی دبی (DLD)",
+      "جدول زمان‌بندی دقیق مراحل ساخت با تاریخ‌ها، درصدها و مبالغ به درهم (AED)",
+      "تفکیک شفاف هزینه‌های جانبی شامل عوارض سند ۴٪ DLD، کمیسیون ۲٪ + مالیات، هزینه اداری ۴,۰۰۰ درهم و سند ۵۸۰ درهم",
+      "محاسبه اقساط ماهیانه دوره ساخت و پس از تحویل کلید تا ۳۶ ماه",
+      "کاملاً محرمانه در سمت مرورگر بدون ارسال داده به سرور"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "AED"
+    },
+    "provider": {
+      "@id": "https://zarinrealestate.com/#organization"
+    },
+    "inLanguage": "fa"
+  }
+  </script>
+
+  <!-- ═══ JSON-LD: FAQPage ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://zarinrealestate.com/fa/off-plan/payment-calculator#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "رایج‌ترین ساختار پرداخت اقساطی برای پروژه‌های پیش‌فروش دبی چیست؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "طرح ۶۰/۴۰ متداول‌ترین ساختار پرداخت پروژه‌های آف‌پلان دبی است. در این طرح خریدار ۶۰٪ ارزش ملک را در طول دوره ساخت متناسب با پیشرفت پروژه (رزرو، شروع گودبرداری، تکمیل اسکلت و نما) پرداخت کرده و ۴۰٪ باقیمانده را هنگام تحویل کلید تسویه می‌نماید."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "در صورت تاخیر یا عدم پرداخت یک قسط چه اتفاقی رخ می‌دهد؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "مطابق قوانین اداره اراضی دبی (DLD)، سازنده اخطاریه رسمی ۳۰ روزه جهت تسویه صادر می‌کند. در صورت عدم پرداخت، سازنده مجاز است قرارداد را فسخ کرده و درصدی از مبالغ پرداخت‌شده را طبق ضوابط قانون RERA به عنوان خسارت کسر نماید."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "آیا امکان مذاکره و شخصی‌سازی برنامه اقساط با سازنده وجود دارد؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "بله؛ برای خریداران واحدهای بزرگ یا متقاضیان خرید چند واحدی، سازندگان انعطاف‌پذیری دارند. مواردی همچون افزایش پیش‌پرداخت در ازای تخفیف نقدی یا تمدید اقساط پس از تحویل کلید با هماهنگی دپارتمان اراضی قابل ثبت است."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هزینه انتقال سند (DLD Fee) چقدر است و چه زمانی پرداخت می‌شود؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "عوارض اداره اراضی دبی معادل ۴ درصد قیمت توافق‌شده ملک است و هنگام ثبت قرارداد پیش‌فروش (ثبت عقود Oqood) که معمولاً ظرف ۳۰ تا ۶۰ روز پس از امضای قرارداد SPA می‌باشد، واریز می‌گردد."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "آیا هزینه ۴ درصد DLD علاوه بر قیمت ملک پرداخت می‌شود؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "بله، این عوارض دولتی بوده و روی قیمت خرید اضافه می‌شود، مگر در مواردی که پروژه‌ای دارای پروموشن معافیت DLD (یا تقبل هزینه توسط سازنده) باشد."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "آیا می‌توان برای تسویه باقیمانده مبلغ پیش‌فروش وام بانکی دریافت کرد؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "بله؛ خریداران می‌توانند برای قسط نهایی هنگام تحویل کلید، از بانک‌های معتبر امارات تا سقف ۵۰ الی ۸۰ درصد ارزش ملک بر اساس وضعیت اقامت خود تسهیلات رهنی دریافت کنند."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "طرح پرداخت پس از تحویل (Post-Handover) چگونه عمل می‌کند؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "در این ساختار بخشی از بهای ملک (معمولاً ۵۰ درصد) طی دوره ساخت تسویه شده و ۵۰ درصد باقیمانده در بازه زمانی ۱ تا ۳ سال پس از دریافت کلید قسط‌بندی می‌شود تا خریدار بتواند از محل اجاره‌بهای واحد بخشی از اقساط را جبران نماید."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "اقدام بعدی پس از مشاهده جدول محاسبات چیست؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "مرحله بعد، رزرو جلسه مشاوره رایگان با مشاور ارشد پیش‌فروش زرین است تا متناسب با بودجه و جریان نقدینگی شما، پروژه‌های دارای حساب اسکرو معتبر و سازندگان تراز اول با بهترین ساختار اقساط معرفی گردند."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ JSON-LD: WebPage + Speakable ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://zarinrealestate.com/fa/off-plan/payment-calculator#webpage",
+    "url": "https://zarinrealestate.com/fa/off-plan/payment-calculator",
+    "name": "محاسبه‌گر اقساط پیش‌فروش دبی | املاک زرین",
+    "description": "محاسبه‌گر رایگان و آنلاین جدول اقساط پروژه‌های پیش‌فروش دبی — مدل‌سازی طرح‌های ۶۰/۴۰، ۷۰/۳۰، پس از تحویل و ۱٪ ماهیانه همراه با جدول زمان‌بندی و تفکیک هزینه‌های جانبی سند.",
+    "isPartOf": {
+      "@id": "https://zarinrealestate.com/#website"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "#hero-headline",
+        "#tldr-summary"
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="bg-ink-900 text-bone antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:right-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-gold-400 focus:text-ink-900 focus:rounded-xs focus:text-sm focus:font-bold">پرش به محتوای اصلی</a>
+
+  <!-- ═══ HEADER ═══ -->
+  <header id="site-header" class="fixed top-0 left-0 w-full z-[900] transition-all duration-500" role="banner" style="padding: 1.15rem 0;">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="flex items-center justify-between gap-4">
+
+        <a href="/fa" class="flex items-center gap-2 group flex-shrink-0" aria-label="املاک زرین — صفحه اصلی">
+          <span class="font-sans font-extrabold text-2xl tracking-tight text-bone group-hover:text-gold-400 transition-colors duration-300">ZARIN</span>
+          <span class="hidden md:inline text-[10px] tracking-[0.3em] uppercase text-gold-400 font-semibold border-r border-gold-line pr-2">املاک و مستغلات</span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1" aria-label="منوی اصلی ناوبری">
+
+          <!-- 1. منوی املاک -->
+          <div class="mega-menu-trigger flex items-center group/prop">
+            <a href="/fa/properties" class="pr-3 pl-1 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300" id="properties-nav-link">املاک برگزیده</a>
+            <button type="button" class="mega-menu-toggle-btn pl-3 pr-1 py-2 text-ash hover:text-gold-400 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-400" id="properties-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="properties-mega-panel" aria-label="نمایش زیرمنوی املاک">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="properties-mega-panel" class="mega-menu-panel absolute top-full right-0 mt-2 w-[640px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-3 gap-x-6 gap-y-3" role="region" aria-label="زیرمنوی املاک">
+              <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">برای فروش</div>
+              <a href="/fa/properties-for-sale" class="text-sm text-bone hover:text-gold-400 transition-colors">همه املاک برای فروش</a>
+              <a href="/fa/apartments-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">آپارتمان‌ها</a>
+              <a href="/fa/villas-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">ویلاها</a>
+              <a href="/fa/penthouses-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">پنت‌هاوس‌ها</a>
+              <a href="/fa/townhouses-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">تاون‌هاوس‌ها</a>
+              <a href="/fa/trophy-residences" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">املاک تراز اول (Trophy) ←</a>
+              <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">برای اجاره</div>
+              <a href="/fa/properties-for-rent" class="text-sm text-bone hover:text-gold-400 transition-colors">همه املاک برای اجاره</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">بر اساس سبک زندگی</div>
+              <a href="/fa/beachfront-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">ساحلی</a>
+              <a href="/fa/burj-khalifa-view-properties" class="text-sm text-ash hover:text-gold-400 transition-colors">دید برج خلیفه</a>
+              <a href="/fa/golf-course-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">زمین گلف</a>
+              <a href="/fa/branded-residences-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">اقامتگاه‌های برند</a>
+              <a href="/fa/commercial-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">املاک تجاری</a>
+            </div>
+          </div>
+
+          <!-- 2. منوی پیش‌فروش و آف‌پلان (Active) -->
+          <div class="mega-menu-trigger flex items-center group/offplan">
+            <a href="/fa/off-plan" class="pr-3 pl-1 py-2 text-[13px] font-semibold tracking-wide text-gold-400 hover:text-gold-300 transition-colors duration-300" id="offplan-nav-link" aria-current="page">پیش‌فروش و آف‌پلان</a>
+            <button type="button" class="mega-menu-toggle-btn pl-3 pr-1 py-2 text-gold-400 hover:text-gold-300 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-400" id="offplan-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="offplan-mega-panel" aria-label="نمایش زیرمنوی پیش‌فروش">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="offplan-mega-panel" class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3" role="region" aria-label="زیرمنوی پیش‌فروش">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">کشف پروژه‌ها</div>
+              <a href="/fa/off-plan/projects" class="text-sm text-bone hover:text-gold-400 transition-colors">همه پروژه‌های پیش‌فروش</a>
+              <a href="/fa/off-plan/new-launches" class="text-sm text-ash hover:text-gold-400 transition-colors">پروژه‌های تازه راه‌اندازی‌شده</a>
+              <a href="/fa/off-plan/coming-soon" class="text-sm text-ash hover:text-gold-400 transition-colors">به‌زودی</a>
+              <a href="/fa/off-plan/by-developer" class="text-sm text-ash hover:text-gold-400 transition-colors">بر اساس سازنده</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">ابزارهای سرمایه‌گذاری</div>
+              <a href="/fa/off-plan/investment-guide" class="text-sm text-ash hover:text-gold-400 transition-colors">راهنمای سرمایه‌گذاری</a>
+              <a href="/fa/off-plan/payment-calculator" class="text-sm text-gold-400 hover:text-gold-300 font-semibold transition-colors" aria-current="page">محاسبه‌گر اقساط</a>
+              <a href="/fa/off-plan/roi-predictor" class="text-sm text-ash hover:text-gold-400 transition-colors">پیش‌بینی‌کننده بازدهی</a>
+              <a href="/fa/off-plan/developer-reputation-tracker" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">رهگیری اعتبار سازندگان ←</a>
+            </div>
+          </div>
+
+          <!-- 3. منوی مناطق -->
+          <div class="mega-menu-trigger flex items-center group/areas">
+            <a href="/fa/areas" class="pr-3 pl-1 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300" id="areas-nav-link">مناطق</a>
+            <button type="button" class="mega-menu-toggle-btn pl-3 pr-1 py-2 text-ash hover:text-gold-400 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-400" id="areas-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="areas-mega-panel" aria-label="نمایش زیرمنوی مناطق">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="areas-mega-panel" class="mega-menu-panel absolute top-full right-0 mt-2 w-[640px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-3 gap-x-6 gap-y-3" role="region" aria-label="زیرمنوی مناطق">
+              <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">مناطق شاخص</div>
+              <a href="/fa/areas" class="text-sm text-bone hover:text-gold-400 transition-colors">پالم جمیرا</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">داون‌تاون دبی</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">دبی هیلز استیت</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">دبی مارینا</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">بیزنس بی</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">کریک هاربر</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">جزیره جمیرا بی</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">امارات هیلز</a>
+              <a href="/fa/areas" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">همه مناطق ←</a>
+              <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">مقایسه شهرها</div>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">دبی در مقایسه با لندن</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">دبی در مقایسه با سنگاپور</a>
+              <a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">دبی در مقایسه با نیویورک</a>
+            </div>
+          </div>
+
+          <!-- 4. منوی دفتر اختصاصی -->
+          <div class="mega-menu-trigger flex items-center group/po">
+            <a href="/fa/private-office" class="pr-3 pl-1 py-2 text-[13px] font-semibold tracking-wide text-gold-400 hover:text-gold-300 transition-colors duration-300" id="private-office-nav-link">دفتر اختصاصی</a>
+            <button type="button" class="mega-menu-toggle-btn pl-3 pr-1 py-2 text-gold-400 hover:text-gold-300 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-300" id="private-office-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="private-office-mega-panel" aria-label="نمایش زیرمنوی دفتر اختصاصی">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="private-office-mega-panel" class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-gold-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3" role="region" aria-label="زیرمنوی دفتر اختصاصی">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">دفتر اختصاصی (+۲۵ میلیون درهم)</div>
+              <a href="/fa/private-office" class="text-sm text-bone hover:text-gold-400 transition-colors">مرور کلی</a>
+              <a href="/fa/private-office" class="text-sm text-ash hover:text-gold-400 transition-colors">پروتکل محرمانگی</a>
+              <a href="/fa/private-office" class="text-sm text-ash hover:text-gold-400 transition-colors">فایل‌های ثبت‌نشده (Off-Market)</a>
+              <a href="/fa/private-office" class="text-sm text-ash hover:text-gold-400 transition-colors">قیمت‌گذاری چند ارزی</a>
+              <a href="/fa/private-office" class="text-sm text-ash hover:text-gold-400 transition-colors">پرداخت با رمزارز</a>
+              <a href="/fa/private-office" class="text-sm text-ash hover:text-gold-400 transition-colors">دستیار سبک زندگی</a>
+              <a href="/fa/private-office" class="text-sm text-ash hover:text-gold-400 transition-colors">هوانوردی و قایق‌های تفریحی</a>
+              <a href="/fa/private-office" class="text-sm text-ash hover:text-gold-400 transition-colors">مشاوره مالیاتی بین‌المللی</a>
+            </div>
+          </div>
+
+          <!-- 5. منوی خدمات -->
+          <div class="mega-menu-trigger">
+            <a href="/fa/services" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              خدمات
+              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">خرید و فروش</div>
+              <a href="/fa/services" class="text-sm text-bone hover:text-gold-400 transition-colors">مشاوره خرید</a>
+              <a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">مشاوره فروش</a>
+              <a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">مشاوره وام بانکی</a>
+              <a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">ارزیابی رایگان ملک</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">مدیریت و امور حقوقی</div>
+              <a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">مدیریت ملک</a>
+              <a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">امور حقوقی و انتقال سند</a>
+              <a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">بیمه ملک</a>
+              <a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">پشتیبانی پس از فروش</a>
+            </div>
+          </div>
+
+          <!-- 6. منوی ویزا -->
+          <div class="mega-menu-trigger">
+            <a href="/fa/visas" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              ویزای اقامت
+              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">انواع ویزا</div>
+              <a href="/fa/visas" class="text-sm text-bone hover:text-gold-400 transition-colors">مرکز ویزاهای اقامت</a>
+              <a href="/fa/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">ویزای طلایی (۱۰ ساله)</a>
+              <a href="/fa/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">ویزای سرمایه‌گذاری (۲ ساله)</a>
+              <a href="/fa/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">ویزای بازنشستگی (۵ ساله)</a>
+              <a href="/fa/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">ویزای فریلنسری و کار دورکاری</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">بر اساس ملیت</div>
+              <a href="/fa/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">برای خریداران هندی</a>
+              <a href="/fa/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">برای خریداران بریتانیایی</a>
+              <a href="/fa/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">برای خریداران چینی</a>
+              <a href="/fa/visas" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">بررسی شرایط صلاحیت ←</a>
+            </div>
+          </div>
+
+          <!-- 7. منوی تحلیل و مقالات -->
+          <div class="mega-menu-trigger">
+            <a href="/fa/insights" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              تحلیل و گزارش‌ها
+              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">مرکز تحلیل</div>
+              <a href="/fa/insights" class="text-sm text-bone hover:text-gold-400 transition-colors">همه مقالات و گزارش‌ها</a>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">مقالات وبلاگ</a>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">گزارش‌های فصلی بازار</a>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">پادکست سرمایه‌گذاری</a>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">راهنمای خریداران</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">ابزارها و مراجع</div>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">همه ماشین‌حساب‌ها</a>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">پرسش‌های متداول</a>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">واژه‌نامه تخصصی</a>
+              <a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">داده‌های آماری بازار</a>
+            </div>
+          </div>
+
+          <!-- 8. منوی اصالت و پیشینه -->
+          <div class="mega-menu-trigger">
+            <a href="/fa/heritage" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              اصالت و پیشینه
+              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">درباره زرین</div>
+              <a href="/fa/heritage" class="text-sm text-bone hover:text-gold-400 transition-colors">داستان ما (از سال ۲۰۰۵)</a>
+              <a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">نامه بنیان‌گذار</a>
+              <a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">تیم ما</a>
+              <a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">نویسندگان و تحلیل‌گران</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">اعتماد و اعتبار</div>
+              <a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">نظرات مشتریان</a>
+              <a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">افتخارات و جوایز</a>
+              <a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">بازتاب رسانه‌ای</a>
+              <a href="/fa/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">مطالعات موردی موفق</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="header-action-cluster flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <a href="tel:+971586901231" class="hidden xl:flex items-center gap-2 text-xs font-semibold text-ash hover:text-gold-400 transition-colors whitespace-nowrap" aria-label="تماس تلفنی با +971 58 690 1231">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.288a11.3 11.3 0 005.067 5.067l1.288-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span dir="ltr" class="tabular-nums">+971 58 690 1231</span>
+          </a>
+
+          <a href="/fa/consultation" class="header-cta hidden lg:inline-flex items-center justify-center h-[34px] px-4 md:px-5 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-[0.06em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold whitespace-nowrap" aria-label="رزرو مشاوره خرید">
+            رزرو مشاوره
+          </a>
+
+          <!-- انتخاب زبان -->
+          <div class="lang-switch hidden lg:inline-flex items-center h-[34px] bg-white/[0.04] border border-white-line rounded-xs p-0.5" role="group" aria-label="انتخاب زبان">
+            <button type="button" class="lang-btn h-full px-2 text-[11px] font-semibold rounded-xs transition-all" data-lang="en" aria-label="Switch to English" aria-pressed="false">EN</button>
+            <button type="button" class="lang-btn h-full px-2 text-[11px] font-semibold rounded-xs transition-all active is-active text-gold-400" data-lang="fa" aria-label="تغییر به زبان فارسی" aria-pressed="true">فارسی</button>
+          </div>
+
+          <button id="mobile-menu-toggle" class="lg:hidden text-bone hover:text-gold-400 transition-colors p-2" aria-label="باز کردن منو" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ MOBILE MENU DRAWER ═══ -->
+  <div id="mobile-menu" class="mobile-menu fixed top-0 left-0 w-full max-w-sm h-full bg-ink-900 border-r border-white-line z-[1000] overflow-y-auto lg:hidden" role="dialog" aria-modal="true" aria-label="ناوبری موبایل">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-8">
+        <span class="font-sans font-extrabold text-xl text-bone">ZARIN</span>
+        <button id="mobile-menu-close" class="text-ash hover:text-gold-400 transition-colors" aria-label="بستن منو">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <nav class="flex flex-col gap-1" aria-label="منوی اصلی ناوبری موبایل">
+        <!-- 1. Properties Accordion -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/properties" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">املاک برای فروش و اجاره</a>
+            <button type="button" id="mobile-properties-toggle" aria-expanded="false" aria-controls="mobile-properties-submenu" aria-label="نمایش زیرمنوی املاک" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-properties-submenu" class="hidden pr-6 pl-4 py-2 flex flex-col gap-2 border-r border-white-line mr-4 my-1">
+            <a href="/fa/properties-for-sale" class="text-xs text-bone hover:text-gold-400 py-1">همه املاک برای فروش</a>
+            <a href="/fa/apartments-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">آپارتمان‌ها</a>
+            <a href="/fa/villas-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">ویلاها</a>
+            <a href="/fa/penthouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">پنت‌هاوس‌ها</a>
+            <a href="/fa/townhouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">تاون‌هاوس‌ها</a>
+            <a href="/fa/trophy-residences" class="text-xs text-gold-400 hover:text-gold-300 font-semibold py-1">املاک تراز اول (Trophy) ←</a>
+            <div class="h-px bg-white-line/30 my-1"></div>
+            <a href="/fa/properties-for-rent" class="text-xs text-ash hover:text-gold-400 py-1">همه املاک برای اجاره</a>
+            <a href="/fa/beachfront-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">املاک ساحلی</a>
+            <a href="/fa/burj-khalifa-view-properties" class="text-xs text-ash hover:text-gold-400 py-1">دید برج خلیفه</a>
+            <a href="/fa/golf-course-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">زمین گلف</a>
+            <a href="/fa/commercial-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">املاک تجاری</a>
+          </div>
+        </div>
+
+        <!-- 2. Off-Plan Accordion -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/off-plan" class="flex-1 py-3 px-4 text-sm font-semibold text-gold-400 hover:text-gold-300">پیش‌فروش و آف‌پلان</a>
+            <button type="button" id="mobile-offplan-toggle" aria-expanded="true" aria-controls="mobile-offplan-submenu" aria-label="نمایش زیرمنوی پیش‌فروش" class="p-3 text-gold-400 hover:text-gold-300 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-offplan-submenu" class="pr-6 pl-4 py-2 flex flex-col gap-2 border-r border-white-line mr-4 my-1">
+            <a href="/fa/off-plan/projects" class="text-xs text-bone hover:text-gold-400 py-1">همه پروژه‌های پیش‌فروش</a>
+            <a href="/fa/off-plan/new-launches" class="text-xs text-ash hover:text-gold-400 py-1">پروژه‌های تازه راه‌اندازی‌شده</a>
+            <a href="/fa/off-plan/coming-soon" class="text-xs text-ash hover:text-gold-400 py-1">به‌زودی</a>
+            <a href="/fa/off-plan/by-developer" class="text-xs text-ash hover:text-gold-400 py-1">بر اساس سازنده</a>
+            <div class="h-px bg-white-line/30 my-1"></div>
+            <a href="/fa/off-plan/investment-guide" class="text-xs text-ash hover:text-gold-400 py-1">راهنمای سرمایه‌گذاری</a>
+            <a href="/fa/off-plan/payment-calculator" class="text-xs text-gold-400 hover:text-gold-300 font-semibold py-1">محاسبه‌گر اقساط</a>
+            <a href="/fa/off-plan/roi-predictor" class="text-xs text-ash hover:text-gold-400 py-1">پیش‌بینی‌کننده بازدهی</a>
+            <a href="/fa/off-plan/developer-reputation-tracker" class="text-xs text-gold-400 hover:text-gold-300 font-semibold py-1">رهگیری اعتبار سازندگان ←</a>
+          </div>
+        </div>
+
+        <!-- 3. Areas Accordion -->
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/fa/areas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">مناطق دبی</a>
+            <button type="button" id="mobile-areas-toggle" aria-expanded="false" aria-controls="mobile-areas-submenu" aria-label="نمایش زیرمنوی مناطق" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-areas-submenu" class="hidden pr-6 pl-4 py-2 flex flex-col gap-2 border-r border-white-line mr-4 my-1">
+            <a href="/fa/areas" class="text-xs text-bone hover:text-gold-400 py-1">پالم جمیرا</a>
+            <a href="/fa/areas" class="text-xs text-ash hover:text-gold-400 py-1">داون‌تاون دبی</a>
+            <a href="/fa/areas" class="text-xs text-ash hover:text-gold-400 py-1">دبی هیلز استیت</a>
+            <a href="/fa/areas" class="text-xs text-ash hover:text-gold-400 py-1">دبی مارینا</a>
+            <a href="/fa/areas" class="text-xs text-ash hover:text-gold-400 py-1">بیزنس بی</a>
+            <a href="/fa/areas" class="text-xs text-gold-400 hover:text-gold-300 font-semibold py-1">همه مناطق ←</a>
+          </div>
+        </div>
+
+        <!-- 4. Direct Sections -->
+        <div class="mobile-nav-item">
+          <a href="/fa/private-office" class="flex-1 py-3 px-4 text-sm font-semibold text-gold-400 hover:bg-white-soft rounded-xs transition-all block">دفتر اختصاصی (+۲۵ میلیون درهم)</a>
+        </div>
+        <div class="mobile-nav-item">
+          <a href="/fa/services" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all block">خدمات ملکی و حقوقی</a>
+        </div>
+        <div class="mobile-nav-item">
+          <a href="/fa/visas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all block">ویزای اقامت امارات</a>
+        </div>
+        <div class="mobile-nav-item">
+          <a href="/fa/insights" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all block">تحلیل و گزارش‌ها</a>
+        </div>
+        <div class="mobile-nav-item">
+          <a href="/fa/heritage" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all block">اصالت و پیشینه (از ۲۰۰۵)</a>
+        </div>
+
+        <div class="h-px bg-white-line my-4"></div>
+
+        <!-- Language toggle for mobile -->
+        <div class="flex items-center justify-between px-4 py-2 bg-ink-850 border border-white-line rounded-xs mb-3">
+          <span class="text-xs text-slate">زبان سایت</span>
+          <div class="flex gap-2">
+            <button type="button" class="lang-btn text-xs text-ash hover:text-gold-400 px-2 py-1" data-lang="en">EN</button>
+            <span class="text-xs text-gold-400 font-bold px-2 py-1 bg-gold-soft border border-gold-line rounded-xs">فارسی</span>
+          </div>
+        </div>
+
+        <a href="/fa/consultation" class="py-3 px-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-wide text-center rounded-xs hover:bg-gold-300 transition-all">رزرو مشاوره تخصصی</a>
+        <a href="tel:+971586901231" class="py-3 px-4 text-sm text-ash hover:text-gold-400 text-center" dir="ltr">+971 58 690 1231</a>
+        <a href="https://wa.me/971586901231" class="py-3 px-4 text-sm text-emerald-400 hover:underline text-center">ارتباط در واتس‌اپ</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ═══ BREADCRUMB ═══ -->
+  <div class="pt-24 bg-ink-900 border-b border-white-line">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-4">
+      <nav aria-label="مسیر راهنما (Breadcrumb)" class="text-xs">
+        <ol class="flex items-center gap-2 text-slate">
+          <li><a href="/fa" class="hover:text-gold-400 transition-colors">صفحه اصلی</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/fa/off-plan" class="hover:text-gold-400 transition-colors">پیش‌فروش و آف‌پلان</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-bone font-semibold" aria-current="page">محاسبه‌گر اقساط</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main">
+
+  <!-- ═══ 1. HERO SECTION ═══ -->
+  <section class="relative py-20 md:py-28 overflow-hidden bg-ink-900" aria-labelledby="hero-headline">
+    <div class="absolute inset-0 opacity-15">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80" alt="" class="w-full h-full object-cover" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-ink-900 via-ink-900/95 to-ink-900" aria-hidden="true"></div>
+    <div class="relative max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-4xl animate-fade-in-up">
+        <div class="inline-flex items-center gap-2 mb-6">
+          <span class="w-8 h-px bg-gold-400" aria-hidden="true"></span>
+          <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">پیش‌فروش و آف‌پلان &middot; ابزار تعاملی</span>
+        </div>
+        <h1 id="hero-headline" class="font-sans font-extrabold text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-bone mb-6">
+          محاسبه‌گر اقساط<br>
+          <span class="text-gold-gradient">پیش‌فروش املاک دبی</span>
+        </h1>
+        <p id="tldr-summary" class="text-base md:text-lg text-ash max-w-3xl leading-relaxed mb-8 font-light">
+          محاسبه‌گر اقساط پیش‌فروش زرین، پنج ساختار استاندارد پرداخت در بازار املاک دبی
+          (۶۰/۴۰، ۷۰/۳۰، ۵۰/۵۰، پس از تحویل ۵۰/۵۰ و ۱٪ ماهیانه) را شبیه‌سازی نموده و جدول زمان‌بندی
+          اقساط به تفکیک مراحل ساخت را با تاریخ‌های تقریبی و مبالغ دقیق به درهم (AED) برای بازه قیمتی
+          ۵۰۰ هزار تا ۵۰ میلیون درهم تولید می‌کند. این ابزار به صورت پیش‌فرض عوارض ۴ درصدی اداره اراضی دبی (DLD)،
+          کمیسیون ۲ درصدی زرین به‌همراه ۵٪ مالیات بر ارزش افزوده، ۴,۰۰۰ درهم هزینه ثبت اداری و ۵۸۰ درهم صدور سند
+          مالکیت را در کل بهای تمام‌شده محاسبه می‌کند و بازه اقساط پس از تحویل تا ۳۶ ماه را مدل‌سازی می‌نماید.
+          کلیه محاسبات مستقیماً در مرورگر شما انجام می‌شود — بدون ثبت‌نام، بدون ارسال اسناد و بدون ذخیره
+          هرگونه داده هویتی در سرور. بنیان‌گذار زرین از سال ۲۰۰۵ در بازار املاک دبی به عنوان سرمایه‌گذار فعال
+          بوده و این مجموعه در سال ۲۰۲۳ به منظور ارائه خدمات جامع خرید، تامین مالی و اخذ اقامت به سرمایه‌گذاران
+          تاسیس گردید.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#calculator" class="inline-flex items-center justify-center px-8 py-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold" aria-label="شروع کار با ماشین حساب اقساط">
+            شروع کار با ماشین حساب
+            <svg class="w-4 h-4 mr-2 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="https://wa.me/971586901231" class="inline-flex items-center justify-center px-8 py-4 border border-gold-line text-bone text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-soft hover:border-gold-border transition-all duration-300" aria-label="گفتگو با مشاور پیش‌فروش در واتس‌اپ">
+            گفتگو با مشاور در واتس‌اپ
+            <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </a>
+        </div>
+
+        <!-- 4 کاشی آماری -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16 pt-8 border-t border-white-line">
+          <div class="border-r-2 border-gold-400 pr-4">
+            <div class="text-3xl md:text-4xl font-bold text-gold-400 stat-number">۵</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-2 font-semibold">طرح پرداخت استاندارد</div>
+            <div class="text-xs text-slate mt-1 leading-relaxed">۶۰/۴۰، ۷۰/۳۰، ۵۰/۵۰، پس از تحویل و ۱٪ ماهانه</div>
+          </div>
+          <div class="border-r-2 border-gold-line pr-4">
+            <div class="text-3xl md:text-4xl font-bold text-gold-400 stat-number">۶</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-2 font-semibold">مرحله تفکیک اقساط</div>
+            <div class="text-xs text-slate mt-1 leading-relaxed">رزرو، شروع ساخت، ۲۰٪، ۶۰٪، ۸۰٪ و تحویل کلید</div>
+          </div>
+          <div class="border-r-2 border-gold-line pr-4">
+            <div class="text-3xl md:text-4xl font-bold text-gold-400 stat-number">۰</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-2 font-semibold">بدون نیاز به اسناد</div>
+            <div class="text-xs text-slate mt-1 leading-relaxed">بدون ثبت‌نام، محاسبه صددرصد در مرورگر شما</div>
+          </div>
+          <div class="border-r-2 border-gold-line pr-4">
+            <div class="text-3xl md:text-4xl font-bold text-gold-400 stat-number">۹۰ ثانیه</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-2 font-semibold">میانگین زمان تکمیل</div>
+            <div class="text-xs text-slate mt-1 leading-relaxed">۷ ورودی ساده، نتایج آنی و زنده</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 2. INTERACTIVE CALCULATOR SECTION ═══ -->
+  <section id="calculator" class="bg-ink-850 py-24 md:py-32" aria-labelledby="calculator-heading">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">ابزار تعاملی</div>
+        <h2 id="calculator-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-bone mb-6">مدل‌سازی جدول اقساط پیش‌فروش</h2>
+        <p class="text-base md:text-lg text-ash leading-relaxed">
+          هفت پارامتر ورودی زیر را مطابق بودجه و نیاز خود تنظیم فرمایید تا جدول اقساط به صورت آنی بازسازی شود.
+          هر ساختار پرداخت از الگوی مصوب دپارتمان اراضی دبی (DLD) که توسط سازندگان تراز اول و معتبر به کار گرفته می‌شود
+          پیروی می‌کند. پنل سمت چپ جدول کامل را با مبالغ دقیق، درصدها و سررسیدها به همراه کلیه هزینه‌های جانبی
+          نمایش می‌دهد. کلیه پردازش‌ها در مرورگر شما انجام می‌شود و هیچ اطلاعاتی در سرور ذخیره نمی‌گردد.
+        </p>
+      </div>
+
+      <!-- وضعیت آمادگی ورودی‌ها -->
+      <div class="max-w-3xl mb-8" role="region" aria-label="میزان تکمیل ورودی‌های ماشین حساب">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <span class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold" id="calc-status" aria-live="polite">ورودی‌ها: ۷ از ۷ آماده</span>
+            <span class="hidden md:inline text-xs text-slate" aria-live="polite">محاسبه زنده در حال اجراست</span>
+          </div>
+          <span class="text-xs text-slate stat-number" id="calc-percent" aria-live="polite">۱۰۰٪</span>
+        </div>
+        <div class="progress-track h-2 w-full" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="وضعیت تکمیل ورودی‌ها">
+          <div class="progress-fill h-full" id="calc-progress" style="width:100%"></div>
+        </div>
+        <ol class="flex items-center justify-between mt-4 text-[10px] uppercase tracking-wider text-slate" aria-label="خلاصه ورودی‌ها">
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>قیمت</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>نوع ملک</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>طرح اقساط</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>مدت ساخت</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>پس از تحویل</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>سند DLD</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>کمیسیون</li>
+        </ol>
+      </div>
+
+      <!-- ساختار دو ستونی ماشین حساب -->
+      <div class="grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-8">
+
+        <!-- پنل ورودی‌ها -->
+        <form id="calc-form" class="bg-ink-900 border border-gold-line rounded-sm p-6 md:p-8" novalidate aria-labelledby="calculator-heading">
+
+          <!-- 1. قیمت ملک -->
+          <fieldset class="mb-6" aria-labelledby="input-price-legend">
+            <legend id="input-price-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">۱ &middot; قیمت خرید ملک (درهم AED)</legend>
+            <label for="price-input" class="block text-sm font-semibold text-bone mb-2">قیمت واحد پیش‌فروش</label>
+            <p class="text-xs text-slate mb-3" id="price-hint">محدوده: ۵۰۰,۰۰۰ تا ۵۰,۰۰۰,۰۰۰ درهم. تغییر از طریق کادر عددی یا اسلایدر.</p>
+            <div class="flex items-stretch gap-2 mb-3">
+              <span class="inline-flex items-center px-3 bg-ink-850 border border-white-line border-l-0 rounded-r-xs text-xs text-ash font-semibold" aria-hidden="true">AED</span>
+              <input type="number" id="price-input" name="price" value="2000000" min="500000" max="50000000" step="50000" required
+                     class="calc-number w-full bg-ink-850 border border-white-line rounded-l-xs px-4 py-3 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors stat-number"
+                     aria-label="قیمت ملک به درهم" aria-required="true" aria-describedby="price-hint" aria-valuenow="2000000" aria-valuemin="500000" aria-valuemax="50000000">
+            </div>
+            <input type="range" id="price-slider" min="500000" max="50000000" step="50000" value="2000000"
+                   class="calc-slider w-full"
+                   aria-label="اسلایدر قیمت ملک" aria-valuenow="2000000" aria-valuemin="500000" aria-valuemax="50000000">
+            <div class="flex justify-between text-[10px] text-slate mt-1 stat-number"><span>۵۰۰ هزار درهم</span><span>۵۰ میلیون درهم</span></div>
+          </fieldset>
+
+          <!-- 2. نوع ملک -->
+          <fieldset class="mb-6" aria-labelledby="input-type-legend">
+            <legend id="input-type-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">۲ &middot; کاربری و نوع ملک</legend>
+            <p class="text-xs text-slate mb-3">موثر در شارژ نگهداری سالیانه مرجع؛ تغییری در درصدهای جدول اقساط ایجاد نمی‌کند.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" role="radiogroup" aria-labelledby="input-type-legend">
+              <input type="radio" name="prop-type" id="type-apartment" value="apartment" checked class="calc-radio sr-only" aria-pressed="true">
+              <label for="type-apartment" class="calc-radio-label block border border-white-line rounded-xs p-3 cursor-pointer hover:border-gold-line hover:bg-white-soft transition-colors text-center text-xs text-bone">
+                <span class="block text-base font-bold text-gold-400 stat-number">آپارتمان</span>
+                <span class="block text-[10px] text-slate mt-1">مسکونی برج</span>
+              </label>
+              <input type="radio" name="prop-type" id="type-villa" value="villa" class="calc-radio sr-only" aria-pressed="false">
+              <label for="type-villa" class="calc-radio-label block border border-white-line rounded-xs p-3 cursor-pointer hover:border-gold-line hover:bg-white-soft transition-colors text-center text-xs text-bone">
+                <span class="block text-base font-bold text-gold-400 stat-number">ویلا</span>
+                <span class="block text-[10px] text-slate mt-1">مستقل شهرکی</span>
+              </label>
+              <input type="radio" name="prop-type" id="type-townhouse" value="townhouse" class="calc-radio sr-only" aria-pressed="false">
+              <label for="type-townhouse" class="calc-radio-label block border border-white-line rounded-xs p-3 cursor-pointer hover:border-gold-line hover:bg-white-soft transition-colors text-center text-xs text-bone">
+                <span class="block text-base font-bold text-gold-400 stat-number">تاون‌هاوس</span>
+                <span class="block text-[10px] text-slate mt-1">پیوسته خانوادگی</span>
+              </label>
+              <input type="radio" name="prop-type" id="type-penthouse" value="penthouse" class="calc-radio sr-only" aria-pressed="false">
+              <label for="type-penthouse" class="calc-radio-label block border border-white-line rounded-xs p-3 cursor-pointer hover:border-gold-line hover:bg-white-soft transition-colors text-center text-xs text-bone">
+                <span class="block text-base font-bold text-gold-400 stat-number">پنت‌هاوس</span>
+                <span class="block text-[10px] text-slate mt-1">طبقات فوقانی لوکس</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- 3. طرح اقساط -->
+          <fieldset class="mb-6" aria-labelledby="input-plan-legend">
+            <legend id="input-plan-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">۳ &middot; ساختار و برنامه پرداخت</legend>
+            <label for="plan-select" class="block text-sm font-semibold text-bone mb-2">طرح استاندارد پرداخت دبی</label>
+            <p class="text-xs text-slate mb-3" id="plan-hint">الگوی مراحل و درصدهای سررسید را مشخص می‌نماید.</p>
+            <select id="plan-select" name="plan" required
+                    class="calc-select w-full bg-ink-850 border border-white-line rounded-xs px-4 py-3 pl-10 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors"
+                    aria-label="نوع طرح پرداخت" aria-required="true" aria-describedby="plan-hint">
+              <option value="60-40">طرح ۶۰/۴۰ &mdash; ۶۰٪ طی دوره ساخت، ۴۰٪ هنگام تحویل کلید</option>
+              <option value="70-30">طرح ۷۰/۳۰ &mdash; ۷۰٪ طی دوره ساخت، ۳۰٪ هنگام تحویل کلید</option>
+              <option value="50-50">طرح ۵۰/۵۰ &mdash; ۵۰٪ طی دوره ساخت، ۵۰٪ هنگام تحویل کلید</option>
+              <option value="post-handover-50-50">طرح ۵۰/۵۰ پس از تحویل &mdash; ۵۰٪ طی ساخت، ۵۰٪ اقساط ۱ تا ۳ ساله پس از تحویل</option>
+              <option value="1-percent-monthly">طرح ۱٪ ماهانه &mdash; ۵۰٪ پیش‌پرداخت اولیه + ۵۰٪ اقساط ۱٪ ماهانه</option>
+            </select>
+          </fieldset>
+
+          <!-- 4. مدت ساخت -->
+          <fieldset class="mb-6" aria-labelledby="input-duration-legend">
+            <legend id="input-duration-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">۴ &middot; مدت دوره ساخت (ماه)</legend>
+            <label for="duration-input" class="block text-sm font-semibold text-bone mb-2">زمان از امضای قرارداد تا تحویل کلید</label>
+            <p class="text-xs text-slate mb-3" id="duration-hint">محدوده: ۱۲ تا ۶۰ ماه. پیش‌فرض ۳۶ ماه (میانگین پروژه‌های دبی).</p>
+            <div class="flex items-center gap-3 mb-3">
+              <input type="number" id="duration-input" name="duration" value="36" min="12" max="60" step="1" required
+                     class="calc-number w-24 bg-ink-850 border border-white-line rounded-xs px-3 py-2 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors stat-number"
+                     aria-label="مدت ساخت به ماه" aria-required="true" aria-describedby="duration-hint" aria-valuenow="36" aria-valuemin="12" aria-valuemax="60">
+              <span class="text-xs text-slate">ماه</span>
+              <span class="mr-auto text-sm text-gold-400 font-bold stat-number" id="duration-display" aria-live="polite">۳۶ ماه</span>
+            </div>
+            <input type="range" id="duration-slider" min="12" max="60" step="1" value="36"
+                   class="calc-slider w-full"
+                   aria-label="اسلایدر مدت ساخت" aria-valuenow="36" aria-valuemin="12" aria-valuemax="60">
+            <div class="flex justify-between text-[10px] text-slate mt-1 stat-number"><span>۱۲ ماه</span><span>۶۰ ماه</span></div>
+          </fieldset>
+
+          <!-- 5. دوره پس از تحویل (مشروط) -->
+          <fieldset class="mb-6 hidden-conditional" id="post-handover-fieldset" aria-labelledby="input-ph-legend">
+            <legend id="input-ph-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">۵ &middot; دوره اقساط پس از تحویل</legend>
+            <label for="posthandover-input" class="block text-sm font-semibold text-bone mb-2">طول دوره بازپرداخت پس از دریافت کلید</label>
+            <p class="text-xs text-slate mb-3" id="posthandover-hint">مخصوص طرح‌های پس از تحویل کلید. محدوده: ۱۲ تا ۳۶ ماه.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <input type="number" id="posthandover-input" name="posthandover" value="24" min="12" max="36" step="1"
+                     class="calc-number w-24 bg-ink-850 border border-white-line rounded-xs px-3 py-2 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors stat-number"
+                     aria-label="دوره پس از تحویل به ماه" aria-describedby="posthandover-hint" aria-valuenow="24" aria-valuemin="12" aria-valuemax="36">
+              <span class="text-xs text-slate">ماه</span>
+              <span class="mr-auto text-sm text-gold-400 font-bold stat-number" id="posthandover-display" aria-live="polite">۲۴ ماه</span>
+            </div>
+            <input type="range" id="posthandover-slider" min="12" max="36" step="1" value="24"
+                   class="calc-slider w-full"
+                   aria-label="اسلایدر دوره پس از تحویل" aria-valuenow="24" aria-valuemin="12" aria-valuemax="36">
+            <div class="flex justify-between text-[10px] text-slate mt-1 stat-number"><span>۱۲ ماه</span><span>۳۶ ماه</span></div>
+          </fieldset>
+
+          <!-- 6. هزینه‌های جانبی و کمیسیون -->
+          <fieldset class="mb-6" aria-labelledby="input-fees-legend">
+            <legend id="input-fees-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">۶ &middot; هزینه‌های جانبی و کمیسیون</legend>
+            <div class="space-y-3">
+              <label for="dld-toggle" class="flex items-start gap-3 cursor-pointer p-3 border border-white-line rounded-xs hover:border-gold-line hover:bg-white-soft transition-colors">
+                <input type="checkbox" id="dld-toggle" name="dld" checked class="calc-checkbox mt-1 w-4 h-4" aria-pressed="true">
+                <span>
+                  <span class="block text-sm font-semibold text-bone">محاسبه هزینه ثبت اداره اراضی دبی (DLD ۴٪)</span>
+                  <span class="block text-xs text-slate mt-1">عوارض قانونی الزامی دپارتمان اراضی و املاک دبی روی تمامی معاملات املاک مسکونی.</span>
+                </span>
+              </label>
+              <label for="commission-toggle" class="flex items-start gap-3 cursor-pointer p-3 border border-white-line rounded-xs hover:border-gold-line hover:bg-white-soft transition-colors">
+                <input type="checkbox" id="commission-toggle" name="commission" checked class="calc-checkbox mt-1 w-4 h-4" aria-pressed="true">
+                <span>
+                  <span class="block text-sm font-semibold text-bone">محاسبه کمیسیون مشاوره زرین (۲٪ + ۵٪ مالیات بر ارزش افزوده)</span>
+                  <span class="block text-xs text-slate mt-1">کارمزد رسمی کارگزاری خریدار. در صورت پروژه‌های شامل معافیت کمیسیون، غیرفعال فرمایید.</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="pt-6 border-t border-white-line">
+            <button type="reset" id="calc-reset" class="inline-flex items-center px-5 py-2.5 border border-white-line text-ash text-xs font-semibold uppercase tracking-wider rounded-xs hover:border-gold-line hover:text-gold-400 transition-all" aria-label="بازنشانی فرم به مقادیر پیش‌فرض">
+              <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              بازنشانی مقادیر اولیه
+            </button>
+          </div>
+        </form>
+
+        <!-- پنل نتایج زنده -->
+        <div id="results-panel" class="result-card bg-ink-900 border border-gold-line rounded-sm p-6 md:p-8" aria-live="polite" aria-busy="false" aria-label="نتایج محاسبات مالی اقساط">
+
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-white-line">
+            <div>
+              <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">نتایج زنده و محاسباتی</span>
+              <h3 id="results-heading" class="text-2xl md:text-3xl font-bold tracking-tight text-bone mt-1">برنامه پرداخت اقساط شما</h3>
+            </div>
+            <span class="text-[10px] uppercase tracking-wider text-slate hidden md:inline" id="results-plan-label" aria-live="polite">طرح ۶۰/۴۰</span>
+          </div>
+
+          <!-- ۶ کاشی خلاصه متریک‌ها -->
+          <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 mb-8" aria-label="شاخص‌های مالی">
+            <div class="metric-card bg-ink-850 border border-white-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">پیش‌پرداخت رزرو</div>
+              <div class="text-xl font-bold text-gold-400 stat-number" id="metric-downpayment">AED 200,000</div>
+              <div class="text-[10px] text-slate mt-1 stat-number" id="metric-downpayment-pct">۱۰٪ ارزش ملک</div>
+            </div>
+            <div class="metric-card bg-ink-850 border border-white-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">اقساط دوره ساخت</div>
+              <div class="text-xl font-bold text-bone stat-number" id="metric-construction">AED 1,000,000</div>
+              <div class="text-[10px] text-slate mt-1 stat-number" id="metric-construction-pct">۵۰٪ ارزش ملک</div>
+            </div>
+            <div class="metric-card bg-ink-850 border border-white-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">اقساط پس از تحویل</div>
+              <div class="text-xl font-bold text-bone stat-number" id="metric-posthandover">AED 0</div>
+              <div class="text-[10px] text-slate mt-1 stat-number" id="metric-posthandover-pct">۰٪ ارزش ملک</div>
+            </div>
+            <div class="metric-card bg-ink-850 border border-gold-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-1">بهای تمام‌شده کل</div>
+              <div class="text-xl font-bold text-gold-400 stat-number" id="metric-total">AED 2,126,580</div>
+              <div class="text-[10px] text-slate mt-1 stat-number" id="metric-total-pct">شامل کل هزینه‌ها</div>
+            </div>
+            <div class="metric-card bg-ink-850 border border-white-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">میانگین پرداخت ماهانه</div>
+              <div class="text-xl font-bold text-bone stat-number" id="metric-monthly">AED 27,778</div>
+              <div class="text-[10px] text-slate mt-1 stat-number" id="metric-monthly-pct">طی ۳۶ ماه ساخت</div>
+            </div>
+            <div class="metric-card bg-ink-850 border border-white-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">تاریخ آخرین سررسید</div>
+              <div class="text-xl font-bold text-bone stat-number" id="metric-lastdate" style="font-size:1rem">ژانویه ۲۰۲۹</div>
+              <div class="text-[10px] text-slate mt-1" id="metric-lastdate-pct">هنگام تحویل کلید</div>
+            </div>
+          </div>
+
+          <!-- تفکیک جزئیات هزینه‌ها -->
+          <div class="bg-ink-850 border border-white-line rounded-xs p-5 mb-6" aria-label="تفکیک بهای تمام‌شده">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-3">تفکیک هزینه‌های خرید ملک</div>
+            <dl class="space-y-2 text-sm">
+              <div class="flex justify-between"><dt class="text-ash">قیمت پایه ملک</dt><dd class="text-bone stat-number" id="cost-price">AED 2,000,000</dd></div>
+              <div class="flex justify-between"><dt class="text-ash">عوارض ثبت سند دپارتمان اراضی دبی (DLD ۴٪)</dt><dd class="text-bone stat-number" id="cost-dld">AED 80,000</dd></div>
+              <div class="flex justify-between"><dt class="text-ash">کمیسیون رسمی زرین (۲٪)</dt><dd class="text-bone stat-number" id="cost-commission">AED 40,000</dd></div>
+              <div class="flex justify-between"><dt class="text-ash">مالیات بر ارزش افزوده کمیسیون (۵٪)</dt><dd class="text-bone stat-number" id="cost-vat">AED 2,000</dd></div>
+              <div class="flex justify-between"><dt class="text-ash">هزینه اداری و صدور گواهی DLD</dt><dd class="text-bone stat-number">AED 4,000</dd></div>
+              <div class="flex justify-between"><dt class="text-ash">هزینه صدور سند رسمی مالکیت (Title Deed)</dt><dd class="text-bone stat-number">AED 580</dd></div>
+              <div class="flex justify-between pt-2 border-t border-white-line"><dt class="text-gold-400 font-semibold">بهای تمام‌شده کل</dt><dd class="text-gold-400 font-bold stat-number" id="cost-total">AED 2,126,580</dd></div>
+            </dl>
+          </div>
+
+          <!-- جدول اقساط به تفکیک مراحل ساخت -->
+          <div class="bg-ink-850 border border-white-line rounded-xs overflow-hidden" aria-label="جدول زمان‌بندی مراحل و اقساط">
+            <div class="px-5 py-3 border-b border-white-line flex items-center justify-between">
+              <span class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold">جدول زمان‌بندی اقساط</span>
+              <span class="text-[10px] text-slate" id="schedule-summary">۶ مرحله &middot; ۳۶ ماه</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="schedule-table w-full text-sm" role="table" aria-label="جدول اقساط پیش‌فروش">
+                <thead>
+                  <tr class="text-[10px] uppercase tracking-wider text-slate text-right" role="row">
+                    <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">مرحله پرداخت</th>
+                    <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">رویداد عمرانی</th>
+                    <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">تاریخ تقریبی</th>
+                    <th scope="col" class="py-3 px-4 font-semibold text-left" role="columnheader">درصد</th>
+                    <th scope="col" class="py-3 px-4 font-semibold text-left" role="columnheader">مبلغ (AED)</th>
+                    <th scope="col" class="py-3 px-4 font-semibold text-left" role="columnheader">مجموع درصدی</th>
+                  </tr>
+                </thead>
+                <tbody id="schedule-tbody" role="rowgroup">
+                  <!-- ردیف‌ها توسط اسکریپت درج می‌گردند -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- یادداشت محرمانگی و حقوقی -->
+          <p class="text-xs text-slate mt-6 leading-relaxed" id="privacy-microcopy">
+            <svg class="w-3.5 h-3.5 inline-block ml-1 -mt-0.5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            رایگان &middot; بدون نیاز به ورود یا ثبت‌نام &middot; ارقام بر اساس استانداردهای متداول سازندگان معتبر دبی محاسبه شده است.
+            برنامه پرداخت نهایی منحصراً در قرارداد بیع سازنده (SPA) تعیین گردیده و ممکن است با توجه به پروژه اندکی تفاوت داشته باشد.
+          </p>
+
+          <!-- دکمه‌های ارتباط با مشاور -->
+          <div class="mt-6 pt-6 border-t border-white-line flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/971586901231" class="inline-flex items-center justify-center px-5 py-3 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-gold-300 transition-all" aria-label="بررسی این جدول با مشاور ارشد در واتس‌اپ">
+              <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              بررسی این جدول با مشاور ارشد
+            </a>
+            <a href="tel:+971586901231" class="inline-flex items-center justify-center px-5 py-3 border border-gold-line text-bone text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-gold-soft transition-all" aria-label="تماس با دفتر زرین +971 58 690 1231">
+              <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.288a11.3 11.3 0 005.067 5.067l1.288-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span dir="ltr">+971 58 690 1231</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. PAYMENT PLAN TYPES EXPLAINED ═══ -->
+  <section id="plan-types" class="bg-ink-900 py-24 md:py-32" aria-labelledby="plan-types-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">مرجع تخصصی</div>
+        <h2 id="plan-types-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-bone mb-6">آشنایی با انواع طرح‌های پرداخت در دبی</h2>
+        <p class="text-base md:text-lg text-ash leading-relaxed">
+          سازندگان معتبر دبی پنج ساختار استاندارد برای فروش اقساطی املاک در حال ساخت ارائه می‌کنند که هر کدام
+          با استراتژی مالی و جریان نقدینگی خریداران متفاوتی تطابق دارد. انتخاب بهینه به اهداف شما از سرمایه‌گذاری،
+          قابلیت تامین سرمایه در حین دوره ساخت و تصمیم شما برای استفاده از تسهیلات بانکی بستگی دارد.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- طرح 1: 60/40 -->
+        <article class="bg-ink-900 border border-white-line rounded-sm p-6 card-lift" aria-labelledby="plan-1-title">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center px-2.5 py-1 bg-gold-soft border border-gold-line rounded-xs text-[10px] uppercase tracking-wider text-gold-400 font-semibold">پرکاربردترین ساختار</span>
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+          </div>
+          <h3 id="plan-1-title" class="text-xl font-bold text-bone mb-3">طرح ۶۰/۴۰ (۶۰٪ حین ساخت، ۴۰٪ تحویل)</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">۶۰ درصد قیمت واحد در طول ساخت متناسب با مراحل اجرایی پرداخت شده و ۴۰ درصد نهایی هنگام تحویل کلید تسویه می‌گردد. این ساختار ریسک ساخت را تعدیل کرده و بخش عمده‌ای از بهای ملک را به زمان تحویل موکول می‌کند.</p>
+          <div class="bg-ink-850 border border-white-line rounded-xs p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate mb-1">نمونه توزیع درصدی</div>
+            <div class="text-xs text-bone leading-relaxed">رزرو ۱۰٪ &middot; شروع ساخت ۱۰٪ &middot; پیشرفت ۲۰٪ (۱۰٪) &middot; پیشرفت ۶۰٪ (۲۰٪) &middot; پیشرفت ۸۰٪ (۱۰٪) &middot; تحویل ۴۰٪</div>
+          </div>
+        </article>
+
+        <!-- طرح 2: 70/30 -->
+        <article class="bg-ink-900 border border-white-line rounded-sm p-6 card-lift" aria-labelledby="plan-2-title">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center px-2.5 py-1 bg-gold-soft border border-gold-line rounded-xs text-[10px] uppercase tracking-wider text-gold-400 font-semibold">سازندگان تراز اول</span>
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+          </div>
+          <h3 id="plan-2-title" class="text-xl font-bold text-bone mb-3">طرح ۷۰/۳۰ (۷۰٪ حین ساخت، ۳۰٪ تحویل)</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">۷۰ درصد بهای ملک طی ساخت دریافت شده و ۳۰ درصد باقیمانده به زمان تحویل کلید منتقل می‌شود. این طرح توسط غول‌های توسعه مانند اعمار (Emaar) و نخیل (Nakheel) به دلیل سرعت بالای ساخت و تحویل به‌موقع استفاده می‌شود.</p>
+          <div class="bg-ink-850 border border-white-line rounded-xs p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate mb-1">نمونه توزیع درصدی</div>
+            <div class="text-xs text-bone leading-relaxed">رزرو ۲۰٪ &middot; شروع ساخت ۲۰٪ &middot; پیشرفت ۴۰٪ (۱۵٪) &middot; پیشرفت ۷۰٪ (۱۵٪) &middot; تحویل ۳۰٪</div>
+          </div>
+        </article>
+
+        <!-- طرح 3: 50/50 -->
+        <article class="bg-ink-900 border border-white-line rounded-sm p-6 card-lift" aria-labelledby="plan-3-title">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center px-2.5 py-1 bg-gold-soft border border-gold-line rounded-xs text-[10px] uppercase tracking-wider text-gold-400 font-semibold">توازن حداکثری ریسک</span>
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/></svg>
+            </div>
+          </div>
+          <h3 id="plan-3-title" class="text-xl font-bold text-bone mb-3">طرح ۵۰/۵۰ (۵۰٪ حین ساخت، ۵۰٪ تحویل)</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">نیمی از مبلغ در طول مراحل ساخت پرداخت گردیده و نصف دیگر درست در زمان تحویل قطعی کلید تسویه می‌گردد. ایده‌آل برای خریدارانی که تمایل دارند بیشترین حجم نقدینگی خود را تا اطمینان از اتمام کامل پروژه نزد خود حفظ کنند.</p>
+          <div class="bg-ink-850 border border-white-line rounded-xs p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate mb-1">نمونه توزیع درصدی</div>
+            <div class="text-xs text-bone leading-relaxed">رزرو ۱۰٪ &middot; شروع ساخت ۲۰٪ &middot; پیشرفت ۵۰٪ (۲۰٪) &middot; تحویل ۵۰٪</div>
+          </div>
+        </article>
+
+        <!-- طرح 4: پس از تحویل -->
+        <article class="bg-ink-900 border border-white-line rounded-sm p-6 card-lift" aria-labelledby="plan-4-title">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center px-2.5 py-1 bg-gold-soft border border-gold-line rounded-xs text-[10px] uppercase tracking-wider text-gold-400 font-semibold">اقساط پس از تحویل</span>
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+          </div>
+          <h3 id="plan-4-title" class="text-xl font-bold text-bone mb-3">طرح پس از تحویل (Post-Handover 50/50)</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">۵۰ درصد طی ساخت پرداخت شده و ۵۰ درصد باقیمانده در اقساط ۱ تا ۳ ساله پس از تحویل کلید تسویه می‌شود. با توجه به امکان اجاره دادن ملک، جریان نقدینگی اجاره‌بها می‌تواند بخش چشمگیری از اقساط بعدی را پوشش دهد.</p>
+          <div class="bg-ink-850 border border-white-line rounded-xs p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate mb-1">نمونه توزیع درصدی</div>
+            <div class="text-xs text-bone leading-relaxed">رزرو ۱۰٪ &middot; شروع ۱۵٪ &middot; نیمه ساخت ۱۵٪ &middot; تحویل ۱۰٪ &middot; سال اول بعد تحویل ۲۵٪ &middot; سال دوم بعد تحویل ۲۵٪</div>
+          </div>
+        </article>
+
+        <!-- طرح 5: 1% ماهانه -->
+        <article class="bg-ink-900 border border-white-line rounded-sm p-6 card-lift" aria-labelledby="plan-5-title">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center px-2.5 py-1 bg-gold-soft border border-gold-line rounded-xs text-[10px] uppercase tracking-wider text-gold-400 font-semibold">سرمایه‌گذاری مرحله‌ای</span>
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.598 1M12 8V7m0 1v8m0 0v1m0-1H9m3 1h3"/></svg>
+            </div>
+          </div>
+          <h3 id="plan-5-title" class="text-xl font-bold text-bone mb-3">طرح ۱٪ ماهانه (۱٪ در هر ماه)</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">۱۰٪ هنگام رزرو، ۴۰٪ در ابتدای عملیات عمرانی و ۵۰٪ باقیمانده به صورت اقساط ماهانه یک درصدی در طول ۵۰ ماه پرداخت می‌شود؛ ساختاری شفاف که به سرمایه‌گذاران امکان برنامه‌ریزی ماهانه با درآمدهای جاری را می‌دهد.</p>
+          <div class="bg-ink-850 border border-white-line rounded-xs p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate mb-1">نمونه توزیع درصدی</div>
+            <div class="text-xs text-bone leading-relaxed">رزرو ۱۰٪ &middot; شروع ساخت ۴۰٪ &middot; ۵۰ قسط ماهانه هر ماه ۱٪ (مجموعاً ۵۰٪)</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. HOW THE CALCULATOR WORKS ═══ -->
+  <section id="how-it-works" class="bg-ink-850 py-24 md:py-32" aria-labelledby="how-it-works-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">متدولوژی و شیوه محاسبه</div>
+        <h2 id="how-it-works-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-bone mb-6">مراحل عملکرد ماشین حساب</h2>
+        <p class="text-base md:text-lg text-ash leading-relaxed">
+          محاسبه‌گر اقساط زرین بر اساس ۴ گام منطقی شفاف طراحی شده است. تمام پردازش‌ها به شکل محلی در مرورگر
+          انجام می‌پذیرد تا امکان اعمال تغییرات نامحدود بدون هیچ‌گونه تاخیر یا افشای داده‌های شخصی فراهم باشد.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+        <div class="relative step-line">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 border border-gold-line rounded-full flex items-center justify-center bg-gold-soft flex-shrink-0" aria-hidden="true">
+              <span class="text-gold-400 font-bold text-lg stat-number">۱</span>
+            </div>
+            <div class="flex-1">
+              <h3 id="step-1-title" class="text-lg font-bold text-bone mb-2">ورود مشخصات و بودجه ملک</h3>
+              <p class="text-sm text-ash leading-relaxed mb-3">با وارد نمودن قیمت خرید ملک به درهم، کاربری، ساختار اقساطی مدنظر، طول دوره ساخت و وضعیت لحاظ عوارض سند و کمیسیون آغاز فرمایید. اسلایدرها و ورودی‌های عددی کاملاً هماهنگ عمل می‌کنند.</p>
+              <div class="flex items-center gap-2 text-[10px] text-slate uppercase tracking-wider">
+                <svg class="w-3 h-3 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                <span>۷ پارامتر ورودی &middot; ۵ ساختار استاندارد &middot; تا ۶۰ ماه دوره ساخت</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative step-line">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 border border-gold-line rounded-full flex items-center justify-center bg-gold-soft flex-shrink-0" aria-hidden="true">
+              <span class="text-gold-400 font-bold text-lg stat-number">۲</span>
+            </div>
+            <div class="flex-1">
+              <h3 id="step-2-title" class="text-lg font-bold text-bone mb-2">اعمال ساختار و الگوهای رسمی DLD</h3>
+              <p class="text-sm text-ash leading-relaxed mb-3">پایگاه داده درونی الگوهای مصوب ثبت‌شده در دپارتمان اراضی دبی را فراخوانی کرده و جدول سررسیدها را بر پایه درصد تجمیعی هر مرحله استخراج می‌نماید.</p>
+              <div class="flex items-center gap-2 text-[10px] text-slate uppercase tracking-wider">
+                <svg class="w-3 h-3 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2a4 4 0 014-4h2a4 4 0 014 4v2M9 7h6m-6 4h6m-9 8h12a2 2 0 002-2V5a2 2 0 00-2-2H6a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                <span>تطابق با ضوابط ثبت پروژه‌های RERA دبی</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative step-line">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 border border-gold-line rounded-full flex items-center justify-center bg-gold-soft flex-shrink-0" aria-hidden="true">
+              <span class="text-gold-400 font-bold text-lg stat-number">۳</span>
+            </div>
+            <div class="flex-1">
+              <h3 id="step-3-title" class="text-lg font-bold text-bone mb-2">محاسبه جدول اقساط و تاریخ‌های سررسید</h3>
+              <p class="text-sm text-ash leading-relaxed mb-3">ماشین حساب مبالغ درهمی هر مرحله را با اعمال درصد مربوطه بر قیمت واحد محاسبه کرده و با گام‌نهادن از تاریخ روز، تقویم زمانی سررسید اقساط و موعد تحویل کلید را مشخص می‌سازد.</p>
+              <div class="flex items-center gap-2 text-[10px] text-slate uppercase tracking-wider">
+                <svg class="w-3 h-3 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                <span>ضرب قیمت &times; درصد &middot; برآورد تقویمی &middot; درصد تجمیعی</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative step-line">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 border border-gold-line rounded-full flex items-center justify-center bg-gold-soft flex-shrink-0" aria-hidden="true">
+              <span class="text-gold-400 font-bold text-lg stat-number">۴</span>
+            </div>
+            <div class="flex-1">
+              <h3 id="step-4-title" class="text-lg font-bold text-bone mb-2">بررسی نتایج مالی و تفکیک هزینه‌ها</h3>
+              <p class="text-sm text-ash leading-relaxed mb-3">پنل نتایج ۶ شاخص کلیدی را نمایش می‌دهد: پیش‌پرداخت، مبالغ دوره ساخت، اقساط پس از تحویل، بهای کل تمام‌شده، میانگین اقساط ماهانه و تاریخ تحویل نهایی همراه با ریز هزینه‌های دولتی و ثبت سند.</p>
+              <div class="flex items-center gap-2 text-[10px] text-slate uppercase tracking-wider">
+                <svg class="w-3 h-3 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2a4 4 0 014-4h4M3 5h13M3 9h10M3 13h6m9 4l3 3m0-3l-3 3"/></svg>
+                <span>۶ شاخص مالی &middot; تفکیک هزینه‌های جانبی &middot; جدول زنده</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 5. ADDITIONAL BUYER COSTS REFERENCE ═══ -->
+  <section id="buyer-costs" class="bg-ink-900 py-24 md:py-32" aria-labelledby="buyer-costs-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">مرجع هزینه‌ها</div>
+        <h2 id="buyer-costs-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-bone mb-6">جدول مرجع هزینه‌های جانبی خرید ملک</h2>
+        <p class="text-base md:text-lg text-ash leading-relaxed">
+          قیمت اعلامی واحد تنها بخشی از سرمایه لازم برای تملک است. فراتر از عدد خرید، خریداران املاک پیش‌فروش دبی
+          با هزینه‌های اداری، مالیاتی و ثبتی روبرو هستند که جدول زیر زمان پرداخت و ضوابط هر یک را شرح می‌دهد.
+        </p>
+      </div>
+
+      <div class="bg-ink-850 border border-white-line rounded-sm overflow-hidden overflow-x-auto">
+        <table class="w-full text-sm" role="table" aria-label="جدول هزینه‌های جانبی خرید ملک">
+          <thead>
+            <tr class="bg-ink-800 text-[10px] uppercase tracking-wider text-gold-400 text-right" role="row">
+              <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">عنوان هزینه</th>
+              <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">نرخ / مبلغ معمول</th>
+              <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">زمان پرداخت</th>
+              <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">توضیحات و نکات</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-right align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">عوارض انتقال سند DLD</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-gold-soft border border-gold-line rounded-xs text-[9px] uppercase tracking-wider text-gold-400 font-semibold">الزامی</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">۴٪ ارزش ملک</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">هنگام پیش‌ثبت عقود Oqood</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">عوارض رسمی دولتی روی تمامی املاک مسکونی دبی. بدون معافیت برای خریداران اول.</td>
+          </tr>
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-right align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">کمیسیون کارگزاری املاک</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-gold-soft border border-gold-line rounded-xs text-[9px] uppercase tracking-wider text-gold-400 font-semibold">الزامی</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">۲٪ ارزش ملک + ۵٪ مالیات</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">هنگام امضای قرارداد SPA</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">حق‌الزحمه رسمی کارگزاری زرین جهت مشاوره و پیگیری کامل اسناد تا تحویل کلید.</td>
+          </tr>
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-right align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">هزینه‌های ثبت و صدور سند</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-gold-soft border border-gold-line rounded-xs text-[9px] uppercase tracking-wider text-gold-400 font-semibold">الزامی</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">۴,۰۰۰ درهم + ۵۸۰ درهم</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">هنگام ثبت قرارداد</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">۴,۰۰۰ درهم هزینه اداری DLD و ۵۸۰ درهم هزینه صدور سند رسمی مالکیت ملک.</td>
+          </tr>
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-right align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">هزینه ثبت تسهیلات بانکی (رهن)</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-ink-700 border border-white-line rounded-xs text-[9px] uppercase tracking-wider text-slate font-semibold">اختیاری</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">۴,۰۲۰ درهم + ۰.۲۵٪ مبلغ وام</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">هنگام ثبت سند رهن</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">تنها در صورت استفاده از وام بانکی برای تسویه قسط تحویل کلید پرداخت می‌شود.</td>
+          </tr>
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-right align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">پیش‌پرداخت شارژ خدمات ساختمان</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-gold-soft border border-gold-line rounded-xs text-[9px] uppercase tracking-wider text-gold-400 font-semibold">الزامی</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">شارژ ۶ تا ۱۲ ماه (متغیر)</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">هنگام دریافت کلید</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">۱۲ تا ۴۵ درهم بر فوت مربع در سال بسته به برج یا شهرک، واریز به حساب انجمن مالکان.</td>
+          </tr>
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-right align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">بیمه سند مالکیت و سازه</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-ink-700 border border-white-line rounded-xs text-[9px] uppercase tracking-wider text-slate font-semibold">اختیاری</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">۲,۵۰۰ درهم یکبار + ۵۰۰ سالانه</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">اختیاری پس از تحویل</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">پوشش ضمانت ۱۰ ساله سازه و عیوب ساختمانی به ویژه برای ویلاها و پنت‌هاوس‌ها.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. DISCLAIMER SECTION ═══ -->
+  <section id="disclaimer" class="bg-ink-850 py-24 md:py-32" aria-labelledby="disclaimer-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-ink-900 border-2 border-gold-line rounded-sm p-8 md:p-10" role="note" aria-labelledby="disclaimer-heading">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft flex-shrink-0" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">سلب مسئولیت و ملاحظات قانونی</div>
+              <h2 id="disclaimer-heading" class="text-2xl md:text-3xl font-bold tracking-tight text-bone mt-1">پیش از هر اقدام مالی مطالعه فرمایید</h2>
+            </div>
+          </div>
+          <div class="space-y-4 text-sm text-ash leading-relaxed">
+            <p>
+              <strong class="text-bone">(الف)</strong> محاسبه‌گر اقساط پیش‌فروش زرین یک ابزار محاسباتی و اطلاع‌رسانی است که نتایج آن بر اساس الگوهای استاندارد مورد تایید دپارتمان اراضی دبی (DLD) شبیه‌سازی می‌گردد. داده‌ها با آخرین بخشنامه‌های سال <span class="text-gold-400 font-semibold">۲۰۲۶</span> بازبینی شده‌اند اما نباید به عنوان تاییدیه قطعی قیمت یک پروژه خاص تلقی شوند.
+            </p>
+            <p>
+              <strong class="text-bone">(ب)</strong> نتایج این ابزار مشاوره مالی رسمی یا تعهد سازنده محسوب نمی‌شود. سند الزام‌آور نهایی منحصراً قرارداد فروش بیع (SPA) است که مستقیماً میان خریدار و سازنده امضا شده و در حساب امانی اسکرو تحت نظارت رگولاتوری RERA به ثبت می‌رسد.
+            </p>
+            <p>
+              <strong class="text-bone">(ج)</strong> املاک زرین دارای مجوز رسمی کارگزاری املاک از RERA دبی می‌باشد. جهت اخذ مشاوره تخصصی و تطبیق ساختار پرداخت با پروژه‌های مشخص با تیم مشاوران ما از طریق
+              <a href="mailto:advisory@zarinrealestate.com" class="text-gold-400 hover:underline">advisory@zarinrealestate.com</a>
+              یا شماره تماس <a href="tel:+971586901231" class="text-gold-400 hover:underline" dir="ltr">+971 58 690 1231</a>
+              ارتباط برقرار فرمایید.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 7. FAQ SECTION ═══ -->
+  <section id="faq" class="bg-ink-900 py-24 md:py-32" aria-labelledby="faq-heading">
+    <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20">
+      <div class="text-center mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">پرسش‌های متداول خریداران</div>
+        <h2 id="faq-heading" class="text-3xl md:text-5xl font-bold tracking-tight text-bone mb-4">سوالات متداول اقساط و پیش‌فروش</h2>
+        <p class="text-base md:text-lg text-ash leading-relaxed">پاسخ‌های تیم ارشد مشاوره زرین به پرسش‌های پرتکرار سرمایه‌گذاران درباره طرح‌های اقساطی، هزینه‌های DLD و وام مسکن.</p>
+      </div>
+
+      <div class="space-y-3">
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pl-4">رایج‌ترین ساختار پرداخت اقساطی برای پروژه‌های پیش‌فروش دبی چیست؟</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">طرح ۶۰/۴۰ متداول‌ترین ساختار پرداخت پروژه‌های آف‌پلان دبی است که توسط اکثر سازندگان استفاده می‌شود. در این طرح خریدار ۶۰٪ ارزش ملک را در طول دوره ساخت متناسب با پیشرفت پروژه (رزرو، شروع گودبرداری، تکمیل فونداسیون، ۶۰٪ و ۸۰٪ اسکلت) پرداخت کرده و ۴۰٪ باقیمانده را هنگام تحویل کلید تسویه می‌نماید. این توازن ریسک سرمایه‌گذار و تامین مالی سازنده را در بهینه‌ترین سطح حفظ می‌کند.</p>
+          </div>
+        </details>
+
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pl-4">در صورت تاخیر یا عدم پرداخت یک قسط چه اتفاقی رخ می‌دهد؟</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">مطابق قوانین املاک و مستغلات امارات، سازنده ابتدا اخطاریه رسمی ۳۰ روزه جهت تسویه صادر می‌کند. در صورت عدم پرداخت در این مهلت، سازنده حق دارد با مجوز DLD قرارداد بیع را فسخ نموده و طبق ماده ۱۱ قانون اسکرو، متناسب با درصد پیشرفت فیزیکی پروژه تا حداکثر ۴۰٪ از مبالغ واریز شده را به عنوان خسارت کسر نماید. زرین همواره توصیه می‌کند خریداران همواره ذخیره نقدی معادل دو قسط آتی را محفوظ بدارند.</p>
+          </div>
+        </details>
+
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pl-4">آیا امکان مذاکره و شخصی‌سازی برنامه اقساط با سازنده وجود دارد؟</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">بله؛ به‌ویژه برای خریداران واحدهای لوکس و متقاضیان خریدهای پکیجی چند واحدی. گزینه‌های قابل مذاکره شامل افزایش پیش‌پرداخت اولیه در ازای تخفیف نقدی ۲ تا ۴ درصدی، تمدید دوره اقساط پس از تحویل کلید به مدت ۶ تا ۱۲ ماه، یا تنظیم تاریخ اقساط با عواید مالی سالیانه خریدار است که تمامی این تغییرات در قرارداد SPA درج و در دپارتمان اراضی ثبت می‌گردد.</p>
+          </div>
+        </details>
+
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pl-4">هزینه انتقال سند (DLD Fee) چقدر است و چه زمانی پرداخت می‌شود؟</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">عوارض دپارتمان اراضی دبی معادل ۴ درصد ارزش کل خرید است که به صورت مستقیم یا از طریق حساب پروژه به اداره اراضی پرداخت می‌گردد. در پروژه‌های پیش‌فروش، این وجه در مرحله ثبت مقدماتی (صدور گواهی عقود Oqood) که معمولاً ظرف ۳۰ الی ۶۰ روز پس از امضای قرارداد صورت می‌گیرد پرداخت می‌شود.</p>
+          </div>
+        </details>
+
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pl-4">آیا هزینه ۴ درصد DLD علاوه بر قیمت ملک پرداخت می‌شود؟</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">بله؛ عوارض ۴ درصدی شارژ قانونی دولت دبی بوده و علاوه بر قیمت ملک دریافت می‌شود. برای مثال برای خرید یک آپارتمان ۲,۰۰۰,۰۰۰ درهمی، مبلغ ۸۰,۰۰۰ درهم عوارض انتقال بعلاوه هزینه‌های اداری پرداخت خواهد شد. در برخی فستیوال‌های فروش، سازندگان پروموشن معافیت DLD ارائه داده و این مبلغ را به نفع خریدار تقبل می‌کنند.</p>
+          </div>
+        </details>
+
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pl-4">آیا می‌توان برای تسویه باقیمانده مبلغ پیش‌فروش وام بانکی دریافت کرد؟</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">بله؛ در زمان اتمام ساخت و تحویل کلید، خریداران می‌توانند مبلغ قسط نهایی (مثلاً ۴۰ یا ۵۰ درصد باقیمانده) را از طریق تسهیلات بانکی امارات تسویه نمایند. بانک‌های اماراتی همچون Emirates NBD، مَشرق و ADCB به خریداران مقیم و غیرمقیم تسهیلاتی معادل ۵۰ تا ۸۰ درصد ارزش ملک اعطا می‌نمایند که تیم زرین امور هماهنگی آن را انجام می‌دهد.</p>
+          </div>
+        </details>
+
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pl-4">طرح پرداخت پس از تحویل (Post-Handover) چگونه عمل می‌کند؟</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">طرح اقساط پس از تحویل به خریدار اجازه می‌دهد بخشی از بهای ملک (اغلب ۵۰ درصد) را طی بازه ۱ تا ۳ ساله پس از دریافت کلید تسویه کند. از آنجا که واحد تحویل شده است، خریدار می‌تواند بلافاصله آن را به اجاره سالانه یا ماهانه واگذار نموده و مبالغ اجاره دریافتی را مستقیماً صرف پرداخت اقساط سازنده نماید.</p>
+          </div>
+        </details>
+
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pl-4">اقدام بعدی پس از مشاهده جدول محاسبات چیست؟</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">گام بعدی برگزاری یک جلسه مشاوره ۳۰ دقیقه‌ای با کارشناس ارشد پروژه‌های پیش‌فروش زرین است. کارشناس جدول اقساط را با جریان وجوه شما بازبینی کرده و ۲ الی ۳ پروژه معتبر دارای حساب اسکرو سالم و سازنده باسابقه که دقیقاً چنین شرایط پرداختی ارائه می‌دهند را معرفی می‌نماید. این جلسه بدون هزینه و کاملاً رایگان است.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="mt-12 text-center bg-ink-850 border border-gold-line rounded-sm p-8">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-3">هنوز سوالی دارید؟</div>
+        <h3 class="text-2xl font-bold text-bone mb-4">گفتگوی تخصصی با کارشناس پیش‌فروش زرین</h3>
+        <p class="text-sm text-ash leading-relaxed mb-6 max-w-xl mx-auto">
+          مشاوران ارشد ما در ۷ روز هفته آماده بررسی جدول محاسبات شما، اعتبارسنجی سازندگان و حساب‌های امانی اسکرو و معرفی بهترین گزینه‌های اقساطی در دبی هستند.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://wa.me/971586901231" class="inline-flex items-center justify-center px-6 py-3 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-wider rounded-xs hover:bg-gold-300 transition-all" aria-label="ارسال پیام در واتس‌اپ">
+            <svg class="w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            ارتباط در واتس‌اپ
+          </a>
+          <a href="mailto:advisory@zarinrealestate.com" class="inline-flex items-center justify-center px-6 py-3 border border-gold-line text-bone text-sm font-bold uppercase tracking-wider rounded-xs hover:bg-gold-soft transition-all" aria-label="ارسال ایمیل به advisory@zarinrealestate.com">
+            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            ارسال ایمیل به مشاور
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="bg-ink-950 border-t border-white-line pt-20 pb-8" role="contentinfo">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
+        <div class="col-span-2 lg:col-span-1">
+          <a href="/fa" class="flex items-center gap-2 mb-4" aria-label="صفحه اصلی املاک زرین"><span class="font-sans font-extrabold text-2xl tracking-tight text-bone">ZARIN</span></a>
+          <p class="text-sm text-slate leading-relaxed mb-6">مرجع تخصصی خرید، پیش‌فروش و سرمایه‌گذاری املاک در دبی.</p>
+          <div class="flex gap-3">
+            <a href="https://instagram.com/zarin.realestate" class="w-10 h-10 border border-white-line rounded-xs flex items-center justify-center text-ash hover:text-gold-400 hover:border-gold-line transition-all" aria-label="اینستاگرام"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689-.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://wa.me/971586901231" class="w-10 h-10 border border-white-line rounded-xs flex items-center justify-center text-ash hover:text-gold-400 hover:border-gold-line transition-all" aria-label="واتس‌اپ"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="ناوبری پیش‌فروش فوتر"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">پیش‌فروش</h2><ul class="space-y-2"><li><a href="/fa/off-plan/new-launches" class="text-sm text-ash hover:text-gold-400 transition-colors">پروژه‌های جدید</a></li><li><a href="/fa/off-plan/coming-soon" class="text-sm text-ash hover:text-gold-400 transition-colors">به‌زودی</a></li><li><a href="/fa/off-plan/by-developer" class="text-sm text-ash hover:text-gold-400 transition-colors">بر اساس سازنده</a></li><li><a href="/fa/off-plan/investment-guide" class="text-sm text-ash hover:text-gold-400 transition-colors">راهنمای سرمایه‌گذاری</a></li></ul></nav>
+        <nav aria-label="ناوبری کشف املاک"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">کشف املاک</h2><ul class="space-y-2"><li><a href="/fa/properties" class="text-sm text-ash hover:text-gold-400 transition-colors">املاک دبی</a></li><li><a href="/fa/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">مناطق</a></li><li><a href="/fa/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">ویزای اقامت</a></li><li><a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">تحلیل و گزارش‌ها</a></li></ul></nav>
+        <nav aria-label="ناوبری خدمات ملکی"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">خدمات</h2><ul class="space-y-2"><li><a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">مشاوره خرید</a></li><li><a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">وام مسکن</a></li><li><a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">امور حقوقی و سند</a></li><li><a href="/fa/services" class="text-sm text-ash hover:text-gold-400 transition-colors">ارزیابی ارزش ملک</a></li></ul></nav>
+        <nav aria-label="ناوبری مرکز اطلاعات"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">مرکز اطلاعات</h2><ul class="space-y-2"><li><a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">وبلاگ تحلیلی</a></li><li><a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">گزارش‌های فصلی</a></li><li><a href="/fa/off-plan/payment-calculator" class="text-sm text-ash hover:text-gold-400 transition-colors">محاسبه‌گر اقساط</a></li><li><a href="/fa/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">پرسش‌های متداول</a></li></ul></nav>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 py-8 border-t border-white-line">
+        <address class="not-italic"><div class="text-xs uppercase tracking-wider text-slate mb-2">دفتر دبی</div><p class="text-sm text-ash">خیابان شیخ زاید<br>داون‌تاون دبی، امارات متحده عربی</p></address>
+        <div><div class="text-xs uppercase tracking-wider text-slate mb-2">تلفن تماس</div><a href="tel:+971586901231" class="text-sm text-bone hover:text-gold-400 transition-colors" dir="ltr">+971 58 690 1231</a></div>
+        <div><div class="text-xs uppercase tracking-wider text-slate mb-2">پست الکترونیکی</div><a href="mailto:advisory@zarinrealestate.com" class="text-sm text-bone hover:text-gold-400 transition-colors">advisory@zarinrealestate.com</a></div>
+      </div>
+      <div class="pt-8 border-t border-white-line flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex flex-wrap items-center gap-4 text-xs text-slate"><span>&copy; ۲۰۲۶ املاک زرین (ZARIN Real Estate). تمامی حقوق محفوظ است.</span><span class="hidden md:inline w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span><span>دارای مجوز رسمی RERA</span></div>
+        <nav aria-label="پیوندهای حقوقی" class="flex flex-wrap items-center gap-4 text-xs"><a href="/fa/legal/privacy" class="text-slate hover:text-gold-400 transition-colors">حریم خصوصی</a><a href="/fa/legal/terms" class="text-slate hover:text-gold-400 transition-colors">قوانین و مقررات</a><a href="/fa/legal/privacy" class="text-slate hover:text-gold-400 transition-colors">کوکی‌ها</a><a href="/fa/contact" class="text-slate hover:text-gold-400 transition-colors">تماس با ما</a><a href="/fa/sitemap" class="text-slate hover:text-gold-400 transition-colors">نقشه سایت</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ STICKY WHATSAPP ═══ -->
+  <a href="https://wa.me/971586901231" class="sticky-whatsapp fixed bottom-6 left-6 z-[800] w-14 h-14 bg-gold-400 rounded-full shadow-monolith items-center justify-center hover:bg-gold-300 transition-colors" aria-label="ارتباط در واتس‌اپ"><svg class="w-7 h-7 text-ink-900 mx-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+
+  <!-- ═══ NAVIGATION CONTROLLER SCRIPT ═══ -->
+  <script type="module" src="/scripts/nav.js"></script>
+
+  <script defer>
+    const header = document.getElementById('site-header');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (window.scrollY > 60) {
+            header.style.backgroundColor = 'rgba(10, 11, 14, 0.85)';
+            header.style.backdropFilter = 'blur(20px)';
+            header.style.borderBottomColor = 'rgba(200, 171, 131, 0.15)';
+            header.style.padding = '0.85rem 0';
+          } else {
+            header.style.backgroundColor = 'transparent';
+            header.style.backdropFilter = 'none';
+            header.style.borderBottomColor = 'transparent';
+            header.style.padding = '1.15rem 0';
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    // Mobile drawer accordion toggles
+    function setupMobileAccordion(toggleId, submenuId) {
+      const toggle = document.getElementById(toggleId);
+      const submenu = document.getElementById(submenuId);
+      if (!toggle || !submenu) return;
+      toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', !isExpanded);
+        submenu.classList.toggle('hidden', isExpanded);
+        const icon = toggle.querySelector('svg');
+        if (icon) icon.classList.toggle('rotate-180', !isExpanded);
+      });
+    }
+    setupMobileAccordion('mobile-properties-toggle', 'mobile-properties-submenu');
+    setupMobileAccordion('mobile-offplan-toggle', 'mobile-offplan-submenu');
+    setupMobileAccordion('mobile-areas-toggle', 'mobile-areas-submenu');
+
+    const details = document.querySelectorAll('details');
+    details.forEach(detail => {
+      detail.addEventListener('toggle', () => {
+        if (detail.open) {
+          details.forEach(d => { if (d !== detail) d.open = false; });
+        }
+      });
+    });
+  </script>
+
+  <!-- ═══ CALCULATOR JAVASCRIPT (PERSIAN LOCALIZED) ═══ -->
+  <script>
+    (function () {
+      "use strict";
+
+      var PLAN_TEMPLATES = {
+        "60-40": [
+          { milestone: "رزرو اولیه", trigger: "امضای قرارداد خرید (Booking)", pct: 10, offsetMonths: 0, isBooking: true },
+          { milestone: "شروع عملیات عمرانی", trigger: "تجهیز کارگاه ساختمانی", pct: 10, offsetMonths: 1 },
+          { milestone: "۲۰٪ پیشرفت فیزیکی", trigger: "تکمیل فونداسیون سازه", pct: 10, offsetMonths: 6 },
+          { milestone: "۶۰٪ پیشرفت فیزیکی", trigger: "اتمام سقف اسکلت اصلی", pct: 20, offsetMonths: 18 },
+          { milestone: "۸۰٪ پیشرفت فیزیکی", trigger: "تکمیل نمای خارجی و نازک‌کاری", pct: 10, offsetMonths: 24 },
+          { milestone: "تحویل قطعی کلید", trigger: "دریافت گواهی پایان کار و تحویل واحد", pct: 40, offsetMonths: null }
+        ],
+        "70-30": [
+          { milestone: "رزرو اولیه", trigger: "امضای قرارداد خرید (Booking)", pct: 20, offsetMonths: 0, isBooking: true },
+          { milestone: "شروع عملیات عمرانی", trigger: "تجهیز کارگاه ساختمانی", pct: 20, offsetMonths: 1 },
+          { milestone: "۴۰٪ پیشرفت فیزیکی", trigger: "تکمیل فونداسیون و طبقات پایه", pct: 15, offsetMonths: 8 },
+          { milestone: "۷۰٪ پیشرفت فیزیکی", trigger: "اتمام اسکلت و نمای اولیه", pct: 15, offsetMonths: 20 },
+          { milestone: "تحویل قطعی کلید", trigger: "دریافت گواهی پایان کار و تحویل واحد", pct: 30, offsetMonths: null }
+        ],
+        "50-50": [
+          { milestone: "رزرو اولیه", trigger: "امضای قرارداد خرید (Booking)", pct: 10, offsetMonths: 0, isBooking: true },
+          { milestone: "شروع عملیات عمرانی", trigger: "تجهیز کارگاه ساختمانی", pct: 20, offsetMonths: 1 },
+          { milestone: "۵۰٪ پیشرفت فیزیکی", trigger: "مرحله میانی سفت‌کاری", pct: 20, offsetMonths: 12 },
+          { milestone: "تحویل قطعی کلید", trigger: "دریافت گواهی پایان کار و تحویل واحد", pct: 50, offsetMonths: null }
+        ],
+        "post-handover-50-50": [
+          { milestone: "رزرو اولیه", trigger: "امضای قرارداد خرید (Booking)", pct: 10, offsetMonths: 0, isBooking: true },
+          { milestone: "شروع عملیات عمرانی", trigger: "تجهیز کارگاه ساختمانی", pct: 15, offsetMonths: 1 },
+          { milestone: "۵۰٪ پیشرفت فیزیکی", trigger: "مرحله میانی سفت‌کاری", pct: 15, offsetMonths: 12 },
+          { milestone: "تحویل کلید", trigger: "دریافت کلید واحد و شروع اقساط بعدی", pct: 10, offsetMonths: null },
+          { milestone: "قسط سال اول پس از تحویل", trigger: "۱۲ ماه پس از دریافت کلید", pct: 25, offsetMonths: null, postHandover: 12 },
+          { milestone: "قسط سال دوم پس از تحویل", trigger: "۲۴ ماه پس از دریافت کلید", pct: 25, offsetMonths: null, postHandover: 24 }
+        ],
+        "1-percent-monthly": [
+          { milestone: "رزرو اولیه (۱۰٪)", trigger: "امضای قرارداد خرید", pct: 10, offsetMonths: 0, isBooking: true },
+          { milestone: "شروع ساخت (۴۰٪)", trigger: "تجهیز کارگاه و گودبرداری", pct: 40, offsetMonths: 1 },
+          { milestone: "اقساط ماهانه ۱٪ (۵۰ ماه)", trigger: "پرداخت ۱٪ در هر ماه در طول ساخت", pct: 50, offsetMonths: 2, isMonthly: true }
+        ]
+      };
+
+      var PLAN_LABELS = {
+        "60-40": "طرح ۶۰/۴۰",
+        "70-30": "طرح ۷۰/۳۰",
+        "50-50": "طرح ۵۰/۵۰",
+        "post-handover-50-50": "طرح ۵۰/۵۰ پس از تحویل",
+        "1-percent-monthly": "طرح ۱٪ ماهانه"
+      };
+
+      var DLD_FEE_RATE = 0.04;
+      var COMMISSION_RATE = 0.02;
+      var VAT_ON_COMMISSION = 0.05;
+      var ADMIN_FEE = 4000;
+      var TITLE_DEED_FEE = 580;
+
+      var MONTH_NAMES = [
+        "ژانویه", "فوریه", "مارس", "آوریل", "مه", "ژوئن",
+        "ژوئیه", "اوت", "سپتامبر", "اکتبر", "نوامبر", "دسامبر"
+      ];
+
+      // DOM refs
+      var form = document.getElementById("calc-form");
+      var priceInput = document.getElementById("price-input");
+      var priceSlider = document.getElementById("price-slider");
+      var durationInput = document.getElementById("duration-input");
+      var durationSlider = document.getElementById("duration-slider");
+      var durationDisplay = document.getElementById("duration-display");
+      var posthandoverFieldset = document.getElementById("post-handover-fieldset");
+      var posthandoverInput = document.getElementById("posthandover-input");
+      var posthandoverSlider = document.getElementById("posthandover-slider");
+      var posthandoverDisplay = document.getElementById("posthandover-display");
+      var planSelect = document.getElementById("plan-select");
+      var dldToggle = document.getElementById("dld-toggle");
+      var commissionToggle = document.getElementById("commission-toggle");
+      var resetBtn = document.getElementById("calc-reset");
+
+      // Result refs
+      var resultsPanel = document.getElementById("results-panel");
+      var metricDownpayment = document.getElementById("metric-downpayment");
+      var metricDownpaymentPct = document.getElementById("metric-downpayment-pct");
+      var metricConstruction = document.getElementById("metric-construction");
+      var metricConstructionPct = document.getElementById("metric-construction-pct");
+      var metricPosthandover = document.getElementById("metric-posthandover");
+      var metricPosthandoverPct = document.getElementById("metric-posthandover-pct");
+      var metricTotal = document.getElementById("metric-total");
+      var metricTotalPct = document.getElementById("metric-total-pct");
+      var metricMonthly = document.getElementById("metric-monthly");
+      var metricMonthlyPct = document.getElementById("metric-monthly-pct");
+      var metricLastDate = document.getElementById("metric-lastdate");
+      var metricLastDatePct = document.getElementById("metric-lastdate-pct");
+      var costPrice = document.getElementById("cost-price");
+      var costDld = document.getElementById("cost-dld");
+      var costCommission = document.getElementById("cost-commission");
+      var costVat = document.getElementById("cost-vat");
+      var costTotal = document.getElementById("cost-total");
+      var scheduleTbody = document.getElementById("schedule-tbody");
+      var scheduleSummary = document.getElementById("schedule-summary");
+      var resultsPlanLabel = document.getElementById("results-plan-label");
+      var calcStatus = document.getElementById("calc-status");
+      var calcPercent = document.getElementById("calc-percent");
+      var calcProgress = document.getElementById("calc-progress");
+
+      function fmtAEDShort(num) {
+        var n = Math.round(num);
+        return "AED " + n.toLocaleString("en-US");
+      }
+
+      function fmtPct(num) {
+        return Math.round(num) + "٪";
+      }
+
+      function addMonths(date, months) {
+        var d = new Date(date.getTime());
+        d.setMonth(d.getMonth() + months);
+        return d;
+      }
+
+      function fmtDate(d) {
+        return MONTH_NAMES[d.getMonth()] + " " + d.getFullYear();
+      }
+
+      function getInputs() {
+        var price = parseFloat(priceInput.value) || 0;
+        if (price < 500000) price = 500000;
+        if (price > 50000000) price = 50000000;
+        var duration = parseInt(durationInput.value, 10) || 36;
+        if (duration < 12) duration = 12;
+        if (duration > 60) duration = 60;
+        var postHandover = parseInt(posthandoverInput.value, 10) || 24;
+        if (postHandover < 12) postHandover = 12;
+        if (postHandover > 36) postHandover = 36;
+        var plan = planSelect.value;
+        var includeDld = dldToggle.checked;
+        var includeCommission = commissionToggle.checked;
+        return {
+          price: price,
+          duration: duration,
+          postHandover: postHandover,
+          plan: plan,
+          includeDld: includeDld,
+          includeCommission: includeCommission
+        };
+      }
+
+      function buildSchedule(inp) {
+        var template = PLAN_TEMPLATES[inp.plan] || PLAN_TEMPLATES["60-40"];
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        var handoverDate = addMonths(today, inp.duration);
+        var schedule = [];
+        var cumulativePct = 0;
+
+        template.forEach(function (m) {
+          var milestoneDate;
+          var phase = "construction";
+          if (m.offsetMonths === null && m.postHandover) {
+            milestoneDate = addMonths(handoverDate, m.postHandover);
+            phase = "post-handover";
+          } else if (m.offsetMonths === null) {
+            milestoneDate = handoverDate;
+            phase = "handover";
+          } else {
+            milestoneDate = addMonths(today, m.offsetMonths);
+            phase = "construction";
+          }
+          cumulativePct += m.pct;
+          schedule.push({
+            milestone: m.milestone,
+            trigger: m.trigger,
+            date: milestoneDate,
+            pct: m.pct,
+            amount: inp.price * m.pct / 100,
+            cumulativePct: cumulativePct,
+            phase: phase,
+            isBooking: !!m.isBooking,
+            isMonthly: !!m.isMonthly
+          });
+        });
+
+        return { schedule: schedule, handoverDate: handoverDate };
+      }
+
+      function renderResults(inp) {
+        var built = buildSchedule(inp);
+        var schedule = built.schedule;
+        var handoverDate = built.handoverDate;
+
+        var booking = schedule[0] || { amount: 0, pct: 0 };
+        var constructionMilestonesTotal = 0;
+        var postHandoverTotal = 0;
+        var lastDate = handoverDate;
+
+        schedule.forEach(function (row) {
+          if (row.phase === "construction" && !row.isBooking) {
+            constructionMilestonesTotal += row.amount;
+          } else if (row.phase === "post-handover") {
+            postHandoverTotal += row.amount;
+          }
+          if (row.date.getTime() > lastDate.getTime()) {
+            lastDate = row.date;
+          }
+        });
+
+        var dldFee = inp.includeDld ? inp.price * DLD_FEE_RATE : 0;
+        var commission = inp.includeCommission ? inp.price * COMMISSION_RATE : 0;
+        var vat = commission * VAT_ON_COMMISSION;
+        var totalCost = inp.price + dldFee + commission + vat + ADMIN_FEE + TITLE_DEED_FEE;
+
+        var monthlyAvg = constructionMilestonesTotal / inp.duration;
+
+        metricDownpayment.textContent = fmtAEDShort(booking.amount);
+        metricDownpaymentPct.textContent = fmtPct(booking.pct) + " ارزش ملک";
+        metricConstruction.textContent = fmtAEDShort(constructionMilestonesTotal);
+        metricConstructionPct.textContent = fmtPct(constructionMilestonesTotal / inp.price * 100) + " ارزش ملک";
+        metricPosthandover.textContent = fmtAEDShort(postHandoverTotal);
+        metricPosthandoverPct.textContent = fmtPct(postHandoverTotal / inp.price * 100) + " ارزش ملک";
+        metricTotal.textContent = fmtAEDShort(totalCost);
+        metricTotalPct.textContent = "شامل کل هزینه‌ها";
+        metricMonthly.textContent = fmtAEDShort(monthlyAvg);
+        metricMonthlyPct.textContent = "طی " + inp.duration + " ماه ساخت";
+        metricLastDate.textContent = fmtDate(lastDate);
+        metricLastDatePct.textContent = postHandoverTotal > 0 ? "پایان اقساط پس از تحویل" : "تحویل کلید واحد";
+
+        costPrice.textContent = fmtAEDShort(inp.price);
+        costDld.textContent = fmtAEDShort(dldFee);
+        costCommission.textContent = fmtAEDShort(commission);
+        costVat.textContent = fmtAEDShort(vat);
+        costTotal.textContent = fmtAEDShort(totalCost);
+
+        resultsPlanLabel.textContent = PLAN_LABELS[inp.plan] || "طرح ۶۰/۴۰";
+
+        var rowsHtml = "";
+        schedule.forEach(function (row) {
+          var phaseLabel = "";
+          if (row.phase === "handover") {
+            phaseLabel = " <span class='text-[9px] uppercase tracking-wider text-gold-400 font-semibold'>(تحویل کلید)</span>";
+          } else if (row.phase === "post-handover") {
+            phaseLabel = " <span class='text-[9px] uppercase tracking-wider text-blue-400 font-semibold'>(پس از تحویل)</span>";
+          }
+          rowsHtml += "<tr role='row' class='border-t border-white-line'>" +
+            "<td class='py-3 px-4 text-bone font-semibold text-sm'>" + row.milestone + phaseLabel + "</td>" +
+            "<td class='py-3 px-4 text-slate text-xs'>" + row.trigger + "</td>" +
+            "<td class='py-3 px-4 text-ash text-xs stat-number'>" + fmtDate(row.date) + "</td>" +
+            "<td class='py-3 px-4 text-left text-bone text-sm stat-number'>" + row.pct + "٪</td>" +
+            "<td class='py-3 px-4 text-left text-bone text-sm stat-number font-semibold'>" + fmtAEDShort(row.amount) + "</td>" +
+            "<td class='py-3 px-4 text-left text-gold-400 text-sm stat-number font-semibold'>" + row.cumulativePct + "٪</td>" +
+            "</tr>";
+        });
+        scheduleTbody.innerHTML = rowsHtml;
+        scheduleSummary.textContent = schedule.length + " مرحله \u00B7 " + inp.duration + " ماه";
+
+        calcStatus.textContent = "ورودی‌ها: ۷ از ۷ آماده";
+        calcPercent.textContent = "۱۰۰٪";
+        calcProgress.style.width = "100%";
+        calcProgress.setAttribute("aria-valuenow", "100");
+      }
+
+      function recalc() {
+        resultsPanel.setAttribute("aria-busy", "true");
+        var inp = getInputs();
+        renderResults(inp);
+        setTimeout(function () {
+          resultsPanel.setAttribute("aria-busy", "false");
+        }, 50);
+      }
+
+      function syncPrice(source) {
+        var val = parseFloat(source.value);
+        if (isNaN(val)) val = 2000000;
+        val = Math.max(500000, Math.min(50000000, val));
+        priceInput.value = val;
+        priceSlider.value = val;
+        priceInput.setAttribute("aria-valuenow", val);
+        priceSlider.setAttribute("aria-valuenow", val);
+        recalc();
+      }
+
+      function syncDuration(source) {
+        var val = parseInt(source.value, 10);
+        if (isNaN(val)) val = 36;
+        val = Math.max(12, Math.min(60, val));
+        durationInput.value = val;
+        durationSlider.value = val;
+        durationDisplay.textContent = val + " ماه";
+        durationInput.setAttribute("aria-valuenow", val);
+        durationSlider.setAttribute("aria-valuenow", val);
+        recalc();
+      }
+
+      function syncPostHandover(source) {
+        var val = parseInt(source.value, 10);
+        if (isNaN(val)) val = 24;
+        val = Math.max(12, Math.min(36, val));
+        posthandoverInput.value = val;
+        posthandoverSlider.value = val;
+        posthandoverDisplay.textContent = val + " ماه";
+        posthandoverInput.setAttribute("aria-valuenow", val);
+        posthandoverSlider.setAttribute("aria-valuenow", val);
+        recalc();
+      }
+
+      function updatePostHandoverVisibility() {
+        var plan = planSelect.value;
+        if (plan === "post-handover-50-50") {
+          posthandoverFieldset.classList.remove("hidden-conditional");
+          posthandoverFieldset.removeAttribute("hidden");
+        } else {
+          posthandoverFieldset.classList.add("hidden-conditional");
+          posthandoverFieldset.setAttribute("hidden", "hidden");
+        }
+      }
+
+      function updateRadioPressed() {
+        var radios = form.querySelectorAll('input[type="radio"].calc-radio');
+        radios.forEach(function (r) {
+          r.setAttribute("aria-pressed", r.checked ? "true" : "false");
+        });
+        var checks = form.querySelectorAll('input[type="checkbox"].calc-checkbox');
+        checks.forEach(function (c) {
+          c.setAttribute("aria-pressed", c.checked ? "true" : "false");
+        });
+      }
+
+      priceInput.addEventListener("input", function () { syncPrice(priceInput); });
+      priceSlider.addEventListener("input", function () { syncPrice(priceSlider); });
+      durationInput.addEventListener("input", function () { syncDuration(durationInput); });
+      durationSlider.addEventListener("input", function () { syncDuration(durationSlider); });
+      posthandoverInput.addEventListener("input", function () { syncPostHandover(posthandoverInput); });
+      posthandoverSlider.addEventListener("input", function () { syncPostHandover(posthandoverSlider); });
+      planSelect.addEventListener("change", function () {
+        updatePostHandoverVisibility();
+        recalc();
+      });
+      dldToggle.addEventListener("change", function () {
+        dldToggle.setAttribute("aria-pressed", dldToggle.checked ? "true" : "false");
+        recalc();
+      });
+      commissionToggle.addEventListener("change", function () {
+        commissionToggle.setAttribute("aria-pressed", commissionToggle.checked ? "true" : "false");
+        recalc();
+      });
+      form.addEventListener("change", updateRadioPressed);
+
+      resetBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        setTimeout(function () {
+          priceInput.value = 2000000;
+          priceSlider.value = 2000000;
+          durationInput.value = 36;
+          durationSlider.value = 36;
+          durationDisplay.textContent = "۳۶ ماه";
+          posthandoverInput.value = 24;
+          posthandoverSlider.value = 24;
+          posthandoverDisplay.textContent = "۲۴ ماه";
+          planSelect.value = "60-40";
+          dldToggle.checked = true;
+          commissionToggle.checked = true;
+          var aptRadio = document.getElementById("type-apartment");
+          aptRadio.checked = true;
+          updatePostHandoverVisibility();
+          updateRadioPressed();
+          recalc();
+        }, 0);
+      });
+
+      updatePostHandoverVisibility();
+      updateRadioPressed();
+      recalc();
+    })();
+  </script>
+
+</body>
+</html>

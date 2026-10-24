@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0A0B0E">
+
+  <!-- ═══ PRIMARY META ═══ -->
+  <title>Dubai Off-Plan Payment Calculator | ZARIN Real Estate</title>
+  <meta name="description" content="Free Dubai off-plan payment plan calculator — input property price & plan type (60/40, 70/30, post-handover, 1% monthly) to see exact milestone schedule & monthly payments.">
+  <meta name="keywords" content="Dubai off-plan payment calculator, off-plan payment plan calculator Dubai, 60/40 payment plan Dubai, 70/30 payment plan Dubai, post-handover payment plan Dubai, 1% monthly payment plan Dubai, DLD fee 4% calculator Dubai, off-plan installment schedule Dubai">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="ZARIN Real Estate">
+  <link rel="canonical" href="https://zarinrealestate.com/off-plan/payment-calculator">
+
+  <!-- ═══ HREFLANG ALTERNATES ═══ -->
+  <link rel="alternate" hreflang="en" href="https://zarinrealestate.com/off-plan/payment-calculator">
+  <link rel="alternate" hreflang="fa" href="https://zarinrealestate.com/fa/off-plan/payment-calculator">
+  <link rel="alternate" hreflang="x-default" href="https://zarinrealestate.com/off-plan/payment-calculator">
+
+  <!-- ═══ OPEN GRAPH ═══ -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Dubai Off-Plan Payment Calculator | ZARIN Real Estate">
+  <meta property="og:description" content="Free Dubai off-plan payment plan calculator — input price, plan type & duration to see milestone schedule, monthly payments, and total cost.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dubai off-plan payment calculator — interactive milestone schedule tool">
+  <meta property="og:url" content="https://zarinrealestate.com/off-plan/payment-calculator">
+  <meta property="og:site_name" content="ZARIN Real Estate">
+  <meta property="og:locale" content="en_US">
+
+  <!-- ═══ TWITTER CARD ═══ -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dubai Off-Plan Payment Calculator | ZARIN Real Estate">
+  <meta name="twitter:description" content="Free Dubai off-plan payment calculator — 5 plan types, milestone schedule, monthly payments.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- ═══ FAVICON ═══ -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0B0E'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' fill='%23C8AB83' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
+
+  <!-- ═══ RESOURCE PRELOADS & FONTS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- ═══ PRODUCTION STYLES ═══ -->
+  <link rel="stylesheet" href="/styles/main.css">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Source Sans 3", "Vazirmatn", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0A0B0E;
+      color: #F8F9FA;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #0A0B0E; }
+    ::-webkit-scrollbar-thumb { background: #C8AB83; border-radius: 4px; }
+    ::selection { background: rgba(200,171,131,0.3); color: #F8F9FA; }
+    .glass { background: rgba(10,11,14,0.78); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    .gold-glow { transition: box-shadow .5s cubic-bezier(.16,1,.3,1), border-color .5s cubic-bezier(.16,1,.3,1); }
+    .gold-glow:hover { box-shadow: 0 10px 30px rgba(200,171,131,.15); border-color: rgba(200,171,131,.45); }
+    .text-gold-gradient { background: linear-gradient(135deg, #DFC49E 0%, #C8AB83 50%, #A88D66 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+    .stat-number { font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+    .card-lift { transition: transform .5s cubic-bezier(.16,1,.3,1), box-shadow .5s cubic-bezier(.16,1,.3,1); }
+    .card-lift:hover { transform: translateY(-4px); box-shadow: 0 24px 60px rgba(0,0,0,.5); }
+    .mobile-menu { transform: translateX(100%); transition: transform .4s cubic-bezier(.16,1,.3,1); }
+    .mobile-menu.open { transform: translateX(0); }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fade-in-up { animation: fadeInUp .8s cubic-bezier(.16,1,.3,1) both; }
+    details summary { list-style: none; cursor: pointer; }
+    details summary::-webkit-details-marker { display: none; }
+    details[open] .faq-icon { transform: rotate(45deg); }
+    .faq-icon { transition: transform .3s cubic-bezier(.16,1,.3,1); }
+    .sticky-whatsapp { display: none; }
+    @media (max-width: 1024px) { .sticky-whatsapp { display: flex; } }
+    .step-line::before { content: ""; position: absolute; left: 1.5rem; top: 3.5rem; bottom: -2.5rem; width: 1px; background: linear-gradient(to bottom, rgba(200,171,131,0.45), rgba(200,171,131,0.05)); }
+    @media (max-width: 768px) { .step-line::before { display: none; } }
+
+    /* Calculator UI */
+    input[type="range"].calc-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; background: rgba(255,255,255,0.08); border-radius: 999px; outline: none; cursor: pointer; }
+    input[type="range"].calc-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; background: #C8AB83; border-radius: 50%; border: 2px solid #0A0B0E; box-shadow: 0 0 0 1px rgba(200,171,131,0.45); transition: transform .2s; }
+    input[type="range"].calc-slider::-webkit-slider-thumb:hover { transform: scale(1.15); }
+    input[type="range"].calc-slider::-moz-range-thumb { width: 20px; height: 20px; background: #C8AB83; border-radius: 50%; border: 2px solid #0A0B0E; box-shadow: 0 0 0 1px rgba(200,171,131,0.45); cursor: pointer; }
+    input[type="range"].calc-slider:focus-visible { outline: 2px solid #C8AB83; outline-offset: 4px; }
+    .calc-radio:focus-visible + .calc-radio-label { outline: 2px solid #C8AB83; outline-offset: 2px; }
+    input[type="radio"].calc-radio:checked + .calc-radio-label { border-color: rgba(200,171,131,0.65); background: rgba(200,171,131,0.10); }
+    select.calc-select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23C8AB83'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.85rem center; background-size: 1.1rem; }
+    [dir="rtl"] select.calc-select { background-position: left 0.85rem center; }
+    input[type="checkbox"].calc-checkbox:checked { accent-color: #C8AB83; }
+    .result-card { animation: fadeInUp .6s cubic-bezier(.16,1,.3,1) both; }
+    .progress-track { background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
+    .progress-fill { background: linear-gradient(90deg, #DFC49E 0%, #C8AB83 50%, #A88D66 100%); transition: width .5s cubic-bezier(.16,1,.3,1); }
+    .schedule-table tbody tr:nth-child(odd) { background: rgba(255,255,255,0.02); }
+    .schedule-table tbody tr:hover { background: rgba(200,171,131,0.05); }
+    .metric-card { transition: border-color .3s, transform .3s; }
+    .metric-card:hover { border-color: rgba(200,171,131,0.45); transform: translateY(-2px); }
+    .hidden-conditional { display: none; }
+  </style>
+
+  <!-- ═══ JSON-LD: BREADCRUMBLIST ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://zarinrealestate.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Off-Plan",
+        "item": "https://zarinrealestate.com/off-plan"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Payment Calculator",
+        "item": "https://zarinrealestate.com/off-plan/payment-calculator"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ JSON-LD: WEBAPPLICATION ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "@id": "https://zarinrealestate.com/off-plan/payment-calculator#webapp",
+    "name": "ZARIN Off-Plan Payment Calculator",
+    "url": "https://zarinrealestate.com/off-plan/payment-calculator",
+    "description": "Free interactive Dubai off-plan payment plan calculator — input property price, property type, payment plan type, construction duration, post-handover period, and DLD/commission toggles to generate a milestone-by-milestone installment schedule with monthly averages, total cost, and a detailed breakdown across 5 standard Dubai payment plan structures: 60/40, 70/30, 50/50, post-handover 50/50, and 1% monthly.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any (web browser)",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "featureList": [
+      "7-input calculator: property price (AED 500K-50M), property type, payment plan type, construction duration (12-60 months), post-handover period (12-36 months), DLD fee 4% toggle, ZARIN commission 2% toggle",
+      "5 standard Dubai off-plan payment plan templates: 60/40, 70/30, 50/50, post-handover 50/50, 1% monthly",
+      "Milestone-by-milestone schedule with dates, percentages, amounts (AED), and cumulative percentage",
+      "7 live result metrics: down payment, construction-period installments, post-handover installments, total property cost, monthly average payment, last payment date, full schedule table",
+      "Auto-included DLD fee (4%), ZARIN commission (2% + 5% VAT), admin fee (AED 4,000), title deed fee (AED 580)",
+      "Confidential — runs entirely in browser, no personal information collected, no data saved server-side",
+      "Free advisor follow-up via WhatsApp, phone, or email"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "AED"
+    },
+    "provider": {
+      "@id": "https://zarinrealestate.com/#organization"
+    },
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Prospective Dubai off-plan property buyers and investors evaluating payment plan structures, milestone schedules, and total acquisition cost across 60/40, 70/30, 50/50, post-handover, and 1% monthly plans"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "United Arab Emirates"
+    }
+  }
+  </script>
+
+  <!-- ═══ JSON-LD: FAQPAGE ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://zarinrealestate.com/off-plan/payment-calculator#faq",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the most common payment plan for Dubai off-plan property?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 60/40 plan is the most common Dubai off-plan payment structure, used by a majority of mid-market developers. Under this plan, buyers pay 60 percent of the property price during construction across milestone installments (typically booking, construction start, 20 percent, 60 percent, and 80 percent completion triggers) and the remaining 40 percent on handover when keys are exchanged. The structure balances developer cash flow needs with buyer risk, since a meaningful portion is deferred until delivery. ZARIN's founder has been investing in Dubai real estate since 2005 and has seen this plan survive multiple market cycles as the industry default."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I miss an off-plan payment in Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Missing an off-plan payment triggers a defined sequence under UAE real estate law. The developer typically issues a written notice giving the buyer 30 days to cure the default. If the payment remains unpaid after that window, the developer may terminate the Sale & Purchase Agreement, deduct up to 40 percent of the amounts already paid as compensation, and refund the balance. The exact percentage retained depends on how much of the total price has been paid — under AED 60 percent paid means 40 percent can be retained, while above AED 60 percent paid means only 10 percent can be retained. ZARIN advises clients to maintain a cash buffer equal to two upcoming installments to avoid this scenario."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I customize my payment plan with the developer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, to a limited extent. Developers typically publish a standard payment plan per project (most often a 60/40 or 70/30 structure) but are open to negotiated variations for premium buyers committing to high-value units or buying multiple units at once. Common customizations include shifting the booking deposit from 10 percent to 20 percent in exchange for a 2-4 percent price discount, extending the post-handover tail by 6-12 months, or aligning installments with the buyer's known income events. All customizations must be written into the SPA and registered with DLD. ZARIN negotiates these terms on behalf of clients as part of standard advisory."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the DLD fee and when do I pay it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The DLD (Dubai Land Department) transfer fee is a mandatory 4 percent of the property purchase price, payable to the Dubai Land Department at the time of property registration. For off-plan property, this fee is paid at the Oqood pre-registration stage — typically within 30 to 60 days of signing the SPA — and is in addition to the property price. The fee is paid into the project's escrow account or directly to DLD via the developer's conveyancing team. There are no exemptions or reductions for off-plan buyers; even first-time buyers pay the full 4 percent. ZARIN ensures all clients are aware of this cost before signing."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the 4% DLD fee on top of the property price?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the 4 percent DLD fee is a separate government charge levied on top of the agreed property price. If you buy an off-plan apartment for AED 2,000,000, you will pay AED 80,000 in DLD fees at registration, plus a small admin fee (AED 4,000) and a title deed issuance fee (AED 580). Some developers advertise properties as 'DLD-free' or '4 percent DLD included' as a promotional incentive — in those cases the developer effectively absorbs the 4 percent by discounting the list price. ZARIN's calculator includes the 4 percent DLD fee by default (toggle it off if you are evaluating a DLD-free promotion)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I get a mortgage on off-plan property in Dubai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, but with structural differences from ready-property mortgages. During construction you typically pay installments from your own funds into the project escrow account. A mortgage can then be arranged to fund the handover balance, with UAE banks offering up to 50-80 percent loan-to-value depending on the property value and your residency status. Some developers partner with specific banks to offer in-house financing with streamlined approval. The mortgage registration fee is AED 4,020 plus 0.25 percent of the loan amount. ZARIN coordinates with major UAE lenders including Emirates NBD, Mashreq, and ADCB to secure competitive terms for off-plan clients."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a post-handover payment plan and who offers it?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A post-handover payment plan spreads a portion of the purchase price over a defined period (typically 1-3 years) after key handover. The most common structure is 50/50 post-handover, where 50 percent is paid during construction and 50 percent is paid in equal installments across the post-handover period. This reduces buyer cash flow pressure because rental income from the handed-over unit can be used to subsidize the remaining payments. DAMAC, Select Group, and Ellington are among the Dubai developers most associated with post-handover plans. The trade-off is that headline prices are typically 8-15 percent higher than equivalent 60/40 plans, reflecting the developer's cost of carrying buyer debt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What should I do after seeing my payment calculator results?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "After you see your results, the next step is a 30-minute advisory call with a ZARIN off-plan specialist who will review your schedule, confirm the plan type matches your cash flow profile, and shortlist two to three vetted projects that offer the structure you have modeled. The call is complimentary and carries no obligation. If you choose to engage ZARIN, we move into project selection, SPA review, escrow verification, and milestone monitoring through to handover. ZARIN was established in 2023 to deliver this end-to-end advisory, building on our founder's experience investing in Dubai real estate since 2005."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- ═══ JSON-LD: WEBPAGE + SPEAKABLE ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://zarinrealestate.com/off-plan/payment-calculator#webpage",
+    "url": "https://zarinrealestate.com/off-plan/payment-calculator",
+    "name": "Dubai Off-Plan Payment Calculator | ZARIN Real Estate",
+    "description": "Free Dubai off-plan payment plan calculator — input property price & plan type (60/40, 70/30, post-handover, 1% monthly) to see exact milestone schedule & monthly payments.",
+    "isPartOf": {
+      "@id": "https://zarinrealestate.com/#website"
+    },
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "#hero-headline",
+        "#tldr-summary"
+      ]
+    }
+  }
+  </script>
+</head>
+<body class="bg-ink-900 text-bone antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-gold-400 focus:text-ink-900 focus:rounded-xs focus:text-sm focus:font-bold">Skip to main content</a>
+
+  <!-- ═══ HEADER ═══ -->
+  <header id="site-header" class="fixed top-0 left-0 w-full z-[900] transition-all duration-500" role="banner" style="padding: 1.25rem 0; border-bottom: 1px solid transparent;">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="flex items-center justify-between gap-4">
+
+        <a href="/" class="flex items-center gap-2 group flex-shrink-0" aria-label="ZARIN Real Estate — Home">
+          <span class="font-sans font-extrabold text-2xl tracking-tight text-bone group-hover:text-gold-400 transition-colors duration-300">ZARIN</span>
+          <span class="hidden md:inline text-[10px] tracking-[0.3em] uppercase text-gold-400 font-semibold border-l border-gold-line pl-2">Real Estate</span>
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-1" aria-label="Primary Navigation">
+
+          <!-- 1. Properties Mega Menu -->
+          <div class="mega-menu-trigger flex items-center group/prop">
+            <a href="/properties" class="pl-3 pr-1 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300" id="properties-nav-link">Properties</a>
+            <button type="button" class="mega-menu-toggle-btn pr-3 pl-1 py-2 text-ash hover:text-gold-400 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-400" id="properties-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="properties-mega-panel" aria-label="Toggle Properties submenu">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="properties-mega-panel" class="mega-menu-panel absolute top-full left-0 mt-2 w-[640px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-3 gap-x-6 gap-y-3" role="region" aria-label="Properties submenu">
+              <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">For Sale</div>
+              <a href="/properties-for-sale" class="text-sm text-bone hover:text-gold-400 transition-colors">All Properties for Sale</a>
+              <a href="/apartments-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Apartments</a>
+              <a href="/villas-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Villas</a>
+              <a href="/penthouses-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Penthouses</a>
+              <a href="/townhouses-for-sale-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Townhouses</a>
+              <a href="/trophy-residences" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">Trophy Residences →</a>
+              <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">For Rent</div>
+              <a href="/properties-for-rent" class="text-sm text-bone hover:text-gold-400 transition-colors">All Rentals</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">By Lifestyle</div>
+              <a href="/beachfront-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Beachfront</a>
+              <a href="/burj-khalifa-view-properties" class="text-sm text-ash hover:text-gold-400 transition-colors">Burj View</a>
+              <a href="/golf-course-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Golf Course</a>
+              <a href="/branded-residences-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Branded Residences</a>
+              <a href="/commercial-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Commercial</a>
+            </div>
+          </div>
+
+          <!-- 2. Off-Plan Mega Menu (Active) -->
+          <div class="mega-menu-trigger flex items-center group/offplan">
+            <a href="/off-plan" class="pl-3 pr-1 py-2 text-[13px] font-semibold tracking-wide text-gold-400 hover:text-gold-300 transition-colors duration-300" id="offplan-nav-link" aria-current="page">Off-Plan</a>
+            <button type="button" class="mega-menu-toggle-btn pr-3 pl-1 py-2 text-gold-400 hover:text-gold-300 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-400" id="offplan-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="offplan-mega-panel" aria-label="Toggle Off-Plan submenu">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="offplan-mega-panel" class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3" role="region" aria-label="Off-Plan submenu">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">Discover</div>
+              <a href="/off-plan/projects" class="text-sm text-bone hover:text-gold-400 transition-colors">All Off-Plan Projects</a>
+              <a href="/off-plan/new-launches" class="text-sm text-ash hover:text-gold-400 transition-colors">New Launches</a>
+              <a href="/off-plan/coming-soon" class="text-sm text-ash hover:text-gold-400 transition-colors">Coming Soon</a>
+              <a href="/off-plan/by-developer" class="text-sm text-ash hover:text-gold-400 transition-colors">By Developer</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">Investment Tools</div>
+              <a href="/off-plan/investment-guide" class="text-sm text-ash hover:text-gold-400 transition-colors">Investment Guide</a>
+              <a href="/off-plan/payment-calculator" class="text-sm text-gold-400 hover:text-gold-300 font-semibold transition-colors" aria-current="page">Payment Calculator</a>
+              <a href="/off-plan/roi-predictor" class="text-sm text-ash hover:text-gold-400 transition-colors">ROI Predictor</a>
+              <a href="/off-plan/developer-reputation-tracker" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">Developer Tracker →</a>
+            </div>
+          </div>
+
+          <!-- 3. Areas Mega Menu -->
+          <div class="mega-menu-trigger flex items-center group/areas">
+            <a href="/areas" class="pl-3 pr-1 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300" id="areas-nav-link">Areas</a>
+            <button type="button" class="mega-menu-toggle-btn pr-3 pl-1 py-2 text-ash hover:text-gold-400 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-400" id="areas-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="areas-mega-panel" aria-label="Toggle Areas submenu">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="areas-mega-panel" class="mega-menu-panel absolute top-full left-0 mt-2 w-[640px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-3 gap-x-6 gap-y-3" role="region" aria-label="Areas submenu">
+              <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">Featured Areas</div>
+              <a href="/areas/palm-jumeirah" class="text-sm text-bone hover:text-gold-400 transition-colors">Palm Jumeirah</a>
+              <a href="/areas/downtown-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Downtown Dubai</a>
+              <a href="/areas/dubai-hills-estate" class="text-sm text-ash hover:text-gold-400 transition-colors">Dubai Hills Estate</a>
+              <a href="/areas/dubai-marina" class="text-sm text-ash hover:text-gold-400 transition-colors">Dubai Marina</a>
+              <a href="/areas/business-bay" class="text-sm text-ash hover:text-gold-400 transition-colors">Business Bay</a>
+              <a href="/areas/dubai-creek-harbour" class="text-sm text-ash hover:text-gold-400 transition-colors">Creek Harbour</a>
+              <a href="/areas/jumeirah-bay-island" class="text-sm text-ash hover:text-gold-400 transition-colors">Jumeirah Bay Island</a>
+              <a href="/areas/emirates-hills" class="text-sm text-ash hover:text-gold-400 transition-colors">Emirates Hills</a>
+              <a href="/areas" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">All Areas →</a>
+              <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">City Comparisons</div>
+              <a href="/areas/compare/dubai-vs-london" class="text-sm text-ash hover:text-gold-400 transition-colors">Dubai vs London</a>
+              <a href="/areas/compare/dubai-vs-singapore" class="text-sm text-ash hover:text-gold-400 transition-colors">Dubai vs Singapore</a>
+              <a href="/areas/compare/dubai-vs-new-york" class="text-sm text-ash hover:text-gold-400 transition-colors">Dubai vs New York</a>
+            </div>
+          </div>
+
+          <!-- 4. Private Office Mega Menu -->
+          <div class="mega-menu-trigger flex items-center group/po">
+            <a href="/private-office" class="pl-3 pr-1 py-2 text-[13px] font-semibold tracking-wide text-gold-400 hover:text-gold-300 transition-colors duration-300" id="private-office-nav-link">Private Office</a>
+            <button type="button" class="mega-menu-toggle-btn pr-3 pl-1 py-2 text-gold-400 hover:text-gold-300 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-300" id="private-office-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="private-office-mega-panel" aria-label="Toggle Private Office submenu">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div id="private-office-mega-panel" class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-gold-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3" role="region" aria-label="Private Office submenu">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">The Private Office ($10M+)</div>
+              <a href="/private-office" class="text-sm text-bone hover:text-gold-400 transition-colors">Overview</a>
+              <a href="/private-office/discretion" class="text-sm text-ash hover:text-gold-400 transition-colors">Discretion Protocol</a>
+              <a href="/private-office/off-market" class="text-sm text-ash hover:text-gold-400 transition-colors">Off-Market Listings</a>
+              <a href="/private-office/multi-currency" class="text-sm text-ash hover:text-gold-400 transition-colors">Multi-Currency Pricing</a>
+              <a href="/private-office/crypto-payments" class="text-sm text-ash hover:text-gold-400 transition-colors">Crypto Payments</a>
+              <a href="/private-office/concierge" class="text-sm text-ash hover:text-gold-400 transition-colors">Lifestyle Concierge</a>
+              <a href="/private-office/yacht-aviation" class="text-sm text-ash hover:text-gold-400 transition-colors">Yacht & Aviation</a>
+              <a href="/private-office/cross-border-tax" class="text-sm text-ash hover:text-gold-400 transition-colors">Cross-Border Tax</a>
+            </div>
+          </div>
+
+          <!-- 5. Services Mega Menu -->
+          <div class="mega-menu-trigger">
+            <a href="/services" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              Services
+              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">Buying & Selling</div>
+              <a href="/services" class="text-sm text-bone hover:text-gold-400 transition-colors">Buying Advisory</a>
+              <a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">Selling Advisory</a>
+              <a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">Mortgage Advisory</a>
+              <a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">Free Valuation</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">Management & Legal</div>
+              <a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">Property Management</a>
+              <a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">Legal & Conveyancing</a>
+              <a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">Property Insurance</a>
+              <a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">After-Sales Support</a>
+            </div>
+          </div>
+
+          <!-- 6. Visas Mega Menu -->
+          <div class="mega-menu-trigger">
+            <a href="/visas" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              Visas
+              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">Visa Types</div>
+              <a href="/visas" class="text-sm text-bone hover:text-gold-400 transition-colors">All Visas Hub</a>
+              <a href="/visas/golden-visa" class="text-sm text-ash hover:text-gold-400 transition-colors">Golden Visa (10-Year)</a>
+              <a href="/visas/investor-visa" class="text-sm text-ash hover:text-gold-400 transition-colors">Investor Visa (2-Year)</a>
+              <a href="/visas/retirement-visa" class="text-sm text-ash hover:text-gold-400 transition-colors">Retirement Visa (5-Year)</a>
+              <a href="/visas/remote-work-visa" class="text-sm text-ash hover:text-gold-400 transition-colors">Remote Work Visa</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">By Nationality</div>
+              <a href="/visas/for-indian-buyers" class="text-sm text-ash hover:text-gold-400 transition-colors">For Indian Buyers</a>
+              <a href="/visas/for-uk-buyers" class="text-sm text-ash hover:text-gold-400 transition-colors">For UK Buyers</a>
+              <a href="/visas/for-chinese-buyers" class="text-sm text-ash hover:text-gold-400 transition-colors">For Chinese Buyers</a>
+              <a href="/visas/eligibility-checker" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold">Check Eligibility →</a>
+            </div>
+          </div>
+
+          <!-- 7. Insights Mega Menu -->
+          <div class="mega-menu-trigger">
+            <a href="/insights" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              Insights
+              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">Content Hub</div>
+              <a href="/insights" class="text-sm text-bone hover:text-gold-400 transition-colors">All Insights</a>
+              <a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">Blog Articles</a>
+              <a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Reports</a>
+              <a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">Podcast</a>
+              <a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">Buyer's Guides</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">Tools & Reference</div>
+              <a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">All Calculators</a>
+              <a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">FAQ Hub</a>
+              <a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">Glossary</a>
+              <a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Data</a>
+            </div>
+          </div>
+
+          <!-- 8. Heritage Mega Menu -->
+          <div class="mega-menu-trigger">
+            <a href="/heritage" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+              Heritage
+              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </a>
+            <div class="mega-menu-panel absolute top-full right-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line">About ZARIN</div>
+              <a href="/heritage" class="text-sm text-bone hover:text-gold-400 transition-colors">Our Story (since 2005)</a>
+              <a href="/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">Founder's Letter</a>
+              <a href="/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">Our Team</a>
+              <a href="/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">Author Profiles</a>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2">Trust & Proof</div>
+              <a href="/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">Testimonials</a>
+              <a href="/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">Awards</a>
+              <a href="/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">Press & Media</a>
+              <a href="/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">Case Studies</a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="header-action-cluster flex items-center gap-2 sm:gap-3 flex-shrink-0">
+          <a href="tel:+971586901231" class="hidden xl:flex items-center gap-2 text-xs font-semibold text-ash hover:text-gold-400 transition-colors whitespace-nowrap" aria-label="Call us at +971 58 690 1231">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.288a11.3 11.3 0 005.067 5.067l1.288-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <span dir="ltr" class="tabular-nums">+971 58 690 1231</span>
+          </a>
+
+          <a href="/consultation" class="header-cta hidden lg:inline-flex items-center justify-center h-[34px] px-4 md:px-5 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-[0.06em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold whitespace-nowrap" aria-label="Book a consultation">
+            Book Consultation
+          </a>
+
+          <!-- Language Switcher -->
+          <div class="lang-switch hidden lg:inline-flex items-center h-[34px] bg-white/[0.04] border border-white-line rounded-xs p-0.5" role="group" aria-label="Language Selector">
+            <a href="/off-plan/payment-calculator" class="lang-btn h-full px-2 text-[11px] font-semibold rounded-xs transition-all active is-active text-gold-400" aria-label="English language active" aria-current="true">EN</a>
+            <a href="/fa/off-plan/payment-calculator" class="lang-btn h-full px-2 text-[11px] font-semibold rounded-xs text-ash hover:text-gold-400 transition-all" aria-label="تغییر به زبان فارسی">فارسی</a>
+          </div>
+
+          <button id="mobile-menu-toggle" class="lg:hidden text-bone hover:text-gold-400 transition-colors p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ MOBILE MENU DRAWER ═══ -->
+  <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full max-w-sm h-full bg-ink-900 border-l border-white-line z-[1000] overflow-y-auto lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="p-6">
+      <div class="flex justify-between items-center mb-8">
+        <span class="font-sans font-extrabold text-xl text-bone">ZARIN</span>
+        <button id="mobile-menu-close" class="text-ash hover:text-gold-400 transition-colors" aria-label="Close menu">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <nav class="flex flex-col gap-1" aria-label="Mobile primary navigation">
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/properties" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">Properties</a>
+            <button type="button" id="mobile-properties-toggle" aria-expanded="false" aria-controls="mobile-properties-submenu" aria-label="Toggle Properties submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-properties-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <a href="/properties-for-sale" class="text-xs text-bone hover:text-gold-400 py-1">All Properties for Sale</a>
+            <a href="/apartments-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">Apartments</a>
+            <a href="/villas-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">Villas</a>
+            <a href="/penthouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">Penthouses</a>
+            <a href="/townhouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1">Townhouses</a>
+            <a href="/trophy-residences" class="text-xs text-gold-400 font-semibold py-1">Trophy Residences →</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/off-plan" class="flex-1 py-3 px-4 text-sm font-semibold text-gold-400 hover:text-gold-300">Off-Plan</a>
+            <button type="button" id="mobile-offplan-toggle" aria-expanded="true" aria-controls="mobile-offplan-submenu" aria-label="Toggle Off-Plan submenu" class="p-3 text-gold-400 hover:text-gold-300 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-offplan-submenu" class="pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <a href="/off-plan/projects" class="text-xs text-ash hover:text-gold-400 py-1">All Off-Plan Projects</a>
+            <a href="/off-plan/new-launches" class="text-xs text-ash hover:text-gold-400 py-1">New Launches</a>
+            <a href="/off-plan/coming-soon" class="text-xs text-ash hover:text-gold-400 py-1">Coming Soon</a>
+            <a href="/off-plan/by-developer" class="text-xs text-ash hover:text-gold-400 py-1">By Developer</a>
+            <a href="/off-plan/investment-guide" class="text-xs text-ash hover:text-gold-400 py-1">Investment Guide</a>
+            <a href="/off-plan/payment-calculator" class="text-xs text-gold-400 font-semibold py-1" aria-current="page">Payment Calculator</a>
+            <a href="/off-plan/roi-predictor" class="text-xs text-ash hover:text-gold-400 py-1">ROI Predictor</a>
+            <a href="/off-plan/developer-reputation-tracker" class="text-xs text-gold-400 font-semibold py-1">Developer Tracker →</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-item">
+          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
+            <a href="/areas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400">Areas</a>
+            <button type="button" id="mobile-areas-toggle" aria-expanded="false" aria-controls="mobile-areas-submenu" aria-label="Toggle Areas submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+          </div>
+          <div id="mobile-areas-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
+            <a href="/areas/palm-jumeirah" class="text-xs text-bone hover:text-gold-400 py-1">Palm Jumeirah</a>
+            <a href="/areas/downtown-dubai" class="text-xs text-ash hover:text-gold-400 py-1">Downtown Dubai</a>
+            <a href="/areas/dubai-hills-estate" class="text-xs text-ash hover:text-gold-400 py-1">Dubai Hills Estate</a>
+          </div>
+        </div>
+
+        <div class="mobile-nav-item">
+          <a href="/private-office" class="flex-1 py-3 px-4 text-sm font-semibold text-gold-400 hover:bg-white-soft rounded-xs transition-all block">Private Office</a>
+        </div>
+        <div class="mobile-nav-item">
+          <a href="/services" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all block">Services</a>
+        </div>
+        <div class="mobile-nav-item">
+          <a href="/visas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all block">Visas</a>
+        </div>
+        <div class="mobile-nav-item">
+          <a href="/insights" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all block">Insights</a>
+        </div>
+        <div class="mobile-nav-item">
+          <a href="/heritage" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400 hover:bg-white-soft rounded-xs transition-all block">Heritage</a>
+        </div>
+
+        <div class="px-4 py-3 border-t border-white-line my-2">
+          <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-2">Language / زبان</div>
+          <div class="flex items-center gap-2" role="group" aria-label="Select language">
+            <a href="/off-plan/payment-calculator" class="flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-gold-line bg-gold-400 text-ink-900 transition-all text-center">English (EN)</a>
+            <a href="/fa/off-plan/payment-calculator" class="flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-white-line text-ash hover:text-gold-400 hover:border-gold-line transition-all text-center">فارسی (FA)</a>
+          </div>
+        </div>
+
+        <div class="h-px bg-white-line my-2"></div>
+        <a href="/consultation" class="py-3 px-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-wide text-center rounded-xs hover:bg-gold-300 transition-all">Book Consultation</a>
+        <a href="tel:+971586901231" class="py-3 px-4 text-sm text-ash hover:text-gold-400 text-center"><span dir="ltr" class="tabular-nums">+971 58 690 1231</span></a>
+        <a href="https://wa.me/971586901231" class="py-3 px-4 text-sm text-tether hover:text-tether/80 text-center">WhatsApp</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ═══ BREADCRUMB ═══ -->
+  <div class="pt-24 bg-ink-900 border-b border-white-line">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-4">
+      <nav aria-label="Breadcrumb" class="text-xs">
+        <ol class="flex items-center gap-2 text-slate">
+          <li><a href="/" class="hover:text-gold-400 transition-colors">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/off-plan" class="hover:text-gold-400 transition-colors">Off-Plan</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-bone font-semibold" aria-current="page">Payment Calculator</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <main id="main">
+
+  <!-- ═══ 1. HERO ═══ -->
+  <section class="relative py-20 md:py-28 overflow-hidden bg-ink-900" aria-labelledby="hero-headline">
+    <div class="absolute inset-0 opacity-15">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1920&q=80" alt="" class="w-full h-full object-cover" aria-hidden="true" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-ink-900 via-ink-900/95 to-ink-900" aria-hidden="true"></div>
+    <div class="relative max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-4xl animate-fade-in-up">
+        <div class="inline-flex items-center gap-2 mb-6">
+          <span class="w-8 h-px bg-gold-400" aria-hidden="true"></span>
+          <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Off-Plan &middot; Interactive Tool</span>
+        </div>
+        <h1 id="hero-headline" class="font-sans font-extrabold text-5xl md:text-7xl lg:text-[5rem] leading-[0.95] tracking-tight text-bone mb-6">
+          Off-Plan Payment<br>
+          <span class="text-gold-gradient">Calculator</span>
+        </h1>
+        <p id="tldr-summary" class="text-lg md:text-xl text-ash max-w-2xl leading-relaxed mb-8 font-light">
+          The ZARIN Off-Plan Payment Calculator models five standard Dubai payment plan structures
+          (60/40, 70/30, 50/50, post-handover 50/50, and 1% monthly), generating a milestone-by-milestone
+          installment schedule with projected dates and exact AED amounts for any property price between
+          AED 500,000 and AED 50,000,000. The calculator automatically includes the 4 percent DLD transfer
+          fee, the 2 percent ZARIN commission plus 5 percent VAT, the AED 4,000 admin fee, and the AED 580
+          title deed fee in its total cost calculation, and models post-handover payment tails of up to
+          36 months. The tool runs entirely in your browser via JavaScript — no server, no signup, no
+          documents, and no personally identifying information is collected. ZARIN's founder has been
+          investing in Dubai real estate since 2005, and the firm was formally established in 2023 to
+          deliver integrated off-plan, financing, and residency advisory to premium buyers and
+          discerning investors.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#calculator" class="inline-flex items-center justify-center px-8 py-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold" aria-label="Start the payment calculator now">
+            Start Calculator
+            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="https://wa.me/971586901231" class="inline-flex items-center justify-center px-8 py-4 border border-gold-line text-bone text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-soft hover:border-gold-border transition-all duration-300" aria-label="Speak to an off-plan advisor on WhatsApp">
+            Speak to Advisor
+            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </a>
+        </div>
+
+        <!-- 4 stat tiles -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-16 pt-8 border-t border-white-line">
+          <div class="border-l-2 border-gold-400 pl-4">
+            <div class="text-3xl md:text-4xl font-bold text-gold-400 stat-number">5</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-2 font-semibold">Payment Plan Types</div>
+            <div class="text-xs text-slate mt-1 leading-relaxed">60/40, 70/30, 50/50, post-handover, 1% monthly</div>
+          </div>
+          <div class="border-l-2 border-gold-line pl-4">
+            <div class="text-3xl md:text-4xl font-bold text-gold-400 stat-number">6</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-2 font-semibold">Milestone Stages</div>
+            <div class="text-xs text-slate mt-1 leading-relaxed">Booking, start, 20%, 60%, 80%, handover</div>
+          </div>
+          <div class="border-l-2 border-gold-line pl-4">
+            <div class="text-3xl md:text-4xl font-bold text-gold-400 stat-number">0</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-2 font-semibold">Documents Required</div>
+            <div class="text-xs text-slate mt-1 leading-relaxed">No signup, no upload, browser-side only</div>
+          </div>
+          <div class="border-l-2 border-gold-line pl-4">
+            <div class="text-3xl md:text-4xl font-bold text-gold-400 stat-number">90 sec</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-2 font-semibold">Average Completion Time</div>
+            <div class="text-xs text-slate mt-1 leading-relaxed">7 inputs, instant live results</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 2. INTERACTIVE CALCULATOR ═══ -->
+  <section id="calculator" class="bg-ink-850 py-24 md:py-32" aria-labelledby="calculator-heading">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Interactive Tool</div>
+        <h2 id="calculator-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Model Your Off-Plan Payment Schedule</h2>
+        <p class="text-lg text-ash leading-relaxed">
+          Adjust the seven inputs on the left and the calculator rebuilds your milestone schedule in real time.
+          Each plan type follows the standard DLD-registered milestone template used by the relevant developer
+          cohort (Tier 1, mid-market, or post-handover specialist). The right panel shows the full schedule
+          with dates, percentages, AED amounts, and cumulative totals — plus a breakdown of every additional
+          buyer cost. All processing happens in your browser; nothing is transmitted or stored on our servers.
+        </p>
+      </div>
+
+      <!-- Progress indicator -->
+      <div class="max-w-3xl mb-8" role="region" aria-label="Calculator input completeness">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <span class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold" id="calc-status" aria-live="polite">Inputs: 7 of 7 ready</span>
+            <span class="hidden md:inline text-xs text-slate" aria-live="polite">Live schedule recalculating</span>
+          </div>
+          <span class="text-xs text-slate stat-number" id="calc-percent" aria-live="polite">100%</span>
+        </div>
+        <div class="progress-track h-2 w-full" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" aria-label="Calculator input completeness">
+          <div class="progress-fill h-full" id="calc-progress" style="width:100%"></div>
+        </div>
+        <ol class="flex items-center justify-between mt-4 text-[10px] uppercase tracking-wider text-slate" aria-label="Calculator inputs overview">
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>Price</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>Type</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>Plan</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>Duration</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>Post-Hnd</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>DLD</li>
+          <li class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-gold-400" aria-hidden="true"></span>Comm.</li>
+        </ol>
+      </div>
+
+      <!-- Two-column calculator grid -->
+      <div class="grid lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] gap-8">
+
+        <!-- INPUT PANEL -->
+        <form id="calc-form" class="bg-ink-900 border border-gold-line rounded-sm p-6 md:p-8" novalidate aria-labelledby="calculator-heading">
+
+          <fieldset class="mb-6" aria-labelledby="input-price-legend">
+            <legend id="input-price-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">1 &middot; Property Price (AED)</legend>
+            <label for="price-input" class="block text-sm font-semibold text-bone mb-2">Purchase price of the off-plan unit</label>
+            <p class="text-xs text-slate mb-3" id="price-hint">Range: AED 500,000 to AED 50,000,000. Adjust via the number input or slider.</p>
+            <div class="flex items-stretch gap-2 mb-3">
+              <span class="inline-flex items-center px-3 bg-ink-850 border border-white-line border-r-0 rounded-l-xs text-xs text-ash font-semibold" aria-hidden="true">AED</span>
+              <input type="number" id="price-input" name="price" value="2000000" min="500000" max="50000000" step="50000" required
+                     class="calc-number w-full bg-ink-850 border border-white-line rounded-r-xs px-4 py-3 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors stat-number"
+                     aria-label="Property price in AED" aria-required="true" aria-describedby="price-hint" aria-valuenow="2000000" aria-valuemin="500000" aria-valuemax="50000000">
+            </div>
+            <input type="range" id="price-slider" min="500000" max="50000000" step="50000" value="2000000"
+                   class="calc-slider w-full"
+                   aria-label="Property price slider" aria-valuenow="2000000" aria-valuemin="500000" aria-valuemax="50000000">
+            <div class="flex justify-between text-[10px] text-slate mt-1 stat-number"><span>AED 500K</span><span>AED 50M</span></div>
+          </fieldset>
+
+          <fieldset class="mb-6" aria-labelledby="input-type-legend">
+            <legend id="input-type-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">2 &middot; Property Type</legend>
+            <p class="text-xs text-slate mb-3">Affects service charge band in the total cost reference. Not used to alter the milestone schedule.</p>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2" role="radiogroup" aria-labelledby="input-type-legend">
+              <input type="radio" name="prop-type" id="type-apartment" value="apartment" checked class="calc-radio sr-only" aria-pressed="true">
+              <label for="type-apartment" class="calc-radio-label block border border-white-line rounded-xs p-3 cursor-pointer hover:border-gold-line hover:bg-white-soft transition-colors text-center text-xs text-bone">
+                <span class="block text-base font-bold text-gold-400 stat-number">Apt</span>
+                <span class="block text-[10px] text-slate mt-1">Apartment</span>
+              </label>
+              <input type="radio" name="prop-type" id="type-villa" value="villa" class="calc-radio sr-only" aria-pressed="false">
+              <label for="type-villa" class="calc-radio-label block border border-white-line rounded-xs p-3 cursor-pointer hover:border-gold-line hover:bg-white-soft transition-colors text-center text-xs text-bone">
+                <span class="block text-base font-bold text-gold-400 stat-number">Villa</span>
+                <span class="block text-[10px] text-slate mt-1">Stand-alone</span>
+              </label>
+              <input type="radio" name="prop-type" id="type-townhouse" value="townhouse" class="calc-radio sr-only" aria-pressed="false">
+              <label for="type-townhouse" class="calc-radio-label block border border-white-line rounded-xs p-3 cursor-pointer hover:border-gold-line hover:bg-white-soft transition-colors text-center text-xs text-bone">
+                <span class="block text-base font-bold text-gold-400 stat-number">TH</span>
+                <span class="block text-[10px] text-slate mt-1">Townhouse</span>
+              </label>
+              <input type="radio" name="prop-type" id="type-penthouse" value="penthouse" class="calc-radio sr-only" aria-pressed="false">
+              <label for="type-penthouse" class="calc-radio-label block border border-white-line rounded-xs p-3 cursor-pointer hover:border-gold-line hover:bg-white-soft transition-colors text-center text-xs text-bone">
+                <span class="block text-base font-bold text-gold-400 stat-number">PH</span>
+                <span class="block text-[10px] text-slate mt-1">Penthouse</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="mb-6" aria-labelledby="input-plan-legend">
+            <legend id="input-plan-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">3 &middot; Payment Plan Type</legend>
+            <label for="plan-select" class="block text-sm font-semibold text-bone mb-2">Standard Dubai off-plan structure</label>
+            <p class="text-xs text-slate mb-3" id="plan-hint">Determines the milestone template used by the schedule.</p>
+            <select id="plan-select" name="plan" required
+                    class="calc-select w-full bg-ink-850 border border-white-line rounded-xs px-4 py-3 pr-10 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors"
+                    aria-label="Payment plan type" aria-required="true" aria-describedby="plan-hint">
+              <option value="60-40">60/40 Plan &mdash; 60% during construction, 40% on handover</option>
+              <option value="70-30">70/30 Plan &mdash; 70% during construction, 30% on handover</option>
+              <option value="50-50">50/50 Plan &mdash; 50% during construction, 50% on handover</option>
+              <option value="post-handover-50-50">Post-Handover 50/50 &mdash; 50% during construction, 50% over 1-3 years post-handover</option>
+              <option value="1-percent-monthly">1% Monthly &mdash; 50% upfront + 50% in monthly installments during construction</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="mb-6" aria-labelledby="input-duration-legend">
+            <legend id="input-duration-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">4 &middot; Construction Duration</legend>
+            <label for="duration-input" class="block text-sm font-semibold text-bone mb-2">Total build cycle from booking to handover</label>
+            <p class="text-xs text-slate mb-3" id="duration-hint">Range: 12 to 60 months. Default is 36 months (industry standard).</p>
+            <div class="flex items-center gap-3 mb-3">
+              <input type="number" id="duration-input" name="duration" value="36" min="12" max="60" step="1" required
+                     class="calc-number w-24 bg-ink-850 border border-white-line rounded-xs px-3 py-2 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors stat-number"
+                     aria-label="Construction duration in months" aria-required="true" aria-describedby="duration-hint" aria-valuenow="36" aria-valuemin="12" aria-valuemax="60">
+              <span class="text-xs text-slate">months</span>
+              <span class="ml-auto text-sm text-gold-400 font-bold stat-number" id="duration-display" aria-live="polite">36 months</span>
+            </div>
+            <input type="range" id="duration-slider" min="12" max="60" step="1" value="36"
+                   class="calc-slider w-full"
+                   aria-label="Construction duration slider" aria-valuenow="36" aria-valuemin="12" aria-valuemax="60">
+            <div class="flex justify-between text-[10px] text-slate mt-1 stat-number"><span>12 mo</span><span>60 mo</span></div>
+          </fieldset>
+
+          <fieldset class="mb-6 hidden-conditional" id="post-handover-fieldset" aria-labelledby="input-ph-legend">
+            <legend id="input-ph-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">5 &middot; Post-Handover Period</legend>
+            <label for="posthandover-input" class="block text-sm font-semibold text-bone mb-2">Tail period after key handover</label>
+            <p class="text-xs text-slate mb-3" id="posthandover-hint">Visible only for post-handover plan. Range: 12 to 36 months.</p>
+            <div class="flex items-center gap-3 mb-3">
+              <input type="number" id="posthandover-input" name="posthandover" value="24" min="12" max="36" step="1"
+                     class="calc-number w-24 bg-ink-850 border border-white-line rounded-xs px-3 py-2 text-bone text-sm focus:border-gold-400 focus:outline-none transition-colors stat-number"
+                     aria-label="Post-handover period in months" aria-describedby="posthandover-hint" aria-valuenow="24" aria-valuemin="12" aria-valuemax="36">
+              <span class="text-xs text-slate">months</span>
+              <span class="ml-auto text-sm text-gold-400 font-bold stat-number" id="posthandover-display" aria-live="polite">24 months</span>
+            </div>
+            <input type="range" id="posthandover-slider" min="12" max="36" step="1" value="24"
+                   class="calc-slider w-full"
+                   aria-label="Post-handover period slider" aria-valuenow="24" aria-valuemin="12" aria-valuemax="36">
+            <div class="flex justify-between text-[10px] text-slate mt-1 stat-number"><span>12 mo</span><span>36 mo</span></div>
+          </fieldset>
+
+          <fieldset class="mb-6" aria-labelledby="input-fees-legend">
+            <legend id="input-fees-legend" class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-3">6 &middot; Buyer Fees &amp; Commission</legend>
+            <div class="space-y-3">
+              <label for="dld-toggle" class="flex items-start gap-3 cursor-pointer p-3 border border-white-line rounded-xs hover:border-gold-line hover:bg-white-soft transition-colors">
+                <input type="checkbox" id="dld-toggle" name="dld" checked class="calc-checkbox mt-1 w-4 h-4" aria-pressed="true">
+                <span>
+                  <span class="block text-sm font-semibold text-bone">Include DLD Fee (4%)</span>
+                  <span class="block text-xs text-slate mt-1">Mandatory Dubai Land Department transfer fee on all residential purchases.</span>
+                </span>
+              </label>
+              <label for="commission-toggle" class="flex items-start gap-3 cursor-pointer p-3 border border-white-line rounded-xs hover:border-gold-line hover:bg-white-soft transition-colors">
+                <input type="checkbox" id="commission-toggle" name="commission" checked class="calc-checkbox mt-1 w-4 h-4" aria-pressed="true">
+                <span>
+                  <span class="block text-sm font-semibold text-bone">Include ZARIN Commission (2% + 5% VAT)</span>
+                  <span class="block text-xs text-slate mt-1">Standard buyer-side broker fee. Disable if comparing cash-only deals or DLD-free promotions.</span>
+                </span>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="pt-6 border-t border-white-line">
+            <button type="reset" id="calc-reset" class="inline-flex items-center px-5 py-2.5 border border-white-line text-ash text-xs font-semibold uppercase tracking-wider rounded-xs hover:border-gold-line hover:text-gold-400 transition-all cursor-pointer" aria-label="Reset calculator to default values">
+              <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+              Reset Defaults
+            </button>
+          </div>
+        </form>
+
+        <!-- RESULTS PANEL -->
+        <div id="results-panel" class="result-card bg-ink-900 border border-gold-line rounded-sm p-6 md:p-8" aria-live="polite" aria-busy="false" aria-label="Payment calculation results">
+
+          <div class="flex items-center justify-between mb-6 pb-4 border-b border-white-line">
+            <div>
+              <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Live Results</span>
+              <h3 id="results-heading" class="text-2xl md:text-3xl font-bold tracking-tight text-bone mt-1">Your Payment Schedule</h3>
+            </div>
+            <span class="text-[10px] uppercase tracking-wider text-slate hidden md:inline" id="results-plan-label" aria-live="polite">60/40 Plan</span>
+          </div>
+
+          <!-- 6 metric tiles -->
+          <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 mb-8" aria-label="Summary metrics">
+            <div class="metric-card bg-ink-850 border border-white-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Down Payment</div>
+              <div class="text-xl font-bold text-gold-400 stat-number" id="metric-downpayment">AED 200,000</div>
+              <div class="text-[10px] text-slate mt-1 stat-number" id="metric-downpayment-pct">10% of price</div>
+            </div>
+            <div class="metric-card bg-ink-850 border border-white-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Construction Installments</div>
+              <div class="text-xl font-bold text-bone stat-number" id="metric-construction">AED 1,000,000</div>
+              <div class="text-[10px] text-slate mt-1 stat-number" id="metric-construction-pct">50% of price</div>
+            </div>
+            <div class="metric-card bg-ink-850 border border-white-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Post-Handover</div>
+              <div class="text-xl font-bold text-bone stat-number" id="metric-posthandover">AED 0</div>
+              <div class="text-[10px] text-slate mt-1 stat-number" id="metric-posthandover-pct">0% of price</div>
+            </div>
+            <div class="metric-card bg-ink-850 border border-gold-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-1">Total Property Cost</div>
+              <div class="text-xl font-bold text-gold-400 stat-number" id="metric-total">AED 2,126,580</div>
+              <div class="text-[10px] text-slate mt-1 stat-number" id="metric-total-pct">Incl. fees</div>
+            </div>
+            <div class="metric-card bg-ink-850 border border-white-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Monthly Average</div>
+              <div class="text-xl font-bold text-bone stat-number" id="metric-monthly">AED 27,778</div>
+              <div class="text-[10px] text-slate mt-1 stat-number" id="metric-monthly-pct">Over 36 months</div>
+            </div>
+            <div class="metric-card bg-ink-850 border border-white-line rounded-xs p-4">
+              <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Last Payment Date</div>
+              <div class="text-xl font-bold text-bone stat-number" id="metric-lastdate" style="font-size:1rem">Oct 2029</div>
+              <div class="text-[10px] text-slate mt-1" id="metric-lastdate-pct">Project handover</div>
+            </div>
+          </div>
+
+          <!-- Cost breakdown -->
+          <div class="bg-ink-850 border border-white-line rounded-xs p-5 mb-6" aria-label="Total cost breakdown">
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-3">Cost Breakdown</div>
+            <dl class="space-y-2 text-sm">
+              <div class="flex justify-between"><dt class="text-ash">Property Price</dt><dd class="text-bone stat-number" id="cost-price">AED 2,000,000</dd></div>
+              <div class="flex justify-between"><dt class="text-ash">DLD Transfer Fee (4%)</dt><dd class="text-bone stat-number" id="cost-dld">AED 80,000</dd></div>
+              <div class="flex justify-between"><dt class="text-ash">ZARIN Commission (2%)</dt><dd class="text-bone stat-number" id="cost-commission">AED 40,000</dd></div>
+              <div class="flex justify-between"><dt class="text-ash">VAT on Commission (5%)</dt><dd class="text-bone stat-number" id="cost-vat">AED 2,000</dd></div>
+              <div class="flex justify-between"><dt class="text-ash">DLD Admin Fee</dt><dd class="text-bone stat-number">AED 4,000</dd></div>
+              <div class="flex justify-between"><dt class="text-ash">Title Deed Issuance</dt><dd class="text-bone stat-number">AED 580</dd></div>
+              <div class="flex justify-between pt-2 border-t border-white-line"><dt class="text-gold-400 font-semibold">Total Cost</dt><dd class="text-gold-400 font-bold stat-number" id="cost-total">AED 2,126,580</dd></div>
+            </dl>
+          </div>
+
+          <!-- Payment schedule table -->
+          <div class="bg-ink-850 border border-white-line rounded-xs overflow-hidden" aria-label="Milestone-by-milestone payment schedule">
+            <div class="px-5 py-3 border-b border-white-line flex items-center justify-between">
+              <span class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold">Payment Schedule</span>
+              <span class="text-[10px] text-slate" id="schedule-summary">6 milestones &middot; 36 months</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="schedule-table w-full text-sm" role="table" aria-label="Milestone schedule table">
+                <thead>
+                  <tr class="text-[10px] uppercase tracking-wider text-slate text-left" role="row">
+                    <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">Milestone</th>
+                    <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">Trigger</th>
+                    <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">Date</th>
+                    <th scope="col" class="py-3 px-4 font-semibold text-right" role="columnheader">%</th>
+                    <th scope="col" class="py-3 px-4 font-semibold text-right" role="columnheader">Amount (AED)</th>
+                    <th scope="col" class="py-3 px-4 font-semibold text-right" role="columnheader">Cumulative</th>
+                  </tr>
+                </thead>
+                <tbody id="schedule-tbody" role="rowgroup">
+                  <!-- rows injected by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Privacy microcopy -->
+          <p class="text-xs text-slate mt-6 leading-relaxed" id="privacy-microcopy">
+            <svg class="w-3.5 h-3.5 inline-block mr-1 -mt-0.5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            Free &middot; No signup &middot; No documents &middot; Calculations are based on standard Dubai off-plan payment plan structures.
+            Actual schedule is set by the developer's sales agreement and may differ slightly.
+          </p>
+
+          <!-- Advisor CTA -->
+          <div class="mt-6 pt-6 border-t border-white-line flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/971586901231" class="inline-flex items-center justify-center px-5 py-3 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-gold-300 transition-all" aria-label="Discuss this schedule with a ZARIN advisor on WhatsApp">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+              Discuss with Advisor
+            </a>
+            <a href="tel:+971586901231" class="inline-flex items-center justify-center px-5 py-3 border border-gold-line text-bone text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-gold-soft transition-all" aria-label="Call ZARIN at +971 58 690 1231">
+              <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.288a11.3 11.3 0 005.067 5.067l1.288-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <span dir="ltr" class="tabular-nums">+971 58 690 1231</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. PAYMENT PLAN TYPES EXPLAINED ═══ -->
+  <section id="plan-types" class="bg-ink-900 py-24 md:py-32" aria-labelledby="plan-types-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Reference</div>
+        <h2 id="plan-types-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Payment Plan Types Explained</h2>
+        <p class="text-lg text-ash leading-relaxed">
+          Dubai developers offer five standard off-plan payment plan structures, each calibrated to a different
+          buyer profile and developer financing strategy. The plan that fits best depends on your cash flow
+          profile, your tolerance for construction-period capital deployment, and whether you intend to
+          finance the handover balance via mortgage or pay cash at delivery.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="bg-ink-900 border border-white-line rounded-sm p-6 card-lift" aria-labelledby="plan-1-title">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center px-2.5 py-1 bg-gold-soft border border-gold-line rounded-xs text-[10px] uppercase tracking-wider text-gold-400 font-semibold">Most Common</span>
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+          </div>
+          <h3 id="plan-1-title" class="text-xl font-bold text-bone mb-3">60/40 Plan</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">60 percent of the property price is paid during construction across milestone installments, with the remaining 40 percent due on key handover. This is the most common Dubai plan structure because it balances the developer's cash flow needs against the buyer's exposure to construction risk, leaving a meaningful balance for delivery.</p>
+          <div class="bg-ink-850 border border-white-line rounded-xs p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate mb-1">Example Structure</div>
+            <div class="text-xs text-bone leading-relaxed">Booking 10% &middot; Start 10% &middot; 20% complete 10% &middot; 60% complete 20% &middot; 80% complete 10% &middot; Handover 40%</div>
+          </div>
+        </article>
+        <article class="bg-ink-900 border border-white-line rounded-sm p-6 card-lift" aria-labelledby="plan-2-title">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center px-2.5 py-1 bg-gold-soft border border-gold-line rounded-xs text-[10px] uppercase tracking-wider text-gold-400 font-semibold">Tier 1 Developer</span>
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            </div>
+          </div>
+          <h3 id="plan-2-title" class="text-xl font-bold text-bone mb-3">70/30 Plan</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">70 percent of the purchase price is collected during construction, with 30 percent held back for handover. This aggressive front-loading is favoured by Tier 1 developers like Emaar and Nakheel because it aligns buyer capital deployment with construction progress, reducing developer financing cost and accelerating project completion.</p>
+          <div class="bg-ink-850 border border-white-line rounded-xs p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate mb-1">Example Structure</div>
+            <div class="text-xs text-bone leading-relaxed">Booking 20% &middot; Start 20% &middot; 40% complete 15% &middot; 70% complete 15% &middot; Handover 30%</div>
+          </div>
+        </article>
+        <article class="bg-ink-900 border border-white-line rounded-sm p-6 card-lift" aria-labelledby="plan-3-title">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center px-2.5 py-1 bg-gold-soft border border-gold-line rounded-xs text-[10px] uppercase tracking-wider text-gold-400 font-semibold">Balanced Risk</span>
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/></svg>
+            </div>
+          </div>
+          <h3 id="plan-3-title" class="text-xl font-bold text-bone mb-3">50/50 Plan</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">Half the price is paid during construction and half is held back for handover. This balanced structure is popular with mid-tier developers and is often used for projects where construction risk is perceived as higher, since the buyer retains 50 percent of capital until delivery is verified.</p>
+          <div class="bg-ink-850 border border-white-line rounded-xs p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate mb-1">Example Structure</div>
+            <div class="text-xs text-bone leading-relaxed">Booking 10% &middot; Start 20% &middot; 50% complete 20% &middot; Handover 50%</div>
+          </div>
+        </article>
+        <article class="bg-ink-900 border border-white-line rounded-sm p-6 card-lift" aria-labelledby="plan-4-title">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center px-2.5 py-1 bg-gold-soft border border-gold-line rounded-xs text-[10px] uppercase tracking-wider text-gold-400 font-semibold">Cash-Flow Friendly</span>
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            </div>
+          </div>
+          <h3 id="plan-4-title" class="text-xl font-bold text-bone mb-3">Post-Handover 50/50</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">Half the price is paid during construction and the remaining 50 percent is spread over one to three years after key handover. This structure reduces buyer cash flow pressure because rental income from the handed-over unit can subsidize the remaining balance. Popular with DAMAC and Select Group, typically priced 8-15 percent higher than equivalent 60/40 plans.</p>
+          <div class="bg-ink-850 border border-white-line rounded-xs p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate mb-1">Example Structure</div>
+            <div class="text-xs text-bone leading-relaxed">Booking 10% &middot; Start 15% &middot; 50% complete 15% &middot; Handover 10% &middot; Post-Handover Y1 25% &middot; Post-Handover Y2 25%</div>
+          </div>
+        </article>
+        <article class="bg-ink-900 border border-white-line rounded-sm p-6 card-lift" aria-labelledby="plan-5-title">
+          <div class="flex items-center justify-between mb-4">
+            <span class="inline-flex items-center px-2.5 py-1 bg-gold-soft border border-gold-line rounded-xs text-[10px] uppercase tracking-wider text-gold-400 font-semibold">First-Time Investor</span>
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.598 1M12 8V7m0 1v8m0 0v1m0-1H9m3 1h3"/></svg>
+            </div>
+          </div>
+          <h3 id="plan-5-title" class="text-xl font-bold text-bone mb-3">1% Monthly Plan</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">Ten percent is paid at booking, forty percent at construction start, and the remaining fifty percent is paid in equal monthly installments of one percent each over fifty months. This structure is the most buyer-friendly for first-time investors because it converts the purchase into predictable monthly outflows that can be matched to salaried income.</p>
+          <div class="bg-ink-850 border border-white-line rounded-xs p-3">
+            <div class="text-[10px] uppercase tracking-wider text-slate mb-1">Example Structure</div>
+            <div class="text-xs text-bone leading-relaxed">Booking 10% &middot; Start 40% &middot; Monthly 1% over 50 months 50%</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. HOW THE CALCULATOR WORKS ═══ -->
+  <section id="how-it-works" class="bg-ink-850 py-24 md:py-32" aria-labelledby="how-it-works-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Methodology</div>
+        <h2 id="how-it-works-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">How the Calculator Works</h2>
+        <p class="text-lg text-ash leading-relaxed">
+          The ZARIN Off-Plan Payment Calculator runs in four transparent steps. Every calculation
+          is performed locally in your browser via JavaScript, so you can adjust inputs freely without
+          worrying about privacy, latency, or server-side storage. The methodology below mirrors the
+          way our advisory team models payment schedules for live clients.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-x-12 gap-y-8">
+        <div class="relative step-line">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 border border-gold-line rounded-full flex items-center justify-center bg-gold-soft flex-shrink-0" aria-hidden="true">
+              <span class="text-gold-400 font-bold text-lg stat-number">1</span>
+            </div>
+            <div class="flex-1">
+              <h3 id="step-1-title" class="text-lg font-bold text-bone mb-2">Input Property Details</h3>
+              <p class="text-sm text-ash leading-relaxed mb-3">Begin by entering seven inputs that define your off-plan purchase: property price in AED (range 500,000 to 50,000,000), property type (apartment, villa, townhouse, or penthouse), payment plan type (5 standard options), construction duration in months (12-60), post-handover period if applicable (12-36 months), and the DLD fee and commission toggles. The slider and number input on each numeric field stay synchronized, so you can use whichever is faster.</p>
+              <div class="flex items-center gap-2 text-[10px] text-slate uppercase tracking-wider">
+                <svg class="w-3 h-3 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                <span>7 inputs &middot; 5 plan types &middot; 60-month max duration</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative step-line">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 border border-gold-line rounded-full flex items-center justify-center bg-gold-soft flex-shrink-0" aria-hidden="true">
+              <span class="text-gold-400 font-bold text-lg stat-number">2</span>
+            </div>
+            <div class="flex-1">
+              <h3 id="step-2-title" class="text-lg font-bold text-bone mb-2">Apply Plan Structure</h3>
+              <p class="text-sm text-ash leading-relaxed mb-3">Behind the calculator sits a template library of five standard Dubai payment plan structures, each encoded as an ordered list of milestones with cumulative percentage allocations. When you select a plan type, the calculator loads the corresponding template and prepares to compute amounts against your property price. The templates mirror the DLD-registered milestone schedules used by Tier 1, mid-market, and post-handover specialist developers across Dubai.</p>
+              <div class="flex items-center gap-2 text-[10px] text-slate uppercase tracking-wider">
+                <svg class="w-3 h-3 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2a4 4 0 014-4h2a4 4 0 014 4v2M9 7h6m-6 4h6m-9 8h12a2 2 0 002-2V5a2 2 0 00-2-2H6a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                <span>5 templates &middot; cumulative % encoding &middot; DLD-aligned</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative step-line">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 border border-gold-line rounded-full flex items-center justify-center bg-gold-soft flex-shrink-0" aria-hidden="true">
+              <span class="text-gold-400 font-bold text-lg stat-number">3</span>
+            </div>
+            <div class="flex-1">
+              <h3 id="step-3-title" class="text-lg font-bold text-bone mb-2">Calculate Schedule</h3>
+              <p class="text-sm text-ash leading-relaxed mb-3">The calculator computes the AED amount for each milestone by multiplying your property price by the milestone percentage, then walks forward from the booking date to project a calendar date for each milestone based on your construction duration slider. Post-handover milestones are appended after the handover date using your post-handover period slider. The output is a complete milestone-by-milestone schedule with cumulative percentages.</p>
+              <div class="flex items-center gap-2 text-[10px] text-slate uppercase tracking-wider">
+                <svg class="w-3 h-3 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                <span>Price &times; pct &middot; date projection &middot; cumulative running</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative step-line">
+          <div class="flex items-start gap-4 mb-4">
+            <div class="w-12 h-12 border border-gold-line rounded-full flex items-center justify-center bg-gold-soft flex-shrink-0" aria-hidden="true">
+              <span class="text-gold-400 font-bold text-lg stat-number">4</span>
+            </div>
+            <div class="flex-1">
+              <h3 id="step-4-title" class="text-lg font-bold text-bone mb-2">Review Results</h3>
+              <p class="text-sm text-ash leading-relaxed mb-3">The results panel surfaces seven summary metrics (down payment, construction-period installments, post-handover installments, total property cost, monthly average payment, last payment date, and full schedule), a cost breakdown listing every additional buyer fee (DLD 4 percent, commission 2 percent + VAT, admin AED 4,000, title deed AED 580), and the full schedule table. Adjust any input and the results update instantly without page reload.</p>
+              <div class="flex items-center gap-2 text-[10px] text-slate uppercase tracking-wider">
+                <svg class="w-3 h-3 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2a4 4 0 014-4h4M3 5h13M3 9h10M3 13h6m9 4l3 3m0-3l-3 3"/></svg>
+                <span>7 metrics &middot; cost breakdown &middot; live schedule table</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 5. ADDITIONAL BUYER COSTS REFERENCE ═══ -->
+  <section id="buyer-costs" class="bg-ink-900 py-24 md:py-32" aria-labelledby="buyer-costs-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Cost Reference</div>
+        <h2 id="buyer-costs-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Additional Buyer Costs Reference</h2>
+        <p class="text-lg text-ash leading-relaxed">
+          The property price is only part of the total acquisition cost. Beyond the headline number,
+          Dubai off-plan buyers face five to six additional cost components depending on whether they
+          finance the handover balance and whether they purchase title insurance. The reference table
+          below covers every standard cost component with typical amount, payment timing, and notes.
+        </p>
+      </div>
+      <div class="bg-ink-850 border border-white-line rounded-sm overflow-hidden overflow-x-auto">
+        <table class="w-full text-sm" role="table" aria-label="Additional buyer costs reference table">
+          <thead>
+            <tr class="bg-ink-800 text-[10px] uppercase tracking-wider text-gold-400 text-left" role="row">
+              <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">Cost Component</th>
+              <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">Typical Amount</th>
+              <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">Payment Timing</th>
+              <th scope="col" class="py-3 px-4 font-semibold" role="columnheader">Notes</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-left align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">DLD Transfer Fee</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-gold-soft border border-gold-line rounded-xs text-[9px] uppercase tracking-wider text-gold-400 font-semibold">Mandatory</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">4% of property price</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">Paid at Oqood registration</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">Mandatory government fee on all residential purchases. No exemptions for off-plan buyers.</td>
+          </tr>
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-left align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">Real Estate Commission</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-gold-soft border border-gold-line rounded-xs text-[9px] uppercase tracking-wider text-gold-400 font-semibold">Mandatory</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">2% of property price + 5% VAT</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">Paid at SPA signing</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">ZARIN standard buyer-side brokerage fee. Some developers offer DLD-free promotions that absorb this.</td>
+          </tr>
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-left align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">Admin Fees</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-gold-soft border border-gold-line rounded-xs text-[9px] uppercase tracking-wider text-gold-400 font-semibold">Mandatory</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">AED 4,000 + AED 580</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">Paid at registration</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">AED 4,000 DLD administrative fee + AED 580 title deed issuance fee. Always applies.</td>
+          </tr>
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-left align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">Mortgage Registration Fee</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-ink-700 border border-white-line rounded-xs text-[9px] uppercase tracking-wider text-slate font-semibold">Optional</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">AED 4,020 + 0.25% of loan</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">Paid at mortgage registration</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">Applies only if financed. UAE banks offer 50-80% LTV on off-plan handover balance.</td>
+          </tr>
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-left align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">Service Charge Prepayment</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-gold-soft border border-gold-line rounded-xs text-[9px] uppercase tracking-wider text-gold-400 font-semibold">Mandatory</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">6 months advance (varies)</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">Paid at handover</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">Varies by area: AED 12-45/sqft/year. Apartments lower, villas higher. Paid to owners' association.</td>
+          </tr>
+          <tr class="border-t border-white-line hover:bg-white-soft transition-colors">
+            <th scope="row" class="py-4 px-4 text-left align-top">
+              <div class="flex items-start gap-2 flex-wrap">
+                <span class="text-bone font-semibold">Title Insurance</span>
+                <span class="inline-flex items-center px-2 py-0.5 bg-ink-700 border border-white-line rounded-xs text-[9px] uppercase tracking-wider text-slate font-semibold">Optional</span>
+              </div>
+            </th>
+            <td class="py-4 px-4 align-top text-bone stat-number text-sm">AED 2,500 one-time + AED 500/yr</td>
+            <td class="py-4 px-4 align-top text-ash text-sm">Optional at handover</td>
+            <td class="py-4 px-4 align-top text-slate text-xs leading-relaxed">Recommended for villas and high-value units. Covers structural defects for 10 years.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. IMPORTANT DISCLAIMER ═══ -->
+  <section id="disclaimer" class="bg-ink-850 py-24 md:py-32" aria-labelledby="disclaimer-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-ink-900 border-2 border-gold-line rounded-sm p-8 md:p-10" role="note" aria-labelledby="disclaimer-heading">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft flex-shrink-0" aria-hidden="true">
+              <svg class="w-5 h-5 text-gold-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            </div>
+            <div>
+              <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Important Disclaimer</div>
+              <h2 id="disclaimer-heading" class="text-2xl md:text-3xl font-bold tracking-tight text-bone mt-1">Read Before Acting on Calculator Output</h2>
+            </div>
+          </div>
+          <div class="space-y-4 text-sm text-ash leading-relaxed">
+            <p>
+              <strong class="text-bone">(a)</strong> The ZARIN Off-Plan Payment Calculator is an informational tool that produces
+              estimates based on standard Dubai Land Department (DLD) registered payment plan templates used across
+              Tier 1, mid-market, and post-handover specialist developers. The calculator does not retrieve real-time
+              project data and does not reflect any specific developer's published schedule. Estimates were last
+              validated against current DLD rules in <span class="text-gold-400 font-semibold">2026</span> and may be updated
+              periodically as the regulator revises fee structures or milestone definitions.
+            </p>
+            <p>
+              <strong class="text-bone">(b)</strong> Calculator output is not financial advice. The actual binding payment
+              schedule is defined exclusively in the developer's Sale &amp; Purchase Agreement (SPA) signed between buyer
+              and developer, and every off-plan contract must be registered with DLD via the developer's RERA-monitored
+              escrow account before any buyer funds are released. Variations between the calculator output and the SPA
+              are common — developers frequently adjust milestone percentages, post-handover tail lengths, and admin fee
+              handling on a project-by-project basis. Always review the SPA in detail before signing.
+            </p>
+            <p>
+              <strong class="text-bone">(c)</strong> ZARIN Real Estate is a RERA-licensed Dubai brokerage. Our founder has
+              been investing in Dubai real estate since 2005, and ZARIN was formally established in 2023 to deliver
+              integrated off-plan, financing, and residency advisory to premium buyers and discerning investors.
+              Engaging ZARIN for advisory services requires a signed agreement that defines scope, fees, and obligations.
+              For a binding payment schedule tailored to your specific project, contact our advisory team at
+              <a href="mailto:advisory@zarinrealestate.com" class="text-gold-400 hover:underline">advisory@zarinrealestate.com</a>
+              or <a href="tel:+971586901231" class="text-gold-400 hover:underline"><span dir="ltr" class="tabular-nums">+971 58 690 1231</span></a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 7. FAQ ═══ -->
+  <section id="faq" class="bg-ink-900 py-24 md:py-32" aria-labelledby="faq-heading">
+    <div class="max-w-3xl mx-auto px-6 md:px-12 lg:px-20">
+      <div class="text-center mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Frequently Asked Questions</div>
+        <h2 id="faq-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-4">Payment Calculator FAQ</h2>
+        <p class="text-lg text-ash leading-relaxed">Eight questions on plan selection, missed payments, DLD fees, mortgages, and post-handover structures — answered by the ZARIN advisory team.</p>
+      </div>
+      <div class="space-y-3">
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pr-4">What is the most common payment plan for Dubai off-plan property?</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">The 60/40 plan is the most common Dubai off-plan payment structure, used by a majority of mid-market developers. Under this plan, buyers pay 60 percent of the property price during construction across milestone installments (typically booking, construction start, 20 percent, 60 percent, and 80 percent completion triggers) and the remaining 40 percent on handover when keys are exchanged. The structure balances developer cash flow needs with buyer risk, since a meaningful portion is deferred until delivery. ZARIN's founder has been investing in Dubai real estate since 2005 and has seen this plan survive multiple market cycles as the industry default.</p>
+          </div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pr-4">What happens if I miss an off-plan payment in Dubai?</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">Missing an off-plan payment triggers a defined sequence under UAE real estate law. The developer typically issues a written notice giving the buyer 30 days to cure the default. If the payment remains unpaid after that window, the developer may terminate the Sale & Purchase Agreement, deduct up to 40 percent of the amounts already paid as compensation, and refund the balance. The exact percentage retained depends on how much of the total price has been paid — under AED 60 percent paid means 40 percent can be retained, while above AED 60 percent paid means only 10 percent can be retained. ZARIN advises clients to maintain a cash buffer equal to two upcoming installments to avoid this scenario.</p>
+          </div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pr-4">Can I customize my payment plan with the developer?</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">Yes, to a limited extent. Developers typically publish a standard payment plan per project (most often a 60/40 or 70/30 structure) but are open to negotiated variations for premium buyers committing to high-value units or buying multiple units at once. Common customizations include shifting the booking deposit from 10 percent to 20 percent in exchange for a 2-4 percent price discount, extending the post-handover tail by 6-12 months, or aligning installments with the buyer's known income events. All customizations must be written into the SPA and registered with DLD. ZARIN negotiates these terms on behalf of clients as part of standard advisory.</p>
+          </div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pr-4">What is the DLD fee and when do I pay it?</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">The DLD (Dubai Land Department) transfer fee is a mandatory 4 percent of the property purchase price, payable to the Dubai Land Department at the time of property registration. For off-plan property, this fee is paid at the Oqood pre-registration stage — typically within 30 to 60 days of signing the SPA — and is in addition to the property price. The fee is paid into the project's escrow account or directly to DLD via the developer's conveyancing team. There are no exemptions or reductions for off-plan buyers; even first-time buyers pay the full 4 percent. ZARIN ensures all clients are aware of this cost before signing.</p>
+          </div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pr-4">Is the 4% DLD fee on top of the property price?</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">Yes, the 4 percent DLD fee is a separate government charge levied on top of the agreed property price. If you buy an off-plan apartment for AED 2,000,000, you will pay AED 80,000 in DLD fees at registration, plus a small admin fee (AED 4,000) and a title deed issuance fee (AED 580). Some developers advertise properties as 'DLD-free' or '4 percent DLD included' as a promotional incentive — in those cases the developer effectively absorbs the 4 percent by discounting the list price. ZARIN's calculator includes the 4 percent DLD fee by default (toggle it off if you are evaluating a DLD-free promotion).</p>
+          </div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pr-4">Can I get a mortgage on off-plan property in Dubai?</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">Yes, but with structural differences from ready-property mortgages. During construction you typically pay installments from your own funds into the project escrow account. A mortgage can then be arranged to fund the handover balance, with UAE banks offering up to 50-80 percent loan-to-value depending on the property value and your residency status. Some developers partner with specific banks to offer in-house financing with streamlined approval. The mortgage registration fee is AED 4,020 plus 0.25 percent of the loan amount. ZARIN coordinates with major UAE lenders including Emirates NBD, Mashreq, and ADCB to secure competitive terms for off-plan clients.</p>
+          </div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pr-4">What is a post-handover payment plan and who offers it?</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">A post-handover payment plan spreads a portion of the purchase price over a defined period (typically 1-3 years) after key handover. The most common structure is 50/50 post-handover, where 50 percent is paid during construction and 50 percent is paid in equal installments across the post-handover period. This reduces buyer cash flow pressure because rental income from the handed-over unit can be used to subsidize the remaining payments. DAMAC, Select Group, and Ellington are among the Dubai developers most associated with post-handover plans. The trade-off is that headline prices are typically 8-15 percent higher than equivalent 60/40 plans, reflecting the developer's cost of carrying buyer debt.</p>
+          </div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm overflow-hidden">
+          <summary class="flex items-center justify-between p-5 cursor-pointer">
+            <span class="text-base font-semibold text-bone flex-1 pr-4">What should I do after seeing my payment calculator results?</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 border border-gold-line rounded-xs flex items-center justify-center text-gold-400" aria-hidden="true">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            </span>
+          </summary>
+          <div class="px-5 pb-5">
+            <p class="text-sm text-ash leading-relaxed">After you see your results, the next step is a 30-minute advisory call with a ZARIN off-plan specialist who will review your schedule, confirm the plan type matches your cash flow profile, and shortlist two to three vetted projects that offer the structure you have modeled. The call is complimentary and carries no obligation. If you choose to engage ZARIN, we move into project selection, SPA review, escrow verification, and milestone monitoring through to handover. ZARIN was established in 2023 to deliver this end-to-end advisory, building on our founder's experience investing in Dubai real estate since 2005.</p>
+          </div>
+        </details>
+      </div>
+
+      <div class="mt-12 text-center bg-ink-850 border border-gold-line rounded-sm p-8">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-3">Still Have Questions?</div>
+        <h3 class="text-2xl font-bold text-bone mb-4">Speak to a ZARIN Off-Plan Advisor</h3>
+        <p class="text-sm text-ash leading-relaxed mb-6 max-w-xl mx-auto">
+          Our advisory team is available seven days a week to walk through your calculator results, refine the schedule against specific projects, and run the escrow and developer due diligence. ZARIN was established in 2023, building on our founder's experience investing in Dubai real estate since 2005.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://wa.me/971586901231" class="inline-flex items-center justify-center px-6 py-3 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-wider rounded-xs hover:bg-gold-300 transition-all" aria-label="Message ZARIN on WhatsApp">
+            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            WhatsApp Us
+          </a>
+          <a href="mailto:advisory@zarinrealestate.com" class="inline-flex items-center justify-center px-6 py-3 border border-gold-line text-bone text-sm font-bold uppercase tracking-wider rounded-xs hover:bg-gold-soft transition-all" aria-label="Email advisory@zarinrealestate.com">
+            <svg class="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Email Advisor
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="bg-ink-950 border-t border-white-line pt-20 pb-8" role="contentinfo">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
+        <div class="col-span-2 lg:col-span-1">
+          <a href="/" class="flex items-center gap-2 mb-4" aria-label="ZARIN Real Estate home"><span class="font-sans font-extrabold text-2xl tracking-tight text-bone">ZARIN</span></a>
+          <p class="text-sm text-slate leading-relaxed mb-6">Dubai off-plan properties and investment advisory.</p>
+          <div class="flex gap-3">
+            <a href="https://instagram.com/zarin.realestate" class="w-10 h-10 border border-white-line rounded-xs flex items-center justify-center text-ash hover:text-gold-400 hover:border-gold-line transition-all" aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://wa.me/971586901231" class="w-10 h-10 border border-white-line rounded-xs flex items-center justify-center text-ash hover:text-gold-400 hover:border-gold-line transition-all" aria-label="WhatsApp"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          </div>
+        </div>
+        <nav aria-label="Properties footer navigation"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Off-Plan</h2><ul class="space-y-2"><li><a href="/off-plan/new-launches" class="text-sm text-ash hover:text-gold-400 transition-colors">New Launches</a></li><li><a href="/off-plan/coming-soon" class="text-sm text-ash hover:text-gold-400 transition-colors">Coming Soon</a></li><li><a href="/off-plan/by-developer" class="text-sm text-ash hover:text-gold-400 transition-colors">By Developer</a></li><li><a href="/off-plan/investment-guide" class="text-sm text-ash hover:text-gold-400 transition-colors">Investment Guide</a></li><li><a href="/off-plan/payment-calculator" class="text-sm text-gold-400 hover:text-gold-300 font-semibold transition-colors" aria-current="page">Payment Calculator</a></li></ul></nav>
+        <nav aria-label="Discover footer navigation"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Discover</h2><ul class="space-y-2"><li><a href="/properties" class="text-sm text-ash hover:text-gold-400 transition-colors">Properties</a></li><li><a href="/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">Areas</a></li><li><a href="/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">Visas</a></li><li><a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">Insights</a></li></ul></nav>
+        <nav aria-label="Services footer navigation"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Services</h2><ul class="space-y-2"><li><a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">Buying Advisory</a></li><li><a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">Mortgage</a></li><li><a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">Legal</a></li><li><a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">Valuation</a></li></ul></nav>
+        <nav aria-label="Insights footer navigation"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Insights</h2><ul class="space-y-2"><li><a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">Blog</a></li><li><a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Reports</a></li><li><a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">Calculators</a></li><li><a href="/insights" class="text-sm text-ash hover:text-gold-400 transition-colors">FAQ</a></li></ul></nav>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 py-8 border-t border-white-line">
+        <address class="not-italic"><div class="text-xs uppercase tracking-wider text-slate mb-2">Dubai Office</div><p class="text-sm text-ash">Sheikh Zayed Road<br>Downtown Dubai, UAE</p></address>
+        <div><div class="text-xs uppercase tracking-wider text-slate mb-2">Phone</div><a href="tel:+971586901231" class="text-sm text-bone hover:text-gold-400 transition-colors"><span dir="ltr" class="tabular-nums">+971 58 690 1231</span></a></div>
+        <div><div class="text-xs uppercase tracking-wider text-slate mb-2">Email</div><a href="mailto:advisory@zarinrealestate.com" class="text-sm text-bone hover:text-gold-400 transition-colors">advisory@zarinrealestate.com</a></div>
+      </div>
+      <div class="pt-8 border-t border-white-line flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex flex-wrap items-center gap-4 text-xs text-slate"><span>&copy; 2026 ZARIN Real Estate. All rights reserved.</span><span class="hidden md:inline w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span><span>RERA Licensed</span></div>
+        <nav aria-label="Legal links" class="flex flex-wrap items-center gap-4 text-xs"><a href="/legal/privacy" class="text-slate hover:text-gold-400 transition-colors">Privacy</a><a href="/legal/terms" class="text-slate hover:text-gold-400 transition-colors">Terms</a><a href="/legal/privacy" class="text-slate hover:text-gold-400 transition-colors">Cookies</a><a href="/legal/ai-disclosure" class="text-slate hover:text-gold-400 transition-colors">AI Disclosure</a><a href="/legal/dmca" class="text-slate hover:text-gold-400 transition-colors">DMCA</a><a href="/contact" class="text-slate hover:text-gold-400 transition-colors">Contact</a><a href="/sitemap" class="text-slate hover:text-gold-400 transition-colors">Sitemap</a></nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky WhatsApp -->
+  <a href="https://wa.me/971586901231" class="sticky-whatsapp fixed bottom-6 right-6 z-[800] w-14 h-14 bg-gold-400 rounded-full shadow-monolith items-center justify-center hover:bg-gold-300 transition-colors" aria-label="WhatsApp us"><svg class="w-7 h-7 text-ink-900 mx-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+
+  <!-- ═══ UNIVERSAL NAVIGATION MODULE ═══ -->
+  <script type="module" src="/scripts/nav.js"></script>
+
+  <!-- ═══ INTERACTIVE CALCULATOR JAVASCRIPT ═══ -->
+  <script>
+    (function () {
+      "use strict";
+
+      // Standard Dubai off-plan payment plan milestone definitions
+      var PLAN_CONFIGS = {
+        "60-40": {
+          label: "60/40 Plan",
+          milestones: [
+            { name: "Booking", trigger: "Sales agreement signed", pct: 10, phase: "booking", monthFraction: 0 },
+            { name: "Construction Start", trigger: "Site mobilization", pct: 10, phase: "construction", monthFraction: 0.03 },
+            { name: "20% Construction", trigger: "Foundation complete", pct: 10, phase: "construction", monthFraction: 0.20 },
+            { name: "60% Construction", trigger: "Structure topped out", pct: 20, phase: "construction", monthFraction: 0.60 },
+            { name: "80% Construction", trigger: "Facade complete", pct: 10, phase: "construction", monthFraction: 0.80 },
+            { name: "Handover", trigger: "Keys handed over", pct: 40, phase: "handover", monthFraction: 1.0 }
+          ]
+        },
+        "70-30": {
+          label: "70/30 Plan",
+          milestones: [
+            { name: "Booking", trigger: "Sales agreement signed", pct: 20, phase: "booking", monthFraction: 0 },
+            { name: "Construction Start", trigger: "Site mobilization", pct: 20, phase: "construction", monthFraction: 0.03 },
+            { name: "40% Construction", trigger: "Foundation complete", pct: 15, phase: "construction", monthFraction: 0.35 },
+            { name: "70% Construction", trigger: "Structure topped out", pct: 15, phase: "construction", monthFraction: 0.70 },
+            { name: "Handover", trigger: "Keys handed over", pct: 30, phase: "handover", monthFraction: 1.0 }
+          ]
+        },
+        "50-50": {
+          label: "50/50 Plan",
+          milestones: [
+            { name: "Booking", trigger: "Sales agreement signed", pct: 10, phase: "booking", monthFraction: 0 },
+            { name: "Construction Start", trigger: "Site mobilization", pct: 20, phase: "construction", monthFraction: 0.03 },
+            { name: "50% Construction", trigger: "Mid-construction", pct: 20, phase: "construction", monthFraction: 0.50 },
+            { name: "Handover", trigger: "Keys handed over", pct: 50, phase: "handover", monthFraction: 1.0 }
+          ]
+        },
+        "post-handover-50-50": {
+          label: "Post-Handover 50/50",
+          getMilestones: function (postMonths) {
+            var ms = [
+              { name: "Booking", trigger: "Sales agreement signed", pct: 10, phase: "booking", monthFraction: 0 },
+              { name: "Construction Start", trigger: "Site mobilization", pct: 15, phase: "construction", monthFraction: 0.03 },
+              { name: "50% Construction", trigger: "Mid-construction", pct: 15, phase: "construction", monthFraction: 0.50 },
+              { name: "Handover", trigger: "Keys handed over", pct: 10, phase: "handover", monthFraction: 1.0 }
+            ];
+            if (postMonths <= 12) {
+              ms.push({ name: "Post-Handover Year 1", trigger: postMonths + " months after handover", pct: 50, phase: "post-handover", postMonthsOffset: postMonths });
+            } else if (postMonths <= 24) {
+              ms.push({ name: "Post-Handover Year 1", trigger: "12 months after handover", pct: 25, phase: "post-handover", postMonthsOffset: 12 });
+              ms.push({ name: "Post-Handover Year 2", trigger: postMonths + " months after handover", pct: 25, phase: "post-handover", postMonthsOffset: postMonths });
+            } else {
+              ms.push({ name: "Post-Handover Year 1", trigger: "12 months after handover", pct: 16.67, phase: "post-handover", postMonthsOffset: 12 });
+              ms.push({ name: "Post-Handover Year 2", trigger: "24 months after handover", pct: 16.67, phase: "post-handover", postMonthsOffset: 24 });
+              ms.push({ name: "Post-Handover Year 3", trigger: postMonths + " months after handover", pct: 16.66, phase: "post-handover", postMonthsOffset: postMonths });
+            }
+            return ms;
+          }
+        },
+        "1-percent-monthly": {
+          label: "1% Monthly Plan",
+          milestones: [
+            { name: "Booking (10%)", trigger: "Sales agreement signed", pct: 10, phase: "booking", monthFraction: 0 },
+            { name: "Construction Start (40%)", trigger: "Site mobilization", pct: 40, phase: "construction", monthFraction: 0.03 },
+            { name: "Monthly 1% (50 months)", trigger: "1% per month during construction", pct: 50, phase: "construction", monthFraction: 0.06, isMonthly: true }
+          ]
+        }
+      };
+
+      var DLD_FEE_RATE = 0.04;
+      var COMMISSION_RATE = 0.02;
+      var VAT_ON_COMMISSION = 0.05;
+      var ADMIN_FEE = 4000;
+      var TITLE_DEED_FEE = 580;
+
+      var MONTH_NAMES = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
+      // DOM Elements
+      var form = document.getElementById("calc-form");
+      var priceInput = document.getElementById("price-input");
+      var priceSlider = document.getElementById("price-slider");
+      var durationInput = document.getElementById("duration-input");
+      var durationSlider = document.getElementById("duration-slider");
+      var durationDisplay = document.getElementById("duration-display");
+      var posthandoverFieldset = document.getElementById("post-handover-fieldset");
+      var posthandoverInput = document.getElementById("posthandover-input");
+      var posthandoverSlider = document.getElementById("posthandover-slider");
+      var posthandoverDisplay = document.getElementById("posthandover-display");
+      var planSelect = document.getElementById("plan-select");
+      var dldToggle = document.getElementById("dld-toggle");
+      var commissionToggle = document.getElementById("commission-toggle");
+      var resetBtn = document.getElementById("calc-reset");
+
+      // Results DOM Elements
+      var resultsPanel = document.getElementById("results-panel");
+      var metricDownpayment = document.getElementById("metric-downpayment");
+      var metricDownpaymentPct = document.getElementById("metric-downpayment-pct");
+      var metricConstruction = document.getElementById("metric-construction");
+      var metricConstructionPct = document.getElementById("metric-construction-pct");
+      var metricPosthandover = document.getElementById("metric-posthandover");
+      var metricPosthandoverPct = document.getElementById("metric-posthandover-pct");
+      var metricTotal = document.getElementById("metric-total");
+      var metricTotalPct = document.getElementById("metric-total-pct");
+      var metricMonthly = document.getElementById("metric-monthly");
+      var metricMonthlyPct = document.getElementById("metric-monthly-pct");
+      var metricLastDate = document.getElementById("metric-lastdate");
+      var metricLastDatePct = document.getElementById("metric-lastdate-pct");
+      var costPrice = document.getElementById("cost-price");
+      var costDld = document.getElementById("cost-dld");
+      var costCommission = document.getElementById("cost-commission");
+      var costVat = document.getElementById("cost-vat");
+      var costTotal = document.getElementById("cost-total");
+      var scheduleTbody = document.getElementById("schedule-tbody");
+      var scheduleSummary = document.getElementById("schedule-summary");
+      var resultsPlanLabel = document.getElementById("results-plan-label");
+
+      function fmtAED(num) {
+        if (isNaN(num) || !isFinite(num)) return "AED 0";
+        var n = Math.round(num);
+        return "AED " + n.toLocaleString("en-US");
+      }
+
+      function fmtPct(num) {
+        if (isNaN(num) || !isFinite(num)) return "0%";
+        var rounded = Math.round(num * 10) / 10;
+        return (rounded % 1 === 0 ? rounded.toFixed(0) : rounded.toFixed(1)) + "%";
+      }
+
+      function addMonths(date, months) {
+        var d = new Date(date.getTime());
+        d.setMonth(d.getMonth() + months);
+        return d;
+      }
+
+      function fmtDate(d) {
+        return MONTH_NAMES[d.getMonth()] + " " + d.getFullYear();
+      }
+
+      function getInputs() {
+        var rawPrice = parseFloat(priceInput.value);
+        var price = isNaN(rawPrice) ? 2000000 : rawPrice;
+        price = Math.max(500000, Math.min(50000000, price));
+
+        var rawDuration = parseInt(durationInput.value, 10);
+        var duration = isNaN(rawDuration) ? 36 : rawDuration;
+        duration = Math.max(12, Math.min(60, duration));
+
+        var rawPost = parseInt(posthandoverInput.value, 10);
+        var postHandover = isNaN(rawPost) ? 24 : rawPost;
+        postHandover = Math.max(12, Math.min(36, postHandover));
+
+        return {
+          price: price,
+          duration: duration,
+          postHandover: postHandover,
+          plan: planSelect.value || "60-40",
+          includeDld: dldToggle.checked,
+          includeCommission: commissionToggle.checked
+        };
+      }
+
+      function buildSchedule(inp) {
+        var planConfig = PLAN_CONFIGS[inp.plan] || PLAN_CONFIGS["60-40"];
+        var rawMilestones = typeof planConfig.getMilestones === "function"
+          ? planConfig.getMilestones(inp.postHandover)
+          : planConfig.milestones;
+
+        var today = new Date();
+        today.setHours(0, 0, 0, 0);
+        var handoverDate = addMonths(today, inp.duration);
+        var schedule = [];
+        var cumulativePct = 0;
+
+        rawMilestones.forEach(function (m) {
+          var milestoneDate;
+          if (m.phase === "post-handover") {
+            milestoneDate = addMonths(handoverDate, m.postMonthsOffset || 12);
+          } else if (m.phase === "handover") {
+            milestoneDate = handoverDate;
+          } else {
+            var monthsOffset = Math.round(inp.duration * (m.monthFraction || 0));
+            if (m.monthFraction > 0 && monthsOffset === 0) monthsOffset = 1;
+            milestoneDate = addMonths(today, monthsOffset);
+          }
+
+          cumulativePct += m.pct;
+          schedule.push({
+            name: m.name,
+            trigger: m.trigger,
+            date: milestoneDate,
+            pct: m.pct,
+            amount: inp.price * (m.pct / 100),
+            cumulativePct: Math.round(cumulativePct * 100) / 100,
+            phase: m.phase
+          });
+        });
+
+        return { schedule: schedule, handoverDate: handoverDate, label: planConfig.label };
+      }
+
+      function renderResults(inp) {
+        var built = buildSchedule(inp);
+        var schedule = built.schedule;
+        var handoverDate = built.handoverDate;
+
+        var bookingAmount = 0;
+        var bookingPct = 0;
+        var constructionAmount = 0;
+        var constructionPct = 0;
+        var postHandoverAmount = 0;
+        var postHandoverPct = 0;
+        var lastDate = handoverDate;
+
+        schedule.forEach(function (row) {
+          if (row.phase === "booking") {
+            bookingAmount += row.amount;
+            bookingPct += row.pct;
+          } else if (row.phase === "construction") {
+            constructionAmount += row.amount;
+            constructionPct += row.pct;
+          } else if (row.phase === "post-handover") {
+            postHandoverAmount += row.amount;
+            postHandoverPct += row.pct;
+          }
+
+          if (row.date.getTime() > lastDate.getTime()) {
+            lastDate = row.date;
+          }
+        });
+
+        // Fees calculation
+        var dldFee = inp.includeDld ? inp.price * DLD_FEE_RATE : 0;
+        var commission = inp.includeCommission ? inp.price * COMMISSION_RATE : 0;
+        var vat = commission * VAT_ON_COMMISSION;
+        var totalCost = inp.price + dldFee + commission + vat + ADMIN_FEE + TITLE_DEED_FEE;
+
+        // Monthly average payment during construction
+        var monthlyAvg = constructionAmount / inp.duration;
+
+        // Update Summary Metrics
+        metricDownpayment.textContent = fmtAED(bookingAmount);
+        metricDownpaymentPct.textContent = fmtPct(bookingPct) + " of price";
+
+        metricConstruction.textContent = fmtAED(constructionAmount);
+        metricConstructionPct.textContent = fmtPct(constructionPct) + " of price";
+
+        metricPosthandover.textContent = fmtAED(postHandoverAmount);
+        metricPosthandoverPct.textContent = fmtPct(postHandoverPct) + " of price";
+
+        metricTotal.textContent = fmtAED(totalCost);
+        metricTotalPct.textContent = "Incl. fees";
+
+        metricMonthly.textContent = fmtAED(monthlyAvg);
+        metricMonthlyPct.textContent = "Over " + inp.duration + " months";
+
+        metricLastDate.textContent = fmtDate(lastDate);
+        metricLastDatePct.textContent = postHandoverAmount > 0 ? "Post-handover tail end" : "Project handover";
+
+        // Cost Breakdown
+        costPrice.textContent = fmtAED(inp.price);
+        costDld.textContent = fmtAED(dldFee);
+        costCommission.textContent = fmtAED(commission);
+        costVat.textContent = fmtAED(vat);
+        costTotal.textContent = fmtAED(totalCost);
+
+        // Header / label
+        resultsPlanLabel.textContent = built.label;
+
+        // Populate Schedule Table
+        var rowsHtml = "";
+        schedule.forEach(function (row) {
+          var tag = "";
+          if (row.phase === "handover") {
+            tag = " <span class='text-[9px] uppercase tracking-wider text-gold-400 font-bold'>(Handover)</span>";
+          } else if (row.phase === "post-handover") {
+            tag = " <span class='text-[9px] uppercase tracking-wider text-info font-bold'>(Post-Handover)</span>";
+          }
+          rowsHtml += "<tr role='row' class='border-t border-white-line transition-colors'>" +
+            "<td class='py-3 px-4 text-bone font-semibold text-sm'>" + row.name + tag + "</td>" +
+            "<td class='py-3 px-4 text-slate text-xs'>" + row.trigger + "</td>" +
+            "<td class='py-3 px-4 text-ash text-xs stat-number'>" + fmtDate(row.date) + "</td>" +
+            "<td class='py-3 px-4 text-right text-bone text-sm stat-number'>" + fmtPct(row.pct) + "</td>" +
+            "<td class='py-3 px-4 text-right text-bone text-sm stat-number font-semibold'>" + fmtAED(row.amount) + "</td>" +
+            "<td class='py-3 px-4 text-right text-gold-400 text-sm stat-number font-semibold'>" + fmtPct(row.cumulativePct) + "</td>" +
+            "</tr>";
+        });
+        scheduleTbody.innerHTML = rowsHtml;
+        scheduleSummary.textContent = schedule.length + " milestones \u00B7 " + inp.duration + " months";
+      }
+
+      function recalc() {
+        resultsPanel.setAttribute("aria-busy", "true");
+        var inp = getInputs();
+        renderResults(inp);
+        setTimeout(function () {
+          resultsPanel.setAttribute("aria-busy", "false");
+        }, 30);
+      }
+
+      function syncPrice(source) {
+        var val = parseFloat(source.value);
+        if (isNaN(val)) val = 2000000;
+        val = Math.max(500000, Math.min(50000000, val));
+        priceInput.value = val;
+        priceSlider.value = val;
+        priceInput.setAttribute("aria-valuenow", val);
+        priceSlider.setAttribute("aria-valuenow", val);
+        recalc();
+      }
+
+      function syncDuration(source) {
+        var val = parseInt(source.value, 10);
+        if (isNaN(val)) val = 36;
+        val = Math.max(12, Math.min(60, val));
+        durationInput.value = val;
+        durationSlider.value = val;
+        durationDisplay.textContent = val + " months";
+        durationInput.setAttribute("aria-valuenow", val);
+        durationSlider.setAttribute("aria-valuenow", val);
+        recalc();
+      }
+
+      function syncPostHandover(source) {
+        var val = parseInt(source.value, 10);
+        if (isNaN(val)) val = 24;
+        val = Math.max(12, Math.min(36, val));
+        posthandoverInput.value = val;
+        posthandoverSlider.value = val;
+        posthandoverDisplay.textContent = val + " months";
+        posthandoverInput.setAttribute("aria-valuenow", val);
+        posthandoverSlider.setAttribute("aria-valuenow", val);
+        recalc();
+      }
+
+      function updatePostHandoverVisibility() {
+        var plan = planSelect.value;
+        if (plan === "post-handover-50-50") {
+          posthandoverFieldset.classList.remove("hidden-conditional");
+          posthandoverFieldset.removeAttribute("hidden");
+        } else {
+          posthandoverFieldset.classList.add("hidden-conditional");
+          posthandoverFieldset.setAttribute("hidden", "hidden");
+        }
+      }
+
+      function updateRadioPressed() {
+        var radios = form.querySelectorAll('input[type="radio"].calc-radio');
+        radios.forEach(function (r) {
+          r.setAttribute("aria-pressed", r.checked ? "true" : "false");
+        });
+        var checks = form.querySelectorAll('input[type="checkbox"].calc-checkbox');
+        checks.forEach(function (c) {
+          c.setAttribute("aria-pressed", c.checked ? "true" : "false");
+        });
+      }
+
+      // Event Listeners
+      priceInput.addEventListener("input", function () { syncPrice(priceInput); });
+      priceSlider.addEventListener("input", function () { syncPrice(priceSlider); });
+      durationInput.addEventListener("input", function () { syncDuration(durationInput); });
+      durationSlider.addEventListener("input", function () { syncDuration(durationSlider); });
+      posthandoverInput.addEventListener("input", function () { syncPostHandover(posthandoverInput); });
+      posthandoverSlider.addEventListener("input", function () { syncPostHandover(posthandoverSlider); });
+
+      planSelect.addEventListener("change", function () {
+        updatePostHandoverVisibility();
+        recalc();
+      });
+
+      dldToggle.addEventListener("change", function () {
+        dldToggle.setAttribute("aria-pressed", dldToggle.checked ? "true" : "false");
+        recalc();
+      });
+
+      commissionToggle.addEventListener("change", function () {
+        commissionToggle.setAttribute("aria-pressed", commissionToggle.checked ? "true" : "false");
+        recalc();
+      });
+
+      form.addEventListener("change", updateRadioPressed);
+
+      resetBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        priceInput.value = 2000000;
+        priceSlider.value = 2000000;
+        durationInput.value = 36;
+        durationSlider.value = 36;
+        durationDisplay.textContent = "36 months";
+        posthandoverInput.value = 24;
+        posthandoverSlider.value = 24;
+        posthandoverDisplay.textContent = "24 months";
+        planSelect.value = "60-40";
+        dldToggle.checked = true;
+        commissionToggle.checked = true;
+        var aptRadio = document.getElementById("type-apartment");
+        if (aptRadio) aptRadio.checked = true;
+        updatePostHandoverVisibility();
+        updateRadioPressed();
+        recalc();
+      });
+
+      // Exclusive FAQ accordion
+      var details = document.querySelectorAll('#faq details');
+      details.forEach(function (detail) {
+        detail.addEventListener('toggle', function () {
+          if (detail.open) {
+            details.forEach(function (d) {
+              if (d !== detail) d.open = false;
+            });
+          }
+        });
+      });
+
+      // Initial run
+      updatePostHandoverVisibility();
+      updateRadioPressed();
+      recalc();
+    })();
+  </script>
+</body>
+</html>
