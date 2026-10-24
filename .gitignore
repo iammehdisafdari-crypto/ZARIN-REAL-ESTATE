@@ -6,3 +6,5 @@ dist/
 .wrangler/
 *.patch
 scratch/
+
+/cms-laravel/
