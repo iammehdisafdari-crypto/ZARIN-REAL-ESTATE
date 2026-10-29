@@ -282,6 +282,19 @@ details.is-closing .faq-accordion-content {
   z-index: 950;
 }
 
+/* ═══ Mobile Properties Submenu Headings & Group Spacing ═══ */
+@media (max-width: 768px) {
+  #mobile-properties-submenu > div {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  #mobile-properties-submenu > div:not(:first-child) {
+    margin-top: 26px;
+  }
+}
+
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .animate-fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both; }
 
@@ -401,9 +414,35 @@ details.is-closing .faq-accordion-content {
   font-family: "Vazirmatn", sans-serif;
 }
 
-/* ═══ Language Switcher ═══ */
+/* ═══ Language Switcher (Visible ONLY on Homepage) ═══ */
+#site-header .lang-switch,
+#site-header .mobile-lang-container {
+  display: none !important;
+}
+
+body.page-home #site-header .lang-switch,
+body.home-page #site-header .lang-switch,
+body[data-page="home"] #site-header .lang-switch {
+  display: none !important;
+}
+
+@media (min-width: 1024px) {
+  body.page-home #site-header .lang-switch,
+  body.home-page #site-header .lang-switch,
+  body[data-page="home"] #site-header .lang-switch {
+    display: inline-flex !important;
+  }
+}
+
+@media (max-width: 1023px) {
+  body.page-home #site-header .mobile-lang-container,
+  body.home-page #site-header .mobile-lang-container,
+  body[data-page="home"] #site-header .mobile-lang-container {
+    display: block !important;
+  }
+}
+
 .lang-switch {
-  display: inline-flex;
   align-items: center;
   height: 34px;
   background: rgba(255, 255, 255, 0.04);

@@ -2,6 +2,16 @@
  * ZARIN — Consultation & Private Advisory Lead Engine
  */
 
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export function initConsultation() {
   const modalBackdrop = document.querySelector(".modal-backdrop");
   const modalCloseBtn = document.querySelector(".modal-close-btn");
@@ -310,8 +320,8 @@ export function initConsultationPageForm(doc = (typeof document !== "undefined" 
               <h3 class="text-base font-bold text-bone mb-1">${fa ? 'درخواست مشاوره خصوصی با موفقیت ثبت شد' : 'Consultation Request Received'}</h3>
               <p class="text-xs text-ash leading-relaxed mb-4">
                 ${fa
-                  ? `با تشکر از شما جناب/سرکار ${payload.name}. اطلاعات شما با بالاترین سطح محرمانگی ثبت شد. مشاور ارشد زرین ظرف ۲۴ ساعت آینده از طریق ${contactMethodLabel} با شما تماس خواهد گرفت.`
-                  : `Thank you, ${payload.name}. Your mandate has been registered under strict confidentiality. A senior ZARIN advisor will review your criteria and contact you via ${contactMethodLabel} within 24 hours.`
+                  ? `با تشکر از شما جناب/سرکار ${escapeHtml(payload.name)}. اطلاعات شما با بالاترین سطح محرمانگی ثبت شد. مشاور ارشد زرین ظرف ۲۴ ساعت آینده از طریق ${contactMethodLabel} با شما تماس خواهد گرفت.`
+                  : `Thank you, ${escapeHtml(payload.name)}. Your mandate has been registered under strict confidentiality. A senior ZARIN advisor will review your criteria and contact you via ${contactMethodLabel} within 24 hours.`
                 }
               </p>
               <div class="flex flex-wrap items-center gap-3">

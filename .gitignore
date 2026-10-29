@@ -6,5 +6,7 @@ dist/
 .wrangler/
 *.patch
 scratch/
+.agent/
+.agents/
 
 /cms-laravel/

@@ -81,7 +81,7 @@ for (const rel of faFiles) {
   // Nav Links (allows /properties or /fa/properties, etc.)
   const navLinks = Array.from(doc.querySelectorAll('header nav a[href]')).map(a => a.getAttribute('href'));
   assert(navLinks.includes('/properties') || navLinks.includes('/fa/properties'), `[${rel}] Header has /properties or /fa/properties link`);
-  assert(navLinks.includes('/private-office') || navLinks.includes('/fa/private-office'), `[${rel}] Header has /private-office or /fa/private-office link`);
+  assert(!navLinks.includes('/private-office') && !navLinks.includes('/fa/private-office'), `[${rel}] Header does NOT have Private Office link`);
 
   // Consultation Form
   const form = doc.getElementById('consultation-form');

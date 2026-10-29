@@ -85,8 +85,10 @@ for (const { file, name, lang, dir } of subpagesToTest) {
   assert(nav, `Nav missing in ${file}`);
   const triggers = Array.from(nav.children).filter(c => c.classList.contains('mega-menu-trigger') || c.tagName === 'DIV');
 
-  it(`[${name}] Has exactly 8 primary navigation items matching Homepage`, () => {
-    assert.strictEqual(triggers.length, 8, `Expected 8 triggers, found ${triggers.length}`);
+  it(`[${name}] Has exactly 7 primary navigation items matching Homepage (Private Office removed)`, () => {
+    assert.strictEqual(triggers.length, 7, `Expected 7 triggers, found ${triggers.length}`);
+    const poLink = nav.querySelector('a[href*="private-office"]');
+    assert(!poLink, `Private Office must not be in desktop nav`);
   });
 
   it(`[${name}] All primary items have semantic <a> links (no bare unclickable <button> headers)`, () => {
@@ -150,11 +152,13 @@ for (const { file, name, lang, dir } of subpagesToTest) {
     });
   });
 
-  it(`[${name}] Mobile drawer #mobile-menu exists and includes all 8 accordion sections`, () => {
+  it(`[${name}] Mobile drawer #mobile-menu exists and includes 7 accordion sections (Private Office removed)`, () => {
     const mobileMenu = doc.getElementById('mobile-menu');
     assert(mobileMenu, 'Missing #mobile-menu');
     const accordions = mobileMenu.querySelectorAll('.mobile-nav-item');
-    assert.strictEqual(accordions.length, 8, `Expected 8 mobile accordions, found ${accordions.length}`);
+    assert.strictEqual(accordions.length, 7, `Expected 7 mobile accordions, found ${accordions.length}`);
+    const poMobileLink = mobileMenu.querySelector('a[href*="private-office"]');
+    assert(!poMobileLink, `Private Office must not be in mobile menu`);
   });
 }
 

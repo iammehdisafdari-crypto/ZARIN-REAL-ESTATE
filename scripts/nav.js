@@ -135,8 +135,6 @@ export function initDesktopNav(doc = (typeof document !== 'undefined' ? document
     'off-plan': '/off-plan',
     'offplan': '/off-plan',
     'areas': '/areas',
-    'private office': '/private-office',
-    'private-office': '/private-office',
     'services': '/services',
     'visas': '/visas',
     'insights': '/insights',
@@ -721,7 +719,6 @@ export function initGlobalLanguageState(doc = (typeof document !== 'undefined' ?
       'nav_properties': 'املاک برگزیده',
       'nav_offplan': 'پیش‌فروش و آف‌پلان',
       'nav_areas': 'مناطق',
-      'nav_private_office': 'دفتر اختصاصی',
       'nav_services': 'خدمات',
       'nav_visas': 'ویزای اقامت',
       'nav_insights': 'تحلیل و گزارش‌ها',
@@ -732,16 +729,6 @@ export function initGlobalLanguageState(doc = (typeof document !== 'undefined' ?
       const key = el.getAttribute('data-i18n');
       if (faNavLabels[key]) {
         el.textContent = faNavLabels[key];
-      }
-    });
-
-    // Guard Private Office specifically across header & mobile menu
-    doc.querySelectorAll('header a[href*="private-office"], #mobile-menu a[href*="private-office"]').forEach(el => {
-      const span = el.querySelector('span');
-      if (span && (span.textContent.trim() === 'Private Office' || span.textContent.trim() === 'The Private Office')) {
-        span.textContent = 'دفتر اختصاصی';
-      } else if (el.textContent.trim() === 'Private Office' || el.textContent.trim() === 'The Private Office') {
-        el.textContent = 'دفتر اختصاصی';
       }
     });
   } else {
@@ -755,7 +742,31 @@ export function initGlobalLanguageState(doc = (typeof document !== 'undefined' ?
   }
 }
 
+export function initHeaderLanguageVisibility(doc = (typeof document !== 'undefined' ? document : null)) {
+  if (!doc) return;
+  const win = doc.defaultView || (typeof window !== 'undefined' ? window : null);
+  if (win && win.location) {
+    const rawPath = win.location.pathname || '';
+    const clean = rawPath.replace(/\/$/, '') || '/';
+    const isHome = clean === '/' || clean === '/index.html' || clean === '/fa' || clean === '/fa/index.html';
+    if (doc.body) {
+      if (isHome) {
+        doc.body.classList.add('page-home');
+        doc.body.classList.add('home-page');
+        doc.body.dataset.page = 'home';
+      } else {
+        doc.body.classList.remove('page-home');
+        doc.body.classList.remove('home-page');
+        if (doc.body.dataset.page === 'home') {
+          delete doc.body.dataset.page;
+        }
+      }
+    }
+  }
+}
+
 export function initNavigation(doc = (typeof document !== 'undefined' ? document : null)) {
+  initHeaderLanguageVisibility(doc);
   initMobileNav(doc);
   initDesktopNav(doc);
   initFaqAccordion(doc);
@@ -778,6 +789,7 @@ if (typeof window !== 'undefined') {
     initDesktopNav,
     initFaqAccordion,
     initGlobalLanguageState,
+    initHeaderLanguageVisibility,
     initNavigation
   };
 }

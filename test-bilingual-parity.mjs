@@ -50,6 +50,18 @@ const routePairs = [
   { name: 'Payment Calculator', en: 'off-plan/payment-calculator.html', fa: 'fa/off-plan/payment-calculator.html', canonicalEn: 'off-plan/payment-calculator', canonicalFa: 'fa/off-plan/payment-calculator' },
   { name: 'ROI Predictor', en: 'off-plan/roi-predictor.html', fa: 'fa/off-plan/roi-predictor.html', canonicalEn: 'off-plan/roi-predictor', canonicalFa: 'fa/off-plan/roi-predictor' },
   { name: 'Developer Tracker', en: 'off-plan/developer-reputation-tracker.html', fa: 'fa/off-plan/developer-reputation-tracker.html', canonicalEn: 'off-plan/developer-reputation-tracker', canonicalFa: 'fa/off-plan/developer-reputation-tracker' },
+  { name: 'Palm Jumeirah', en: 'areas/palm-jumeirah.html', fa: 'fa/areas/palm-jumeirah.html', canonicalEn: 'areas/palm-jumeirah', canonicalFa: 'fa/areas/palm-jumeirah' },
+  { name: 'Downtown Dubai', en: 'areas/downtown-dubai.html', fa: 'fa/areas/downtown-dubai.html', canonicalEn: 'areas/downtown-dubai', canonicalFa: 'fa/areas/downtown-dubai' },
+  { name: 'Dubai Hills Estate', en: 'areas/dubai-hills-estate.html', fa: 'fa/areas/dubai-hills-estate.html', canonicalEn: 'areas/dubai-hills-estate', canonicalFa: 'fa/areas/dubai-hills-estate' },
+  { name: 'Dubai Marina', en: 'areas/dubai-marina.html', fa: 'fa/areas/dubai-marina.html', canonicalEn: 'areas/dubai-marina', canonicalFa: 'fa/areas/dubai-marina' },
+  { name: 'Business Bay', en: 'areas/business-bay.html', fa: 'fa/areas/business-bay.html', canonicalEn: 'areas/business-bay', canonicalFa: 'fa/areas/business-bay' },
+  { name: 'Dubai Creek Harbour', en: 'areas/dubai-creek-harbour.html', fa: 'fa/areas/dubai-creek-harbour.html', canonicalEn: 'areas/dubai-creek-harbour', canonicalFa: 'fa/areas/dubai-creek-harbour' },
+  { name: 'Jumeirah Bay Island', en: 'areas/jumeirah-bay-island.html', fa: 'fa/areas/jumeirah-bay-island.html', canonicalEn: 'areas/jumeirah-bay-island', canonicalFa: 'fa/areas/jumeirah-bay-island' },
+  { name: 'Jumeirah Islands', en: 'areas/jumeirah-islands.html', fa: 'fa/areas/jumeirah-islands.html', canonicalEn: 'areas/jumeirah-islands', canonicalFa: 'fa/areas/jumeirah-islands' },
+  { name: 'Emirates Hills', en: 'areas/emirates-hills.html', fa: 'fa/areas/emirates-hills.html', canonicalEn: 'areas/emirates-hills', canonicalFa: 'fa/areas/emirates-hills' },
+  { name: 'Dubai vs London', en: 'areas/dubai-vs-london.html', fa: 'fa/areas/dubai-vs-london.html', canonicalEn: 'areas/dubai-vs-london', canonicalFa: 'fa/areas/dubai-vs-london' },
+  { name: 'Dubai vs New York', en: 'areas/dubai-vs-new-york.html', fa: 'fa/areas/dubai-vs-new-york.html', canonicalEn: 'areas/dubai-vs-new-york', canonicalFa: 'fa/areas/dubai-vs-new-york' },
+  { name: 'Dubai vs Singapore', en: 'areas/dubai-vs-singapore.html', fa: 'fa/areas/dubai-vs-singapore.html', canonicalEn: 'areas/dubai-vs-singapore', canonicalFa: 'fa/areas/dubai-vs-singapore' },
 ];
 
 console.log('\n--- 1. File Existence & Clean URL Counterparts ---');
@@ -207,7 +219,29 @@ const testCases = [
   { input: '/off-plan', target: 'fa', expected: '/fa/off-plan' },
   { input: '/fa/off-plan', target: 'en', expected: '/off-plan' },
   { input: '/areas', target: 'fa', expected: '/fa/areas' },
-  { input: '/fa/areas', target: 'en', expected: '/areas' }
+  { input: '/fa/areas', target: 'en', expected: '/areas' },
+  { input: '/areas/palm-jumeirah', target: 'fa', expected: '/fa/areas/palm-jumeirah' },
+  { input: '/fa/areas/palm-jumeirah', target: 'en', expected: '/areas/palm-jumeirah' },
+  { input: '/areas/downtown-dubai', target: 'fa', expected: '/fa/areas/downtown-dubai' },
+  { input: '/fa/areas/downtown-dubai', target: 'en', expected: '/areas/downtown-dubai' },
+  { input: '/areas/dubai-hills-estate', target: 'fa', expected: '/fa/areas/dubai-hills-estate' },
+  { input: '/fa/areas/dubai-hills-estate', target: 'en', expected: '/areas/dubai-hills-estate' },
+  { input: '/areas/dubai-marina', target: 'fa', expected: '/fa/areas/dubai-marina' },
+  { input: '/fa/areas/dubai-marina', target: 'en', expected: '/areas/dubai-marina' },
+  { input: '/areas/business-bay', target: 'fa', expected: '/fa/areas/business-bay' },
+  { input: '/fa/areas/business-bay', target: 'en', expected: '/areas/business-bay' },
+  { input: '/areas/dubai-creek-harbour', target: 'fa', expected: '/fa/areas/dubai-creek-harbour' },
+  { input: '/fa/areas/dubai-creek-harbour', target: 'en', expected: '/areas/dubai-creek-harbour' },
+  { input: '/areas/jumeirah-bay-island', target: 'fa', expected: '/fa/areas/jumeirah-bay-island' },
+  { input: '/fa/areas/jumeirah-bay-island', target: 'en', expected: '/areas/jumeirah-bay-island' },
+  { input: '/areas/jumeirah-islands', target: 'fa', expected: '/fa/areas/jumeirah-islands' },
+  { input: '/fa/areas/jumeirah-islands', target: 'en', expected: '/areas/jumeirah-islands' },
+  { input: '/areas/emirates-hills', target: 'fa', expected: '/fa/areas/emirates-hills' },
+  { input: '/fa/areas/emirates-hills', target: 'en', expected: '/areas/emirates-hills' },
+  { input: '/areas/dubai-vs-london', target: 'fa', expected: '/fa/areas/dubai-vs-london' },
+  { input: '/fa/areas/dubai-vs-london', target: 'en', expected: '/areas/dubai-vs-london' },
+  { input: '/areas/dubai-vs-new-york', target: 'fa', expected: '/fa/areas/dubai-vs-new-york' },
+  { input: '/fa/areas/dubai-vs-new-york', target: 'en', expected: '/areas/dubai-vs-new-york' }
 ];
 
 for (const tc of testCases) {

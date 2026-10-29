@@ -39,7 +39,6 @@ const canonicalExpectedRoutes = [
   { text: 'Properties', href: '/properties' },
   { text: 'Off-Plan', href: '/off-plan' },
   { text: 'Areas', href: '/areas' },
-  { text: 'Private Office', href: '/private-office' },
   { text: 'Services', href: '/services' },
   { text: 'Visas & Residency', href: '/visas' },
   { text: 'Market Insights', href: '/insights' },
@@ -77,6 +76,9 @@ for (const relPath of testPages) {
         `[${relPath}] Desktop nav contains exact link to ${expected.href} ("${expected.text}")`);
     }
 
+    const hasPo = desktopLinks.some(a => (a.getAttribute('href') || '').includes('private-office'));
+    assert(!hasPo, `[${relPath}] Desktop nav does NOT contain Private Office link`);
+
     // Check no trigger buttons without hrefs exist as primary nav links
     const buttons = Array.from(desktopNav.children).filter(el => el.tagName === 'BUTTON');
     assert(buttons.length === 0, `[${relPath}] No bare <button> triggers in top-level desktop nav`);
@@ -91,6 +93,8 @@ for (const relPath of testPages) {
       const hasRoute = mobileLinks.some(href => href === expected.href || href.startsWith(expected.href));
       assert(hasRoute, `[${relPath}] Mobile menu contains route ${expected.href}`);
     }
+    const hasPo = mobileLinks.some(href => (href || '').includes('private-office'));
+    assert(!hasPo, `[${relPath}] Mobile menu does NOT contain Private Office link`);
   }
 
   // 4. CTA button in header

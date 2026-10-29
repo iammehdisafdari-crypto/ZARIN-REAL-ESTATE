@@ -37,7 +37,7 @@ for (const p of samplePages) {
   if (nav) {
     const directTriggers = nav.querySelectorAll(':scope > .mega-menu-trigger');
     const allTriggers = nav.querySelectorAll('.mega-menu-trigger');
-    assert(directTriggers.length === 8, `[${p}] Has 8 direct sibling triggers in <nav> (found ${directTriggers.length})`);
+    assert(directTriggers.length === 7, `[${p}] Has 7 direct sibling triggers in <nav> (found ${directTriggers.length})`);
     assert(directTriggers.length === allTriggers.length, `[${p}] Zero nested triggers (direct: ${directTriggers.length}, all: ${allTriggers.length})`);
   }
 }
