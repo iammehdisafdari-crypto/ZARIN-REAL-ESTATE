@@ -5,23 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0A0B0E">
 
-  <title>ZARIN Podcast | Dubai Real Estate Market Intelligence | ZARIN</title>
-  <meta name="description" content="24 insightful audio and video episodes with top developers, legal advisors, wealth managers, and property market analysts.">
+  <title>ZARIN Podcast — Listen to the Market | ZARIN</title>
+  <meta name="description" content="The ZARIN podcast: 24 episodes on Dubai real estate — developer interviews, area deep-dives, buyer stories and tax structuring, on DLD data.">
+  <meta name="keywords" content="Dubai real estate podcast, ZARIN podcast, Dubai property podcast, Dubai developer interviews, Dubai area deep-dive podcast, Dubai property investor podcast, Dubai Golden Visa podcast">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="ZARIN Real Estate">
   <link rel="canonical" href="https://zarinrealestate.com/insights/podcast">
+  <link rel="alternate" hreflang="en" href="https://zarinrealestate.com/insights/podcast">
+  <link rel="alternate" hreflang="fa" href="https://zarinrealestate.com/fa/insights/podcast">
+  <link rel="alternate" hreflang="x-default" href="https://zarinrealestate.com/insights/podcast">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="ZARIN Podcast | Dubai Real Estate Market Intelligence | ZARIN">
-  <meta property="og:description" content="24 insightful audio and video episodes with top developers, legal advisors, wealth managers, and property market analysts.">
+  <meta property="og:title" content="ZARIN Podcast — Listen to the Market | ZARIN">
+  <meta property="og:description" content="The ZARIN podcast: 24 episodes on Dubai real estate — developer interviews, area deep-dives, buyer stories and tax structuring, on DLD data.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Dubai skyline at dusk — the view the ZARIN podcast talks through">
   <meta property="og:url" content="https://zarinrealestate.com/insights/podcast">
   <meta property="og:site_name" content="ZARIN Real Estate">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:section" content="Insights">
+  <meta property="article:tag" content="ZARIN podcast, Dubai real estate audio, developer interviews, area deep-dives, buyer stories, tax structuring, DLD data">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ZARIN Podcast — Listen to the Market | ZARIN">
+  <meta name="twitter:description" content="The ZARIN podcast: 24 episodes on Dubai real estate — developer interviews, area deep-dives, buyer stories and tax structuring, on DLD data.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0B0E'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' fill='%23C8AB83' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/main.css">
 
@@ -30,24 +45,226 @@
     ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0A0B0E}::-webkit-scrollbar-thumb{background:#C8AB83;border-radius:4px}
     ::selection{background:rgba(200,171,131,0.3);color:#F8F9FA}
     .glass{background:rgba(10,11,14,0.78);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+    .gold-glow{transition:box-shadow .5s cubic-bezier(.16,1,.3,1),border-color .5s cubic-bezier(.16,1,.3,1)}
+    .gold-glow:hover{box-shadow:0 10px 30px rgba(200,171,131,.15);border-color:rgba(200,171,131,.45)}
     .text-gold-gradient{background:linear-gradient(135deg,#DFC49E 0%,#C8AB83 50%,#A88D66 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    
-    
-    
+    .stat-number{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+    .mega-menu-trigger{position:relative}
+    .mega-menu-panel{opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1),visibility .3s}
+    .mega-menu-trigger:hover .mega-menu-panel,.mega-menu-trigger:focus-within .mega-menu-panel{opacity:1;visibility:visible;transform:translateY(0)}
+    .card-lift{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s cubic-bezier(.16,1,.3,1)}
+    .card-lift:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.5)}
     .mobile-menu{transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}.mobile-menu.open{transform:translateX(0)}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .animate-fade-in-up{animation:fadeInUp .8s cubic-bezier(.16,1,.3,1) both}
+    details summary{list-style:none;cursor:pointer}details summary::-webkit-details-marker{display:none}
+    details[open] .faq-icon{transform:rotate(45deg)}.faq-icon{transition:transform .3s cubic-bezier(.16,1,.3,1)}
     .sticky-whatsapp{display:none}@media(max-width:1024px){.sticky-whatsapp{display:flex}}
+    .vs-divider{background:linear-gradient(to bottom,rgba(200,171,131,0),rgba(200,171,131,0.6),rgba(200,171,131,0))}
   </style>
 
+  <!-- JSON-LD: BreadcrumbList -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://zarinrealestate.com/"},
-    {"@type":"ListItem","position":2,"name":"Insights","item":"https://zarinrealestate.com/insights"},
-    {"@type":"ListItem","position":3,"name":"ZARIN Real Estate Podcast","item":"https://zarinrealestate.com/insights/podcast"}
-  ]}
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://zarinrealestate.com/insights/podcast#breadcrumbs",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://zarinrealestate.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://zarinrealestate.com/insights"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Podcast",
+      "item": "https://zarinrealestate.com/insights/podcast"
+    }
+  ]
+}
+  </script>
+
+  <!-- JSON-LD: CollectionPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://zarinrealestate.com/insights/podcast#collectionpage",
+  "url": "https://zarinrealestate.com/insights/podcast",
+  "name": "The ZARIN Podcast — Listen to the Market",
+  "description": "The ZARIN podcast: 24 episodes on Dubai real estate — developer interviews, area deep-dives, buyer stories and tax structuring for international investors, backed by DLD data.",
+  "isPartOf": {
+    "@id": "https://zarinrealestate.com/insights#webpage"
+  },
+  "publisher": {
+    "@id": "https://zarinrealestate.com/#organization"
+  },
+  "mainEntity": {
+    "@type": "PodcastSeries",
+    "name": "The ZARIN Podcast",
+    "url": "https://zarinrealestate.com/insights/podcast",
+    "numberOfEpisodes": 24,
+    "provider": {
+      "@id": "https://zarinrealestate.com/#organization"
+    },
+    "containsSeason": {
+      "@type": "PodcastSeason",
+      "seasonNumber": 1,
+      "numberOfEpisodes": 24,
+      "episode": [
+        {
+          "@type": "PodcastEpisode",
+          "episodeNumber": 24,
+          "name": "Episode 24: The Palm Jumeirah Decade",
+          "duration": "PT42M",
+          "datePublished": "2026-10",
+          "partOfSeries": {
+            "@type": "PodcastSeries",
+            "name": "The ZARIN Podcast",
+            "url": "https://zarinrealestate.com/insights/podcast"
+          }
+        },
+        {
+          "@type": "PodcastEpisode",
+          "episodeNumber": 23,
+          "name": "Episode 23: Golden Visa Myths Debunked",
+          "duration": "PT38M",
+          "datePublished": "2026-09",
+          "partOfSeries": {
+            "@type": "PodcastSeries",
+            "name": "The ZARIN Podcast",
+            "url": "https://zarinrealestate.com/insights/podcast"
+          }
+        },
+        {
+          "@type": "PodcastEpisode",
+          "episodeNumber": 22,
+          "name": "Episode 22: Off-Plan Developer Ratings",
+          "duration": "PT45M",
+          "datePublished": "2026-09",
+          "partOfSeries": {
+            "@type": "PodcastSeries",
+            "name": "The ZARIN Podcast",
+            "url": "https://zarinrealestate.com/insights/podcast"
+          }
+        }
+      ]
+    }
+  }
+}
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://zarinrealestate.com/insights/podcast#faqpage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where can I listen to the ZARIN podcast?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The show is carried on Spotify, Apple Podcasts and YouTube. We deliberately publish no direct streaming links on this page — apps and regional catalogues differ, and a stale link is worse than none. Search “ZARIN Real Estate” in your podcast app and the show appears with the gold Z mark. Every episode is free to stream or download."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often are new episodes released?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The show launched in January 2026 and has published two to three episodes a month since — 24 episodes through October 2026, with the run continuing through Q4. Area deep-dives and quarterly report breakdowns anchor the calendar, with desk episodes and buyer stories between them. Subscribers to the monthly briefing receive an alert the morning each episode goes live."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do developers pay to be featured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No — and they cannot pay for ratings either. There is no pay-to-play on the show: developers do not pay for coverage, for scorecard positions, or for the softening of a hard question. This is the same standard the Developer Reputation Tracker is built on, and it is why we can say what a delivery record actually looks like."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who appears on the show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ZARIN advisors host, with the founder joining for the quarterly breakdowns and market episodes. Guests sit across the market: developers on their own projects, and the country desks in person — Rohit Kapoor on India, Emma Whitfield on the UK, Li Hong on China. Buyer stories are told with permission and anonymised, in the “M., Tehran” convention used across the site."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I suggest a topic or ask a question on air?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — and listeners do. Write to advisory@zarinrealestate.com with “Podcast” in the subject, or use the contact page. Recurring listener questions become desk episodes: the Golden Visa myths episode began as three separate emails asking the same thing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are the episodes free to listen to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "All 24 episodes are free, on every platform, with no premium tier and no advertorials. The show exists for the same reason the blog and the market reports do: informed buyers make better clients, and better clients make a better advisory business."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do the numbers in the episodes come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The same sources as everything ZARIN publishes: Dubai Land Department transaction records for prices and volumes, the RERA service-charge index for costs, and the ZARIN ROI basis for yields. Each quarterly breakdown episode is recorded against the corresponding market report, and the live figures sit on the market data pages."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "I'm a first-time buyer — where should I start?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with Episode 20, “Buyer Stories: Three Purchases, Three Lessons” — it walks three real journeys, including the mistakes. Then take the area deep-dives for whichever districts are on your shortlist, and read the buyer’s guides alongside. The show assumes no prior Dubai knowledge; neither do the guides."
+      }
+    }
+  ]
+}
+  </script>
+
+  <!-- JSON-LD: WebPage + Speakable -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://zarinrealestate.com/insights/podcast#webpage",
+  "url": "https://zarinrealestate.com/insights/podcast",
+  "name": "ZARIN Podcast — Listen to the Market | ZARIN",
+  "description": "The ZARIN podcast: 24 episodes on Dubai real estate — developer interviews, area deep-dives, buyer stories and tax structuring, on DLD data.",
+  "isPartOf": {
+    "@id": "https://zarinrealestate.com/#website"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1200&q=80"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "#hero-headline",
+      "#tldr-summary"
+    ]
+  }
+}
   </script>
 </head>
+<body class="bg-ink-900 text-bone antialiased">
 
-<body class="bg-ink-900 text-bone antialiased min-h-screen flex flex-col justify-between">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-gold-400 focus:text-ink-900 focus:rounded-xs focus:text-sm focus:font-bold">Skip to main content</a>
 
   <!-- HEADER -->
@@ -99,7 +316,7 @@
               <a href="/off-plan/by-developer" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_by_developer">By Developer</a>
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2" data-i18n="nav_investment_tools">Investment Tools</div>
               <a href="/off-plan/investment-guide" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_investment_guide">Investment Guide</a>
-              <a href="/off-plan/payment-plan-calculator" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_payment_calculator">Payment Calculator</a>
+              <a href="/off-plan/payment-calculator" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_payment_calculator">Payment Calculator</a>
               <a href="/off-plan/roi-predictor" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_roi_predictor">ROI Predictor</a>
               <a href="/off-plan/developer-reputation-tracker" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold" data-i18n="nav_developer_tracker">Developer Tracker →</a>
             </div>
@@ -112,8 +329,7 @@
             </button>
             <div id="areas-mega-panel" class="mega-menu-panel absolute top-full left-0 mt-2 w-[640px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-3 gap-x-6 gap-y-3" role="region" aria-label="Areas submenu">
               <div class="col-span-3 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_featured_areas">Featured Areas</div>
-              <a href="/areas/palm-jumeirah" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_palm_jumeirah">Palm Jumeirah</a>
-              <a href="/areas/downtown-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_downtown_dubai">Downtown Dubai</a>
+              <a href="/areas/downtown-dubai" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_downtown_dubai">Downtown Dubai</a>
               <a href="/areas/dubai-hills-estate" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_dubai_hills_estate">Dubai Hills Estate</a>
               <a href="/areas/dubai-marina" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_dubai_marina">Dubai Marina</a>
               <a href="/areas/business-bay" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_business_bay">Business Bay</a>
@@ -129,7 +345,7 @@
           </div>
 
           <div class="mega-menu-trigger">
-            <a href="/services" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
+            <a href="/services" class="px-3 py-2 text-[13px] font-semibold tracking-wide hover:text-gold-400 transition-colors duration-300 flex items-center gap-1 text-ash" aria-haspopup="true" aria-expanded="false">
               <span data-i18n="nav_services">Services</span>
               <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
@@ -137,32 +353,9 @@
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_buying_selling">Buying &amp; Selling</div>
               <a href="/services/buying" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="footer_buying">Buying Advisory</a>
               <a href="/services/selling" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_selling_advisory">Selling Advisory</a>
-              <a href="/services/mortgage" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_mortgage_advisory">Mortgage Advisory</a>
-              <a href="/services/valuation" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_free_valuation">Free Valuation</a>
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2" data-i18n="nav_management_legal">Management &amp; Legal</div>
-              <a href="/services/property-management" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_property_management">Property Management</a>
-              <a href="/services/legal" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="footer_legal">Legal &amp; Conveyancing</a>
-              <a href="/services/insurance" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_property_insurance">Property Insurance</a>
-              <a href="/services/after-sales" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_after_sales">After-Sales Support</a>
-            </div>
-          </div>
-
-          <div class="mega-menu-trigger">
-            <a href="/visas" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
-              <span data-i18n="nav_visas">Visas</span>
-              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </a>
-            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
-              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_visa_types">Visa Types</div>
-              <a href="/visas/golden-visa" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_golden_visa_10yr">Golden Visa (10-Year)</a>
-              <a href="/visas/investor-visa" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_investor_visa_2yr">Investor Visa (2-Year)</a>
-              <a href="/visas/retirement-visa" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_retirement_visa_5yr">Retirement Visa (5-Year)</a>
-              <a href="/visas/remote-work-visa" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_remote_work_visa">Remote Work Visa</a>
-              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2" data-i18n="nav_by_nationality">By Nationality</div>
-              <a href="/visas/for-indian-buyers" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="visa_nat_indian_title">For Indian Buyers</a>
-              <a href="/visas/for-uk-buyers" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="visa_nat_uk_title">For UK Buyers</a>
-              <a href="/visas/for-chinese-buyers" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="visa_nat_chinese_title">For Chinese Buyers</a>
-              <a href="/visas/eligibility-checker" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold" data-i18n="nav_check_eligibility">Check Eligibility →</a>
+              <a href="/services/valuation" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_free_valuation">Free Valuation</a>
+              <a href="/services/after-sales" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_after_sales">After Sales Support</a>
             </div>
           </div>
 
@@ -171,17 +364,18 @@
               <span data-i18n="nav_insights">Insights</span>
               <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
-            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3" role="region" aria-label="Insights submenu">
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_content_hub">Content Hub</div>
-              <a href="/insights/blog" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_blog_articles">Blog Articles</a>
-              <a href="/insights/market-reports" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_market_reports">Market Reports</a>
-              <a href="/insights/podcast" class="text-sm hover:text-gold-400 transition-colors text-gold-400 font-semibold" data-i18n="art_podcast_tag" aria-current="page">Podcast</a>
-              <a href="/insights/guides" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_buyers_guides">Buyer's Guides</a>
-              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2" data-i18n="nav_tools_reference">Tools &amp; Reference</div>
-              <a href="/insights/calculators" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_all_calculators">All Calculators</a>
-              <a href="/insights/faq" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_faq_hub">FAQ Hub</a>
-              <a href="/insights/glossary" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_glossary">Glossary</a>
-              <a href="/insights/market-data" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_market_data">Market Data</a>
+              <a href="/insights/blog" class="text-sm transition-colors text-bone hover:text-gold-400" data-i18n="nav_blog_articles">Blog Articles</a>
+              <a href="/insights/market-reports" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_market_reports">Market Reports</a>
+              <a href="/insights/podcast" class="text-sm transition-colors text-gold-400 font-semibold hover:text-gold-300" data-i18n="art_podcast_tag" aria-current="page">Podcast</a>
+              <a href="/insights/guides" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_buyers_guides">Buyer's Guides</a>
+              <div class="col-span-2 border-t border-white-line my-1" aria-hidden="true"></div>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_tools_reference">Tools &amp; Reference</div>
+              <a href="/insights/calculators" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_all_calculators">All Calculators</a>
+              <a href="/insights/faq" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_faq_hub">FAQ Hub</a>
+              <a href="/insights/glossary" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_glossary">Glossary</a>
+              <a href="/insights/market-data" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_market_data">Market Data</a>
             </div>
           </div>
 
@@ -198,9 +392,7 @@
               <a href="/heritage/authors" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_authors">Author Profiles</a>
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2" data-i18n="nav_trust_proof">Trust &amp; Proof</div>
               <a href="/heritage/testimonials" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="footer_testimonials">Testimonials</a>
-              <a href="/heritage/awards" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="footer_awards">Awards</a>
               <a href="/heritage/press" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="footer_press">Press &amp; Media</a>
-              <a href="/heritage/case-studies" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_case_studies">Case Studies</a>
             </div>
           </div>
         </nav>
@@ -251,7 +443,7 @@
     <div class="p-6">
       <div class="flex justify-between items-center mb-8">
         <span class="font-sans font-extrabold text-xl text-bone">ZARIN</span>
-        <button id="mobile-menu-close" class="text-ash hover:text-gold-400 transition-colors" aria-label="Close menu">
+        <button id="mobile-menu-close" class="text-ash hover:text-gold-400 transition-colors p-2" aria-label="Close menu">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
       </div>
@@ -260,268 +452,671 @@
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/properties" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_properties">Properties</a>
-            <button type="button" id="mobile-properties-toggle" aria-expanded="false" aria-controls="mobile-properties-submenu" aria-label="Toggle Properties submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-properties-toggle" aria-expanded="false" aria-controls="mobile-properties-submenu" aria-label="Toggle Properties submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-properties-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_for_sale">For Sale</div>
-            <a href="/properties-for-sale" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_properties_for_sale">All Properties for Sale</a>
-            <a href="/apartments-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_apartments">Apartments</a>
-            <a href="/villas-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_villas">Villas</a>
-            <a href="/penthouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_penthouses">Penthouses</a>
-            <a href="/townhouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_townhouses">Townhouses</a>
-            <a href="/trophy-residences" class="text-xs text-gold-400 font-semibold py-1" data-i18n="filter_trophy">Trophy Residences →</a>
+            <a href="/properties-for-sale" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="nav_all_properties_for_sale">All Properties for Sale</a>
+            <a href="/apartments-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="filter_apartments">Apartments</a>
+            <a href="/villas-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="filter_villas">Villas</a>
+            <a href="/penthouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="filter_penthouses">Penthouses</a>
+            <a href="/townhouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="filter_townhouses">Townhouses</a>
+            <a href="/trophy-residences" class="text-xs text-gold-400 font-semibold hover:text-gold-300 py-1 transition-colors" data-i18n="filter_trophy">Trophy Residences →</a>
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_for_rent">For Rent</div>
-            <a href="/properties-for-rent" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_rentals">All Rentals</a>
+            <a href="/properties-for-rent" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="nav_all_rentals">All Rentals</a>
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_by_lifestyle">By Lifestyle</div>
-            <a href="/beachfront-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_beachfront">Beachfront</a>
-            <a href="/burj-khalifa-view-properties" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_burj_view">Burj View</a>
-            <a href="/golf-course-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_golf_course">Golf Course</a>
-            <a href="/branded-residences-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_branded_residences">Branded Residences</a>
-            <a href="/commercial-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_commercial">Commercial</a>
+            <a href="/beachfront-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_beachfront">Beachfront</a>
+            <a href="/burj-khalifa-view-properties" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_burj_view">Burj View</a>
+            <a href="/golf-course-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_golf_course">Golf Course</a>
+            <a href="/branded-residences-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_branded_residences">Branded Residences</a>
+            <a href="/commercial-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_commercial">Commercial</a>
           </div>
         </div>
-
         <!-- 2. Off-Plan -->
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/off-plan" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_offplan">Off-Plan</a>
-            <button type="button" id="mobile-offplan-toggle" aria-expanded="false" aria-controls="mobile-offplan-submenu" aria-label="Toggle Off-Plan submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-offplan-toggle" aria-expanded="false" aria-controls="mobile-offplan-submenu" aria-label="Toggle Off-Plan submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-offplan-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_discover">Discover</div>
-            <a href="/off-plan/projects" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_offplan">All Off-Plan Projects</a>
-            <a href="/off-plan/new-launches" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_new_launches">New Launches</a>
-            <a href="/off-plan/by-developer" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_by_developer">By Developer</a>
+            <a href="/off-plan/projects" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="nav_all_offplan">All Off-Plan Projects</a>
+            <a href="/off-plan/new-launches" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_new_launches">New Launches</a>
+            <a href="/off-plan/coming-soon" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_coming_soon">Coming Soon</a>
+            <a href="/off-plan/by-developer" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_by_developer">By Developer</a>
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_investment_tools">Investment Tools</div>
-            <a href="/off-plan/investment-guide" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_investment_guide">Investment Guide</a>
+            <a href="/off-plan/investment-guide" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_investment_guide">Investment Guide</a>
+            <a href="/off-plan/payment-calculator" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_payment_calculator">Payment Calculator</a>
+            <a href="/off-plan/roi-predictor" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_roi_predictor">ROI Predictor</a>
+            <a href="/off-plan/developer-reputation-tracker" class="text-xs text-gold-400 font-semibold hover:text-gold-300 py-1 transition-colors" data-i18n="nav_developer_tracker">Developer Tracker →</a>
           </div>
         </div>
-
         <!-- 3. Areas -->
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/areas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_areas">Areas</a>
-            <button type="button" id="mobile-areas-toggle" aria-expanded="false" aria-controls="mobile-areas-submenu" aria-label="Toggle Areas submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-areas-toggle" aria-expanded="false" aria-controls="mobile-areas-submenu" aria-label="Toggle Areas submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-areas-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_featured_areas">Featured Areas</div>
-            <a href="/areas" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_areas">All Areas →</a>
-            <a href="/areas/palm-jumeirah" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_palm_jumeirah">Palm Jumeirah</a>
-            <a href="/areas/downtown-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_downtown_dubai">Downtown Dubai</a>
-            <a href="/areas/dubai-hills-estate" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_dubai_hills_estate">Dubai Hills Estate</a>
+            <a href="/areas/downtown-dubai" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="nav_downtown_dubai">Downtown Dubai</a>
+            <a href="/areas/dubai-hills-estate" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_dubai_hills_estate">Dubai Hills Estate</a>
+            <a href="/areas/dubai-marina" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_dubai_marina">Dubai Marina</a>
+            <a href="/areas/business-bay" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_business_bay">Business Bay</a>
+            <a href="/areas/dubai-creek-harbour" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_creek_harbour">Creek Harbour</a>
+            <a href="/areas/jumeirah-bay-island" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_jumeirah_bay_island">Jumeirah Bay Island</a>
+            <a href="/areas/emirates-hills" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_emirates_hills">Emirates Hills</a>
+            <a href="/areas" class="text-xs text-gold-400 font-semibold hover:text-gold-300 py-1 transition-colors" data-i18n="nav_all_areas">All Areas →</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_city_comparisons">City Comparisons</div>
+            <a href="/areas/compare/dubai-vs-london" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_dubai_vs_london">Dubai vs London</a>
+            <a href="/areas/compare/dubai-vs-singapore" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_dubai_vs_singapore">Dubai vs Singapore</a>
+            <a href="/areas/compare/dubai-vs-new-york" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_dubai_vs_new_york">Dubai vs New York</a>
           </div>
         </div>
-
-        <!-- 5. Services -->
+        <!-- 4. Services -->
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/services" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_services">Services</a>
-            <button type="button" id="mobile-services-toggle" aria-expanded="false" aria-controls="mobile-services-submenu" aria-label="Toggle Services submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-services-toggle" aria-expanded="false" aria-controls="mobile-services-submenu" aria-label="Toggle Services submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-services-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_buying_selling">Buying &amp; Selling</div>
-            <a href="/services" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_services">All Services →</a>
-            <a href="/services/buying" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_buying">Buying Advisory</a>
-            <a href="/services/selling" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_selling_advisory">Selling Advisory</a>
-            <a href="/services/mortgage" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_mortgage_advisory">Mortgage Advisory</a>
-            <a href="/services/valuation" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_free_valuation">Free Valuation</a>
+            <a href="/services/buying" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="footer_buying">Buying Advisory</a>
+            <a href="/services/selling" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_selling_advisory">Selling Advisory</a>
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_management_legal">Management &amp; Legal</div>
-            <a href="/services/property-management" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_property_management">Property Management</a>
-            <a href="/services/legal" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_legal">Legal &amp; Conveyancing</a>
-            <a href="/services/insurance" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_property_insurance">Property Insurance</a>
-            <a href="/services/after-sales" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_after_sales">After-Sales Support</a>
+            <a href="/services/valuation" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_free_valuation">Free Valuation</a>
+            <a href="/services/after-sales" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_after_sales">After Sales Support</a>
           </div>
         </div>
-
-        <!-- 6. Visas -->
-        <div class="mobile-nav-item">
-          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
-            <a href="/visas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_visas">Visas</a>
-            <button type="button" id="mobile-visas-toggle" aria-expanded="false" aria-controls="mobile-visas-submenu" aria-label="Toggle Visas submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
-              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-          </div>
-          <div id="mobile-visas-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
-            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_visa_types">Visa Types</div>
-            <a href="/visas" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_visas">All Visas →</a>
-            <a href="/visas/golden-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_golden_visa_10yr">Golden Visa (10-Year)</a>
-            <a href="/visas/investor-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_investor_visa_2yr">Investor Visa (2-Year)</a>
-            <a href="/visas/retirement-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_retirement_visa_5yr">Retirement Visa (5-Year)</a>
-            <a href="/visas/remote-work-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_remote_work_visa">Remote Work Visa</a>
-            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_by_nationality">By Nationality</div>
-            <a href="/visas/for-indian-buyers" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="visa_nat_indian_title">For Indian Buyers</a>
-            <a href="/visas/for-uk-buyers" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="visa_nat_uk_title">For UK Buyers</a>
-            <a href="/visas/for-chinese-buyers" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="visa_nat_chinese_title">For Chinese Buyers</a>
-            <a href="/visas/eligibility-checker" class="text-xs text-gold-400 font-semibold py-1" data-i18n="nav_check_eligibility">Check Eligibility →</a>
-          </div>
-        </div>
-
-        <!-- 7. Insights -->
+        <!-- 5. Insights -->
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/insights" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_insights">Insights</a>
-            <button type="button" id="mobile-insights-toggle" aria-expanded="false" aria-controls="mobile-insights-submenu" aria-label="Toggle Insights submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-insights-toggle" aria-expanded="false" aria-controls="mobile-insights-submenu" aria-label="Toggle Insights submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-insights-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_content_hub">Content Hub</div>
-            <a href="/insights" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_insights">All Insights →</a>
-            <a href="/insights/blog" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_blog_articles">Blog Articles</a>
-            <a href="/insights/market-reports" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_market_reports">Market Reports</a>
-            <a href="/insights/podcast" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="art_podcast_tag">Podcast</a>
-            <a href="/insights/guides" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_buyers_guides">Buyer's Guides</a>
-            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_tools_reference">Tools &amp; Reference</div>
-            <a href="/insights/calculators" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_all_calculators">All Calculators</a>
-            <a href="/insights/faq" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_faq_hub">FAQ Hub</a>
-            <a href="/insights/glossary" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_glossary">Glossary</a>
-            <a href="/insights/market-data" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_market_data">Market Data</a>
+            <a href="/insights/blog" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_blog_articles">Blog Articles</a>
+            <a href="/insights/market-reports" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_market_reports">Market Reports</a>
+            <a href="/insights/podcast" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="art_podcast_tag">Podcast</a>
+            <a href="/insights/guides" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_buyers_guides">Buyer's Guides</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2 border-t border-white-line/50 mt-1" data-i18n="nav_tools_reference">Tools & Reference</div>
+            <a href="/insights/calculators" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_all_calculators">All Calculators</a>
+            <a href="/insights/faq" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_faq_hub">FAQ Hub</a>
+            <a href="/insights/glossary" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_glossary">Glossary</a>
+            <a href="/insights/market-data" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_market_data">Market Data</a>
           </div>
         </div>
-
-        <!-- 8. Heritage -->
+        <!-- 6. Heritage -->
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/heritage" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_heritage">Heritage</a>
-            <button type="button" id="mobile-heritage-toggle" aria-expanded="false" aria-controls="mobile-heritage-submenu" aria-label="Toggle Heritage submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-heritage-toggle" aria-expanded="false" aria-controls="mobile-heritage-submenu" aria-label="Toggle Heritage submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-heritage-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_about_zarin">About ZARIN</div>
-            <a href="/heritage" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_our_story">Our Story (since 2005)</a>
-            <a href="/heritage/founder" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_founders_letter">Founder's Letter</a>
-            <a href="/heritage/team" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_team">Our Team</a>
-            <a href="/heritage/authors" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_authors">Author Profiles</a>
+            <a href="/heritage" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="nav_our_story">Our Story (since 2005)</a>
+            <a href="/heritage/founder" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_founders_letter">Founder's Letter</a>
+            <a href="/heritage/team" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_team">Our Team</a>
+            <a href="/heritage/authors" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_authors">Author Profiles</a>
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_trust_proof">Trust &amp; Proof</div>
-            <a href="/heritage/testimonials" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_testimonials">Testimonials</a>
-            <a href="/heritage/awards" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_awards">Awards</a>
-            <a href="/heritage/press" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_press">Press &amp; Media</a>
-            <a href="/heritage/case-studies" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_case_studies">Case Studies</a>
+            <a href="/heritage/testimonials" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="footer_testimonials">Testimonials</a>
+            <a href="/heritage/press" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="footer_press">Press &amp; Media</a>
           </div>
         </div>
+      </nav>
+      <div class="h-px bg-white-line my-2"></div>
+      <div class="pt-4 flex flex-col gap-3">
+        <a href="/consultation" class="w-full py-3 px-4 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-wider text-center rounded-xs hover:bg-gold-300 transition-all shadow-gold" data-i18n="nav_cta">Book Consultation</a>
+        <a href="tel:+971586901231" class="w-full py-2.5 px-4 border border-white-line text-xs font-semibold text-center text-ash hover:text-gold-400 hover:border-gold-line rounded-xs transition-all flex items-center justify-center gap-2" dir="ltr">
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.288a11.3 11.3 0 005.067 5.067l1.288-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          <span class="tabular-nums">+971 58 690 1231</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
-        <div class="px-4 py-3 border-t border-white-line my-2">
-          <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-2" data-i18n="lang_label">Language / زبان</div>
-          <div class="flex items-center gap-2" role="group" aria-label="Select language">
-            <button type="button" class="mobile-lang-btn lang-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-gold-line bg-gold-400 text-ink-900 transition-all text-center active cursor-pointer" data-lang="en" data-i18n="lang_en_label">English (EN)</button>
-            <button type="button" class="mobile-lang-btn lang-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-white-line text-ash hover:text-gold-400 hover:border-gold-line transition-all text-center cursor-pointer" data-lang="fa" data-i18n="lang_fa_label">فارسی (FA)</button>
-          </div>
-        </div>
-        <div class="h-px bg-white-line my-2"></div>
-        <a href="/consultation" class="py-3 px-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-wide text-center rounded-xs hover:bg-gold-300 transition-all" data-i18n="nav_cta">Book Consultation</a>
-        <a href="tel:+971586901231" class="py-3 px-4 text-sm text-ash hover:text-gold-400 text-center"><span dir="ltr" class="tabular-nums">+971 58 690 1231</span></a>
-        <a href="https://wa.me/971586901231" class="py-3 px-4 text-sm text-tether hover:text-tether/80 text-center" data-i18n="contact_wa_title">WhatsApp</a>
+  <!-- Breadcrumb -->
+  <div class="pt-24 bg-ink-900 border-b border-white-line">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-4">
+      <nav aria-label="Breadcrumb" class="text-xs">
+        <ol class="flex items-center gap-2 text-slate flex-wrap" role="list">
+          <li role="listitem"><a href="/" class="hover:text-gold-400 transition-colors">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li role="listitem"><a href="/insights" class="hover:text-gold-400 transition-colors">Insights</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-bone font-semibold" aria-current="page">Podcast</li>
+        </ol>
       </nav>
     </div>
   </div>
 
-  <main id="main" class="flex-grow py-20 md:py-28 px-6 bg-ink-950">
-    <div class="max-w-4xl mx-auto">
-      <div class="inline-flex items-center gap-2 mb-6">
-        <span class="w-8 h-px bg-gold-400"></span>
-        <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Audio & Video · 24 Episodes</span>
-      </div>
-      <h1 class="font-sans font-extrabold text-4xl md:text-6xl text-bone mb-6 tracking-tight leading-tight">ZARIN Real Estate Podcast</h1>
-      <p class="text-ash text-lg md:text-xl font-light leading-relaxed mb-10 pb-8 border-b border-white-line">Candid conversations on prime acquisitions, off-plan developer due diligence, tax structuring, and Dubai market insider perspectives.</p>
+<main id="main">
 
-      <div class="bg-ink-900 border border-gold-line rounded-sm p-8 md:p-12 mb-12 bg-gold-soft">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 rounded-xs border border-gold-line flex items-center justify-center text-gold-400">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+  <!-- 1. HERO -->
+  <section id="hero" class="relative py-24 md:py-32 overflow-hidden bg-ink-900" aria-labelledby="hero-headline">
+    <div class="absolute inset-0 opacity-15">
+      <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1920&q=80" alt="The Dubai skyline at golden hour — ZARIN podcast episodes on the market below" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080">
+    </div>
+    <div class="absolute inset-0 bg-ink-900/70" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-ink-900 via-ink-900/90 to-ink-900" aria-hidden="true"></div>
+    <div class="relative max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-4xl animate-fade-in-up">
+        <div class="inline-flex items-center gap-2 mb-6" aria-hidden="true">
+          <span class="w-8 h-px bg-gold-400"></span>
+          <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Insights &middot; Podcast</span>
+        </div>
+
+        <h1 id="hero-headline" class="font-sans font-extrabold text-4xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight text-bone mb-6">The ZARIN Podcast &mdash;<br><span class="text-gold-gradient">Listen to the Market</span></h1>
+        <p class="text-lg md:text-xl text-ash max-w-3xl leading-relaxed mb-10 font-light">Twenty-four episodes of Dubai real estate, recorded against the data rather than the brochure: developer interviews, area deep-dives across the eight core districts, buyer stories with the mistakes left in, and tax structuring for international investors. Free, on Spotify, Apple Podcasts and YouTube.</p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/consultation" class="inline-flex items-center justify-center px-8 py-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold" aria-label="Book a consultation with ZARIN advisory">
+            Book a Consultation
+            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#latest-episodes" class="inline-flex items-center justify-center px-8 py-4 border border-gold-line text-bone text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-soft hover:border-gold-border transition-all duration-300" aria-label="Jump to the latest podcast episodes">
+            Hear the Latest Episodes
+            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-16 pt-8 border-t border-white-line" role="list" aria-label="Podcast headline statistics">
+          <div class="border-l-2 border-gold-400 pl-4 md:pl-6" role="listitem" aria-label="Episodes Published: 24">
+            <div class="text-4xl md:text-5xl font-bold text-gold-400 stat-number">24</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-3 font-semibold">Episodes Published</div>
+            <div class="text-xs text-slate mt-2 leading-relaxed">From the January 2026 launch through October 2026 &mdash; every one free.</div>
           </div>
-          <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Executive Advisory Intelligence</span>
-        </div>
-        <p class="text-sm md:text-base text-bone/90 leading-relaxed mb-6">24 insightful audio and video episodes with top developers, legal advisors, wealth managers, and property market analysts.</p>
-        <div class="flex flex-col sm:flex-row gap-4 pt-4 border-t border-white-line">
-          <a href="/consultation" class="inline-flex items-center justify-center px-6 py-3.5 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-gold-300 transition-all shadow-gold">Request Bespoke Advisory</a>
-          <a href="/insights" class="inline-flex items-center justify-center px-6 py-3.5 border border-gold-line text-bone text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-gold-soft transition-all">Back to Intelligence Hub →</a>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6 pt-6 border-t border-white-line text-left">
-        <div class="bg-ink-900 border border-white-line rounded-sm p-6">
-          <div class="text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">Verified Data</div>
-          <p class="text-xs text-ash leading-relaxed">Cross-referenced with Dubai Land Department (DLD) and official RERA escrow ledgers.</p>
-        </div>
-        <div class="bg-ink-900 border border-white-line rounded-sm p-6">
-          <div class="text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">Private Office Advisory</div>
-          <p class="text-xs text-ash leading-relaxed">Confidential advisory across ultra-prime acquisitions exceeding AED 10M+.</p>
-        </div>
-        <div class="bg-ink-900 border border-white-line rounded-sm p-6">
-          <div class="text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">Multi-Currency & Tax</div>
-          <p class="text-xs text-ash leading-relaxed">Guidance on foreign remittance, banking compliance, and international tax structuring.</p>
+          <div class="border-l-2 border-gold-line pl-4 md:pl-6" role="listitem" aria-label="Episodes per Month: 2 to 3">
+            <div class="text-4xl md:text-5xl font-bold text-gold-400 stat-number">2&ndash;3</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-3 font-semibold">Episodes per Month</div>
+            <div class="text-xs text-slate mt-2 leading-relaxed">A steady cadence: deep-dives, desk episodes and quarterly breakdowns.</div>
+          </div>
+          <div class="border-l-2 border-gold-line pl-4 md:pl-6" role="listitem" aria-label="Episode Formats: 3">
+            <div class="text-4xl md:text-5xl font-bold text-gold-400 stat-number">3</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-3 font-semibold">Episode Formats</div>
+            <div class="text-xs text-slate mt-2 leading-relaxed">Developer interviews, area deep-dives and buyer stories &mdash; plus data segments.</div>
+          </div>
+          <div class="border-l-2 border-gold-line pl-4 md:pl-6" role="listitem" aria-label="Minutes per Episode: 30 to 50">
+            <div class="text-4xl md:text-5xl font-bold text-gold-400 stat-number">30&ndash;50</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-3 font-semibold">Minutes per Episode</div>
+            <div class="text-xs text-slate mt-2 leading-relaxed">Long enough for the numbers, short enough for the commute.</div>
+          </div>
         </div>
       </div>
     </div>
-  </main>
+  </section>
 
-  <!-- FOOTER -->
+  <!-- 2. TL;DR -->
+  <section id="tldr" class="bg-ink-850 py-16 md:py-20" aria-labelledby="tldr-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-4xl mx-auto border-l-2 border-gold-400 pl-6 md:pl-8">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4" id="tldr-heading">The Short Version</div>
+        <p id="tldr-summary" class="text-xl md:text-2xl leading-relaxed text-bone font-light">Twenty-four episodes since the January 2026 launch, running thirty to fifty minutes each. The format is simple: developer interviews that ask about delivery records rather than launch parties, area deep-dives across the eight districts ZARIN tracks, buyer stories told with the mistakes left in, and tax structuring for international investors &mdash; the India, UK and China desks each take an episode. Every number quoted on air comes from DLD records or the RERA index, the same sources as our market reports. Our founder has invested in this market since 2005; the firm established in 2023 records the show with the same discipline it advises with.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. ABOUT THE SHOW -->
+  <section id="about" class="bg-ink-900 py-24 md:py-32" aria-labelledby="about-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid lg:grid-cols-[1.5fr,1fr] gap-12 items-start">
+        <div>
+          <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">About the Show</div>
+          <h2 id="about-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">The Market, Spoken Aloud</h2>
+          <p class="text-base text-ash leading-relaxed mb-4">The ZARIN podcast is the audio arm of the insights desk: the same DLD-sourced numbers, the same named desks, the same refusal of paid placements &mdash; recorded instead of typeset. It exists for the parts of the market that survive conversation better than text: a developer explaining a delay, an advisor walking a buyer&rsquo;s actual numbers, a desk lead describing how remittances really clear.</p>
+          <p class="text-base text-ash leading-relaxed mb-4">It is built for three listeners: the buyer mid-decision who wants the area deep-dive on their shortlist, the international investor structuring a purchase from abroad, and the existing client who would rather hear the quarterly breakdown on the drive home than read forty-two pages. No episode assumes prior Dubai knowledge; every episode assumes you can handle a number.</p>
+          <p class="text-base text-ash leading-relaxed">The show is free on all platforms, with no premium tier and no advertorials &mdash; consistent with the editorial standards across <a href="/insights/blog" class="text-gold-400 font-semibold hover:underline">the blog</a> and the <a href="/insights/market-reports" class="text-gold-400 font-semibold hover:underline">market reports</a>.</p>
+        </div>
+        <aside class="bg-ink-850 border border-white-line rounded-sm p-8" aria-label="Podcast platform availability">
+          <div class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-6 pb-4 border-b border-white-line">Where the Show Runs</div>
+          <div class="space-y-3" role="list" aria-label="Podcast platforms">
+            <div class="flex items-center gap-3 px-5 py-3 border border-gold-line rounded-xs bg-gold-soft" role="listitem" aria-label="Available on Spotify">
+              <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              <span class="text-sm font-bold text-bone">Spotify</span>
+            </div>
+            <div class="flex items-center gap-3 px-5 py-3 border border-gold-line rounded-xs bg-gold-soft" role="listitem" aria-label="Available on Apple Podcasts">
+              <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              <span class="text-sm font-bold text-bone">Apple Podcasts</span>
+            </div>
+            <div class="flex items-center gap-3 px-5 py-3 border border-gold-line rounded-xs bg-gold-soft" role="listitem" aria-label="Available on YouTube">
+              <svg class="w-4 h-4 text-gold-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              <span class="text-sm font-bold text-bone">YouTube</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate leading-relaxed mt-6">Search <span class="text-bone font-semibold">&ldquo;ZARIN Real Estate&rdquo;</span> in your podcast app &mdash; we publish no direct streaming links, so your app, your region and your choice of platform always work.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. LATEST EPISODES -->
+  <section id="latest-episodes" class="bg-ink-850 py-24 md:py-32" aria-labelledby="latest-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Latest Episodes</div>
+        <h2 id="latest-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">The Three Newest</h2>
+        <p class="text-base text-ash leading-relaxed">Where the listening public is right now: a decade of Palm Jumeirah, the Golden Visa without its folklore, and the developer ratings methodology with no boardroom varnish.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6" role="list" aria-label="The three latest podcast episodes">
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Episode 24: The Palm Jumeirah Decade">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="flex-shrink-0 w-12 h-12 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true"><svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+            <div>
+              <div class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Episode 24</div>
+              <div class="text-xs text-slate">42 min &middot; Oct 2026</div>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-bone mb-3">The Palm Jumeirah Decade</h3>
+          <p class="text-sm text-ash leading-relaxed">Ten years of the island, from infrastructure bet to the address that now leads Dubai appreciation at an apartment base of AED 2,800/sqft. What the decade teaches about scarcity &mdash; and who the Palm suits today at a 4.9% gross yield.</p>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Episode 23: Golden Visa Myths Debunked">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="flex-shrink-0 w-12 h-12 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true"><svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+            <div>
+              <div class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Episode 23</div>
+              <div class="text-xs text-slate">38 min &middot; Sep 2026</div>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-bone mb-3">Golden Visa Myths Debunked</h3>
+          <p class="text-sm text-ash leading-relaxed">The AED 2M property pathway separated from its folklore: the ten-year term, full family sponsorship, processing of two to three months, and the mortgage rule &mdash; unpaid balance at or under 50% of title deed value &mdash; that trips most applicants.</p>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Episode 22: Off-Plan Developer Ratings">
+          <div class="flex items-center gap-4 mb-5">
+            <div class="flex-shrink-0 w-12 h-12 border border-gold-line rounded-xs flex items-center justify-center bg-gold-soft" aria-hidden="true"><svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></div>
+            <div>
+              <div class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Episode 22</div>
+              <div class="text-xs text-slate">45 min &middot; Sep 2026</div>
+            </div>
+          </div>
+          <h3 class="text-xl font-bold text-bone mb-3">Off-Plan Developer Ratings</h3>
+          <p class="text-sm text-ash leading-relaxed">How ZARIN scores developers &mdash; delivery records, escrow discipline, handover quality &mdash; and why no developer can pay for a rating. The scorecard methodology behind the Developer Reputation Tracker, in plain language.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FULL EPISODE LIST -->
+  <section id="episode-list" class="bg-ink-900 py-24 md:py-32" aria-labelledby="elist-heading">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">The Back Catalogue</div>
+        <h2 id="elist-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">All 24 Episodes</h2>
+        <p class="text-base text-ash leading-relaxed">The full run since the January 2026 launch, newest last. The eight area deep-dives are all here &mdash; Dubai Hills, Marina, Downtown, Business Bay, Emirates Hills, Creek Harbour, Jumeirah Bay Island and the Palm &mdash; alongside the visa routes, the cost explainers, the country desks and the quarterly report breakdowns.</p>
+      </div>
+      <div class="space-y-2" role="list" aria-label="All 24 podcast episodes with duration and release month">
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 1: Dubai Hills Estate Deep-Dive, 41 minutes, Jan 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">01</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Dubai Hills Estate Deep-Dive</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">41 min &middot; Jan 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 2: Non-Resident Buying: The Complete Walkthrough, 39 minutes, Jan 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">02</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Non-Resident Buying: The Complete Walkthrough</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">39 min &middot; Jan 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 3: Escrow Accounts Explained, 33 minutes, Jan 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">03</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Escrow Accounts Explained</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">33 min &middot; Jan 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 4: Dubai Marina Deep-Dive, 44 minutes, Feb 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">04</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Dubai Marina Deep-Dive</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">44 min &middot; Feb 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 5: The Golden Visa: The AED 2M Pathway, 36 minutes, Feb 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">05</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">The Golden Visa: The AED 2M Pathway</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">36 min &middot; Feb 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 6: Downtown Dubai Deep-Dive, 47 minutes, Mar 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">06</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Downtown Dubai Deep-Dive</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">47 min &middot; Mar 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 7: Power of Attorney Purchases, 30 minutes, Mar 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">07</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Power of Attorney Purchases</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">30 min &middot; Mar 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 8: Service Charges: What You Pay Beyond the Price, 35 minutes, Mar 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">08</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Service Charges: What You Pay Beyond the Price</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">35 min &middot; Mar 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 9: The India Desk: FEMA, Tax and Remittances, 45 minutes, Apr 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">09</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">The India Desk: FEMA, Tax and Remittances</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">45 min &middot; Apr 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 10: Currency Planning for International Buyers, 42 minutes, Apr 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">10</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Currency Planning for International Buyers</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">42 min &middot; Apr 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 11: The Q1 2026 Market Report Breakdown, 48 minutes, May 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">11</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">The Q1 2026 Market Report Breakdown</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">48 min &middot; May 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 12: Business Bay Deep-Dive, 40 minutes, May 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">12</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Business Bay Deep-Dive</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">40 min &middot; May 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 13: Off-Plan Payment Plans Compared, 43 minutes, Jun 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">13</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Off-Plan Payment Plans Compared</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">43 min &middot; Jun 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 14: The Investor Visa: The AED 750K Route, 32 minutes, Jun 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">14</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">The Investor Visa: The AED 750K Route</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">32 min &middot; Jun 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 15: Emirates Hills Deep-Dive, 46 minutes, Jun 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">15</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Emirates Hills Deep-Dive</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">46 min &middot; Jun 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 16: The Q2 2026 Market Report Breakdown, 50 minutes, Jul 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">16</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">The Q2 2026 Market Report Breakdown</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">50 min &middot; Jul 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 17: The UK Desk: Non-Dom Structuring and Mortgages, 38 minutes, Jul 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">17</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">The UK Desk: Non-Dom Structuring and Mortgages</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">38 min &middot; Jul 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 18: Dubai Creek Harbour Deep-Dive, 41 minutes, Aug 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">18</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Dubai Creek Harbour Deep-Dive</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">41 min &middot; Aug 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 19: Jumeirah Bay Island Deep-Dive, 37 minutes, Aug 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">19</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Jumeirah Bay Island Deep-Dive</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">37 min &middot; Aug 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 20: Buyer Stories: Three Purchases, Three Lessons, 44 minutes, Aug 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">20</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Buyer Stories: Three Purchases, Three Lessons</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">44 min &middot; Aug 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-white-line rounded-xs" role="listitem" aria-label="Episode 21: The Q3 2026 Market Report Breakdown, 46 minutes, Sep 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">21</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">The Q3 2026 Market Report Breakdown</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">46 min &middot; Sep 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-gold-line rounded-xs" role="listitem" aria-label="Episode 22: Off-Plan Developer Ratings, 45 minutes, Sep 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">22</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Off-Plan Developer Ratings</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">45 min &middot; Sep 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-gold-line rounded-xs" role="listitem" aria-label="Episode 23: Golden Visa Myths Debunked, 38 minutes, Sep 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">23</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">Golden Visa Myths Debunked</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">38 min &middot; Sep 2026</div>
+          </div>
+          <div class="flex items-center gap-4 py-3 px-4 bg-ink-850 border border-gold-line rounded-xs" role="listitem" aria-label="Episode 24: The Palm Jumeirah Decade, 42 minutes, Oct 2026">
+            <div class="text-sm font-extrabold text-gold-400 stat-number w-10 flex-shrink-0" aria-hidden="true">24</div>
+            <div class="flex-1 text-sm font-semibold text-bone leading-snug">The Palm Jumeirah Decade</div>
+            <div class="text-xs text-slate whitespace-nowrap flex-shrink-0">42 min &middot; Oct 2026</div>
+          </div>
+      </div>
+      <p class="text-xs text-slate leading-relaxed mt-8">Quarterly breakdowns are recorded as each quarter closes; the written report follows in the first weeks of the new quarter. Episode 24 is the newest release, and the run continues through Q4 2026.</p>
+    </div>
+  </section>
+
+  <!-- 6. EPISODE FORMATS -->
+  <section id="formats" class="bg-ink-850 py-24 md:py-32" aria-labelledby="formats-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Three Formats, One Standard</div>
+        <h2 id="formats-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Episode Formats</h2>
+        <p class="text-base text-ash leading-relaxed">The show runs three standing formats, each with a data segment attached: the relevant DLD numbers read out, dated, and left with the listener &mdash; because a claim you cannot check is a slogan, not analysis.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6" role="list" aria-label="The three standing episode formats">
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Episode format: Developer Interviews">
+          <h3 class="text-lg font-bold text-bone mb-3">Developer Interviews</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">Developers on their own projects &mdash; asked about delivery records, escrow discipline and handover quality, not launch-party adjectives. The hardest question is always the one about the last delay.</p>
+          <div class="text-xs text-gold-400 font-semibold pt-3 border-t border-white-line">Formats: roughly every third episode</div>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Episode format: Area Deep-Dives">
+          <h3 class="text-lg font-bold text-bone mb-3">Area Deep-Dives</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">One district per episode, on the locked eight-area table &mdash; price per sqft, gross yield, service-charge load and the supply pipeline. The audio companion to the area pages.</p>
+          <div class="text-xs text-gold-400 font-semibold pt-3 border-t border-white-line">All eight core districts covered</div>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Episode format: Buyer Stories">
+          <h3 class="text-lg font-bold text-bone mb-3">Buyer Stories</h3>
+          <p class="text-sm text-ash leading-relaxed mb-4">Real purchases told with permission and anonymised &mdash; including what went wrong. Episode 20 walks three journeys end to end, mistakes included, because that is where the lessons live.</p>
+          <div class="text-xs text-gold-400 font-semibold pt-3 border-t border-white-line">Told in the &ldquo;M., Tehran&rdquo; convention</div>
+        </article>
+      </div>
+      <div class="mt-10 p-6 border border-gold-line rounded-sm bg-gold-soft" role="note" aria-label="The data segment attached to every format">
+        <div class="flex items-start gap-4">
+          <svg class="w-6 h-6 text-gold-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <div>
+            <div class="text-sm font-bold text-bone mb-1">Every format closes with the numbers</div>
+            <p class="text-xs text-ash leading-relaxed">Each episode ends with a short data segment: the current quarter&rsquo;s figures for whatever the episode touched, sourced from DLD records and the RERA index, and repeated in the show notes on each platform. Q3 2026&rsquo;s baselines: AED 1,650/sqft citywide, +12% year on year, 38,247 transactions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. HOW WE RECORD -->
+  <section id="how-we-record" class="bg-ink-900 py-24 md:py-32" aria-labelledby="record-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid lg:grid-cols-[1.5fr,1fr] gap-12 items-start">
+        <div>
+          <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">How We Record</div>
+          <h2 id="record-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Prepped on the Record, Not the Press Release</h2>
+          <p class="text-base text-ash leading-relaxed mb-4">Every episode is prepared from primary sources. Before a developer interview, the desk pulls the delivery record and the escrow history. Before an area deep-dive, the current DLD price and volume series for that district &mdash; the same series behind the <a href="/insights/market-data" class="text-gold-400 font-semibold hover:underline">market data pages</a>. Before a quarterly breakdown, the corresponding <a href="/insights/market-reports" class="text-gold-400 font-semibold hover:underline">market report</a> is the script.</p>
+          <p class="text-base text-ash leading-relaxed mb-4">The guest hears the hard questions in advance &mdash; that is a courtesy, not a concession &mdash; but never edits them. Where a guest declines to answer on the record, the silence stays in the episode. It is usually the most informative part.</p>
+          <p class="text-base text-ash leading-relaxed">And the rule that governs everything: no pay-to-play. Developers do not pay for coverage, and they cannot pay for ratings. The scorecards discussed on air are the same ones published on the <a href="/off-plan/developer-reputation-tracker" class="text-gold-400 font-semibold hover:underline">Developer Reputation Tracker</a> &mdash; built the same way our founder has judged counterparties since 2005, and the firm established in 2023 made public.</p>
+        </div>
+        <aside class="bg-ink-850 border border-gold-line rounded-sm p-8" aria-label="Recording principles at a glance">
+          <div class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-6 pb-4 border-b border-white-line">The Recording Rules</div>
+          <dl class="space-y-5">
+            <div><dt class="text-xs text-slate uppercase tracking-wider font-semibold">Sources</dt><dd class="text-sm text-ash mt-1 leading-relaxed">DLD transaction records and the RERA service-charge index &mdash; dated on air.</dd></div>
+            <div><dt class="text-xs text-slate uppercase tracking-wider font-semibold">Questions</dt><dd class="text-sm text-ash mt-1 leading-relaxed">Guests see them in advance; nobody edits them.</dd></div>
+            <div><dt class="text-xs text-slate uppercase tracking-wider font-semibold">Payment</dt><dd class="text-sm text-ash mt-1 leading-relaxed">No pay-to-play, for coverage or for ratings, without exception.</dd></div>
+            <div><dt class="text-xs text-slate uppercase tracking-wider font-semibold">Corrections</dt><dd class="text-sm text-ash mt-1 leading-relaxed">A number misspoken on air is corrected in the next episode&rsquo;s cold open.</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. WHERE TO LISTEN -->
+  <section id="where-to-listen" class="bg-ink-850 py-24 md:py-32" aria-labelledby="where-heading">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="text-center mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Where to Listen</div>
+        <h2 id="where-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Three Platforms, Zero Lock-In</h2>
+        <p class="text-ash max-w-2xl mx-auto leading-relaxed">Search <span class="text-bone font-semibold">&ldquo;ZARIN Real Estate&rdquo;</span> in your podcast app and the show appears with the gold Z mark. We deliberately publish no direct streaming links here &mdash; apps, regions and catalogues differ, and a broken link is a worse introduction than a search box.</p>
+      </div>
+      <div class="flex flex-wrap gap-4 max-w-2xl mx-auto" role="list" aria-label="Podcast platform badges">
+            <div class="flex-1 min-w-[140px] text-center px-5 py-4 border border-gold-line rounded-xs bg-gold-soft" role="listitem" aria-label="Search for ZARIN Real Estate on Spotify">
+              <svg class="w-5 h-5 text-gold-400 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              <div class="text-sm font-bold text-bone">Spotify</div>
+            </div>
+            <div class="flex-1 min-w-[140px] text-center px-5 py-4 border border-gold-line rounded-xs bg-gold-soft" role="listitem" aria-label="Search for ZARIN Real Estate on Apple Podcasts">
+              <svg class="w-5 h-5 text-gold-400 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              <div class="text-sm font-bold text-bone">Apple Podcasts</div>
+            </div>
+            <div class="flex-1 min-w-[140px] text-center px-5 py-4 border border-gold-line rounded-xs bg-gold-soft" role="listitem" aria-label="Search for ZARIN Real Estate on YouTube">
+              <svg class="w-5 h-5 text-gold-400 mx-auto mb-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+              <div class="text-sm font-bold text-bone">YouTube</div>
+            </div>
+      </div>
+      <div class="mt-12 p-6 border border-white-line rounded-sm bg-ink-900" role="note" aria-label="Get episode alerts via the monthly briefing">
+        <div class="flex items-start gap-4">
+          <svg class="w-6 h-6 text-gold-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <div>
+            <div class="text-sm font-bold text-bone mb-1">Never miss an episode</div>
+            <p class="text-xs text-ash leading-relaxed">Subscribers to ZARIN&rsquo;s monthly intelligence briefing receive an alert the morning each episode goes live, alongside the report summary and new articles. Subscribe once on the <a href="/insights" class="text-gold-400 font-semibold hover:underline">Insights hub</a> &mdash; no spam, unsubscribe anytime.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section id="faq" class="bg-ink-900 py-24 md:py-32" aria-labelledby="faq-heading">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="text-center mb-16">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Podcast FAQ</div>
+        <h2 id="faq-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Eight Questions Listeners Ask First</h2>
+        <p class="text-ash max-w-2xl mx-auto leading-relaxed">Platforms, cadence, guests and the no-pay-to-play rule &mdash; answered before you hit play. Anything else, <a href="/contact" class="text-gold-400 font-semibold hover:underline">write to the desk</a>.</p>
+      </div>
+      <div class="space-y-3">
+        <details class="bg-ink-850 border border-white-line rounded-sm" open>
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Where can I listen to the ZARIN podcast?">
+            <h3 class="text-base font-semibold text-bone pr-4">Where can I listen to the ZARIN podcast?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">The show is carried on Spotify, Apple Podcasts and YouTube. We deliberately publish no direct streaming links on this page &mdash; apps and regional catalogues differ, and a stale link is worse than none. Search &ldquo;ZARIN Real Estate&rdquo; in your podcast app and the show appears with the gold Z mark. Every episode is free to stream or download.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: How often are new episodes released?">
+            <h3 class="text-base font-semibold text-bone pr-4">How often are new episodes released?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">The show launched in January 2026 and has published two to three episodes a month since &mdash; 24 episodes through October 2026, with the run continuing through Q4. Area deep-dives and quarterly report breakdowns anchor the calendar, with desk episodes and buyer stories between them. Subscribers to the monthly briefing receive an alert the morning each episode goes live.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Do developers pay to be featured?">
+            <h3 class="text-base font-semibold text-bone pr-4">Do developers pay to be featured?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">No &mdash; and they cannot pay for ratings either. There is no pay-to-play on the show: developers do not pay for coverage, for scorecard positions, or for the softening of a hard question. This is the same standard the <a href="/off-plan/developer-reputation-tracker" class="text-gold-400 font-semibold hover:underline">Developer Reputation Tracker</a> is built on, and it is why we can say what a delivery record actually looks like.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Who appears on the show?">
+            <h3 class="text-base font-semibold text-bone pr-4">Who appears on the show?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">ZARIN advisors host, with the founder joining for the quarterly breakdowns and market episodes. Guests sit across the market: developers on their own projects, and the country desks in person &mdash; Rohit Kapoor on India, Emma Whitfield on the UK, Li Hong on China. Buyer stories are told with permission and anonymised, in the &ldquo;M., Tehran&rdquo; convention used across the site.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Can I suggest a topic or ask a question on air?">
+            <h3 class="text-base font-semibold text-bone pr-4">Can I suggest a topic or ask a question on air?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">Yes &mdash; and listeners do. Write to advisory@zarinrealestate.com with &ldquo;Podcast&rdquo; in the subject, or use the <a href="/contact" class="text-gold-400 font-semibold hover:underline">contact page</a>. Recurring listener questions become desk episodes: the Golden Visa myths episode began as three separate emails asking the same thing.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Are the episodes free to listen to?">
+            <h3 class="text-base font-semibold text-bone pr-4">Are the episodes free to listen to?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">All 24 episodes are free, on every platform, with no premium tier and no advertorials. The show exists for the same reason the <a href="/insights/blog" class="text-gold-400 font-semibold hover:underline">blog</a> and the <a href="/insights/market-reports" class="text-gold-400 font-semibold hover:underline">market reports</a> do: informed buyers make better clients, and better clients make a better advisory business.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Where do the numbers in the episodes come from?">
+            <h3 class="text-base font-semibold text-bone pr-4">Where do the numbers in the episodes come from?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">The same sources as everything ZARIN publishes: Dubai Land Department transaction records for prices and volumes, the RERA service-charge index for costs, and the ZARIN ROI basis for yields. Each quarterly breakdown episode is recorded against the corresponding <a href="/insights/market-reports" class="text-gold-400 font-semibold hover:underline">market report</a>, and the live figures sit on the <a href="/insights/market-data" class="text-gold-400 font-semibold hover:underline">market data pages</a>.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: I'm a first-time buyer — where should I start?">
+            <h3 class="text-base font-semibold text-bone pr-4">I'm a first-time buyer — where should I start?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">Start with Episode 20, &ldquo;Buyer Stories: Three Purchases, Three Lessons&rdquo; &mdash; it walks three real journeys, including the mistakes. Then take the area deep-dives for whichever districts are on your shortlist, and read the <a href="/insights/guides" class="text-gold-400 font-semibold hover:underline">buyer&rsquo;s guides</a> alongside. The show assumes no prior Dubai knowledge; neither do the guides.</div>
+        </details>
+      </div>
+      <div class="text-center mt-12">
+        <p class="text-sm text-slate">Prefer reading? The <a href="/insights/blog" class="text-gold-400 font-semibold hover:underline">blog library</a> covers the same ground in 200+ articles.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CTA -->
+  <section id="cta" class="bg-ink-850 py-24 md:py-32" aria-labelledby="cta-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="bg-gold-soft border border-gold-line rounded-sm p-8 md:p-12" role="region" aria-label="Subscribe for episode alerts or book a consultation">
+        <div class="grid md:grid-cols-[1.4fr,1fr] gap-10 items-center">
+          <div>
+            <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">From Listening to Acting</div>
+            <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold tracking-tight text-bone mb-4">Heard the Numbers. Now Sit With the Desk.</h2>
+            <p class="text-base text-ash leading-relaxed mb-6 md:mb-0">When an episode turns into a plan &mdash; an area, a budget, a visa pathway &mdash; the advisory desk picks it up from there, on the same data you heard on air. Subscribe to the monthly briefing for episode alerts and the quarterly reports, or book a consultation and put your own numbers on the table.</p>
+          </div>
+          <div class="flex flex-col gap-3">
+            <a href="/insights" class="inline-flex items-center justify-center px-8 py-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold" aria-label="Subscribe to the monthly intelligence briefing on the Insights hub">Subscribe for Episode Alerts</a>
+            <a href="/consultation" class="inline-flex items-center justify-center px-8 py-4 border border-gold-line text-bone text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-soft hover:border-gold-border transition-all duration-300" aria-label="Book a consultation with ZARIN advisory">Book a Consultation</a>
+            <div class="flex items-center justify-center gap-6 pt-2">
+              <a href="tel:+971586901231" class="text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Call ZARIN at +971 58 690 1231">+971 58 690 1231</a>
+              <span class="w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span>
+              <a href="https://wa.me/971586901231" class="text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Message ZARIN on WhatsApp">WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
   <footer class="bg-ink-950 border-t border-white-line pt-20 pb-8" role="contentinfo">
     <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
         <div class="col-span-2 lg:col-span-1">
           <a href="/" class="flex items-center gap-2 mb-4" aria-label="ZARIN Real Estate home"><span class="font-sans font-extrabold text-2xl tracking-tight text-bone">ZARIN</span></a>
-          <p class="text-sm text-slate leading-relaxed mb-6">Dubai real estate intelligence and market data.</p>
+          <p class="text-sm text-slate leading-relaxed mb-6">Dubai real estate advisory since 2023.</p>
+          <div class="flex gap-3">
+            <a href="https://instagram.com/zarin.realestate" class="w-10 h-10 border border-white-line rounded-xs flex items-center justify-center text-ash hover:text-gold-400 hover:border-gold-line transition-all" aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://wa.me/971586901231" class="w-10 h-10 border border-white-line rounded-xs flex items-center justify-center text-ash hover:text-gold-400 hover:border-gold-line transition-all" aria-label="WhatsApp"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          </div>
         </div>
-        <nav aria-label="Insights footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Insights</h2><ul class="space-y-2"><li><a href="/insights/blog" class="text-sm text-ash hover:text-gold-400 transition-colors">Blog</a></li><li><a href="/insights/market-reports" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Reports</a></li><li><a href="/insights/podcast" class="text-sm text-ash hover:text-gold-400 transition-colors">Podcast</a></li><li><a href="/insights/calculators" class="text-sm text-ash hover:text-gold-400 transition-colors">Calculators</a></li></ul></nav>
-        <nav aria-label="Discover footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Discover</h2><ul class="space-y-2"><li><a href="/properties-for-sale" class="text-sm text-ash hover:text-gold-400 transition-colors">Properties</a></li><li><a href="/off-plan" class="text-sm text-ash hover:text-gold-400 transition-colors">Off-Plan</a></li><li><a href="/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">Areas</a></li><li><a href="/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">Visas</a></li></ul></nav>
-        <nav aria-label="Services footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Services</h2><ul class="space-y-2"><li><a href="/services/buying" class="text-sm text-ash hover:text-gold-400 transition-colors">Buying Advisory</a></li><li><a href="/services/mortgage" class="text-sm text-ash hover:text-gold-400 transition-colors">Mortgage</a></li><li><a href="/services/legal" class="text-sm text-ash hover:text-gold-400 transition-colors">Legal</a></li><li><a href="/services/valuation" class="text-sm text-ash hover:text-gold-400 transition-colors">Valuation</a></li></ul></nav>
-        <nav aria-label="Heritage footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Heritage</h2><ul class="space-y-2"><li><a href="/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">Our Story</a></li><li><a href="/heritage/team" class="text-sm text-ash hover:text-gold-400 transition-colors">Team</a></li><li><a href="/heritage/testimonials" class="text-sm text-ash hover:text-gold-400 transition-colors">Testimonials</a></li><li><a href="/heritage/awards" class="text-sm text-ash hover:text-gold-400 transition-colors">Awards</a></li></ul></nav>
+        <nav aria-label="Properties footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Properties</h2><ul class="space-y-2"><li><a href="/properties-for-sale" class="text-sm text-ash hover:text-gold-400 transition-colors">For Sale</a></li><li><a href="/properties-for-rent" class="text-sm text-ash hover:text-gold-400 transition-colors">For Rent</a></li><li><a href="/trophy-residences" class="text-sm text-ash hover:text-gold-400 transition-colors">Trophy Residences</a></li><li><a href="/beachfront-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Beachfront</a></li><li><a href="/branded-residences-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Branded Residences</a></li><li><a href="/commercial-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Commercial</a></li></ul></nav>
+        <nav aria-label="Services footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Services</h2><ul class="space-y-2"><li><a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">All Services</a></li><li><a href="/services/buying" class="text-sm text-ash hover:text-gold-400 transition-colors">Buying Advisory</a></li><li><a href="/services/selling" class="text-sm text-ash hover:text-gold-400 transition-colors">Selling Advisory</a></li><li><a href="/services/valuation" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Price Assessment</a></li><li><a href="/services/after-sales" class="text-sm text-ash hover:text-gold-400 transition-colors">After-Sales Support</a></li><li><a href="/consultation" class="text-sm text-ash hover:text-gold-400 transition-colors">Book Consultation</a></li><li><a href="/contact" class="text-sm text-ash hover:text-gold-400 transition-colors">Contact</a></li></ul></nav>
+        <nav aria-label="Insights footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Insights</h2>
+<ul class="space-y-2"><li><a href="/insights" class="text-sm text-bone hover:text-gold-400 transition-colors font-semibold">All Insights</a></li><li><a href="/insights/blog" class="text-sm text-ash hover:text-gold-400 transition-colors">Blog Articles</a></li><li><a href="/insights/market-reports" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Reports</a></li><li><a href="/insights/podcast" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold" aria-current="page">Podcast</a></li><li><a href="/insights/guides" class="text-sm text-ash hover:text-gold-400 transition-colors">Buyer's Guides</a></li><li><a href="/insights/calculators" class="text-sm text-ash hover:text-gold-400 transition-colors">All Calculators</a></li><li><a href="/insights/faq" class="text-sm text-ash hover:text-gold-400 transition-colors">FAQ Hub</a></li><li><a href="/insights/glossary" class="text-sm text-ash hover:text-gold-400 transition-colors">Glossary</a></li><li><a href="/insights/market-data" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Data</a></li></ul></nav>
+        <nav aria-label="Heritage footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Heritage</h2>
+<ul class="space-y-2"><li><a href="/heritage" class="text-sm text-bone hover:text-gold-400 transition-colors font-semibold">Our Story (since 2005)</a></li><li><a href="/heritage/founder" class="text-sm text-ash hover:text-gold-400 transition-colors">Founder's Letter</a></li><li><a href="/heritage/team" class="text-sm text-ash hover:text-gold-400 transition-colors">Our Team</a></li><li><a href="/heritage/authors" class="text-sm text-ash hover:text-gold-400 transition-colors">Author Profiles</a></li><li><a href="/heritage/testimonials" class="text-sm text-ash hover:text-gold-400 transition-colors">Testimonials</a></li><li><a href="/heritage/press" class="text-sm text-ash hover:text-gold-400 transition-colors">Press &amp; Media</a></li></ul></nav>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 py-8 border-t border-white-line">
+        <address class="not-italic"><div class="text-xs uppercase tracking-wider text-slate mb-2">Dubai Office</div><p class="text-sm text-ash">Sheikh Zayed Road<br>Downtown Dubai, UAE</p></address>
+        <div><div class="text-xs uppercase tracking-wider text-slate mb-2">Phone</div><a href="tel:+971586901231" class="text-sm text-bone hover:text-gold-400 transition-colors">+971 58 690 1231</a></div>
+        <div><div class="text-xs uppercase tracking-wider text-slate mb-2">Email</div><a href="mailto:advisory@zarinrealestate.com" class="text-sm text-bone hover:text-gold-400 transition-colors">advisory@zarinrealestate.com</a></div>
       </div>
       <div class="pt-8 border-t border-white-line flex flex-col md:flex-row justify-between items-center gap-4">
         <div class="flex flex-wrap items-center gap-4 text-xs text-slate"><span>&copy; 2026 ZARIN Real Estate. All rights reserved.</span><span class="hidden md:inline w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span><span>RERA Licensed</span></div>
-        <nav aria-label="Legal links" class="flex flex-wrap items-center gap-4 text-xs"><a href="/legal/privacy" class="text-slate hover:text-gold-400 transition-colors">Privacy</a><a href="/legal/terms" class="text-slate hover:text-gold-400 transition-colors">Terms</a><a href="/legal/cookies" class="text-slate hover:text-gold-400 transition-colors">Cookies</a><a href="/sitemap" class="text-slate hover:text-gold-400 transition-colors">Sitemap</a></nav>
+        <nav aria-label="Legal links" class="flex flex-wrap items-center gap-4 text-xs"><a href="/legal/privacy" class="text-slate hover:text-gold-400 transition-colors">Privacy</a><a href="/legal/terms" class="text-slate hover:text-gold-400 transition-colors">Terms</a><a href="/legal/privacy" class="text-slate hover:text-gold-400 transition-colors">Cookies</a><a href="/legal/ai-disclosure" class="text-slate hover:text-gold-400 transition-colors">AI Disclosure</a><a href="/legal/dmca" class="text-slate hover:text-gold-400 transition-colors">DMCA</a><a href="/contact" class="text-slate hover:text-gold-400 transition-colors">Contact</a><a href="/sitemap" class="text-slate hover:text-gold-400 transition-colors">Sitemap</a></nav>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/971586901231" class="sticky-whatsapp fixed bottom-6 right-6 z-[800] w-14 h-14 bg-gold-400 rounded-full shadow-monolith items-center justify-center hover:bg-gold-300 transition-colors" aria-label="WhatsApp us"><svg class="w-7 h-7 text-ink-900 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+  <a href="https://wa.me/971586901231" class="sticky-whatsapp fixed bottom-6 right-6 z-[800] w-14 h-14 bg-gold-400 rounded-full shadow-monolith items-center justify-center hover:bg-gold-300 transition-colors" aria-label="WhatsApp us"><svg class="w-7 h-7 text-ink-900 mx-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
 
   <script defer>
     const header=document.getElementById('site-header');let ticking=false;
-    window.addEventListener('scroll',()=>{if(!ticking){window.requestAnimationFrame(()=>{if(window.scrollY>60){header.style.backgroundColor='rgba(10,11,14,0.85)';header.style.backdropFilter='blur(20px)';header.style.borderBottomColor='rgba(200,171,131,0.15)';header.style.padding='0.85rem 0';}else{header.style.backgroundColor='transparent';header.style.backdropFilter='none';header.style.borderBottomColor='transparent';header.style.padding='1.25rem 0';}ticking=false;});ticking=true;}});
+    if(header){header.dataset.boundScroll='true';}
+    window.addEventListener('scroll',()=>{if(!ticking){window.requestAnimationFrame(()=>{if(window.scrollY>60){header.style.backgroundColor='rgba(10,11,14,0.85)';header.style.backdropFilter='blur(20px)';header.style.borderBottomColor='rgba(200,171,131,0.15)';header.style.padding='0.85rem 0';}else{header.style.backgroundColor='transparent';header.style.backdropFilter='none';header.style.borderBottomColor='transparent';header.style.padding='1.15rem 0';}ticking=false;});ticking=true;}});
     const mt=document.getElementById('mobile-menu-toggle'),mc=document.getElementById('mobile-menu-close'),mm=document.getElementById('mobile-menu');
-        const mlt=document.getElementById('mobile-lang-trigger'),mlm=document.getElementById('mobile-lang-menu'),mll=document.getElementById('mobile-lang-label');
-    if(mlt&&mlm){
-      const curLang=localStorage.getItem('zarin_lang')||document.documentElement.lang||'en';
-      if(mll)mll.textContent=curLang==='fa'?'FA':'EN';
-      mlm.querySelectorAll('.mobile-lang-check').forEach(c=>{const p=c.closest('button');if(p)c.classList.toggle('hidden',p.dataset.lang!==curLang);});
-      mlt.addEventListener('click',(e)=>{e.stopPropagation();const h=mlm.classList.toggle('hidden');mlt.setAttribute('aria-expanded',!h);});
-      document.addEventListener('click',(e)=>{if(!mlt.contains(e.target)&&!mlm.contains(e.target)){mlm.classList.add('hidden');mlt.setAttribute('aria-expanded','false');}});
-      document.addEventListener('keydown',(e)=>{if(e.key==='Escape'){mlm.classList.add('hidden');mlt.setAttribute('aria-expanded','false');}});
-      mt?.addEventListener('click',()=>{mlm.classList.add('hidden');mlt.setAttribute('aria-expanded','false');});
-      mlm.querySelectorAll('.lang-btn').forEach(b=>{
-        b.addEventListener('click',()=>{
-          const l=b.dataset.lang;
-          if(l){
-            localStorage.setItem('zarin_lang',l);
-            document.documentElement.lang=l;
-            document.documentElement.dir=l==='fa'?'rtl':'ltr';
-            if(mll)mll.textContent=l==='fa'?'FA':'EN';
-            mlm.querySelectorAll('.mobile-lang-check').forEach(c=>{const p=c.closest('button');if(p)c.classList.toggle('hidden',p.dataset.lang!==l);});
-            mlm.classList.add('hidden');
-            mlt.setAttribute('aria-expanded','false');
-            if(window.ZARIN_I18N&&window.ZARIN_I18N.setLanguage){window.ZARIN_I18N.setLanguage(l);}
-          }
-        });
-      });
-    }
-    
-    
-    
-
-    
-
+    mt?.addEventListener('click',()=>{mm.classList.add('open');mt.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';});
+    mc?.addEventListener('click',()=>{mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';});
+    mm?.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
   </script>
+  <script type="module" src="/scripts/i18n.js"></script>
   <script type="module" src="/scripts/nav.js"></script>
 </body>
 </html>

@@ -414,31 +414,49 @@ details.is-closing .faq-accordion-content {
   font-family: "Vazirmatn", sans-serif;
 }
 
-/* ═══ Language Switcher (Visible ONLY on Homepage) ═══ */
+/* ═══ Language Switcher (Permanent Global Rule: Visible ONLY on Homepage) ═══ */
+/* Hidden completely from the header on EVERY internal page across all breakpoints */
 #site-header .lang-switch,
-#site-header .mobile-lang-container {
+#site-header .mobile-lang-container,
+#site-header [data-lang-switch],
+#site-header .header-lang-switch {
   display: none !important;
 }
 
 body.page-home #site-header .lang-switch,
 body.home-page #site-header .lang-switch,
-body[data-page="home"] #site-header .lang-switch {
+body[data-page="home"] #site-header .lang-switch,
+body.page-home #site-header .mobile-lang-container,
+body.home-page #site-header .mobile-lang-container,
+body[data-page="home"] #site-header .mobile-lang-container {
   display: none !important;
 }
 
+/* Homepage Only: Desktop (min-width: 1024px) */
 @media (min-width: 1024px) {
   body.page-home #site-header .lang-switch,
   body.home-page #site-header .lang-switch,
   body[data-page="home"] #site-header .lang-switch {
     display: inline-flex !important;
   }
+  body.page-home #site-header .mobile-lang-container,
+  body.home-page #site-header .mobile-lang-container,
+  body[data-page="home"] #site-header .mobile-lang-container {
+    display: none !important;
+  }
 }
 
+/* Homepage Only: Mobile & Tablet (max-width: 1023px) */
 @media (max-width: 1023px) {
   body.page-home #site-header .mobile-lang-container,
   body.home-page #site-header .mobile-lang-container,
   body[data-page="home"] #site-header .mobile-lang-container {
     display: block !important;
+  }
+  body.page-home #site-header .lang-switch,
+  body.home-page #site-header .lang-switch,
+  body[data-page="home"] #site-header .lang-switch {
+    display: none !important;
   }
 }
 
@@ -583,6 +601,92 @@ body[data-page="home"] #site-header .lang-switch {
   font-weight: 700;
 }
 
+/* ═══ Mobile Menu Drawer Segmented Language Switcher ═══ */
+#mobile-menu [data-i18n="lang_label"] {
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  color: #C8AB83;
+  margin-bottom: 0.625rem;
+}
+
+#mobile-menu [data-i18n="lang_label"] + [role="group"],
+#mobile-menu [role="group"]:has(.mobile-lang-btn) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+  padding: 4px;
+  background-color: #111318;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#mobile-menu .mobile-lang-btn,
+#mobile-menu .mobile-lang-btn.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  height: 36px;
+  padding: 0 0.75rem;
+  border-radius: 2px;
+  font-size: 0.78rem;
+  line-height: 1;
+  letter-spacing: 0.015em;
+  text-align: center;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #9FA6B2;
+  font-weight: 500;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              color 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#mobile-menu .mobile-lang-btn[data-lang="en"],
+#mobile-menu .mobile-lang-btn.lang-btn[data-lang="en"] {
+  font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  direction: ltr;
+}
+
+#mobile-menu .mobile-lang-btn[data-lang="fa"],
+#mobile-menu .mobile-lang-btn.lang-btn[data-lang="fa"] {
+  font-family: "Vazirmatn", "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+  direction: rtl;
+}
+
+#mobile-menu .mobile-lang-btn.lang-btn:not(.active):not(.is-active):hover,
+#mobile-menu .mobile-lang-btn.lang-btn:not(.active):not(.is-active):focus-visible {
+  background-color: rgba(255, 255, 255, 0.035);
+  border-color: rgba(255, 255, 255, 0.06);
+  color: #F8F9FA;
+  outline: none;
+}
+
+#mobile-menu .mobile-lang-btn.active,
+#mobile-menu .mobile-lang-btn.is-active,
+#mobile-menu .mobile-lang-btn.lang-btn.active,
+#mobile-menu .mobile-lang-btn.lang-btn.is-active {
+  background-color: rgba(200, 171, 131, 0.16);
+  border-color: rgba(200, 171, 131, 0.42);
+  color: #DFC49E;
+  font-weight: 600;
+}
+
+#mobile-menu .mobile-lang-btn.lang-btn:focus-visible {
+  outline: 1px solid rgba(200, 171, 131, 0.55);
+  outline-offset: 1px;
+}
+
 /* Header action cluster CTA */
 .header-cta {
   height: 34px;
@@ -604,6 +708,10 @@ body[data-page="home"] #site-header .lang-switch {
 }
 
 [dir="rtl"] .font-sans {
+  font-family: "Vazirmatn", "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+[dir="rtl"] .font-serif {
   font-family: "Vazirmatn", "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
@@ -643,14 +751,20 @@ body[data-page="home"] #site-header .lang-switch {
   pointer-events: auto;
 }
 
+[dir="rtl"] .mobile-nav-item div[id$="-submenu"],
 [dir="rtl"] #mobile-properties-submenu,
-[dir="rtl"] #mobile-offplan-submenu {
-  margin-left: 0;
-  margin-right: 1rem;
-  border-left: none;
-  border-right: 1px solid rgba(255, 255, 255, 0.08);
-  padding-left: 1rem;
-  padding-right: 1.5rem;
+[dir="rtl"] #mobile-offplan-submenu,
+[dir="rtl"] #mobile-areas-submenu,
+[dir="rtl"] #mobile-services-submenu,
+[dir="rtl"] #mobile-insights-submenu,
+[dir="rtl"] #mobile-heritage-submenu {
+  margin-left: 0 !important;
+  margin-right: 1rem !important;
+  border-left: none !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding-left: 1rem !important;
+  padding-right: 1.5rem !important;
+  text-align: right !important;
 }
 
 [dir="rtl"] .border-l-2.border-gold-400 {

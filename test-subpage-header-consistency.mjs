@@ -68,7 +68,13 @@ const subpagesToTest = [
   { file: 'off-plan/roi-predictor.html', name: 'ROI Predictor (EN)', lang: 'en', dir: 'ltr' },
   { file: 'fa/off-plan/roi-predictor.html', name: 'ROI Predictor (FA)', lang: 'fa', dir: 'rtl' },
   { file: 'off-plan/developer-reputation-tracker.html', name: 'Developer Tracker (EN)', lang: 'en', dir: 'ltr' },
-  { file: 'fa/off-plan/developer-reputation-tracker.html', name: 'Developer Tracker (FA)', lang: 'fa', dir: 'rtl' }
+  { file: 'fa/off-plan/developer-reputation-tracker.html', name: 'Developer Tracker (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'services/buying.html', name: 'Buying Advisory (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'fa/services/buying.html', name: 'Buying Advisory (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'services/after-sales.html', name: 'After-Sales Support (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'fa/services/after-sales.html', name: 'After-Sales Support (FA)', lang: 'fa', dir: 'rtl' },
+  { file: 'services/valuation.html', name: 'Market Price Assessment (EN)', lang: 'en', dir: 'ltr' },
+  { file: 'fa/services/valuation.html', name: 'Market Price Assessment (FA)', lang: 'fa', dir: 'rtl' }
 ];
 
 console.log('\n--- 2. Structural & Interaction Parity Across Subpages ---');
@@ -85,8 +91,8 @@ for (const { file, name, lang, dir } of subpagesToTest) {
   assert(nav, `Nav missing in ${file}`);
   const triggers = Array.from(nav.children).filter(c => c.classList.contains('mega-menu-trigger') || c.tagName === 'DIV');
 
-  it(`[${name}] Has exactly 7 primary navigation items matching Homepage (Private Office removed)`, () => {
-    assert.strictEqual(triggers.length, 7, `Expected 7 triggers, found ${triggers.length}`);
+  it(`[${name}] Has exactly 6 primary navigation items matching Homepage (Private Office and Visas removed)`, () => {
+    assert.strictEqual(triggers.length, 6, `Expected 7 triggers, found ${triggers.length}`);
     const poLink = nav.querySelector('a[href*="private-office"]');
     assert(!poLink, `Private Office must not be in desktop nav`);
   });
@@ -152,11 +158,11 @@ for (const { file, name, lang, dir } of subpagesToTest) {
     });
   });
 
-  it(`[${name}] Mobile drawer #mobile-menu exists and includes 7 accordion sections (Private Office removed)`, () => {
+  it(`[${name}] Mobile drawer #mobile-menu exists and includes 6 accordion sections (Private Office and Visas removed)`, () => {
     const mobileMenu = doc.getElementById('mobile-menu');
     assert(mobileMenu, 'Missing #mobile-menu');
     const accordions = mobileMenu.querySelectorAll('.mobile-nav-item');
-    assert.strictEqual(accordions.length, 7, `Expected 7 mobile accordions, found ${accordions.length}`);
+    assert.strictEqual(accordions.length, 6, `Expected 7 mobile accordions, found ${accordions.length}`);
     const poMobileLink = mobileMenu.querySelector('a[href*="private-office"]');
     assert(!poMobileLink, `Private Office must not be in mobile menu`);
   });

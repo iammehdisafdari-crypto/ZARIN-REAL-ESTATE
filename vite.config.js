@@ -29,8 +29,76 @@ const consultationSuccessHtml = `<!DOCTYPE html>
 const newsletterSuccessHtml = `<!DOCTYPE html>
 <html lang="en" dir="ltr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Subscription Confirmed | ZARIN Insights</title><link rel="stylesheet" href="/styles/main.css"></head><body class="bg-[#0A0B0E] text-[#F8F9FA] min-h-screen flex items-center justify-center p-6"><div class="max-w-md w-full bg-[#111318] border border-[rgba(200,171,131,0.32)] rounded p-8 text-center"><div class="w-12 h-12 mx-auto mb-4 border border-[rgba(200,171,131,0.45)] rounded flex items-center justify-center text-[#C8AB83]"><svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div><h1 class="text-2xl font-bold mb-2">Subscription Confirmed</h1><p class="text-[#9FA6B2] text-sm mb-6 leading-relaxed">Welcome to ZARIN's monthly intelligence briefing. You will receive market reports, editorial articles, and daily data updates.</p><a href="/insights" class="inline-block px-6 py-3 bg-[#C8AB83] text-[#0A0B0E] text-xs font-bold uppercase tracking-wider rounded hover:bg-[#DFC49E] transition-colors">Return to Insights</a></div></body></html>`;
 
+function htmlProxyFallbackPlugin() {
+  const htmlProxyRE = /[?&]html-proxy=?(?:&inline-css)?(?:&style-attr)?&index=(\d+)\.(?:js|css)$/;
+  let config;
+
+  return {
+    name: 'html-proxy-fallback',
+    enforce: 'pre',
+    configResolved(resolvedConfig) {
+      config = resolvedConfig;
+    },
+    async load(id) {
+      const match = htmlProxyRE.exec(id);
+      if (!match) return null;
+
+      const index = parseInt(match[1], 10);
+      const isCss = id.endsWith('.css');
+      const root = config?.root || projectRoot;
+
+      const cleanId = id.replace(/[?#].*$/, '');
+      let normalized = cleanId
+        .replace(/^\/@id\/__x00__/, '')
+        .replace(/^\0/, '')
+        .replace(/\\/g, '/');
+
+      let filePath = null;
+      if (fs.existsSync(normalized)) {
+        filePath = normalized;
+      } else {
+        const rel = normalized.startsWith('/') ? normalized.slice(1) : normalized;
+        const candidate = resolve(root, rel);
+        if (fs.existsSync(candidate)) {
+          filePath = candidate;
+        }
+      }
+
+      if (!filePath) return null;
+
+      try {
+        const html = fs.readFileSync(filePath, 'utf8');
+        if (isCss) {
+          const styleMatches = [...html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)];
+          if (styleMatches[index]) {
+            return { code: styleMatches[index][1], map: null };
+          }
+        } else {
+          const scriptMatches = [...html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/gi)];
+          let moduleIndex = 0;
+          for (const s of scriptMatches) {
+            const openTag = s[0].match(/<script[^>]*>/i)[0];
+            const isModule = /type=["']module["']/i.test(openTag);
+            const hasSrc = /\bsrc=/i.test(openTag);
+            if (isModule && !hasSrc) {
+              if (moduleIndex === index) {
+                return { code: s[1], map: null };
+              }
+              moduleIndex++;
+            }
+          }
+        }
+      } catch (err) {
+        // Fall through to default Vite handlers
+      }
+      return null;
+    }
+  };
+}
+
 export default defineConfig({
   plugins: [
+    htmlProxyFallbackPlugin(),
     tailwindcss(),
     {
       name: 'form-post-middleware',
@@ -118,6 +186,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
+      maxParallelFileOps: 1,
       input: getHtmlInputs(projectRoot)
     }
   },

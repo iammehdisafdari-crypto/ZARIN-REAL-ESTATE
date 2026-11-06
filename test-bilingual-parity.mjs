@@ -62,6 +62,22 @@ const routePairs = [
   { name: 'Dubai vs London', en: 'areas/dubai-vs-london.html', fa: 'fa/areas/dubai-vs-london.html', canonicalEn: 'areas/dubai-vs-london', canonicalFa: 'fa/areas/dubai-vs-london' },
   { name: 'Dubai vs New York', en: 'areas/dubai-vs-new-york.html', fa: 'fa/areas/dubai-vs-new-york.html', canonicalEn: 'areas/dubai-vs-new-york', canonicalFa: 'fa/areas/dubai-vs-new-york' },
   { name: 'Dubai vs Singapore', en: 'areas/dubai-vs-singapore.html', fa: 'fa/areas/dubai-vs-singapore.html', canonicalEn: 'areas/dubai-vs-singapore', canonicalFa: 'fa/areas/dubai-vs-singapore' },
+  { name: 'Selling Advisory', en: 'services/selling-advisory.html', fa: 'fa/services/selling-advisory.html', canonicalEn: 'services/selling-advisory', canonicalFa: 'fa/services/selling-advisory' },
+  { name: 'Selling (Alias)', en: 'services/selling.html', fa: 'fa/services/selling.html', canonicalEn: 'services/selling-advisory', canonicalFa: 'fa/services/selling-advisory' },
+  { name: 'Buying Advisory', en: 'services/buying-advisory.html', fa: 'fa/services/buying-advisory.html', canonicalEn: 'services/buying', canonicalFa: 'fa/services/buying' },
+  { name: 'Buying (Canonical)', en: 'services/buying.html', fa: 'fa/services/buying.html', canonicalEn: 'services/buying', canonicalFa: 'fa/services/buying' },
+  { name: 'After-Sales Support', en: 'services/after-sales.html', fa: 'fa/services/after-sales.html', canonicalEn: 'services/after-sales', canonicalFa: 'fa/services/after-sales' },
+  { name: 'Market Price Assessment', en: 'services/valuation.html', fa: 'fa/services/valuation.html', canonicalEn: 'services/valuation', canonicalFa: 'fa/services/valuation' },
+  { name: 'Blog', en: 'insights/blog.html', fa: 'fa/insights/blog.html', canonicalEn: 'insights/blog', canonicalFa: 'fa/insights/blog' },
+  { name: 'Market Reports', en: 'insights/market-reports.html', fa: 'fa/insights/market-reports.html', canonicalEn: 'insights/market-reports', canonicalFa: 'fa/insights/market-reports' },
+  { name: 'Podcast', en: 'insights/podcast.html', fa: 'fa/insights/podcast.html', canonicalEn: 'insights/podcast', canonicalFa: 'fa/insights/podcast' },
+  { name: 'Buyer\'s Guides', en: 'insights/guides.html', fa: 'fa/insights/guides.html', canonicalEn: 'insights/guides', canonicalFa: 'fa/insights/guides' },
+  { name: 'Press & Media', en: 'heritage/press.html', fa: 'fa/heritage/press.html', canonicalEn: 'heritage/press', canonicalFa: 'fa/heritage/press' },
+  { name: 'Testimonials', en: 'heritage/testimonials.html', fa: 'fa/heritage/testimonials.html', canonicalEn: 'heritage/testimonials', canonicalFa: 'fa/heritage/testimonials' },
+  { name: 'Our Team', en: 'heritage/team.html', fa: 'fa/heritage/team.html', canonicalEn: 'heritage/team', canonicalFa: 'fa/heritage/team' },
+  { name: 'Author Profiles', en: 'heritage/authors.html', fa: 'fa/heritage/authors.html', canonicalEn: 'heritage/authors', canonicalFa: 'fa/heritage/authors' },
+  { name: 'Founder\'s Letter', en: 'heritage/founders-letter.html', fa: 'fa/heritage/founders-letter.html', canonicalEn: 'heritage/founders-letter', canonicalFa: 'fa/heritage/founders-letter' },
+  { name: 'Founder\'s Letter (Nav Alias)', en: 'heritage/founder.html', fa: 'fa/heritage/founder.html', canonicalEn: 'heritage/founders-letter', canonicalFa: 'fa/heritage/founders-letter' },
 ];
 
 console.log('\n--- 1. File Existence & Clean URL Counterparts ---');
@@ -241,7 +257,17 @@ const testCases = [
   { input: '/areas/dubai-vs-london', target: 'fa', expected: '/fa/areas/dubai-vs-london' },
   { input: '/fa/areas/dubai-vs-london', target: 'en', expected: '/areas/dubai-vs-london' },
   { input: '/areas/dubai-vs-new-york', target: 'fa', expected: '/fa/areas/dubai-vs-new-york' },
-  { input: '/fa/areas/dubai-vs-new-york', target: 'en', expected: '/areas/dubai-vs-new-york' }
+  { input: '/fa/areas/dubai-vs-new-york', target: 'en', expected: '/areas/dubai-vs-new-york' },
+  { input: '/services/selling', target: 'fa', expected: '/fa/services/selling' },
+  { input: '/fa/services/selling', target: 'en', expected: '/services/selling' },
+  { input: '/services/selling-advisory', target: 'fa', expected: '/fa/services/selling-advisory' },
+  { input: '/fa/services/selling-advisory', target: 'en', expected: '/services/selling-advisory' },
+  { input: '/services/buying', target: 'fa', expected: '/fa/services/buying' },
+  { input: '/fa/services/buying', target: 'en', expected: '/services/buying' },
+  { input: '/services/buying-advisory', target: 'fa', expected: '/fa/services/buying-advisory' },
+  { input: '/fa/services/buying-advisory', target: 'en', expected: '/services/buying-advisory' },
+  { input: '/insights/guides', target: 'fa', expected: '/fa/insights/guides' },
+  { input: '/fa/insights/guides', target: 'en', expected: '/insights/guides' }
 ];
 
 for (const tc of testCases) {

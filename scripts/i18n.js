@@ -1862,7 +1862,7 @@ export const translations = {
     "nav_buying_advisory": "مشاوره خرید",
     "nav_selling_advisory": "مشاوره فروش",
     "nav_mortgage_advisory": "مشاوره وام بانکی",
-    "nav_free_valuation": "کارشناسی رایگان قیمت",
+    "nav_free_valuation": "ارزشگذاری رایگان",
     "nav_management_legal": "مدیریت و امور حقوقی",
     "nav_property_management": "مدیریت اجاره و املاک",
     "nav_legal_conveyancing": "امور حقوقی و انتقال سند",
@@ -2371,7 +2371,7 @@ export const translations = {
     "nav_property_management": "مدیریت جامع ملک",
     "nav_legal_conveyancing": "امور حقوقی و انتقال سند",
     "nav_property_insurance": "بیمه ملک و دارایی",
-    "nav_after_sales": "خدمات و پشتیبانی پس از فروش",
+    "nav_after_sales": "پشتیبانی پس از فروش",
     "nav_visa_types": "انواع ویزای اقامت",
     "nav_golden_visa_10yr": "ویزای طلایی (۱۰ ساله)",
     "nav_investor_visa_2yr": "ویزای سرمایه‌گذاری (۲ ساله)",
@@ -2389,7 +2389,7 @@ export const translations = {
     "nav_podcast": "پادکست اختصاصی",
     "nav_buyers_guides": "راهنماهای جامع خریدار",
     "nav_tools_reference": "ابزارها و مراجع محاسباتی",
-    "nav_all_calculators": "تمام ماشین‌حساب‌های سرمایه‌گذاری",
+    "nav_all_calculators": "همه ماشینحسابها",
     "nav_faq_hub": "مرکز پرسش‌های پرتکرار",
     "nav_glossary": "واژه‌نامه اصطلاحات ملکی",
     "nav_market_data": "داده‌ها و آمار زنده بازار",
@@ -2942,6 +2942,7 @@ export function getCurrentLanguage() {
       if (p === '/fa' || p.startsWith('/fa/') || p.startsWith('/fa.')) {
         return 'fa';
       }
+      return 'en';
     }
     if (typeof document !== 'undefined' && document.documentElement && document.documentElement.lang) {
       if (document.documentElement.lang === 'fa') return 'fa';
@@ -2951,9 +2952,9 @@ export function getCurrentLanguage() {
     if (saved === 'fa' || saved === 'en') {
       return saved;
     }
-    return activeLang;
+    return activeLang || 'en';
   } catch (e) {
-    return activeLang;
+    return activeLang || 'en';
   }
 }
 

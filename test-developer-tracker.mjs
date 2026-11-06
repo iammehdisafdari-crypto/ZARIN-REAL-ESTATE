@@ -72,11 +72,11 @@ it('Includes structured data JSON-LD (Dataset, BreadcrumbList, ItemList, FAQPage
   assert(types.includes('WebPage'), 'Missing WebPage schema');
 });
 
-it('Header has exactly 7 desktop triggers with split button semantics', () => {
+it('Header has exactly 6 desktop triggers with split button semantics (Private Office & Visas removed)', () => {
   const header = enDoc.querySelector('#site-header');
   assert(header, 'Missing #site-header');
   const triggers = header.querySelectorAll('.mega-menu-trigger');
-  assert.strictEqual(triggers.length, 7, `Expected 7 mega-menu-trigger elements, found ${triggers.length}`);
+  assert.strictEqual(triggers.length, 6, `Expected 6 mega-menu-trigger elements, found ${triggers.length}`);
   
   assert(header.querySelector('#properties-nav-link'), 'Missing properties-nav-link');
   assert(header.querySelector('#properties-nav-toggle'), 'Missing properties-nav-toggle');
@@ -86,13 +86,15 @@ it('Header has exactly 7 desktop triggers with split button semantics', () => {
   assert(header.querySelector('#areas-nav-toggle'), 'Missing areas-nav-toggle');
   assert(!header.querySelector('#private-office-nav-link'), 'private-office-nav-link must be absent from nav');
   assert(!header.querySelector('#private-office-nav-toggle'), 'private-office-nav-toggle must be absent from nav');
+  assert(!header.querySelector('#visas-nav-link'), 'visas-nav-link must be absent from nav');
+  assert(!header.querySelector('#visas-nav-toggle'), 'visas-nav-toggle must be absent from nav');
 });
 
-it('Mobile drawer has 7 accordion sections matching desktop (Private Office removed)', () => {
+it('Mobile drawer has 6 accordion sections matching desktop (Private Office & Visas removed)', () => {
   const mobileNav = enDoc.querySelector('#mobile-menu');
   assert(mobileNav, 'Missing #mobile-menu');
   const items = mobileNav.querySelectorAll('.mobile-nav-item');
-  assert.strictEqual(items.length, 7, `Expected 7 mobile nav items, found ${items.length}`);
+  assert.strictEqual(items.length, 6, `Expected 6 mobile nav items, found ${items.length}`);
 });
 
 it('Hero displays live dataset stats (38 developers, 612 projects, 84.1% on-time)', () => {

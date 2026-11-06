@@ -4,6 +4,10 @@
  * and bfcache page restorations across all site pages.
  */
 
+import { NAVIGATION_DATA } from './nav-data.js';
+
+export { NAVIGATION_DATA };
+
 export function initMobileNav(doc = (typeof document !== 'undefined' ? document : null)) {
   if (!doc) return;
   const win = doc.defaultView || (typeof window !== 'undefined' ? window : null);
@@ -12,6 +16,15 @@ export function initMobileNav(doc = (typeof document !== 'undefined' ? document 
   const mobileMenu = doc.getElementById('mobile-menu');
 
   if (!mobileMenu || !mobileMenuToggle) return;
+
+  function closeAllMobileSubmenus() {
+    mobileMenu.querySelectorAll('.mobile-nav-item').forEach(item => {
+      const toggle = item.querySelector('button[id$="-toggle"]');
+      const submenu = item.querySelector('div[id$="-submenu"]');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      if (submenu) submenu.classList.add('hidden');
+    });
+  }
 
   function openMenu() {
     mobileMenu.classList.add('open');
@@ -23,6 +36,7 @@ export function initMobileNav(doc = (typeof document !== 'undefined' ? document 
     mobileMenu.classList.remove('open');
     mobileMenuToggle.setAttribute('aria-expanded', 'false');
     if (doc.body) doc.body.style.overflow = '';
+    closeAllMobileSubmenus();
   }
 
   function toggleMenu() {
@@ -33,7 +47,7 @@ export function initMobileNav(doc = (typeof document !== 'undefined' ? document 
     }
   }
 
-  // Ensure clean initial state
+  // Ensure clean initial state: drawer and submenus closed
   closeMenu();
 
   // Bind hamburger button toggle (idempotent)
@@ -93,17 +107,31 @@ export function initMobileNav(doc = (typeof document !== 'undefined' ? document 
     }
   }
 
-  // Universal Mobile Accordion Toggle Handler (all 8 items)
-  doc.querySelectorAll('.mobile-nav-item').forEach(item => {
+  // Universal Mobile Accordion Toggle Handler with Mutual Exclusivity
+  const mobileNavItems = Array.from(mobileMenu.querySelectorAll('.mobile-nav-item'));
+  mobileNavItems.forEach(item => {
     const toggle = item.querySelector('button[id$="-toggle"]');
     const submenu = item.querySelector('div[id$="-submenu"]');
     if (toggle && submenu && !toggle.dataset.boundNav) {
       toggle.dataset.boundNav = 'true';
       toggle.addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
-        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-        submenu.classList.toggle('hidden', isExpanded);
+        const willExpand = toggle.getAttribute('aria-expanded') !== 'true';
+
+        // Accordion behavior: close sibling submenus at the same hierarchy level
+        mobileNavItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            const otherToggle = otherItem.querySelector('button[id$="-toggle"]');
+            const otherSubmenu = otherItem.querySelector('div[id$="-submenu"]');
+            if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+            if (otherSubmenu) otherSubmenu.classList.add('hidden');
+          }
+        });
+
+        // Toggle current submenu
+        toggle.setAttribute('aria-expanded', willExpand ? 'true' : 'false');
+        submenu.classList.toggle('hidden', !willExpand);
       });
     }
   });
@@ -603,39 +631,35 @@ export function initGlobalLanguageState(doc = (typeof document !== 'undefined' ?
     storage = null;
   }
 
-  let savedLang = 'en';
-  try {
-    if (storage) {
-      savedLang = storage.getItem('zarin_lang') || doc.documentElement.lang || 'en';
-    } else {
-      savedLang = doc.documentElement.lang || 'en';
-    }
-  } catch (_) {
-    savedLang = doc.documentElement.lang || 'en';
-  }
-
-  // If current URL is explicitly /fa or starts with /fa/, lock savedLang to 'fa'
+  // Determine active language strictly from URL pathname and document.documentElement.lang
+  let activeLang = 'en';
   if (win && win.location) {
     const curPath = (win.location.pathname || '').replace(/\/$/, '');
     if (curPath === '/fa' || curPath.startsWith('/fa/') || curPath.startsWith('/fa.')) {
-      savedLang = 'fa';
-      try { if (storage) storage.setItem('zarin_lang', 'fa'); } catch (_) {}
+      activeLang = 'fa';
+    } else {
+      activeLang = 'en';
     }
+  } else if (doc.documentElement && doc.documentElement.lang) {
+    activeLang = doc.documentElement.lang === 'fa' ? 'fa' : 'en';
   }
-  if (doc.documentElement && doc.documentElement.lang === 'fa') {
-    savedLang = 'fa';
-    try { if (storage) storage.setItem('zarin_lang', 'fa'); } catch (_) {}
-  }
+
+  // Synchronize localStorage to match the active page language
+  try {
+    if (storage) {
+      storage.setItem('zarin_lang', activeLang);
+    }
+  } catch (_) {}
 
   // Maintain document dir and lang attributes
   if (doc.documentElement) {
-    doc.documentElement.lang = savedLang;
-    doc.documentElement.dir = savedLang === 'fa' ? 'rtl' : 'ltr';
+    doc.documentElement.lang = activeLang;
+    doc.documentElement.dir = activeLang === 'fa' ? 'rtl' : 'ltr';
   }
 
   // 1. Synchronize active state of all language switcher buttons
   doc.querySelectorAll('.lang-btn').forEach(btn => {
-    const isTarget = btn.dataset.lang === savedLang;
+    const isTarget = btn.dataset.lang === activeLang;
     btn.classList.toggle('active', isTarget);
     btn.classList.toggle('is-active', isTarget);
     btn.setAttribute('aria-pressed', isTarget ? 'true' : 'false');
@@ -677,17 +701,17 @@ export function initGlobalLanguageState(doc = (typeof document !== 'undefined' ?
   // 2. Synchronize mobile language trigger label & checkmarks
   const mobileLabel = doc.getElementById('mobile-lang-label');
   if (mobileLabel) {
-    mobileLabel.textContent = savedLang === 'fa' ? 'FA' : 'EN';
+    mobileLabel.textContent = activeLang === 'fa' ? 'FA' : 'EN';
   }
   doc.querySelectorAll('#mobile-lang-menu .mobile-lang-check').forEach(chk => {
     const parent = chk.closest('button');
     if (parent) {
-      chk.classList.toggle('hidden', parent.dataset.lang !== savedLang);
+      chk.classList.toggle('hidden', parent.dataset.lang !== activeLang);
     }
   });
 
   // 3. Ensure all internal navigation links respect active language
-  if (savedLang === 'fa') {
+  if (activeLang === 'fa') {
     doc.querySelectorAll('a[href]').forEach(a => {
       const href = a.getAttribute('href');
       if (
@@ -746,9 +770,9 @@ export function initHeaderLanguageVisibility(doc = (typeof document !== 'undefin
   if (!doc) return;
   const win = doc.defaultView || (typeof window !== 'undefined' ? window : null);
   if (win && win.location) {
-    const rawPath = win.location.pathname || '';
+    const rawPath = (win.location.pathname || '').split('?')[0].split('#')[0];
     const clean = rawPath.replace(/\/$/, '') || '/';
-    const isHome = clean === '/' || clean === '/index.html' || clean === '/fa' || clean === '/fa/index.html';
+    const isHome = clean === '/' || clean === '/index.html' || clean === '/index' || clean === '/fa' || clean === '/fa/index' || clean === '/fa/index.html';
     if (doc.body) {
       if (isHome) {
         doc.body.classList.add('page-home');
@@ -785,6 +809,7 @@ if (typeof document !== 'undefined') {
 // Expose globally
 if (typeof window !== 'undefined') {
   window.ZARIN_NAV = {
+    NAVIGATION_DATA,
     initMobileNav,
     initDesktopNav,
     initFaqAccordion,

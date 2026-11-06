@@ -5,52 +5,348 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#0A0B0E">
 
-  <title>Dubai Property Calculators Hub | ZARIN</title>
-  <meta name="description" content="7 free, instant financial calculators: mortgage payments, rental yield & ROI, payment plans, service charges, currency, and visa eligibility.">
+  <title>Dubai Property Calculators — 7 Free Tools | ZARIN</title>
+  <meta name="description" content="Seven free Dubai property calculators — mortgage, ROI, off-plan payment plans, service charges, currency, visa and AI match. No signup, browser-based.">
+  <meta name="keywords" content="Dubai property calculators, Dubai mortgage calculator, Dubai ROI calculator, Dubai payment plan calculator, Dubai service charge calculator, Dubai currency converter, Dubai visa eligibility checker">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="author" content="ZARIN Real Estate">
   <link rel="canonical" href="https://zarinrealestate.com/insights/calculators">
+  <link rel="alternate" hreflang="en" href="https://zarinrealestate.com/insights/calculators">
+  <link rel="alternate" hreflang="fa" href="https://zarinrealestate.com/fa/insights/calculators">
+  <link rel="alternate" hreflang="x-default" href="https://zarinrealestate.com/insights/calculators">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Dubai Property Calculators Hub | ZARIN">
-  <meta property="og:description" content="7 free, instant financial calculators: mortgage payments, rental yield & ROI, payment plans, service charges, currency, and visa eligibility.">
+  <meta property="og:title" content="Dubai Property Calculators — 7 Free Tools | ZARIN">
+  <meta property="og:description" content="Seven free Dubai property calculators — mortgage, ROI, off-plan payment plans, service charges, currency, visa and AI match. No signup, browser-based.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A calculator, notebook and pen on a desk — ZARIN's seven free Dubai property calculators">
   <meta property="og:url" content="https://zarinrealestate.com/insights/calculators">
   <meta property="og:site_name" content="ZARIN Real Estate">
+  <meta property="og:locale" content="en_US">
+  <meta property="article:section" content="Insights">
+  <meta property="article:tag" content="calculators, mortgage, ROI, payment plan, service charges, currency converter, visa eligibility, AI match">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dubai Property Calculators — 7 Free Tools | ZARIN">
+  <meta name="twitter:description" content="Seven free Dubai property calculators — mortgage, ROI, off-plan payment plans, service charges, currency, visa and AI match. No signup, browser-based.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80">
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0B0E'/%3E%3Ctext x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' fill='%23C8AB83' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles/main.css">
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+  <style type="text/tailwindcss">
+    @theme {
+      --color-ink-950:#050507;--color-ink-900:#0A0B0E;--color-ink-850:#0E1015;--color-ink-800:#111318;--color-ink-700:#181B22;--color-ink-600:#20242D;--color-ink-500:#2A2E37;--color-ink-400:#3A3F4A;--color-ink-300:#4A5160;
+      --color-gold-100:#F5E9D4;--color-gold-200:#E8D4B0;--color-gold-300:#DFC49E;--color-gold-400:#C8AB83;--color-gold-500:#B89868;--color-gold-600:#A88D66;--color-gold-700:#8B7048;--color-gold-800:#6B5638;
+      --color-gold-soft:rgba(200,171,131,0.08);--color-gold-tint:rgba(200,171,131,0.15);--color-gold-line:rgba(200,171,131,0.32);--color-gold-border:rgba(200,171,131,0.45);--color-gold-glow:rgba(200,171,131,0.20);
+      --color-bone:#F8F9FA;--color-pearl:#E8EAED;--color-ash:#9FA6B2;--color-slate:#676E7D;--color-graphite:#4A5160;
+      --color-white-soft:rgba(255,255,255,0.04);--color-white-line:rgba(255,255,255,0.08);--color-white-tint:rgba(255,255,255,0.12);
+      --color-glass:rgba(10,11,14,0.78);--color-glass-light:rgba(10,11,14,0.92);
+      --color-success:#4ADE80;--color-warning:#FBBF24;--color-info:#60A5FA;--color-danger:#F87171;
+      --color-tether:#25D366;
+      --font-sans:"Source Sans 3","Vazirmatn",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      --container-narrow:1040px;--container-default:1380px;--container-wide:1600px;
+      --radius-xs:2px;--radius-sm:4px;--radius-md:8px;--radius-lg:12px;
+      --shadow-subtle:0 4px 20px rgba(0,0,0,0.35);--shadow-monolith:0 24px 60px rgba(0,0,0,0.65);--shadow-gold:0 10px 30px rgba(200,171,131,0.12);
+      --ease-editorial:cubic-bezier(0.16,1,0.3,1);--ease-in-out:cubic-bezier(0.65,0,0.35,1);
+    }
+  </style>
 
   <style>
     html{scroll-behavior:smooth}body{font-family:"Source Sans 3","Vazirmatn",-apple-system,sans-serif;background:#0A0B0E;color:#F8F9FA;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
     ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#0A0B0E}::-webkit-scrollbar-thumb{background:#C8AB83;border-radius:4px}
     ::selection{background:rgba(200,171,131,0.3);color:#F8F9FA}
     .glass{background:rgba(10,11,14,0.78);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+    .gold-glow{transition:box-shadow .5s cubic-bezier(.16,1,.3,1),border-color .5s cubic-bezier(.16,1,.3,1)}
+    .gold-glow:hover{box-shadow:0 10px 30px rgba(200,171,131,.15);border-color:rgba(200,171,131,.45)}
     .text-gold-gradient{background:linear-gradient(135deg,#DFC49E 0%,#C8AB83 50%,#A88D66 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-    
-    
-    
+    .stat-number{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+    .mega-menu-trigger{position:relative}
+    .mega-menu-panel{opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .3s cubic-bezier(.16,1,.3,1),transform .3s cubic-bezier(.16,1,.3,1),visibility .3s}
+    .mega-menu-trigger:hover .mega-menu-panel,.mega-menu-trigger:focus-within .mega-menu-panel{opacity:1;visibility:visible;transform:translateY(0)}
+    .card-lift{transition:transform .5s cubic-bezier(.16,1,.3,1),box-shadow .5s cubic-bezier(.16,1,.3,1)}
+    .card-lift:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(0,0,0,.5)}
     .mobile-menu{transform:translateX(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}.mobile-menu.open{transform:translateX(0)}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+    .animate-fade-in-up{animation:fadeInUp .8s cubic-bezier(.16,1,.3,1) both}
+    details summary{list-style:none;cursor:pointer}details summary::-webkit-details-marker{display:none}
+    details[open] .faq-icon{transform:rotate(45deg)}.faq-icon{transition:transform .3s cubic-bezier(.16,1,.3,1)}
     .sticky-whatsapp{display:none}@media(max-width:1024px){.sticky-whatsapp{display:flex}}
+    .vs-divider{background:linear-gradient(to bottom,rgba(200,171,131,0),rgba(200,171,131,0.6),rgba(200,171,131,0))}
   </style>
 
+  <!-- JSON-LD: BreadcrumbList -->
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://zarinrealestate.com/"},
-    {"@type":"ListItem","position":2,"name":"Insights","item":"https://zarinrealestate.com/insights"},
-    {"@type":"ListItem","position":3,"name":"7 Interactive Property Calculators","item":"https://zarinrealestate.com/insights/calculators"}
-  ]}
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://zarinrealestate.com/insights/calculators#breadcrumbs",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://zarinrealestate.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://zarinrealestate.com/insights"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "All Calculators",
+      "item": "https://zarinrealestate.com/insights/calculators"
+    }
+  ]
+}
+  </script>
+
+  <!-- JSON-LD: CollectionPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://zarinrealestate.com/insights/calculators#collection",
+  "url": "https://zarinrealestate.com/insights/calculators",
+  "name": "ZARIN Dubai Property Calculators — 7 Free Tools",
+  "description": "Seven free browser-based calculators covering the acquisition maths of a Dubai property purchase — mortgage repayments, rental ROI net of service charges, off-plan payment plans, RERA-indexed service charges, currency conversion, visa eligibility and AI property matching — plus an instant indicative market estimate. No signup; no personal data collected.",
+  "isPartOf": {
+    "@id": "https://zarinrealestate.com/#website"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Dubai real estate calculators"
+  },
+  "hasPart": [
+    {
+      "@type": "WebApplication",
+      "name": "Mortgage Calculator",
+      "url": "https://zarinrealestate.com/services/buying#mortgage",
+      "description": "Monthly mortgage repayments on any Dubai purchase, with transfer fees and commission carried alongside.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AED"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "ROI Predictor",
+      "url": "https://zarinrealestate.com/off-plan/roi-predictor",
+      "description": "Rental yield, gross and net of RERA-indexed service charges, on the ZARIN 2026 area basis.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AED"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Payment Plan Calculator",
+      "url": "https://zarinrealestate.com/off-plan/payment-calculator",
+      "description": "Off-plan payment schedules mapped instalment by instalment against construction milestones.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AED"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Service Charge Inputs",
+      "url": "https://zarinrealestate.com/off-plan/roi-predictor",
+      "description": "Annual ownership costs drawn from the RERA service-charge index, embedded in the ROI Predictor.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AED"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Currency Converter",
+      "url": "https://zarinrealestate.com/private-office/multi-currency",
+      "description": "Eight currencies against the dirham for international buyers, backed by the multi-currency pricing desk.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AED"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Visa Eligibility Checker",
+      "url": "https://zarinrealestate.com/visas/eligibility-checker",
+      "description": "Seven questions mapping budget and intent to the Golden, Investor, Retirement and Remote Work visa routes.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AED"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "AI Match",
+      "url": "https://zarinrealestate.com/properties",
+      "description": "Brief-based smart search: describe your criteria and ZARIN's advisory desk returns a curated shortlist.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AED"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "Instant Indicative Market Estimate",
+      "url": "https://zarinrealestate.com/services/valuation",
+      "description": "An instant indicative price range, part of the free Market Price Assessment; advisory appraisal, not a formal valuation.",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any (web browser)",
+      "browserRequirements": "Requires JavaScript",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "AED"
+      }
+    }
+  ]
+}
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://zarinrealestate.com/insights/calculators#faqpage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are all seven calculators really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — all seven tools are free, with no signup, no email gate and no payment wall. They exist because informed buyers make better clients: our founder has run exactly this arithmetic on his own Dubai portfolio since 2005, and the firm was established in 2023 to give every buyer the same numbers before a dirham is committed. The only thing we ask in return is that you talk to us when the numbers argue for a purchase."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you collect the numbers I enter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Every calculator runs entirely in your browser — the inputs never leave your device, nothing is transmitted to our servers, and no personal data is collected. There is no account to create and nothing to delete afterwards. The lookup tables behind the results (area prices, yields and the RERA service-charge index) live in the page itself, refreshed with each quarterly review."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which calculator should a first-time buyer start with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start with the mortgage calculator to convert a price into a monthly figure, then read the buying-costs worked example on the buying advisory page: an AED 2,000,000 cash purchase costs AED 124,580 in total acquisition costs (6.2%), or AED 132,830 (6.6%) with a 60% loan-to-value mortgage. Knowing the monthly number and the all-in cost is the whole first conversation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the Instant Market Estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It returns an indicative range around the area benchmark — for a 1,000 sqft Dubai Marina apartment, roughly AED 1,702,000 to AED 1,998,000 around a AED 1,850,000 midpoint. It is an advisory indicative market appraisal for guidance only: it is not a formal valuation and does not replace a bank or DLD valuation. When you need a property-specific number, the free Market Price Assessment adds a five-part written report."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often are the lookup tables updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Quarterly. The tables compile DLD transaction data and the RERA service-charge index, and each review is logged in the changelog inside the off-plan investment guide. The underlying DLD transaction records refresh every 24 hours on the market data dashboard, so the quarterly table is always a reviewed snapshot of live data, not a stale one."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can non-residents use the mortgage calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — the inputs reflect how Dubai actually lends to overseas buyers: non-resident mortgages typically run at 50–60% loan-to-value through partner banks, with income documented from abroad. Model your monthly figure with that ceiling in mind, and note that the DLD 4% transfer fee, 2% commission and AED 4,580 admin fee apply identically whether you pay cash or finance. For live terms, the desk coordinates introductions to the banks active in non-resident lending."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between gross and net yield in the ROI Predictor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Gross yield divides annual rent by purchase price; net yield subtracts service charges first. On a 1,000 sqft Dubai Marina unit at AED 1,850,000 renting for about AED 118,400, the gross yield is 6.4% — but about AED 16,000 of service charges takes the net figure to roughly AED 102,400, or 5.5% net. The ROI Predictor shows both lines, because quoting only the gross number is how disappointment is manufactured."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do the tools work on my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every calculator is built for the browser — phone, tablet or desktop — with no app to download and no plugin to install. Results recalculate instantly as inputs change, so you can sanity-check a payment plan or a currency conversion during a viewing, standing in the property the numbers are about. The pages are lightweight by design; the maths is simple and the interface stays out of its way."
+      }
+    }
+  ]
+}
+  </script>
+
+  <!-- JSON-LD: WebPage + Speakable -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://zarinrealestate.com/insights/calculators#webpage",
+  "url": "https://zarinrealestate.com/insights/calculators",
+  "name": "Dubai Property Calculators — 7 Free Tools | ZARIN",
+  "description": "Seven free Dubai property calculators — mortgage, ROI, off-plan payment plans, service charges, currency, visa and AI match. No signup, browser-based.",
+  "isPartOf": {
+    "@id": "https://zarinrealestate.com/#website"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80"
+  },
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [
+      "#hero-headline",
+      "#tldr-summary"
+    ]
+  }
+}
   </script>
 </head>
+<body class="bg-ink-900 text-bone antialiased selection:bg-gold-500/20 selection:text-gold-200 min-h-screen flex flex-col">
 
-<body class="bg-ink-900 text-bone antialiased min-h-screen flex flex-col justify-between">
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[2000] focus:px-4 focus:py-2 focus:bg-gold-400 focus:text-ink-900 focus:rounded-xs focus:text-sm focus:font-bold">Skip to main content</a>
-
-  <!-- HEADER -->
   <header id="site-header" class="fixed top-0 left-0 w-full z-[900] transition-all duration-500" role="banner" style="padding: 1.15rem 0;">
     <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
       <div class="flex items-center justify-between gap-4">
@@ -99,7 +395,7 @@
               <a href="/off-plan/by-developer" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_by_developer">By Developer</a>
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2" data-i18n="nav_investment_tools">Investment Tools</div>
               <a href="/off-plan/investment-guide" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_investment_guide">Investment Guide</a>
-              <a href="/off-plan/payment-plan-calculator" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_payment_calculator">Payment Calculator</a>
+              <a href="/off-plan/payment-calculator" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_payment_calculator">Payment Calculator</a>
               <a href="/off-plan/roi-predictor" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_roi_predictor">ROI Predictor</a>
               <a href="/off-plan/developer-reputation-tracker" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold" data-i18n="nav_developer_tracker">Developer Tracker →</a>
             </div>
@@ -128,41 +424,18 @@
             </div>
           </div>
 
-          <div class="mega-menu-trigger">
-            <a href="/services" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
-              <span data-i18n="nav_services">Services</span>
-              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </a>
-            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+          <div class="mega-menu-trigger flex items-center group/services">
+            <a href="/services" class="pl-3 pr-1 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300" id="services-nav-link" data-i18n="nav_services">Services</a>
+            <button type="button" class="mega-menu-toggle-btn pr-3 pl-1 py-2 text-ash hover:text-gold-400 transition-colors duration-300 flex items-center justify-center focus:outline-none focus-visible:text-gold-400" id="services-nav-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="services-mega-panel" aria-label="Toggle Services submenu">
+              <svg class="w-3 h-3 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div id="services-mega-panel" class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3" role="region" aria-label="Services submenu">
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_buying_selling">Buying &amp; Selling</div>
               <a href="/services/buying" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="footer_buying">Buying Advisory</a>
               <a href="/services/selling" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_selling_advisory">Selling Advisory</a>
-              <a href="/services/mortgage" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_mortgage_advisory">Mortgage Advisory</a>
-              <a href="/services/valuation" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_free_valuation">Free Valuation</a>
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2" data-i18n="nav_management_legal">Management &amp; Legal</div>
-              <a href="/services/property-management" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_property_management">Property Management</a>
-              <a href="/services/legal" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="footer_legal">Legal &amp; Conveyancing</a>
-              <a href="/services/insurance" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_property_insurance">Property Insurance</a>
-              <a href="/services/after-sales" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_after_sales">After-Sales Support</a>
-            </div>
-          </div>
-
-          <div class="mega-menu-trigger">
-            <a href="/visas" class="px-3 py-2 text-[13px] font-semibold tracking-wide text-ash hover:text-gold-400 transition-colors duration-300 flex items-center gap-1" aria-haspopup="true" aria-expanded="false">
-              <span data-i18n="nav_visas">Visas</span>
-              <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </a>
-            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
-              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_visa_types">Visa Types</div>
-              <a href="/visas/golden-visa" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_golden_visa_10yr">Golden Visa (10-Year)</a>
-              <a href="/visas/investor-visa" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_investor_visa_2yr">Investor Visa (2-Year)</a>
-              <a href="/visas/retirement-visa" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_retirement_visa_5yr">Retirement Visa (5-Year)</a>
-              <a href="/visas/remote-work-visa" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_remote_work_visa">Remote Work Visa</a>
-              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2" data-i18n="nav_by_nationality">By Nationality</div>
-              <a href="/visas/for-indian-buyers" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="visa_nat_indian_title">For Indian Buyers</a>
-              <a href="/visas/for-uk-buyers" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="visa_nat_uk_title">For UK Buyers</a>
-              <a href="/visas/for-chinese-buyers" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="visa_nat_chinese_title">For Chinese Buyers</a>
-              <a href="/visas/eligibility-checker" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold" data-i18n="nav_check_eligibility">Check Eligibility →</a>
+              <a href="/services/valuation" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_free_valuation">Free Valuation</a>
+              <a href="/services/after-sales" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_after_sales">After Sales Support</a>
             </div>
           </div>
 
@@ -171,17 +444,18 @@
               <span data-i18n="nav_insights">Insights</span>
               <svg class="w-3 h-3 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </a>
-            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3">
+            <div class="mega-menu-panel absolute top-full left-0 mt-2 w-[480px] glass border border-white-line rounded-sm shadow-monolith p-6 grid grid-cols-2 gap-x-6 gap-y-3" role="region" aria-label="Insights submenu">
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_content_hub">Content Hub</div>
-              <a href="/insights/blog" class="text-sm text-bone hover:text-gold-400 transition-colors" data-i18n="nav_blog_articles">Blog Articles</a>
-              <a href="/insights/market-reports" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_market_reports">Market Reports</a>
-              <a href="/insights/podcast" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="art_podcast_tag">Podcast</a>
-              <a href="/insights/guides" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_buyers_guides">Buyer's Guides</a>
-              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2" data-i18n="nav_tools_reference">Tools &amp; Reference</div>
-              <a href="/insights/calculators" class="text-sm hover:text-gold-400 transition-colors text-gold-400 font-semibold" data-i18n="nav_all_calculators" aria-current="page">All Calculators</a>
-              <a href="/insights/faq" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_faq_hub">FAQ Hub</a>
-              <a href="/insights/glossary" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_glossary">Glossary</a>
-              <a href="/insights/market-data" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_market_data">Market Data</a>
+              <a href="/insights/blog" class="text-sm transition-colors text-bone hover:text-gold-400" data-i18n="nav_blog_articles">Blog Articles</a>
+              <a href="/insights/market-reports" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_market_reports">Market Reports</a>
+              <a href="/insights/podcast" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="art_podcast_tag">Podcast</a>
+              <a href="/insights/guides" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_buyers_guides">Buyer's Guides</a>
+              <div class="col-span-2 border-t border-white-line my-1" aria-hidden="true"></div>
+              <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line" data-i18n="nav_tools_reference">Tools &amp; Reference</div>
+              <a href="/insights/calculators" class="text-sm transition-colors text-gold-400 font-semibold hover:text-gold-300" data-i18n="nav_all_calculators" aria-current="page">All Calculators</a>
+              <a href="/insights/faq" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_faq_hub">FAQ Hub</a>
+              <a href="/insights/glossary" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_glossary">Glossary</a>
+              <a href="/insights/market-data" class="text-sm transition-colors text-ash hover:text-gold-400" data-i18n="nav_market_data">Market Data</a>
             </div>
           </div>
 
@@ -198,9 +472,7 @@
               <a href="/heritage/authors" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_authors">Author Profiles</a>
               <div class="col-span-2 text-[10px] uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2 pb-2 border-b border-white-line mt-2" data-i18n="nav_trust_proof">Trust &amp; Proof</div>
               <a href="/heritage/testimonials" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="footer_testimonials">Testimonials</a>
-              <a href="/heritage/awards" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="footer_awards">Awards</a>
               <a href="/heritage/press" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="footer_press">Press &amp; Media</a>
-              <a href="/heritage/case-studies" class="text-sm text-ash hover:text-gold-400 transition-colors" data-i18n="nav_case_studies">Case Studies</a>
             </div>
           </div>
         </nav>
@@ -220,7 +492,7 @@
             <button type="button" class="lang-btn h-full px-2 text-[11px] font-semibold rounded-xs transition-all" data-lang="fa" aria-label="تغییر به زبان فارسی" aria-pressed="false">فارسی</button>
           </div>
 
-          <!-- Mobile Language Switcher (immediately left of hamburger menu) -->
+          <!-- Mobile Language Switcher (hidden on internal pages by CSS) -->
           <div class="mobile-lang-container relative lg:hidden" id="mobile-lang-container">
             <button type="button" id="mobile-lang-trigger" class="mobile-lang-trigger" aria-label="Select language / تغییر زبان" aria-haspopup="true" aria-expanded="false" aria-controls="mobile-lang-menu">
               <span id="mobile-lang-label">EN</span>
@@ -246,12 +518,11 @@
     </div>
   </header>
 
-  <!-- Mobile Menu Drawer -->
   <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-full max-w-sm h-full bg-ink-900 border-l border-white-line z-[1000] overflow-y-auto lg:hidden" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <div class="p-6">
       <div class="flex justify-between items-center mb-8">
         <span class="font-sans font-extrabold text-xl text-bone">ZARIN</span>
-        <button id="mobile-menu-close" class="text-ash hover:text-gold-400 transition-colors" aria-label="Close menu">
+        <button id="mobile-menu-close" class="text-ash hover:text-gold-400 transition-colors p-2" aria-label="Close menu">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
       </div>
@@ -260,268 +531,634 @@
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/properties" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_properties">Properties</a>
-            <button type="button" id="mobile-properties-toggle" aria-expanded="false" aria-controls="mobile-properties-submenu" aria-label="Toggle Properties submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-properties-toggle" aria-expanded="false" aria-controls="mobile-properties-submenu" aria-label="Toggle Properties submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-properties-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_for_sale">For Sale</div>
-            <a href="/properties-for-sale" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_properties_for_sale">All Properties for Sale</a>
-            <a href="/apartments-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_apartments">Apartments</a>
-            <a href="/villas-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_villas">Villas</a>
-            <a href="/penthouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_penthouses">Penthouses</a>
-            <a href="/townhouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="filter_townhouses">Townhouses</a>
-            <a href="/trophy-residences" class="text-xs text-gold-400 font-semibold py-1" data-i18n="filter_trophy">Trophy Residences →</a>
+            <a href="/properties-for-sale" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="nav_all_properties_for_sale">All Properties for Sale</a>
+            <a href="/apartments-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="filter_apartments">Apartments</a>
+            <a href="/villas-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="filter_villas">Villas</a>
+            <a href="/penthouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="filter_penthouses">Penthouses</a>
+            <a href="/townhouses-for-sale-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="filter_townhouses">Townhouses</a>
+            <a href="/trophy-residences" class="text-xs text-gold-400 font-semibold hover:text-gold-300 py-1 transition-colors" data-i18n="filter_trophy">Trophy Residences →</a>
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_for_rent">For Rent</div>
-            <a href="/properties-for-rent" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_rentals">All Rentals</a>
+            <a href="/properties-for-rent" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="nav_all_rentals">All Rentals</a>
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_by_lifestyle">By Lifestyle</div>
-            <a href="/beachfront-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_beachfront">Beachfront</a>
-            <a href="/burj-khalifa-view-properties" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_burj_view">Burj View</a>
-            <a href="/golf-course-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_golf_course">Golf Course</a>
-            <a href="/branded-residences-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_branded_residences">Branded Residences</a>
-            <a href="/commercial-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_commercial">Commercial</a>
+            <a href="/beachfront-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_beachfront">Beachfront</a>
+            <a href="/burj-khalifa-view-properties" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_burj_view">Burj View</a>
+            <a href="/golf-course-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_golf_course">Golf Course</a>
+            <a href="/branded-residences-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_branded_residences">Branded Residences</a>
+            <a href="/commercial-properties-in-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_commercial">Commercial</a>
           </div>
         </div>
-
         <!-- 2. Off-Plan -->
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/off-plan" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_offplan">Off-Plan</a>
-            <button type="button" id="mobile-offplan-toggle" aria-expanded="false" aria-controls="mobile-offplan-submenu" aria-label="Toggle Off-Plan submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-offplan-toggle" aria-expanded="false" aria-controls="mobile-offplan-submenu" aria-label="Toggle Off-Plan submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-offplan-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_discover">Discover</div>
-            <a href="/off-plan/projects" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_offplan">All Off-Plan Projects</a>
-            <a href="/off-plan/new-launches" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_new_launches">New Launches</a>
-            <a href="/off-plan/by-developer" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_by_developer">By Developer</a>
+            <a href="/off-plan/projects" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="nav_all_offplan">All Off-Plan Projects</a>
+            <a href="/off-plan/new-launches" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_new_launches">New Launches</a>
+            <a href="/off-plan/coming-soon" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_coming_soon">Coming Soon</a>
+            <a href="/off-plan/by-developer" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_by_developer">By Developer</a>
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_investment_tools">Investment Tools</div>
-            <a href="/off-plan/investment-guide" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_investment_guide">Investment Guide</a>
+            <a href="/off-plan/investment-guide" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_investment_guide">Investment Guide</a>
+            <a href="/off-plan/payment-calculator" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_payment_calculator">Payment Calculator</a>
+            <a href="/off-plan/roi-predictor" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_roi_predictor">ROI Predictor</a>
+            <a href="/off-plan/developer-reputation-tracker" class="text-xs text-gold-400 font-semibold hover:text-gold-300 py-1 transition-colors" data-i18n="nav_developer_tracker">Developer Tracker →</a>
           </div>
         </div>
-
         <!-- 3. Areas -->
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/areas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_areas">Areas</a>
-            <button type="button" id="mobile-areas-toggle" aria-expanded="false" aria-controls="mobile-areas-submenu" aria-label="Toggle Areas submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-areas-toggle" aria-expanded="false" aria-controls="mobile-areas-submenu" aria-label="Toggle Areas submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-areas-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_featured_areas">Featured Areas</div>
-            <a href="/areas" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_areas">All Areas →</a>
-            <a href="/areas/palm-jumeirah" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_palm_jumeirah">Palm Jumeirah</a>
-            <a href="/areas/downtown-dubai" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_downtown_dubai">Downtown Dubai</a>
-            <a href="/areas/dubai-hills-estate" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_dubai_hills_estate">Dubai Hills Estate</a>
+            <a href="/areas/palm-jumeirah" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="nav_palm_jumeirah">Palm Jumeirah</a>
+            <a href="/areas/downtown-dubai" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_downtown_dubai">Downtown Dubai</a>
+            <a href="/areas/dubai-hills-estate" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_dubai_hills_estate">Dubai Hills Estate</a>
+            <a href="/areas/dubai-marina" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_dubai_marina">Dubai Marina</a>
+            <a href="/areas/business-bay" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_business_bay">Business Bay</a>
+            <a href="/areas/dubai-creek-harbour" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_creek_harbour">Creek Harbour</a>
+            <a href="/areas/jumeirah-bay-island" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_jumeirah_bay_island">Jumeirah Bay Island</a>
+            <a href="/areas/emirates-hills" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_emirates_hills">Emirates Hills</a>
+            <a href="/areas" class="text-xs text-gold-400 font-semibold hover:text-gold-300 py-1 transition-colors" data-i18n="nav_all_areas">All Areas →</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_city_comparisons">City Comparisons</div>
+            <a href="/areas/compare/dubai-vs-london" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_dubai_vs_london">Dubai vs London</a>
+            <a href="/areas/compare/dubai-vs-singapore" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_dubai_vs_singapore">Dubai vs Singapore</a>
+            <a href="/areas/compare/dubai-vs-new-york" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_dubai_vs_new_york">Dubai vs New York</a>
           </div>
         </div>
-
-        <!-- 5. Services -->
+        <!-- 4. Services -->
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/services" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_services">Services</a>
-            <button type="button" id="mobile-services-toggle" aria-expanded="false" aria-controls="mobile-services-submenu" aria-label="Toggle Services submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-services-toggle" aria-expanded="false" aria-controls="mobile-services-submenu" aria-label="Toggle Services submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-services-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_buying_selling">Buying &amp; Selling</div>
-            <a href="/services" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_services">All Services →</a>
-            <a href="/services/buying" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_buying">Buying Advisory</a>
-            <a href="/services/selling" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_selling_advisory">Selling Advisory</a>
-            <a href="/services/mortgage" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_mortgage_advisory">Mortgage Advisory</a>
-            <a href="/services/valuation" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_free_valuation">Free Valuation</a>
+            <a href="/services/buying" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="footer_buying">Buying Advisory</a>
+            <a href="/services/selling" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_selling_advisory">Selling Advisory</a>
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_management_legal">Management &amp; Legal</div>
-            <a href="/services/property-management" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_property_management">Property Management</a>
-            <a href="/services/legal" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_legal">Legal &amp; Conveyancing</a>
-            <a href="/services/insurance" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_property_insurance">Property Insurance</a>
-            <a href="/services/after-sales" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_after_sales">After-Sales Support</a>
+            <a href="/services/valuation" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_free_valuation">Free Valuation</a>
+            <a href="/services/after-sales" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_after_sales">After Sales Support</a>
           </div>
         </div>
-
-        <!-- 6. Visas -->
-        <div class="mobile-nav-item">
-          <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
-            <a href="/visas" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_visas">Visas</a>
-            <button type="button" id="mobile-visas-toggle" aria-expanded="false" aria-controls="mobile-visas-submenu" aria-label="Toggle Visas submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
-              <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-          </div>
-          <div id="mobile-visas-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
-            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_visa_types">Visa Types</div>
-            <a href="/visas" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_visas">All Visas →</a>
-            <a href="/visas/golden-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_golden_visa_10yr">Golden Visa (10-Year)</a>
-            <a href="/visas/investor-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_investor_visa_2yr">Investor Visa (2-Year)</a>
-            <a href="/visas/retirement-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_retirement_visa_5yr">Retirement Visa (5-Year)</a>
-            <a href="/visas/remote-work-visa" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_remote_work_visa">Remote Work Visa</a>
-            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_by_nationality">By Nationality</div>
-            <a href="/visas/for-indian-buyers" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="visa_nat_indian_title">For Indian Buyers</a>
-            <a href="/visas/for-uk-buyers" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="visa_nat_uk_title">For UK Buyers</a>
-            <a href="/visas/for-chinese-buyers" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="visa_nat_chinese_title">For Chinese Buyers</a>
-            <a href="/visas/eligibility-checker" class="text-xs text-gold-400 font-semibold py-1" data-i18n="nav_check_eligibility">Check Eligibility →</a>
-          </div>
-        </div>
-
-        <!-- 7. Insights -->
+        <!-- 5. Insights -->
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/insights" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_insights">Insights</a>
-            <button type="button" id="mobile-insights-toggle" aria-expanded="false" aria-controls="mobile-insights-submenu" aria-label="Toggle Insights submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-insights-toggle" aria-expanded="false" aria-controls="mobile-insights-submenu" aria-label="Toggle Insights submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-insights-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_content_hub">Content Hub</div>
-            <a href="/insights" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_all_insights">All Insights →</a>
-            <a href="/insights/blog" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_blog_articles">Blog Articles</a>
-            <a href="/insights/market-reports" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_market_reports">Market Reports</a>
-            <a href="/insights/podcast" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="art_podcast_tag">Podcast</a>
-            <a href="/insights/guides" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_buyers_guides">Buyer's Guides</a>
-            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_tools_reference">Tools &amp; Reference</div>
-            <a href="/insights/calculators" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_all_calculators">All Calculators</a>
-            <a href="/insights/faq" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_faq_hub">FAQ Hub</a>
-            <a href="/insights/glossary" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_glossary">Glossary</a>
-            <a href="/insights/market-data" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_market_data">Market Data</a>
+            <a href="/insights/blog" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_blog_articles">Blog Articles</a>
+            <a href="/insights/market-reports" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_market_reports">Market Reports</a>
+            <a href="/insights/podcast" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="art_podcast_tag">Podcast</a>
+            <a href="/insights/guides" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_buyers_guides">Buyer's Guides</a>
+            <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2 border-t border-white-line/50 mt-1" data-i18n="nav_tools_reference">Tools & Reference</div>
+            <a href="/insights/calculators" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_all_calculators">All Calculators</a>
+            <a href="/insights/faq" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_faq_hub">FAQ Hub</a>
+            <a href="/insights/glossary" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_glossary">Glossary</a>
+            <a href="/insights/market-data" class="text-xs transition-colors py-1.5 text-ash hover:text-gold-400" data-i18n="nav_market_data">Market Data</a>
           </div>
         </div>
-
-        <!-- 8. Heritage -->
+        <!-- 6. Heritage -->
         <div class="mobile-nav-item">
           <div class="flex items-center justify-between hover:bg-white-soft rounded-xs transition-all">
             <a href="/heritage" class="flex-1 py-3 px-4 text-sm font-semibold text-bone hover:text-gold-400" data-i18n="nav_heritage">Heritage</a>
-            <button type="button" id="mobile-heritage-toggle" aria-expanded="false" aria-controls="mobile-heritage-submenu" aria-label="Toggle Heritage submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none">
+            <button type="button" id="mobile-heritage-toggle" aria-expanded="false" aria-controls="mobile-heritage-submenu" aria-label="Toggle Heritage submenu" class="p-3 text-ash hover:text-gold-400 focus:outline-none mobile-accordion-toggle">
               <svg class="w-4 h-4 transition-transform duration-300 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
             </button>
           </div>
           <div id="mobile-heritage-submenu" class="hidden pl-6 pr-4 py-2 flex flex-col gap-2 border-l border-white-line ml-4 my-1">
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-1" data-i18n="nav_about_zarin">About ZARIN</div>
-            <a href="/heritage" class="text-xs text-bone hover:text-gold-400 py-1" data-i18n="nav_our_story">Our Story (since 2005)</a>
-            <a href="/heritage/founder" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_founders_letter">Founder's Letter</a>
-            <a href="/heritage/team" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_team">Our Team</a>
-            <a href="/heritage/authors" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_authors">Author Profiles</a>
+            <a href="/heritage" class="text-xs text-bone hover:text-gold-400 py-1 transition-colors" data-i18n="nav_our_story">Our Story (since 2005)</a>
+            <a href="/heritage/founder" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_founders_letter">Founder's Letter</a>
+            <a href="/heritage/team" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_team">Our Team</a>
+            <a href="/heritage/authors" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="nav_authors">Author Profiles</a>
             <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold pt-2" data-i18n="nav_trust_proof">Trust &amp; Proof</div>
-            <a href="/heritage/testimonials" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_testimonials">Testimonials</a>
-            <a href="/heritage/awards" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_awards">Awards</a>
-            <a href="/heritage/press" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="footer_press">Press &amp; Media</a>
-            <a href="/heritage/case-studies" class="text-xs text-ash hover:text-gold-400 py-1" data-i18n="nav_case_studies">Case Studies</a>
+            <a href="/heritage/testimonials" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="footer_testimonials">Testimonials</a>
+            <a href="/heritage/press" class="text-xs text-ash hover:text-gold-400 py-1 transition-colors" data-i18n="footer_press">Press &amp; Media</a>
           </div>
         </div>
-
-        <div class="px-4 py-3 border-t border-white-line my-2">
-          <div class="text-[10px] uppercase tracking-wider text-gold-400 font-semibold mb-2" data-i18n="lang_label">Language / زبان</div>
-          <div class="flex items-center gap-2" role="group" aria-label="Select language">
-            <button type="button" class="mobile-lang-btn lang-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-gold-line bg-gold-400 text-ink-900 transition-all text-center active cursor-pointer" data-lang="en" data-i18n="lang_en_label">English (EN)</button>
-            <button type="button" class="mobile-lang-btn lang-btn flex-1 py-1.5 px-2 text-xs font-bold rounded-xs border border-white-line text-ash hover:text-gold-400 hover:border-gold-line transition-all text-center cursor-pointer" data-lang="fa" data-i18n="lang_fa_label">فارسی (FA)</button>
-          </div>
-        </div>
-        <div class="h-px bg-white-line my-2"></div>
+        <div class="h-px bg-white-line my-4"></div>
         <a href="/consultation" class="py-3 px-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-wide text-center rounded-xs hover:bg-gold-300 transition-all" data-i18n="nav_cta">Book Consultation</a>
-        <a href="tel:+971586901231" class="py-3 px-4 text-sm text-ash hover:text-gold-400 text-center"><span dir="ltr" class="tabular-nums">+971 58 690 1231</span></a>
-        <a href="https://wa.me/971586901231" class="py-3 px-4 text-sm text-tether hover:text-tether/80 text-center" data-i18n="contact_wa_title">WhatsApp</a>
+        <a href="/contact" class="py-3 px-4 text-sm text-ash hover:text-gold-400 text-center" data-i18n="nav_contact">Contact Us</a>
+        <a href="tel:+971586901231" class="py-3 px-4 text-sm text-ash hover:text-gold-400 text-center" dir="ltr">+971 58 690 1231</a>
+        <a href="https://wa.me/971586901231" class="py-3 px-4 text-sm text-tether hover:text-tether/80 text-center">WhatsApp</a>
       </nav>
     </div>
   </div>
 
-  <main id="main" class="flex-grow py-20 md:py-28 px-6 bg-ink-950">
-    <div class="max-w-4xl mx-auto">
-      <div class="inline-flex items-center gap-2 mb-6">
-        <span class="w-8 h-px bg-gold-400"></span>
-        <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Interactive Financial Tools</span>
-      </div>
-      <h1 class="font-sans font-extrabold text-4xl md:text-6xl text-bone mb-6 tracking-tight leading-tight">7 Interactive Property Calculators</h1>
-      <p class="text-ash text-lg md:text-xl font-light leading-relaxed mb-10 pb-8 border-b border-white-line">Model your investments with accuracy: compute mortgage repayments, net rental yields, off-plan cash flows, service charges, and Golden Visa eligibility.</p>
+    <!-- Breadcrumb -->
+  <div class="pt-24 bg-ink-900 border-b border-white-line">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20 py-4">
+      <nav aria-label="Breadcrumb" class="text-xs">
+        <ol class="flex items-center gap-2 text-slate flex-wrap" role="list">
+          <li role="listitem"><a href="/" class="hover:text-gold-400 transition-colors">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li role="listitem"><a href="/insights" class="hover:text-gold-400 transition-colors">Insights</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-bone font-semibold" aria-current="page">All Calculators</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
 
-      <div class="bg-ink-900 border border-gold-line rounded-sm p-8 md:p-12 mb-12 bg-gold-soft">
-        <div class="flex items-center gap-3 mb-4">
-          <div class="w-8 h-8 rounded-xs border border-gold-line flex items-center justify-center text-gold-400">
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+  <main id="main" class="flex-grow">
+
+  <!-- 1. HERO -->
+  <section id="hero" class="relative py-24 md:py-32 overflow-hidden bg-ink-900" aria-labelledby="hero-headline">
+    <div class="absolute inset-0 opacity-15">
+      <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1600&q=80" alt="A calculator beside property notes — the arithmetic behind every ZARIN Dubai property calculator" class="w-full h-full object-cover" loading="eager" fetchpriority="high" decoding="async" width="1600" height="900">
+    </div>
+    <div class="absolute inset-0 bg-ink-900/70" aria-hidden="true"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-ink-900 via-ink-900/90 to-ink-900" aria-hidden="true"></div>
+    <div class="relative max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-4xl animate-fade-in-up">
+        <div class="inline-flex items-center gap-2 mb-6" aria-hidden="true">
+          <span class="w-8 h-px bg-gold-400"></span>
+          <span class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold">Insights &middot; Free Calculators</span>
+        </div>
+
+        <h1 id="hero-headline" class="font-sans font-extrabold text-4xl md:text-6xl lg:text-7xl leading-[1.02] tracking-tight text-bone mb-6">Dubai Property Calculators &mdash;<br><span class="text-gold-gradient">Seven Free Tools, Zero Guesswork</span></h1>
+        <p class="text-lg md:text-xl text-ash max-w-3xl leading-relaxed mb-10 font-light">Every number a Dubai buyer needs before committing a dirham &mdash; monthly mortgage repayments, rental yields net of service charges, off-plan schedules, currency exposure and visa thresholds. Free, browser-based, and honest about what each figure does and does not promise.</p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/consultation" class="inline-flex items-center justify-center px-8 py-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold" aria-label="Book a free consultation with a ZARIN advisor">
+            Book a Consultation
+            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#tools" class="inline-flex items-center justify-center px-8 py-4 border border-gold-line text-bone text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-soft hover:border-gold-border transition-all duration-300" aria-label="Jump straight to the seven free property calculators">
+            Explore the 7 Tools
+            <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7"/></svg>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-16 pt-8 border-t border-white-line" role="list" aria-label="Calculators hub headline statistics">
+          <div class="border-l-2 border-gold-400 pl-4 md:pl-6" role="listitem" aria-label="Free Tools: 7">
+            <div class="text-4xl md:text-5xl font-bold text-gold-400 stat-number">7</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-3 font-semibold">Free Tools</div>
+            <div class="text-xs text-slate mt-2 leading-relaxed">Mortgage, ROI, payment plan, service charges, currency, visa eligibility and AI match &mdash; the full acquisition maths.</div>
           </div>
-          <span class="text-xs uppercase tracking-wider text-gold-400 font-semibold">Executive Advisory Intelligence</span>
-        </div>
-        <p class="text-sm md:text-base text-bone/90 leading-relaxed mb-6">7 free, instant financial calculators: mortgage payments, rental yield & ROI, payment plans, service charges, currency, and visa eligibility.</p>
-        <div class="flex flex-col sm:flex-row gap-4 pt-4 border-t border-white-line">
-          <a href="/consultation" class="inline-flex items-center justify-center px-6 py-3.5 bg-gold-400 text-ink-900 text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-gold-300 transition-all shadow-gold">Request Bespoke Advisory</a>
-          <a href="/insights" class="inline-flex items-center justify-center px-6 py-3.5 border border-gold-line text-bone text-xs font-bold uppercase tracking-wider rounded-xs hover:bg-gold-soft transition-all">Back to Intelligence Hub →</a>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6 pt-6 border-t border-white-line text-left">
-        <div class="bg-ink-900 border border-white-line rounded-sm p-6">
-          <div class="text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">Verified Data</div>
-          <p class="text-xs text-ash leading-relaxed">Cross-referenced with Dubai Land Department (DLD) and official RERA escrow ledgers.</p>
-        </div>
-        <div class="bg-ink-900 border border-white-line rounded-sm p-6">
-          <div class="text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">Private Office Advisory</div>
-          <p class="text-xs text-ash leading-relaxed">Confidential advisory across ultra-prime acquisitions exceeding AED 10M+.</p>
-        </div>
-        <div class="bg-ink-900 border border-white-line rounded-sm p-6">
-          <div class="text-xs uppercase tracking-wider text-gold-400 font-semibold mb-2">Multi-Currency & Tax</div>
-          <p class="text-xs text-ash leading-relaxed">Guidance on foreign remittance, banking compliance, and international tax structuring.</p>
+          <div class="border-l-2 border-gold-line pl-4 md:pl-6" role="listitem" aria-label="Signup Required: 0">
+            <div class="text-4xl md:text-5xl font-bold text-gold-400 stat-number">0</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-3 font-semibold">Signup Required</div>
+            <div class="text-xs text-slate mt-2 leading-relaxed">Every calculator runs in your browser. No account, no email gate, no personal data collected.</div>
+          </div>
+          <div class="border-l-2 border-gold-line pl-4 md:pl-6" role="listitem" aria-label="Currencies: 8">
+            <div class="text-4xl md:text-5xl font-bold text-gold-400 stat-number">8</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-3 font-semibold">Currencies</div>
+            <div class="text-xs text-slate mt-2 leading-relaxed">The converter prices a Dubai purchase in eight currencies against the dirham.</div>
+          </div>
+          <div class="border-l-2 border-gold-line pl-4 md:pl-6" role="listitem" aria-label="Data Refresh: 24h">
+            <div class="text-4xl md:text-5xl font-bold text-gold-400 stat-number">24h</div>
+            <div class="text-xs text-slate uppercase tracking-wider mt-3 font-semibold">Data Refresh</div>
+            <div class="text-xs text-slate mt-2 leading-relaxed">DLD transaction records refresh daily; lookup tables are reviewed quarterly.</div>
+          </div>
         </div>
       </div>
     </div>
-  </main>
+  </section>
 
-  <!-- FOOTER -->
+  <!-- 2. TL;DR -->
+  <section id="tldr" class="bg-ink-850 py-16 md:py-20 border-b border-white-line" aria-labelledby="tldr-heading">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="border-l-2 border-gold-400 pl-6 md:pl-8">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">The Short Version</div>
+        <p id="tldr-summary" class="text-base md:text-lg text-pearl leading-relaxed">ZARIN publishes seven free calculators covering the full acquisition maths of a Dubai purchase: mortgage repayments, rental ROI net of service charges, off-plan payment schedules, RERA-indexed service charges, currency conversion across eight currencies, a seven-question visa eligibility check, and an AI match brief that returns a curated shortlist from our advisory desk. Every tool runs in your browser &mdash; no signup, no personal data collected &mdash; on lookup tables compiled from DLD transaction data and the RERA service-charge index and reviewed quarterly. A bonus eighth output, the Instant Indicative Market Estimate, arrives with the free Market Price Assessment. Our founder has run this arithmetic on his own portfolio since 2005; the firm was established in 2023 so that every buyer could run it too &mdash; before the dirhams move, not after.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. THE 7 TOOLS -->
+  <section id="tools" class="bg-ink-900 py-24 md:py-32" aria-labelledby="tools-heading">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="text-center mb-16">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">The Toolkit</div>
+        <h2 id="tools-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">The Seven Tools</h2>
+        <p class="text-ash max-w-2xl mx-auto leading-relaxed">Each calculator does one job honestly, lives where the surrounding advice lives, and costs nothing to run. Here is what each one does and where to find it.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" role="list" aria-label="The seven free ZARIN property calculators">
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Tool 01 of 07 — Mortgage Calculator">
+          <div class="flex items-center gap-4 mb-5" aria-hidden="true">
+            <div class="text-3xl font-extrabold text-gold-400 stat-number">01</div>
+            <div class="flex-1 h-px bg-gold-line"></div>
+          </div>
+          <h3 class="text-xl font-bold text-bone mb-3">Mortgage Calculator</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">Converts a purchase price into a monthly repayment. Enter price, down payment, rate and term; the tool returns the monthly figure, and the 4% DLD transfer fee, 2% commission and AED 4,580 admin fee sit alongside it so the all-in cost is visible from the first click.</p>
+          <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Where it lives</div>
+          <div class="text-xs text-pearl font-semibold mb-4">Inside Buying Advisory</div>
+          <a href="/services/buying#mortgage" class="inline-flex items-center text-sm font-bold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Open the Mortgage Calculator">Open tool <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Tool 02 of 07 — ROI Predictor">
+          <div class="flex items-center gap-4 mb-5" aria-hidden="true">
+            <div class="text-3xl font-extrabold text-gold-400 stat-number">02</div>
+            <div class="flex-1 h-px bg-gold-line"></div>
+          </div>
+          <h3 class="text-xl font-bold text-bone mb-3">ROI Predictor</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">Rental yield, gross and net. Pick an area and size, and the predictor applies the ZARIN 2026 basis &mdash; from Business Bay at 7.0% gross to Palm Jumeirah at 4.9% &mdash; then subtracts RERA-indexed service charges so the net number is the one you actually bank.</p>
+          <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Where it lives</div>
+          <div class="text-xs text-pearl font-semibold mb-4">Standalone off-plan tool</div>
+          <a href="/off-plan/roi-predictor" class="inline-flex items-center text-sm font-bold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Open the ROI Predictor">Open tool <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Tool 03 of 07 — Payment Plan Calculator">
+          <div class="flex items-center gap-4 mb-5" aria-hidden="true">
+            <div class="text-3xl font-extrabold text-gold-400 stat-number">03</div>
+            <div class="flex-1 h-px bg-gold-line"></div>
+          </div>
+          <h3 class="text-xl font-bold text-bone mb-3">Payment Plan Calculator</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">Maps an off-plan payment schedule instalment by instalment. Enter a launch price and a plan structure &mdash; a 60/40 split, say &mdash; and every payment is dated against its construction milestone, including any post-handover portion.</p>
+          <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Where it lives</div>
+          <div class="text-xs text-pearl font-semibold mb-4">Standalone off-plan tool</div>
+          <a href="/off-plan/payment-calculator" class="inline-flex items-center text-sm font-bold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Open the Payment Plan Calculator">Open tool <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Tool 04 of 07 — Service Charges">
+          <div class="flex items-center gap-4 mb-5" aria-hidden="true">
+            <div class="text-3xl font-extrabold text-gold-400 stat-number">04</div>
+            <div class="flex-1 h-px bg-gold-line"></div>
+          </div>
+          <h3 class="text-xl font-bold text-bone mb-3">Service Charges</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">Annual ownership costs from the RERA service-charge index: Dubai Hills at roughly AED 12 per sqft per year, Dubai Marina AED 18, Business Bay AED 20, Downtown Dubai AED 22. The inputs live inside the ROI Predictor, so every yield it returns is already net of the running costs.</p>
+          <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Where it lives</div>
+          <div class="text-xs text-pearl font-semibold mb-4">Inputs inside the ROI Predictor</div>
+          <a href="/off-plan/roi-predictor" class="inline-flex items-center text-sm font-bold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Open the Service Charges">Open tool <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Tool 05 of 07 — Currency Converter">
+          <div class="flex items-center gap-4 mb-5" aria-hidden="true">
+            <div class="text-3xl font-extrabold text-gold-400 stat-number">05</div>
+            <div class="flex-1 h-px bg-gold-line"></div>
+          </div>
+          <h3 class="text-xl font-bold text-bone mb-3">Currency Converter</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">Eight currencies against the dirham, for buyers who earn, save and repatriate abroad. See what the price means in your money today &mdash; then let the multi-currency desk structure the actual purchase.</p>
+          <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Where it lives</div>
+          <div class="text-xs text-pearl font-semibold mb-4">Inside the Private Office</div>
+          <a href="/private-office/multi-currency" class="inline-flex items-center text-sm font-bold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Open the Currency Converter">Open tool <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Tool 06 of 07 — Visa Eligibility Checker">
+          <div class="flex items-center gap-4 mb-5" aria-hidden="true">
+            <div class="text-3xl font-extrabold text-gold-400 stat-number">06</div>
+            <div class="flex-1 h-px bg-gold-line"></div>
+          </div>
+          <h3 class="text-xl font-bold text-bone mb-3">Visa Eligibility Checker</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">Seven questions, one instant result. Budget, property status and intent map to the Golden Visa (AED 2M, ten years), the Investor Visa (AED 750K, two years), the Retirement and Remote Work routes &mdash; or to a plan that gets you there.</p>
+          <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Where it lives</div>
+          <div class="text-xs text-pearl font-semibold mb-4">Standalone visa tool</div>
+          <a href="/visas/eligibility-checker" class="inline-flex items-center text-sm font-bold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Open the Visa Eligibility Checker">Open tool <span aria-hidden="true">&rarr;</span></a>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Tool 07 of 07 — AI Match">
+          <div class="flex items-center gap-4 mb-5" aria-hidden="true">
+            <div class="text-3xl font-extrabold text-gold-400 stat-number">07</div>
+            <div class="flex-1 h-px bg-gold-line"></div>
+          </div>
+          <h3 class="text-xl font-bold text-bone mb-3">AI Match</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">Brief-based smart search. Describe your criteria &mdash; budget, area, yield target, handover window &mdash; and ZARIN&rsquo;s advisory desk returns a shortlist, not a portal firehose. It is a filter with a human accountable for what passes it.</p>
+          <div class="text-[10px] uppercase tracking-wider text-slate font-semibold mb-1">Where it lives</div>
+          <div class="text-xs text-pearl font-semibold mb-4">Inside the properties search</div>
+          <a href="/properties" class="inline-flex items-center text-sm font-bold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Open the AI Match">Open tool <span aria-hidden="true">&rarr;</span></a>
+        </article>
+      </div>
+      <div class="mt-10 p-6 border border-gold-line rounded-sm bg-gold-soft" role="note" aria-label="One toolkit, not seven tabs">
+        <div class="flex items-start gap-4">
+          <svg class="w-6 h-6 text-gold-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          <div>
+            <div class="text-sm font-bold text-bone mb-1">The tools are connected on purpose</div>
+            <p class="text-xs text-ash leading-relaxed">A mortgage figure feeds a yield calculation; a payment plan feeds a currency exposure; a yield feeds a visa threshold. Run them in sequence on the same property and you have the full picture &mdash; which is exactly how our advisors use them in a <a href="/consultation" class="text-gold-400 font-semibold hover:underline">consultation</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BONUS TOOL: INSTANT MARKET ESTIMATE -->
+  <section id="bonus-tool" class="bg-ink-850 py-24 md:py-32" aria-labelledby="bonus-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid lg:grid-cols-[1.4fr,1fr] gap-12 items-start">
+        <div>
+          <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">The Eighth Output</div>
+          <h2 id="bonus-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Bonus: the Instant Indicative Market Estimate</h2>
+          <p class="text-base text-ash leading-relaxed mb-4">Not a calculator in the classic sense but the output buyers ask for most: what is this property worth, right now, roughly? The instant estimate is part of the free <a href="/services/valuation" class="text-gold-400 font-semibold hover:underline">Market Price Assessment</a> &mdash; enter an address or an area and size, and the tool returns an indicative range around the area benchmark within seconds.</p>
+          <p class="text-base text-ash leading-relaxed mb-4">The example on the right is the canonical one: a 1,000 sqft Dubai Marina apartment benchmarks at AED 1,850 per sqft, giving a range of roughly AED 1,702,000 to AED 1,998,000 with an indicative rent of about AED 118,400 &mdash; a 6.4% gross yield at the midpoint. Specific floor, view, condition and tenancy move a real unit within &mdash; and occasionally outside &mdash; that range.</p>
+          <p class="text-base text-ash leading-relaxed">Where the assessment earns its keep is what follows the instant number: a Selling Price Recommendation, a Rental Price Assessment, a Current Market Competition Analysis, a Property Selling Strategy and an Off-Plan Resale Assessment &mdash; five deliverables, written, free.</p>
+          <div class="mt-6 p-5 border border-gold-line rounded-sm bg-gold-soft" role="note" aria-label="Advisory-only disclaimer for the instant market estimate">
+            <div class="text-xs uppercase tracking-wider text-gold-400 font-bold mb-2">Advisory only &mdash; read this part</div>
+            <p class="text-xs text-ash leading-relaxed">The instant estimate is an <strong class="text-pearl">indicative market appraisal</strong> for guidance only. It is <strong class="text-pearl">not a formal valuation</strong>, and it <strong class="text-pearl">does not replace a bank or DLD valuation</strong> &mdash; the documents your lender and the registry rely on at transfer. Treat it as the opening number of a conversation, never the closing number of one.</p>
+          </div>
+        </div>
+        <aside class="bg-ink-900 border border-white-line rounded-sm p-8" aria-label="Worked instant estimate for a 1,000 sqft Dubai Marina apartment">
+          <div class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-6 pb-4 border-b border-white-line">Instant Estimate &mdash; Marina, 1,000 Sqft</div>
+          <div role="list" aria-label="Instant indicative market estimate outputs">
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">Low end of range</span><span class="text-base font-bold text-bone stat-number">AED 1,702,000</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">Midpoint (benchmark)</span><span class="text-base font-bold text-gold-400 stat-number">AED 1,850,000</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">High end of range</span><span class="text-base font-bold text-bone stat-number">AED 1,998,000</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">Indicative annual rent</span><span class="text-base font-bold text-bone stat-number">&asymp; AED 118,400</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-line"><span class="text-sm text-ash">Gross yield at midpoint</span><span class="text-base font-bold text-bone stat-number">&asymp; 6.4%</span></div>
+          </div>
+          <p class="text-[10px] text-slate mt-6 leading-relaxed">Indicative range on the ZARIN 2026 area basis. Advisory appraisal only &mdash; not a formal valuation; does not replace bank or DLD valuations.</p>
+          <a href="/services/valuation" class="inline-flex items-center mt-6 text-sm font-bold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Open the free Market Price Assessment">Get the free assessment <span aria-hidden="true">&rarr;</span></a>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. HOW THE MATH WORKS -->
+  <section id="how-the-math-works" class="bg-ink-900 py-24 md:py-32" aria-labelledby="math-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Under the Hood</div>
+        <h2 id="math-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">How the Math Works</h2>
+        <p class="text-base text-ash leading-relaxed mb-4">All seven calculators run entirely in your browser. There is no signup, no account, no email gate &mdash; and no personal data collected: the numbers you enter never leave your device. What powers the results are lookup tables compiled from DLD transaction data and the RERA service-charge index, reviewed every quarter and shipped with the page itself.</p>
+        <p class="text-base text-ash leading-relaxed">The formulas are deliberately transparent &mdash; no black boxes, no &ldquo;proprietary algorithms&rdquo; guarding an arithmetic you could do on paper. If a tool ever produces a number you cannot reconstruct from the inputs, that is a bug, and we want to hear about it.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4" role="list" aria-label="The four formulas behind the calculators">
+        <article class="bg-ink-850 border border-white-line rounded-sm p-6" aria-label="Monthly repayment formula">
+          <h3 class="text-base font-bold text-bone mb-2">Monthly repayment</h3>
+          <p class="text-xs text-ash leading-relaxed">The mortgage tool amortises the loan (price minus down payment) over the term at the rate you enter &mdash; the standard annuity formula, the same one your bank uses.</p>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-6" aria-label="Gross yield formula">
+          <h3 class="text-base font-bold text-bone mb-2">Gross yield</h3>
+          <p class="text-xs text-ash leading-relaxed">Annual rent divided by purchase price. Simple by design: a Marina unit at AED 1,850,000 renting near AED 118,400 is 6.4% gross.</p>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-6" aria-label="Net yield formula">
+          <h3 class="text-base font-bold text-bone mb-2">Net yield</h3>
+          <p class="text-xs text-ash leading-relaxed">(Annual rent minus service charges) divided by purchase price. The ROI Predictor pulls the service-charge line from the RERA index before showing you the net figure.</p>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-6" aria-label="Buyer’s total costs formula">
+          <h3 class="text-base font-bold text-bone mb-2">Buyer&rsquo;s total costs</h3>
+          <p class="text-xs text-ash leading-relaxed">DLD transfer fee 4% + ZARIN commission 2% + admin AED 4,580 &mdash; plus mortgage registration at 0.25% of the loan when financed.</p>
+        </article>
+      </div>
+      <div class="mt-10 p-6 border border-white-line rounded-sm bg-ink-850" role="note" aria-label="Why the tools are browser-based">
+        <p class="text-xs text-ash leading-relaxed"><strong class="text-pearl">Why browser-based matters:</strong> nothing transmitted means nothing to leak, nothing to sell and nothing to subpoena. It also means the tools work on a plane, in a viewing, or on a building&rsquo;s wifi &mdash; the three places buyers actually run numbers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. WORKED EXAMPLES -->
+  <section id="worked-examples" class="bg-ink-850 py-24 md:py-32" aria-labelledby="examples-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="max-w-3xl mb-12">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Proof, Not Promises</div>
+        <h2 id="examples-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Worked Examples</h2>
+        <p class="text-base text-ash leading-relaxed">Two calculations buyers run most &mdash; the total cost of an AED 2,000,000 purchase, and an instant estimate on a Dubai Marina apartment &mdash; shown to the dirham so you can verify every line yourself.</p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-8 mb-12">
+        <article class="bg-ink-900 border border-white-line rounded-sm p-8" aria-label="Worked example A — total acquisition costs on an AED 2,000,000 Dubai purchase">
+          <div class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2">Example A &middot; Buying Costs</div>
+          <h3 class="text-xl font-bold text-bone mb-4">AED 2,000,000 Purchase &mdash; Cash</h3>
+          <div role="list" aria-label="Cash purchase cost breakdown">
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">DLD transfer fee (4%)</span><span class="text-sm font-bold text-bone stat-number whitespace-nowrap">AED 80,000</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">ZARIN commission (2%)</span><span class="text-sm font-bold text-bone stat-number whitespace-nowrap">AED 40,000</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">Admin &amp; title issuance</span><span class="text-sm font-bold text-bone stat-number whitespace-nowrap">AED 4,580</span></div>
+            <div class="flex justify-between items-center py-3 "><span class="text-sm text-ash"><strong class="text-pearl">Total &mdash; cash purchase</strong></span><span class="text-sm font-bold text-bone stat-number whitespace-nowrap"><strong class="text-gold-400">AED 124,580 (6.2%)</strong></span></div>
+          </div>
+          <p class="text-xs text-slate mt-4 leading-relaxed">Financed instead at 60% loan-to-value, the mortgage registration fee (0.25% of the AED 1,200,000 loan) and the bank&rsquo;s valuation and processing costs add roughly AED 8,250:</p>
+          <div class="mt-4" role="list" aria-label="Financed purchase cost breakdown">
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">Cash costs as above</span><span class="text-sm font-bold text-bone stat-number whitespace-nowrap">AED 124,580</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">Mortgage registration (0.25% of loan)</span><span class="text-sm font-bold text-bone stat-number whitespace-nowrap">AED 3,000</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">Bank valuation &amp; processing</span><span class="text-sm font-bold text-bone stat-number whitespace-nowrap">&asymp; AED 5,250</span></div>
+            <div class="flex justify-between items-center py-3 "><span class="text-sm text-ash"><strong class="text-pearl">Total &mdash; 60% LTV financed</strong></span><span class="text-sm font-bold text-bone stat-number whitespace-nowrap"><strong class="text-gold-400">AED 132,830 (6.6%)</strong></span></div>
+          </div>
+          <p class="text-xs text-slate mt-4 leading-relaxed">Same property, two structures: 6.2% all-in cash, 6.6% financed. The <a href="/services/buying#mortgage" class="text-gold-400 font-semibold hover:underline">mortgage calculator</a> models the monthly side of the second column.</p>
+        </article>
+        <article class="bg-ink-900 border border-white-line rounded-sm p-8" aria-label="Worked example B — instant market estimate on a 1,000 sqft Dubai Marina apartment">
+          <div class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-2">Example B &middot; Instant Estimate</div>
+          <h3 class="text-xl font-bold text-bone mb-4">Dubai Marina &mdash; 1,000 Sqft</h3>
+          <div role="list" aria-label="Instant estimate range and yield">
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">Indicative range</span><span class="text-sm font-bold text-bone stat-number">AED 1,702,000 &ndash; 1,998,000</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">Midpoint (AED 1,850/sqft)</span><span class="text-sm font-bold text-gold-400 stat-number">AED 1,850,000</span></div>
+            <div class="flex justify-between items-center py-3 border-b border-white-soft"><span class="text-sm text-ash">Indicative annual rent</span><span class="text-sm font-bold text-bone stat-number">&asymp; AED 118,400</span></div>
+            <div class="flex justify-between items-center py-3"><span class="text-sm text-ash">Gross yield at midpoint</span><span class="text-sm font-bold text-bone stat-number">&asymp; 6.4%</span></div>
+          </div>
+          <p class="text-xs text-slate mt-4 leading-relaxed">Benchmark &times; area, dated by the quarter, priced by the dirham &mdash; and still only an indicative market appraisal, not a formal valuation. The <a href="/off-plan/roi-predictor" class="text-gold-400 font-semibold hover:underline">ROI Predictor</a> extends this to the net line after service charges.</p>
+        </article>
+      </div>
+      <figure class="relative rounded-sm overflow-hidden border border-white-line" aria-label="Property documents and keys beside a calculator">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Property documents and a set of keys on a desk — the paperwork the calculators predict, dirham by dirham" class="w-full h-56 md:h-64 object-cover" loading="lazy" decoding="async" width="900" height="450">
+        <figcaption class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-ink-950 to-transparent p-4 text-xs text-pearl">Every figure above is reconstructible from the inputs &mdash; that is the standard</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 7. CHOOSING THE RIGHT TOOL -->
+  <section id="choosing" class="bg-ink-900 py-24 md:py-32" aria-labelledby="choosing-heading">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="text-center mb-16">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">By Reader Type</div>
+        <h2 id="choosing-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Choosing the Right Tool</h2>
+        <p class="text-ash max-w-2xl mx-auto leading-relaxed">Seven tools, four typical readers. Match yourself to the row and start there &mdash; the rest of the toolkit will make itself useful soon enough.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" role="list" aria-label="Calculator recommendations by reader type">
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Reader type: First-Time Buyer">
+          <div class="text-[10px] uppercase tracking-wider text-gold-400 font-bold mb-3">Start here</div>
+          <h3 class="text-xl font-bold text-bone mb-3">First-Time Buyer</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">Start with the <a href="/services/buying#mortgage" class="text-gold-400 font-semibold hover:underline">mortgage calculator</a> to turn a price into a month, then anchor the all-in cost: 4% + 2% + AED 4,580 &mdash; AED 124,580 on an AED 2M cash purchase. The buying advisory page walks the full process behind the numbers.</p>
+          <div class="text-xs text-slate font-semibold border-t border-white-line pt-4">Mortgage + buying costs</div>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Reader type: Investor">
+          <div class="text-[10px] uppercase tracking-wider text-gold-400 font-bold mb-3">Start here</div>
+          <h3 class="text-xl font-bold text-bone mb-3">Investor</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">Run the <a href="/off-plan/roi-predictor" class="text-gold-400 font-semibold hover:underline">ROI Predictor</a> for net yield, then the instant estimate at <a href="/services/valuation" class="text-gold-400 font-semibold hover:underline">Market Price Assessment</a> for the exit anchor. Yield buys the holding; the estimate prices the exit.</p>
+          <div class="text-xs text-slate font-semibold border-t border-white-line pt-4">ROI + market estimate</div>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Reader type: Off-Plan Buyer">
+          <div class="text-[10px] uppercase tracking-wider text-gold-400 font-bold mb-3">Start here</div>
+          <h3 class="text-xl font-bold text-bone mb-3">Off-Plan Buyer</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">The <a href="/off-plan/payment-calculator" class="text-gold-400 font-semibold hover:underline">payment plan calculator</a> dates every instalment against milestones; pair it with the <a href="/off-plan/developer-reputation-tracker" class="text-gold-400 font-semibold hover:underline">developer reputation tracker</a>, because a schedule is only as good as the builder behind it.</p>
+          <div class="text-xs text-slate font-semibold border-t border-white-line pt-4">Payment plan + developer check</div>
+        </article>
+        <article class="bg-ink-850 border border-white-line rounded-sm p-8 hover:border-gold-line transition-all card-lift" aria-label="Reader type: International Buyer">
+          <div class="text-[10px] uppercase tracking-wider text-gold-400 font-bold mb-3">Start here</div>
+          <h3 class="text-xl font-bold text-bone mb-3">International Buyer</h3>
+          <p class="text-sm text-ash leading-relaxed mb-5">The <a href="/private-office/multi-currency" class="text-gold-400 font-semibold hover:underline">currency converter</a> prices the purchase in your money; the <a href="/visas/eligibility-checker" class="text-gold-400 font-semibold hover:underline">visa checker</a> answers the residency question in seven questions. Run both before the flight, not after it.</p>
+          <div class="text-xs text-slate font-semibold border-t border-white-line pt-4">Currency + visa</div>
+        </article>
+      </div>
+      <div class="text-center mt-12">
+        <p class="text-sm text-slate">Undecided on which kind of buyer you are? That is precisely what a <a href="/consultation" class="text-gold-400 font-semibold hover:underline">consultation</a> settles in thirty minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. DATA SOURCES & CADENCE -->
+  <section id="data-sources" class="bg-ink-850 py-24 md:py-32" aria-labelledby="sources-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid lg:grid-cols-[1.5fr,1fr] gap-12 items-start">
+        <div>
+          <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Provenance</div>
+          <h2 id="sources-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Data Sources &amp; Cadence</h2>
+          <p class="text-base text-ash leading-relaxed mb-4">Every figure the calculators produce traces back to two public sources: <strong class="text-pearl">DLD transaction data</strong> &mdash; the registry of what actually sold, for what, recorded by the Dubai Land Department &mdash; and the <strong class="text-pearl">RERA service-charge index</strong>, the regulatory benchmark for annual ownership costs by building and district.</p>
+          <p class="text-base text-ash leading-relaxed mb-4">The cadence has two gears. The underlying DLD transaction records refresh every 24 hours on the <a href="/insights/market-data" class="text-gold-400 font-semibold hover:underline">market data dashboard</a>. The lookup tables inside the calculators &mdash; area prices, yields, service-charge bands &mdash; are reviewed <strong class="text-pearl">quarterly</strong>, on the ZARIN 2026 ROI basis, so a released table is always a considered snapshot rather than yesterday&rsquo;s spike.</p>
+          <p class="text-base text-ash leading-relaxed">Nothing is changed silently. Each quarterly review is logged in the changelog inside the <a href="/off-plan/investment-guide" class="text-gold-400 font-semibold hover:underline">off-plan investment guide</a> &mdash; which line moved, why, and what it does to a worked example. The same discipline our founder has applied to his own files since 2005; the firm was established in 2023 to make it standard practice.</p>
+        </div>
+        <aside class="bg-ink-900 border border-white-line rounded-sm p-8" aria-label="Calculator data sources at a glance">
+          <div class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-6 pb-4 border-b border-white-line">The Ledger</div>
+          <dl class="space-y-5">
+            <div><dt class="text-xs text-slate uppercase tracking-wider font-semibold">Prices &amp; volumes</dt><dd class="text-sm text-ash mt-1 leading-relaxed">DLD transaction records &mdash; actual transfers, not asking prices.</dd></div>
+            <div><dt class="text-xs text-slate uppercase tracking-wider font-semibold">Service charges</dt><dd class="text-sm text-ash mt-1 leading-relaxed">RERA service-charge index &mdash; AED 12 to AED 22 per sqft per year across the eight tracked districts.</dd></div>
+            <div><dt class="text-xs text-slate uppercase tracking-wider font-semibold">Daily layer</dt><dd class="text-sm text-ash mt-1 leading-relaxed">DLD records refresh every 24 hours on the market data dashboard.</dd></div>
+            <div><dt class="text-xs text-slate uppercase tracking-wider font-semibold">Quarterly layer</dt><dd class="text-sm text-ash mt-1 leading-relaxed">Calculator lookup tables reviewed each quarter; changes logged in the investment guide changelog.</dd></div>
+            <div><dt class="text-xs text-slate uppercase tracking-wider font-semibold">Yield basis</dt><dd class="text-sm text-ash mt-1 leading-relaxed">ZARIN ROI basis, 2026 &mdash; the same basis behind every figure we publish.</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FAQ -->
+  <section id="faq" class="bg-ink-900 py-24 md:py-32" aria-labelledby="faq-heading">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="text-center mb-16">
+        <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">Calculators FAQ</div>
+        <h2 id="faq-heading" class="text-4xl md:text-5xl font-bold tracking-tight text-bone mb-6">Eight Questions About the Tools</h2>
+        <p class="text-ash max-w-2xl mx-auto leading-relaxed">Cost, privacy, accuracy and cadence &mdash; answered with the same transparency the calculators themselves run on. If your question is not here, <a href="/contact" class="text-gold-400 font-semibold hover:underline">ask us directly</a>.</p>
+      </div>
+      <div class="space-y-3">
+        <details class="bg-ink-850 border border-white-line rounded-sm" open>
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Are all seven calculators really free?">
+            <h3 class="text-base font-semibold text-bone pr-4">Are all seven calculators really free?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">Yes &mdash; all seven tools are free, with no signup, no email gate and no payment wall. They exist because informed buyers make better clients: our founder has run exactly this arithmetic on his own Dubai portfolio since 2005, and the firm was established in 2023 to give every buyer the same numbers before a dirham is committed. The only thing we ask in return is that you <a href="/consultation" class="text-gold-400 font-semibold hover:underline">talk to us</a> when the numbers argue for a purchase.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Do you collect the numbers I enter?">
+            <h3 class="text-base font-semibold text-bone pr-4">Do you collect the numbers I enter?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">No. Every calculator runs entirely in your browser &mdash; the inputs never leave your device, nothing is transmitted to our servers, and no personal data is collected. There is no account to create and nothing to delete afterwards. The lookup tables behind the results (area prices, yields and the RERA service-charge index) live in the page itself, refreshed with each quarterly review.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Which calculator should a first-time buyer start with?">
+            <h3 class="text-base font-semibold text-bone pr-4">Which calculator should a first-time buyer start with?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">Start with the <a href="/services/buying#mortgage" class="text-gold-400 font-semibold hover:underline">mortgage calculator</a> to convert a price into a monthly figure, then read the buying-costs worked example on the <a href="/services/buying" class="text-gold-400 font-semibold hover:underline">buying advisory page</a>: an AED 2,000,000 cash purchase costs AED 124,580 in total acquisition costs (6.2%), or AED 132,830 (6.6%) with a 60% loan-to-value mortgage. Knowing the monthly number and the all-in cost is the whole first conversation.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: How accurate is the Instant Market Estimate?">
+            <h3 class="text-base font-semibold text-bone pr-4">How accurate is the Instant Market Estimate?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">It returns an indicative range around the area benchmark &mdash; for a 1,000 sqft Dubai Marina apartment, roughly AED 1,702,000 to AED 1,998,000 around a AED 1,850,000 midpoint. It is an advisory indicative market appraisal for guidance only: it is not a formal valuation and does not replace a bank or DLD valuation. When you need a property-specific number, the free <a href="/services/valuation" class="text-gold-400 font-semibold hover:underline">Market Price Assessment</a> adds a five-part written report.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: How often are the lookup tables updated?">
+            <h3 class="text-base font-semibold text-bone pr-4">How often are the lookup tables updated?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">Quarterly. The tables compile DLD transaction data and the RERA service-charge index, and each review is logged in the changelog inside the <a href="/off-plan/investment-guide" class="text-gold-400 font-semibold hover:underline">off-plan investment guide</a>. The underlying DLD transaction records refresh every 24 hours on the <a href="/insights/market-data" class="text-gold-400 font-semibold hover:underline">market data dashboard</a>, so the quarterly table is always a reviewed snapshot of live data, not a stale one.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Can non-residents use the mortgage calculator?">
+            <h3 class="text-base font-semibold text-bone pr-4">Can non-residents use the mortgage calculator?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">Yes &mdash; the inputs reflect how Dubai actually lends to overseas buyers: non-resident mortgages typically run at 50&ndash;60% loan-to-value through partner banks, with income documented from abroad. Model your monthly figure with that ceiling in mind, and note that the DLD 4% transfer fee, 2% commission and AED 4,580 admin fee apply identically whether you pay cash or finance. For live terms, the desk coordinates introductions to the banks active in non-resident lending.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: What is the difference between gross and net yield in the ROI Predictor?">
+            <h3 class="text-base font-semibold text-bone pr-4">What is the difference between gross and net yield in the ROI Predictor?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">Gross yield divides annual rent by purchase price; net yield subtracts service charges first. On a 1,000 sqft Dubai Marina unit at AED 1,850,000 renting for about AED 118,400, the gross yield is 6.4% &mdash; but about AED 16,000 of service charges takes the net figure to roughly AED 102,400, or 5.5% net. The <a href="/off-plan/roi-predictor" class="text-gold-400 font-semibold hover:underline">ROI Predictor</a> shows both lines, because quoting only the gross number is how disappointment is manufactured.</div>
+        </details>
+        <details class="bg-ink-850 border border-white-line rounded-sm">
+          <summary class="flex items-center justify-between gap-4 p-6 cursor-pointer hover:bg-white-soft transition-colors" aria-label="Expand answer to: Do the tools work on my phone?">
+            <h3 class="text-base font-semibold text-bone pr-4">Do the tools work on my phone?</h3>
+            <svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+          </summary>
+          <div class="px-6 pb-6 text-sm text-ash leading-relaxed">Yes. Every calculator is built for the browser &mdash; phone, tablet or desktop &mdash; with no app to download and no plugin to install. Results recalculate instantly as inputs change, so you can sanity-check a payment plan or a currency conversion during a viewing, standing in the property the numbers are about. The pages are lightweight by design; the maths is simple and the interface stays out of its way.</div>
+        </details>
+      </div>
+      <div class="text-center mt-12">
+        <p class="text-sm text-slate">Prefer a human to walk the numbers with you? <a href="/consultation" class="text-gold-400 font-semibold hover:underline">Book a consultation</a> &mdash; or browse the wider <a href="/insights" class="text-gold-400 font-semibold hover:underline">insights library</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. CTA BAND -->
+  <section id="cta" class="bg-gold-soft border-y border-gold-line py-16 md:py-20" aria-labelledby="cta-heading">
+    <div class="max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
+      <div class="grid md:grid-cols-[1.4fr,1fr] gap-10 items-center">
+        <div>
+          <div class="text-xs uppercase tracking-[0.25em] text-gold-400 font-semibold mb-4">From Numbers to Keys</div>
+          <h2 id="cta-heading" class="text-3xl md:text-4xl font-bold tracking-tight text-bone mb-4">Run the Numbers, Then Run Them Past Us</h2>
+          <p class="text-base text-ash leading-relaxed mb-6 md:mb-0">The calculators get you to an informed position; a consultation turns that position into a shortlist, a structure and a purchase. One conversation &mdash; by phone, WhatsApp, or in our Sheikh Zayed Road office &mdash; with the figures you have already run on the table.</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <a href="/consultation" class="inline-flex items-center justify-center px-8 py-4 bg-gold-400 text-ink-900 text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-300 transition-all duration-300 shadow-gold" aria-label="Book a consultation about your calculator results">Book a Consultation</a>
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 border border-gold-line text-bone text-sm font-bold uppercase tracking-[0.1em] rounded-xs hover:bg-gold-soft hover:border-gold-border transition-all duration-300" aria-label="Contact the ZARIN advisory team">Contact the Team</a>
+          <div class="flex items-center justify-center gap-6 pt-2">
+            <a href="tel:+971586901231" class="text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Call ZARIN at +971 58 690 1231">+971 58 690 1231</a>
+            <span class="w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span>
+            <a href="https://wa.me/971586901231" class="text-sm font-semibold text-gold-400 hover:text-gold-300 transition-colors" aria-label="Message ZARIN on WhatsApp">WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
   <footer class="bg-ink-950 border-t border-white-line pt-20 pb-8" role="contentinfo">
     <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
         <div class="col-span-2 lg:col-span-1">
           <a href="/" class="flex items-center gap-2 mb-4" aria-label="ZARIN Real Estate home"><span class="font-sans font-extrabold text-2xl tracking-tight text-bone">ZARIN</span></a>
-          <p class="text-sm text-slate leading-relaxed mb-6">Dubai real estate intelligence and market data.</p>
+          <p class="text-sm text-slate leading-relaxed mb-6">Dubai real estate advisory since 2023.</p>
+          <div class="flex gap-3">
+            <a href="https://instagram.com/zarin.realestate" class="w-10 h-10 border border-white-line rounded-xs flex items-center justify-center text-ash hover:text-gold-400 hover:border-gold-line transition-all" aria-label="Instagram"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+            <a href="https://wa.me/971586901231" class="w-10 h-10 border border-white-line rounded-xs flex items-center justify-center text-ash hover:text-gold-400 hover:border-gold-line transition-all" aria-label="WhatsApp"><svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+          </div>
         </div>
-        <nav aria-label="Insights footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Insights</h2><ul class="space-y-2"><li><a href="/insights/blog" class="text-sm text-ash hover:text-gold-400 transition-colors">Blog</a></li><li><a href="/insights/market-reports" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Reports</a></li><li><a href="/insights/podcast" class="text-sm text-ash hover:text-gold-400 transition-colors">Podcast</a></li><li><a href="/insights/calculators" class="text-sm text-ash hover:text-gold-400 transition-colors">Calculators</a></li></ul></nav>
-        <nav aria-label="Discover footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Discover</h2><ul class="space-y-2"><li><a href="/properties-for-sale" class="text-sm text-ash hover:text-gold-400 transition-colors">Properties</a></li><li><a href="/off-plan" class="text-sm text-ash hover:text-gold-400 transition-colors">Off-Plan</a></li><li><a href="/areas" class="text-sm text-ash hover:text-gold-400 transition-colors">Areas</a></li><li><a href="/visas" class="text-sm text-ash hover:text-gold-400 transition-colors">Visas</a></li></ul></nav>
-        <nav aria-label="Services footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Services</h2><ul class="space-y-2"><li><a href="/services/buying" class="text-sm text-ash hover:text-gold-400 transition-colors">Buying Advisory</a></li><li><a href="/services/mortgage" class="text-sm text-ash hover:text-gold-400 transition-colors">Mortgage</a></li><li><a href="/services/legal" class="text-sm text-ash hover:text-gold-400 transition-colors">Legal</a></li><li><a href="/services/valuation" class="text-sm text-ash hover:text-gold-400 transition-colors">Valuation</a></li></ul></nav>
-        <nav aria-label="Heritage footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Heritage</h2><ul class="space-y-2"><li><a href="/heritage" class="text-sm text-ash hover:text-gold-400 transition-colors">Our Story</a></li><li><a href="/heritage/team" class="text-sm text-ash hover:text-gold-400 transition-colors">Team</a></li><li><a href="/heritage/testimonials" class="text-sm text-ash hover:text-gold-400 transition-colors">Testimonials</a></li><li><a href="/heritage/awards" class="text-sm text-ash hover:text-gold-400 transition-colors">Awards</a></li></ul></nav>
+        <nav aria-label="Properties footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Properties</h2><ul class="space-y-2"><li><a href="/properties-for-sale" class="text-sm text-ash hover:text-gold-400 transition-colors">For Sale</a></li><li><a href="/properties-for-rent" class="text-sm text-ash hover:text-gold-400 transition-colors">For Rent</a></li><li><a href="/trophy-residences" class="text-sm text-ash hover:text-gold-400 transition-colors">Trophy Residences</a></li><li><a href="/beachfront-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Beachfront</a></li><li><a href="/branded-residences-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Branded Residences</a></li><li><a href="/commercial-properties-in-dubai" class="text-sm text-ash hover:text-gold-400 transition-colors">Commercial</a></li></ul></nav>
+        <nav aria-label="Services footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Services</h2><ul class="space-y-2"><li><a href="/services" class="text-sm text-ash hover:text-gold-400 transition-colors">All Services</a></li><li><a href="/services/buying" class="text-sm text-ash hover:text-gold-400 transition-colors">Buying Advisory</a></li><li><a href="/services/selling" class="text-sm text-ash hover:text-gold-400 transition-colors">Selling Advisory</a></li><li><a href="/services/valuation" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Price Assessment</a></li><li><a href="/services/after-sales" class="text-sm text-ash hover:text-gold-400 transition-colors">After-Sales Support</a></li><li><a href="/consultation" class="text-sm text-ash hover:text-gold-400 transition-colors">Book Consultation</a></li><li><a href="/contact" class="text-sm text-ash hover:text-gold-400 transition-colors">Contact</a></li></ul></nav>
+        <nav aria-label="Insights footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Insights</h2>
+<ul class="space-y-2"><li><a href="/insights" class="text-sm text-bone hover:text-gold-400 transition-colors font-semibold">All Insights</a></li><li><a href="/insights/blog" class="text-sm text-ash hover:text-gold-400 transition-colors">Blog Articles</a></li><li><a href="/insights/market-reports" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Reports</a></li><li><a href="/insights/podcast" class="text-sm text-ash hover:text-gold-400 transition-colors">Podcast</a></li><li><a href="/insights/guides" class="text-sm text-gold-400 hover:text-gold-300 transition-colors font-semibold" aria-current="page">Buyer's Guides</a></li><li><a href="/insights/calculators" class="text-sm text-ash hover:text-gold-400 transition-colors">All Calculators</a></li><li><a href="/insights/faq" class="text-sm text-ash hover:text-gold-400 transition-colors">FAQ Hub</a></li><li><a href="/insights/glossary" class="text-sm text-ash hover:text-gold-400 transition-colors">Glossary</a></li><li><a href="/insights/market-data" class="text-sm text-ash hover:text-gold-400 transition-colors">Market Data</a></li></ul></nav>
+        <nav aria-label="Heritage footer"><h2 class="text-xs uppercase tracking-[0.2em] text-gold-400 font-semibold mb-4">Heritage</h2>
+<ul class="space-y-2"><li><a href="/heritage" class="text-sm text-bone hover:text-gold-400 transition-colors font-semibold">Our Story (since 2005)</a></li><li><a href="/heritage/founder" class="text-sm text-ash hover:text-gold-400 transition-colors">Founder's Letter</a></li><li><a href="/heritage/team" class="text-sm text-ash hover:text-gold-400 transition-colors">Our Team</a></li><li><a href="/heritage/authors" class="text-sm text-ash hover:text-gold-400 transition-colors">Author Profiles</a></li><li><a href="/heritage/testimonials" class="text-sm text-ash hover:text-gold-400 transition-colors">Testimonials</a></li><li><a href="/heritage/press" class="text-sm text-ash hover:text-gold-400 transition-colors">Press &amp; Media</a></li></ul></nav>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 py-8 border-t border-white-line">
+        <address class="not-italic"><div class="text-xs uppercase tracking-wider text-slate mb-2">Dubai Office</div><p class="text-sm text-ash">Sheikh Zayed Road<br>Downtown Dubai, UAE</p></address>
+        <div><div class="text-xs uppercase tracking-wider text-slate mb-2">Phone</div><a href="tel:+971586901231" class="text-sm text-bone hover:text-gold-400 transition-colors">+971 58 690 1231</a></div>
+        <div><div class="text-xs uppercase tracking-wider text-slate mb-2">Email</div><a href="mailto:advisory@zarinrealestate.com" class="text-sm text-bone hover:text-gold-400 transition-colors">advisory@zarinrealestate.com</a></div>
       </div>
       <div class="pt-8 border-t border-white-line flex flex-col md:flex-row justify-between items-center gap-4">
         <div class="flex flex-wrap items-center gap-4 text-xs text-slate"><span>&copy; 2026 ZARIN Real Estate. All rights reserved.</span><span class="hidden md:inline w-1 h-1 bg-slate rounded-full" aria-hidden="true"></span><span>RERA Licensed</span></div>
-        <nav aria-label="Legal links" class="flex flex-wrap items-center gap-4 text-xs"><a href="/legal/privacy" class="text-slate hover:text-gold-400 transition-colors">Privacy</a><a href="/legal/terms" class="text-slate hover:text-gold-400 transition-colors">Terms</a><a href="/legal/cookies" class="text-slate hover:text-gold-400 transition-colors">Cookies</a><a href="/sitemap" class="text-slate hover:text-gold-400 transition-colors">Sitemap</a></nav>
+        <nav aria-label="Legal links" class="flex flex-wrap items-center gap-4 text-xs"><a href="/legal/privacy" class="text-slate hover:text-gold-400 transition-colors">Privacy</a><a href="/legal/terms" class="text-slate hover:text-gold-400 transition-colors">Terms</a><a href="/legal/privacy" class="text-slate hover:text-gold-400 transition-colors">Cookies</a><a href="/legal/ai-disclosure" class="text-slate hover:text-gold-400 transition-colors">AI Disclosure</a><a href="/legal/dmca" class="text-slate hover:text-gold-400 transition-colors">DMCA</a><a href="/contact" class="text-slate hover:text-gold-400 transition-colors">Contact</a><a href="/sitemap" class="text-slate hover:text-gold-400 transition-colors">Sitemap</a></nav>
       </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/971586901231" class="sticky-whatsapp fixed bottom-6 right-6 z-[800] w-14 h-14 bg-gold-400 rounded-full shadow-monolith items-center justify-center hover:bg-gold-300 transition-colors" aria-label="WhatsApp us"><svg class="w-7 h-7 text-ink-900 mx-auto" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
+
+  <a href="https://wa.me/971586901231" class="sticky-whatsapp fixed bottom-6 right-6 z-[800] w-14 h-14 bg-gold-400 rounded-full shadow-monolith items-center justify-center hover:bg-gold-300 transition-colors" aria-label="WhatsApp us"><svg class="w-7 h-7 text-ink-900 mx-auto" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
 
   <script defer>
     const header=document.getElementById('site-header');let ticking=false;
-    window.addEventListener('scroll',()=>{if(!ticking){window.requestAnimationFrame(()=>{if(window.scrollY>60){header.style.backgroundColor='rgba(10,11,14,0.85)';header.style.backdropFilter='blur(20px)';header.style.borderBottomColor='rgba(200,171,131,0.15)';header.style.padding='0.85rem 0';}else{header.style.backgroundColor='transparent';header.style.backdropFilter='none';header.style.borderBottomColor='transparent';header.style.padding='1.25rem 0';}ticking=false;});ticking=true;}});
+    if(header){header.dataset.boundScroll='true';}
+    window.addEventListener('scroll',()=>{if(!ticking){window.requestAnimationFrame(()=>{if(window.scrollY>60){header.style.backgroundColor='rgba(10,11,14,0.85)';header.style.backdropFilter='blur(20px)';header.style.borderBottomColor='rgba(200,171,131,0.15)';header.style.padding='0.85rem 0';}else{header.style.backgroundColor='transparent';header.style.backdropFilter='none';header.style.borderBottomColor='transparent';header.style.padding='1.15rem 0';}ticking=false;});ticking=true;}});
     const mt=document.getElementById('mobile-menu-toggle'),mc=document.getElementById('mobile-menu-close'),mm=document.getElementById('mobile-menu');
-        const mlt=document.getElementById('mobile-lang-trigger'),mlm=document.getElementById('mobile-lang-menu'),mll=document.getElementById('mobile-lang-label');
-    if(mlt&&mlm){
-      const curLang=localStorage.getItem('zarin_lang')||document.documentElement.lang||'en';
-      if(mll)mll.textContent=curLang==='fa'?'FA':'EN';
-      mlm.querySelectorAll('.mobile-lang-check').forEach(c=>{const p=c.closest('button');if(p)c.classList.toggle('hidden',p.dataset.lang!==curLang);});
-      mlt.addEventListener('click',(e)=>{e.stopPropagation();const h=mlm.classList.toggle('hidden');mlt.setAttribute('aria-expanded',!h);});
-      document.addEventListener('click',(e)=>{if(!mlt.contains(e.target)&&!mlm.contains(e.target)){mlm.classList.add('hidden');mlt.setAttribute('aria-expanded','false');}});
-      document.addEventListener('keydown',(e)=>{if(e.key==='Escape'){mlm.classList.add('hidden');mlt.setAttribute('aria-expanded','false');}});
-      mt?.addEventListener('click',()=>{mlm.classList.add('hidden');mlt.setAttribute('aria-expanded','false');});
-      mlm.querySelectorAll('.lang-btn').forEach(b=>{
-        b.addEventListener('click',()=>{
-          const l=b.dataset.lang;
-          if(l){
-            localStorage.setItem('zarin_lang',l);
-            document.documentElement.lang=l;
-            document.documentElement.dir=l==='fa'?'rtl':'ltr';
-            if(mll)mll.textContent=l==='fa'?'FA':'EN';
-            mlm.querySelectorAll('.mobile-lang-check').forEach(c=>{const p=c.closest('button');if(p)c.classList.toggle('hidden',p.dataset.lang!==l);});
-            mlm.classList.add('hidden');
-            mlt.setAttribute('aria-expanded','false');
-            if(window.ZARIN_I18N&&window.ZARIN_I18N.setLanguage){window.ZARIN_I18N.setLanguage(l);}
-          }
-        });
-      });
-    }
-    
-    
-    
-
-    
-
+    mt?.addEventListener('click',()=>{mm.classList.add('open');mt.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';});
+    mc?.addEventListener('click',()=>{mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';});
+    mm?.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{mm.classList.remove('open');mt.setAttribute('aria-expanded','false');document.body.style.overflow='';});});
   </script>
+  <script type="module" src="/scripts/i18n.js"></script>
   <script type="module" src="/scripts/nav.js"></script>
 </body>
 </html>
