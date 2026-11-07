@@ -29,7 +29,7 @@
 
   <link rel="preload" href="/fonts/optima-bold.woff2" as="font" type="font/woff2" crossorigin="">
   <link rel="stylesheet" href="/styles/main.css">
-  <script type="application/ld+json">
+      <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -630,11 +630,13 @@
     <div class="relative max-w-[1380px] mx-auto px-6 md:px-12 lg:px-20">
       <div class="max-w-3xl animate-fade-in-up">
         <nav aria-label="Breadcrumb" class="text-xs text-slate mb-6">
-          <a href="/" class="hover:text-gold-400 transition-colors">Home</a>
-          <span class="mx-2" aria-hidden="true">/</span>
-          <a href="/areas" class="hover:text-gold-400 transition-colors">Areas</a>
-          <span class="mx-2" aria-hidden="true">/</span>
-          <span class="text-gold-400 font-semibold">Emirates Hills</span>
+          <ol class="flex flex-wrap items-center gap-2" role="list">
+            <li role="listitem"><a href="/" class="hover:text-gold-400 transition-colors">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li role="listitem"><a href="/areas" class="hover:text-gold-400 transition-colors">Areas</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-gold-400 font-semibold" aria-current="page">Emirates Hills</li>
+          </ol>
         </nav>
         <div class="inline-flex items-center gap-2 mb-6">
           <span class="w-8 h-px bg-gold-400"></span>

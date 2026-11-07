@@ -36,12 +36,37 @@
     .sticky-whatsapp{display:none}@media(max-width:1024px){.sticky-whatsapp{display:flex}}
   </style>
 
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://zarinrealestate.com/"},
-    {"@type":"ListItem","position":2,"name":"Insights","item":"https://zarinrealestate.com/insights"},
-    {"@type":"ListItem","position":3,"name":"Entry Price vs Replacement Cost","item":"https://zarinrealestate.com/insights/entry-vs-replacement-cost"}
-  ]}
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://zarinrealestate.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://zarinrealestate.com/insights"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Blog Articles",
+      "item": "https://zarinrealestate.com/insights/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Entry Price vs Replacement Cost",
+      "item": "https://zarinrealestate.com/insights/entry-vs-replacement-cost"
+    }
+  ]
+}
   </script>
 </head>
 
@@ -366,8 +391,22 @@
       <a href="https://wa.me/971586901231" class="py-3 px-4 text-sm text-tether hover:text-tether/80 text-center block" data-i18n="contact_wa_title">WhatsApp</a>
     </div>
   </div>
-  
-
+  <!-- Breadcrumb -->
+  <div class="pt-24 md:pt-28 pb-4 bg-ink-900 border-b border-white-line">
+    <div class="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-20">
+      <nav aria-label="Breadcrumb" class="text-xs">
+        <ol class="flex items-center gap-2 text-slate flex-wrap" role="list">
+            <li role="listitem"><a href="/" class="hover:text-gold-400 transition-colors">Home</a></li>
+            <li aria-hidden="true">/</li>
+            <li role="listitem"><a href="/insights" class="hover:text-gold-400 transition-colors">Insights</a></li>
+            <li aria-hidden="true">/</li>
+            <li role="listitem"><a href="/insights/blog" class="hover:text-gold-400 transition-colors">Blog Articles</a></li>
+            <li aria-hidden="true">/</li>
+            <li class="text-bone font-semibold" aria-current="page">Entry Price vs Replacement Cost</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
   <main id="main" class="flex-grow py-20 md:py-28 px-6 bg-ink-950">
     <div class="max-w-4xl mx-auto">
       <div class="inline-flex items-center gap-2 mb-6">

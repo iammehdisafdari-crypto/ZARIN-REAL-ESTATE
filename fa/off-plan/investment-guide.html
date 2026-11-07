@@ -83,16 +83,31 @@
   </style>
 
   <!-- ═══ JSON-LD: BREADCRUMBLIST ═══ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "صفحه اصلی", "item": "https://zarinrealestate.com/fa" },
-      { "@type": "ListItem", "position": 2, "name": "پیش‌فروش و آف‌پلان", "item": "https://zarinrealestate.com/fa/off-plan" },
-      { "@type": "ListItem", "position": 3, "name": "راهنمای سرمایه‌گذاری", "item": "https://zarinrealestate.com/fa/off-plan/investment-guide" }
-    ]
-  }
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "صفحه اصلی",
+      "item": "https://zarinrealestate.com/fa"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "پیش‌فروش و آف‌پلان",
+      "item": "https://zarinrealestate.com/fa/off-plan"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "راهنمای سرمایه‌گذاری",
+      "item": "https://zarinrealestate.com/fa/off-plan/investment-guide"
+    }
+  ]
+}
   </script>
 
   <!-- ═══ JSON-LD: ARTICLE ═══ -->
@@ -548,12 +563,14 @@
     <div class="relative max-w-[1040px] mx-auto px-6 md:px-12 lg:px-20">
       <div class="animate-fade-in-up">
         <!-- Breadcrumb navigation -->
-        <nav aria-label="مسیر راهنما" class="flex items-center gap-2 text-xs text-ash mb-6">
-          <a href="/fa" class="hover:text-gold-400 transition-colors">صفحه اصلی</a>
-          <span class="text-white-line">/</span>
-          <a href="/fa/off-plan" class="hover:text-gold-400 transition-colors">پیش‌فروش و آف‌پلان</a>
-          <span class="text-white-line">/</span>
-          <span class="text-gold-400 font-semibold" aria-current="page">راهنمای سرمایه‌گذاری</span>
+        <nav aria-label="مسیر راهنما" class="text-xs text-ash mb-6">
+          <ol class="flex flex-wrap items-center gap-2" role="list">
+            <li role="listitem"><a href="/fa" class="hover:text-gold-400 transition-colors">صفحه اصلی</a></li>
+            <li class="text-white-line" aria-hidden="true">/</li>
+            <li role="listitem"><a href="/fa/off-plan" class="hover:text-gold-400 transition-colors">پیش‌فروش و آف‌پلان</a></li>
+            <li class="text-white-line" aria-hidden="true">/</li>
+            <li class="text-gold-400 font-semibold" aria-current="page">راهنمای سرمایه‌گذاری</li>
+          </ol>
         </nav>
 
         <div class="inline-flex items-center gap-2 mb-6" role="status">
